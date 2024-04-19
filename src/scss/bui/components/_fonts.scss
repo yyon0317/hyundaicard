@@ -5,24 +5,51 @@
   }
 }
 
-$baseline: 4; // 기준 행간
-$font-size-ratio: 1.5; // 폰트 크기와 행간 간의 비율
 
-@function font-size($line-height) {
-  @return ($line-height * $baseline * $font-size-ratio);
+/* 최대 화면 크기 설정 */
+$vw-viewport: 1200;
+
+/* 반응형이 일어날 화면 설정 */
+@mixin SCREEN{ @media (max-width: #{$vw-viewport}px){ @content; } }
+
+/* 화면 크기에 따라 크기를 알맞게 설정해주는 함수 */
+@mixin set-vw($property, $px){
+    @include SCREEN {
+        #{$property}: get-vw($px);
+    }
+    #{$property}: $px;
 }
 
-@for $i from 0 to 40 {
-  --font-size-#{$i}x: #{font-size($i)};
-}
+
+// :root {
+  
+//   --baseline: 0.1vw;
+//   // --baseline: 1.1111111111vw;
+//   @for $i from 0 through 40 { // 0부터 39까지 반복
+//     --baseline-#{$i}x: #{calc(var(--baseline) * $i)};// 행간에 따른 계산된 값을 변수에 할당
+//   }
+// }
+
+// $baseline: 1.1vw; // 기준 행간
+// $font-size-ratio: 1.5; // 폰트 크기와 행간 간의 비율
+
+// @function font-size($line-height) {
+//   @return ($line-height * $baseline * $font-size-ratio);
+// }
+// :root {
+// @for $i from 0 to 40 {
+//   --font-size-#{$i}x: #{font-size($i)};
+// }
+// }
 
 
+// body {
+//   --baseline: 4vw; /* 기준 행간 설정 */
+// }
 
-body {
-  --baseline: 4; /* 기준 행간 설정 */
-}
 
-p {
-  font-size: var(--font-size-10x); /* 원하는 행간의 폰트 크기 설정 */
-  line-height: 10; /* 원하는 행간 설정 */
-}
+// .guide__font{font-size: var(--font-size-10x);}
+// p {
+//   font-size: var(--font-size-10x); /* 원하는 행간의 폰트 크기 설정 */
+//   line-height: 10; /* 원하는 행간 설정 */
+// }

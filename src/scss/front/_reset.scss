@@ -1,0 +1,122 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin: 0;padding: 0;border: 0;font-size: 100%;/*font: inherit;*/vertical-align: baseline;}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block;}
+body{line-height: 1;}
+ol, ul{list-style: none;}
+blockquote, q{quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after{content: '';content: none;}
+table{border-collapse: collapse;border-spacing: 0;}
+
+*{margin:0;padding:0;outline:none;box-sizing:border-box;}
+html, body{font-family:'Pretendard',sans-serif;color:$font-color;font-size:16px;font-weight:normal;}
+header, footer, section, article, div, table, ul, ol, a, button, form, input, select, textarea, em, i, p, dl, dt, dd, span, strong{font-family:'Pretendard',sans-serif;}
+table{border-collapse:collapse;width:100%;}
+ul, ol{list-style:none;}
+form, fieldset, img{border:0;}
+button{cursor:pointer;background:none;}
+a{color:#050505;font-size:inherit;text-decoration:none;/* transition:all ease-in-out .3s; */}
+a:hover, a:active, a:visited, a:focus{text-decoration: none;}
+input, select, textarea, button{color:#050505;font-size:inherit;border:0;font-family:'Pretendard',sans-serif;}
+textarea{width:100%;resize:none;}
+textarea[readonly]{cursor:default;}
+iframe{width:100%;/*height:auto;*/border:0;}
+label{cursor: pointer;}
+img{width:100%;}
+
+.dimmedLayer {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 50;
+	background-color: #fff;
+	opacity: .8;
+	overflow: hidden;
+}
+
+.scrollLock { overflow: hidden; }
+.clear:after{display: block;content: '';clear: both;}
+
+.sr_only{
+	overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+.text-center{text-align: center;}
+
+.layer{
+    max-width:$grid-width;margin: 0 auto;
+    &:after{
+        content:"";display: block;clear: both;overflow: hidden;
+    }
+}
+.he {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border: none;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+}
+
+.hidden_txt {
+    text-indent: -9999px;
+    font-size: 0;
+    position: absolute;
+}
+// .btn{
+//     display: inline-block; 
+//     overflow: hidden;
+//     position: relative;
+//     vertical-align: middle;
+//     min-width: 100px;
+//     max-width: 100%;
+//     height: 48px;
+//     margin: 0 4px; 
+//     margin: 0 0.66666rem;
+//     margin-left: 1rem;
+//     padding: 0 30px;
+//     font-weight: 600;
+//     border: 1px solid #000;
+//     border-radius: 24px;
+//     color: #000;
+//     text-align: center;
+//     line-height: 46px;
+//     background: #fff;
+//     cursor: pointer;
+//     white-space: nowrap;
+//     -webkit-user-select: none;
+//     -moz-user-select: -moz-none;
+//     -ms-user-select: none;
+//     user-select: none;
+// }
+
+.mb-xl{margin-bottom: $gutter-xl !important;}
+.mb-m{margin-bottom: $gutter-m !important;}
+
+
+
+@import "../front/components/fonts";
+@import "../front/components/color";
+@import "../front/components/column";
+@import "../front/components/btn";
+@import "../front/components/dropdown";
+@import "../front/components/form";
+@import "../front/components/table";
+@import "../front/components/board";
+@import "../front/components/faq";
+@import "../front/components/modal";
+@import "../front/helper/helper";
+@import "../front/components/paging";

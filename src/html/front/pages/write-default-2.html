@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("../partials/meta.html")
+</head>
+
+<body>
+    @@include("../partials/guide.head.html",{
+        "menu": "UI Elements",
+        "title": "Table"
+    })
+    <div id="guide" class="guide">
+        <div class="layer">
+            <div class="guide__title">Table</div>
+            <div class="guide__desc">
+                테이블을 구성하는 기본 요소는 테이블 제목과 테이블 내용입니다. <br>
+                다양한 시나리오 및 장면에 따라 테이블 옵션, 테이블 내 검색필터와 검색 창, 페이지네이션, 뷰 옵션 등 을 추가하여 사용합니다.
+            </div>
+            <div class="guide__content">
+                <div class="guide__title2">Notice</div>
+                <!-- bo_v -->
+                <div class="bo_w">
+
+                    <p class="bo_w_required">“<em>*</em>” 표는 필수 입력사항 입니다. </p>
+                    <div class="table table-horizontal">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>분류 <i class="required">필수</i></th>
+                                    <td>
+                                        <select name="" id="" class="select">
+                                            <option value="">공지</option>
+                                            <option value="">공지</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>제목  <i class="required">필수</i></th>
+                                    <td>
+                                        <input type="text" class="input input-block" placeholder="제목을 입력해주세요.">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>작성자</th>
+                                    <td>
+                                        관리자
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>내용  <i class="required">필수</i></th>
+                                    <td>
+                                        <textarea name="" id="" class="textarea" placeholder="내용을 입력하세요"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>첨부파일 <i class="required">필수</i></th>
+                                    <td>
+                                        <div class="file_upload">
+                                            <input type="file" id="file_upload">
+                                            <input type="text" class="input" disabled placeholder="파일을 선택해주세요.">
+                                            <label for="file_upload" class="btn">파일 선택</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bo_w_btn">
+                        <a href="./table.html" class="btn btn-gray btn-xl">취소</a>
+                        <button type="button" class="btn btn-solid btn-xl">등록</button>
+                    </div>
+                </div>
+                <!-- e: bo_w -->
+            </div>
+        </div>
+    </div>
+     @@include("../partials/guide.tail.html")
+</body>
+
+</html>

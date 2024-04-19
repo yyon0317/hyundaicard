@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("../partials/meta.html")
+</head>
+
+<body>
+    @@include("../partials/guide.head.html",{
+        "menu": "Color Schemes",
+        "title": "Secondary Color"
+    })
+    <div id="guide" class="guide">
+        <div class="layer">
+            <div class="guide__title">Secondary Color</div>
+            <div class="guide__desc">
+                주요 색상 외에도 다양한 시나리오에서 다양한 장면의 특성에 맞는 보조 색상을 사용합니다<br> 
+                (예: 위험한 색상은 위험한 작업을 의미합니다.)
+            </div>
+            <div class="guide__content">
+                <div class="row margin-m">
+                    <div class="col-4">
+                        <div class="guide__color">
+                            <div class="color bg-success">
+                                <span><b>Success</b></span>
+                            </div>
+                            <div class="shame">
+                                <dl>
+                                    <dt>RGB</dt>
+                                    <dd>59, 184, 120</dd>
+                                </dl>
+                                <dl>
+                                    <dt>CMYK</dt>
+                                    <dd>72, 0, 72, 0</dd>
+                                </dl>
+                                <dl>
+                                    <dt>HEX</dt>
+                                    <dd>#3bb878</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // col-4 -->
+                    <div class="col-4">
+                        <div class="guide__color">
+                            <div class="color bg-danger">
+                                <span><b>Danger</b></span>
+                            </div>
+                            <div class="shame">
+                                <dl>
+                                    <dt>RGB</dt>
+                                    <dd>231, 94, 94</dd>
+                                </dl>
+                                <dl>
+                                    <dt>CMYK</dt>
+                                    <dd>4, 78, 59, 0</dd>
+                                </dl>
+                                <dl>
+                                    <dt>HEX</dt>
+                                    <dd>#e75e5e</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // col-4 -->
+                    <div class="col-4">
+                        <div class="guide__color">
+                            <div class="color bg-info">
+                                <span><b>Infomation</b></span>
+                            </div>
+                            <div class="shame">
+                                <dl>
+                                    <dt>RGB</dt>
+                                    <dd>141, 144, 150</dd>
+                                </dl>
+                                <dl>
+                                    <dt>CMYK</dt>
+                                    <dd>48, 38, 34, 2</dd>
+                                </dl>
+                                <dl>
+                                    <dt>HEX</dt>
+                                    <dd>#8d9096</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // col-4 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include("../partials/guide.tail.html")
+</body>
+
+</html>

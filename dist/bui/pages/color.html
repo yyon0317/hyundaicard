@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Author" content="UI STYEL GUIDE">
+    <meta name="Keywords" content="UI STYEL GUIDE">
+    <meta name="Description" content="UI STYEL GUIDE">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+    <meta property="og:image" content="" />
+    <link rel="stylesheet" href="../../assets/css/bui/common.css">
+    <script src="../../assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <title>UI STYEL GUIDE</title>
+
+
+</head>
+
+<body>
+    
+    <nav class="guide_nav">
+    	<div class="guide_nav_top">
+    		<h1>UI STYLE GUIDE</h1>
+    		<button type="button" class="btn_guide_menu"></button>
+    	</div>
+    	<ul class="guide_gnb">
+    		<li><a href="#"><i></i>Typography</a>
+    			<ul>
+    				<li><a href="./font.html"><span>Font</span></a></li>
+    				<li><a href="textUsage.html"><span>Usage</span></a></li>
+    				<li><a href="textColor.html"><span>Text Colors</span></a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>Color Schemes</a>
+    			<ul>
+    				<li><a href="color.html"><span>Primary Color</span></a></li>
+    				<li><a href="SecondaryColor.html"><span>Secondary Color</span></a></li>
+    				<li><a href="shadoes.html"><span>Base Color</span></a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>Spacing</a>
+    			<ul>
+    				<li><a href="SizeUnit.html"><span>Size Unit</span></a></li>
+    				<li><a href="Usage.html"><span>Usage</span></a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>UI Elements</a>
+    			<ul>
+    				<li><a href="Button.html"><span>Button</span></a></li>
+    				<li><a href="Dropdown.html"><span>Dropdown</span></a></li>
+    				<li><a href="form.html"><span>Form</span></a></li>
+    				<li><a href="table.html"><span>Table</span></a></li>
+    				<li><a href="Modal.html"><span>Modal</span></a></li>
+    			</ul>
+    		</li>
+    	</ul>
+    </nav>
+
+
+    <div id="container">
+    	<header class="guide_top">
+    		<div>
+    			<strong>Color Schemes</strong>
+    			<span>Primary Color</span>
+    		</div>
+    		<div class="version">v1.0.0</div>
+    	</header>
+    <div id="guide" class="guide">
+        <div class="layer">
+            <div class="guide__title">Primary Color</div>
+            <div class="guide__desc">
+                주요 색상입니다.<br>
+                아래 정의된 색상 및 가이드를 사용하여 일관성 있는 브랜드 아이덴티티를 만들어 갑니다.<br>
+                ex) style적용 color: var(--color-primary-02);
+                    class적용 color-primary-02
+            </div>
+            <div class="guide__content">
+                <div class="row margin-m">
+                    <div class="col-6">
+                        <div class="guide__color">
+                            <div class="color colorbg-primary-01">
+                                <span class="color-primary-02"><b>WHITE</b></span>
+                            </div>
+                            <div class="shame">
+                                <dl>
+                                    <dt>SCSS html</dt>
+                                    <dd>var(--color-primary-01);<br>color-primary-01</dd>
+                                </dl>
+                                <dl>
+                                    <dt>RGB</dt>
+                                    <dd>255, 255, 255</dd>
+                                </dl>
+                                <dl>
+                                    <dt>CMYK</dt>
+                                    <dd>0, 0, 0, 0</dd>
+                                </dl>
+                                <dl>
+                                    <dt>HEX</dt>
+                                    <dd>#ffffff</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // col-6 -->
+                    <div class="col-6">
+                        <div class="guide__color">
+                            <div class="color colorbg-primary-02">
+                                <span class="color-primary-01"><b>BLACK</b></span>
+                            </div>
+                            <div class="shame">
+                                <dl>
+                                    <dt>SCSS html</dt>
+                                    <dd>var(--color-primary-02);<br>color-primary-02</dd>
+                                </dl>
+                                <dl>
+                                    <dt>RGB</dt>
+                                    <dd>0, 0, 0</dd>
+                                </dl>
+                                <dl>
+                                    <dt>CMYK</dt>
+                                    <dd>0, 0, 0, 100</dd>
+                                </dl>
+                                <dl>
+                                    <dt>HEX</dt>
+                                    <dd>#000000</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // col-6 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    	<footer class="guide__footer">
+    		<p>© ALLFORLAND. All rights reserved</p>
+    	</footer>
+    </div>
+</body>
+
+</html>

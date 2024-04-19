@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("../partials/meta.html")
+</head>
+<body>
+    @@include("../partials/guide.head.html",{
+        "menu": "Typography",
+        "title": "Font"
+    })
+<div id="guide" class="guide">
+    <div class="layer">
+        <div class="guide__title">Font</div>
+        <div class="guide__desc">
+            올포랜드에서 제공하는 모든 서비스에는 Pretendard를 사용합니다.<br>
+            두께는 웹폰트 사용 시 로딩시간을 고려해 최대 4개(Light / Regural / Bold / ExtraBold) 타입으로 제한합니다.
+        </div>
+
+        <div class="guide__content">
+            <div class="row margin-m">
+                <div class="col-3">
+                    <div class="guide__font font-weight-300">
+                        <div>Pretendard  Light</div>
+                        <div>가나다<br>ABC</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="guide__font font-weight-400">
+                        <div>Pretendard  Regular</div>
+                        <div>가나다<br>ABC</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="guide__font font-weight-700">
+                        <div>Pretendard  Bold</div>
+                        <div>가나다<br>ABC</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="guide__font font-weight-800">
+                        <div>Pretendard  Extra Bold</div>
+                        <div>가나다<br>ABC</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@@include("../partials/guide.tail.html")
+</body></html>

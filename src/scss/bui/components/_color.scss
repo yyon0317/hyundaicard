@@ -1,0 +1,104 @@
+//baseColor class명
+$baseColor: (
+    1: #ffffff,
+    2: #fbfbfb,
+    3: #f2f2f2,
+    4: #e4e4e4,
+    5: #d9d9d9,
+    6: #c1c1c1,
+    7: #a9a9a9,
+    8: #919191,
+    9: #767676,
+    10: #606060,
+    11: #303030,
+    12: #181818,
+    13: #000000
+);
+$primaryColor: (
+    1: #ffffff,
+    2: #000000
+);
+$secondaryColor: (
+    1: #f07520,
+    2: #FF4500,
+    3: #CB4086,
+    4: #d93068,
+    5: #8B0000,
+    6: #6e34cd,
+    7: #2954cb,
+    8: #0000CD,
+    9: #19b98d
+);
+
+// 모든 색상 변수를 포함한 맵 생성
+$colors: (
+    base: $baseColor,
+    primary: $primaryColor,
+    secondary: $secondaryColor
+);
+
+@each $type, $colorMap in $colors {
+    @each $colorIndex, $color in $colorMap {
+        $classIndex: if($colorIndex < 10, "0#{$colorIndex}", "#{$colorIndex}");
+
+        .colorbg-#{$type}-#{$classIndex} {
+            background-color: $color;
+        }
+        .color-#{$type}-#{$classIndex} {
+            color: $color;
+        }
+    }
+}
+
+//
+$COLOR-PALETTES: ('base': ('01': '#ffffff', '02': '#fbfbfb', '03': '#f2f2f2', '04': '#e4e4e4', '05': '#d9d9d9', '06': '#c1c1c1', '07': '#a9a9a9', '08': '#919191', '09': '#767676', '10': '#606060', '11': '#303030', '12': '#181818', '13': '#000000'),
+'primary': ('01': '#ffffff', '02': '#000000'),
+'secondary': ('01': '#f07520', '02': '#FF4500', '03': '#CB4086', '04': '#d93068', '05': '#8B0000', '06': '#6e34cd', '07': '#2954cb', '08': '#0000CD', '09': '#19b98d'));
+
+:root {
+	// color
+	@each $variables in $COLOR-PALETTES {
+		@each $color-name in map-get($COLOR-PALETTES, nth($variables, 1)) {
+			--color-#{nth($variables, 1)}-#{nth($color-name, 1)}: #{nth($color-name, 2)};
+		}
+	}
+
+	// color normal
+	// --color-normal-000: var(--color-base-000);
+	// --color-normal-010: var(--color-base-010);
+	// --color-normal-020: var(--color-base-020);
+	// --color-normal-030: var(--color-base-040);
+	// --color-normal-040: var(--color-base-050);
+	// --color-normal-050: var(--color-base-070);
+	// --color-normal-060: var(--color-base-090);
+	// --color-normal-100: var(--color-base-100);
+
+	// color accent
+	// --color-accent-010: var(--color-primary-040);
+	// --color-accent-020: var(--color-secondary-040);
+	// --color-accent-030: var(--color-tertiary-040);
+	// --color-accent-040: var(--color-quaternary-040);
+
+	// --baseline: #{int(4)};
+
+	// vertical rhythm
+	// @each $variables in $VERTICAL-RHYTHM {
+	// 	--baseline-#{nth($variables, 1)}x: #{calc(var(--baseline) * nth($variables, 1))};
+	// }
+
+	// @for $i from 0 to 40 {
+	// 	--baseline-#{$i}x: #{calc(var(--baseline) * $i)};
+	// }
+
+	
+	// @each $colorIndex, $color in $baseColor {
+	//     $classIndex: if($colorIndex < 10, "0#{$colorIndex}", "#{$colorIndex}");
+
+	//     .colorbg-base-#{$classIndex} {
+	//         background-color: $color;
+	//     }
+	//     .color-base-#{$classIndex} {
+	//         color: $color;
+	//     }
+	// }
+}

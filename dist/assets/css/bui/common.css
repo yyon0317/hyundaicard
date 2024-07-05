@@ -1,5 +1,51 @@
-/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --baseline: 4;
+  --baseline-0x: calc(var(--baseline) * 0);
+  --baseline-1x: calc(var(--baseline) * 1);
+  --baseline-2x: calc(var(--baseline) * 2);
+  --baseline-3x: calc(var(--baseline) * 3);
+  --baseline-4x: calc(var(--baseline) * 4);
+  --baseline-5x: calc(var(--baseline) * 5);
+  --baseline-6x: calc(var(--baseline) * 6);
+  --baseline-7x: calc(var(--baseline) * 7);
+  --baseline-8x: calc(var(--baseline) * 8);
+  --baseline-9x: calc(var(--baseline) * 9);
+  --baseline-10x: calc(var(--baseline) * 10);
+  --baseline-11x: calc(var(--baseline) * 11);
+  --baseline-12x: calc(var(--baseline) * 12);
+  --baseline-13x: calc(var(--baseline) * 13);
+  --baseline-14x: calc(var(--baseline) * 14);
+  --baseline-15x: calc(var(--baseline) * 15);
+  --baseline-16x: calc(var(--baseline) * 16);
+  --baseline-17x: calc(var(--baseline) * 17);
+  --baseline-18x: calc(var(--baseline) * 18);
+  --baseline-19x: calc(var(--baseline) * 19);
+  --baseline-20x: calc(var(--baseline) * 20);
+  --baseline-21x: calc(var(--baseline) * 21);
+  --baseline-22x: calc(var(--baseline) * 22);
+  --baseline-23x: calc(var(--baseline) * 23);
+  --baseline-24x: calc(var(--baseline) * 24);
+  --baseline-25x: calc(var(--baseline) * 25);
+  --baseline-26x: calc(var(--baseline) * 26);
+  --baseline-27x: calc(var(--baseline) * 27);
+  --baseline-28x: calc(var(--baseline) * 28);
+  --baseline-29x: calc(var(--baseline) * 29);
+  --baseline-30x: calc(var(--baseline) * 30);
+  --baseline-31x: calc(var(--baseline) * 31);
+  --baseline-32x: calc(var(--baseline) * 32);
+  --baseline-33x: calc(var(--baseline) * 33);
+  --baseline-34x: calc(var(--baseline) * 34);
+  --baseline-35x: calc(var(--baseline) * 35);
+  --baseline-36x: calc(var(--baseline) * 36);
+  --baseline-37x: calc(var(--baseline) * 37);
+  --baseline-38x: calc(var(--baseline) * 38);
+  --baseline-39x: calc(var(--baseline) * 39);
+  --baseline-40x: calc(var(--baseline) * 40);
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -181,6 +227,18 @@ label {
   font-weight: 900;
 }
 
+/* 기준 화면 너비 */
+/* pixel을 vw로 변환해주는 함수 */
+/* 특정 CSS 속성을 픽셀 단위와 반응형 vw 단위로 설정하는 믹스인 */
+/* 특정 CSS 속성에 대해 수직(vertical) 및 수평(horizontal) 값을 설정하는 믹스인 */
+/* 예시
+.guide__desc {
+  font-weight: 700;
+  @include set-vw(font-size, 28px);
+  @include set-vw(margin-bottom, 15px);
+  @include set-pair-vw(padding, 10px, 15px);
+}
+*/
 .colorbg-base-01 {
   background-color: #ffffff;
 }
@@ -400,14 +458,9 @@ label {
   --color-secondary-09: #19b98d;
 }
 
-.row:after {
-  content: "";
-  display: block;
-  clear: both;
-  overflow: hidden;
-}
-.row [class^=col-] {
-  float: left;
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 .row.margin-xxs {
   margin: 0 -2px;
@@ -415,6 +468,7 @@ label {
 .row.margin-xxs [class^=col-] {
   padding: 0 2px;
   padding-top: 4px;
+  padding-bottom: 4px;
 }
 .row.margin-xs {
   margin: 0 -4px;
@@ -422,6 +476,7 @@ label {
 .row.margin-xs [class^=col-] {
   padding: 0 4px;
   padding-top: 8px;
+  padding-bottom: 8px;
 }
 .row.margin-s {
   margin: 0 -8px;
@@ -429,6 +484,7 @@ label {
 .row.margin-s [class^=col-] {
   padding: 0 8px;
   padding-top: 16px;
+  padding-bottom: 16px;
 }
 .row.margin-m {
   margin: 0 -12px;
@@ -436,6 +492,7 @@ label {
 .row.margin-m [class^=col-] {
   padding: 0 12px;
   padding-top: 24px;
+  padding-bottom: 24px;
 }
 .row.margin-l {
   margin: 0 -18px;
@@ -443,6 +500,7 @@ label {
 .row.margin-l [class^=col-] {
   padding: 0 18px;
   padding-top: 36px;
+  padding-bottom: 36px;
 }
 .row.margin-xl {
   margin: 0 -24px;
@@ -450,6 +508,7 @@ label {
 .row.margin-xl [class^=col-] {
   padding: 0 24px;
   padding-top: 48px;
+  padding-bottom: 48px;
 }
 .row.margin-xxl {
   margin: 0 -40px;
@@ -457,56 +516,141 @@ label {
 .row.margin-xxl [class^=col-] {
   padding: 0 40px;
   padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .col-1 {
-  width: 8.3333333333%;
+  flex: 0 0 8.3333333333%;
+  max-width: 8.3333333333%;
 }
 
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 .col-2 {
-  width: 16.6666666667%;
+  flex: 0 0 16.6666666667%;
+  max-width: 16.6666666667%;
 }
 
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 .col-3 {
-  width: 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
 }
 
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 .col-4 {
-  width: 33.3333333333%;
+  flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
 }
 
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 .col-5 {
-  width: 41.6666666667%;
+  flex: 0 0 41.6666666667%;
+  max-width: 41.6666666667%;
 }
 
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 .col-6 {
-  width: 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 .col-7 {
-  width: 58.3333333333%;
+  flex: 0 0 58.3333333333%;
+  max-width: 58.3333333333%;
 }
 
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 .col-8 {
-  width: 66.6666666667%;
+  flex: 0 0 66.6666666667%;
+  max-width: 66.6666666667%;
 }
 
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 .col-9 {
-  width: 75%;
+  flex: 0 0 75%;
+  max-width: 75%;
 }
 
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 .col-10 {
-  width: 83.3333333333%;
+  flex: 0 0 83.3333333333%;
+  max-width: 83.3333333333%;
 }
 
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 .col-11 {
-  width: 91.6666666667%;
+  flex: 0 0 91.6666666667%;
+  max-width: 91.6666666667%;
 }
 
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 .col-12 {
-  width: 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 .btn {
   display: inline-block;
   vertical-align: top;
@@ -1527,52 +1671,192 @@ label {
 
 .guide__footer {
   text-align: center;
-  font-size: 13px;
-  padding: 45px 0;
+  padding: 45px 0px;
   border-top: 1px solid #eeeeee;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
 }
+@media (max-width: 1200px) {
+  .guide__footer {
+    padding: 7.5vw 0vw;
+  }
+}
 .guide__title {
   font-weight: 700;
   font-size: 45px;
 }
+@media (max-width: 1200px) {
+  .guide__title {
+    font-size: 7.5vw;
+  }
+}
 .guide__title2 {
   font-weight: 700;
   font-size: 26px;
-  margin-bottom: 24px;
-  color: #000;
+  margin: 20px 0px;
+  color: var(--color-secondary-07);
+}
+@media (max-width: 1200px) {
+  .guide__title2 {
+    font-size: 4.3333333333vw;
+  }
+}
+@media (max-width: 1200px) {
+  .guide__title2 {
+    margin: 3.3333333333vw 0vw;
+  }
+}
+.guide__title3 {
+  font-weight: 700;
+  font-size: 26px;
+  margin: 20px 0px;
+  color: var(--color-secondary-03);
+}
+@media (max-width: 1200px) {
+  .guide__title3 {
+    font-size: 4.3333333333vw;
+  }
+}
+@media (max-width: 1200px) {
+  .guide__title3 {
+    margin: 3.3333333333vw 0vw;
+  }
+}
+.guide__title4 {
+  font-weight: 700;
+  font-size: 26px;
+  margin: 20px 0px;
+  color: var(--color-secondary-01);
+}
+@media (max-width: 1200px) {
+  .guide__title4 {
+    font-size: 4.3333333333vw;
+  }
+}
+@media (max-width: 1200px) {
+  .guide__title4 {
+    margin: 3.3333333333vw 0vw;
+  }
 }
 .guide__desc {
-  color: #666666;
+  color: var(--color-base-09);
   font-size: 16px;
-  padding: 20px 0 50px;
-  margin-bottom: 50px;
+  padding: 20px 0px;
+  margin-bottom: 30px;
   line-height: 1.34;
+}
+@media (max-width: 1200px) {
+  .guide__desc {
+    padding: 3.3333333333vw 0vw;
+  }
+}
+@media (max-width: 1200px) {
+  .guide__desc {
+    margin-bottom: 5vw;
+  }
+}
+.guide__desc.line {
   border-bottom: 1px solid #eeeeee;
 }
 .guide__font {
-  background-color: #f6f8f9;
-  border: 1px solid #ddd;
-  height: 245px;
-  text-align: center;
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
 }
-.guide__font div:nth-child(1) {
-  color: #666666;
-  font-size: 14px;
-  padding: 50px 0;
+.guide__subcont01 {
+  color: var(--color-base-08);
+  font-size: 15px;
+  padding-top: 20px;
+  line-height: 15px;
 }
-.guide__font div:nth-child(2) {
-  font-size: 45px;
+@media (max-width: 1200px) {
+  .guide__subcont01 {
+    font-size: 2.5vw;
+  }
+}
+@media (max-width: 1200px) {
+  .guide__subcont01 {
+    padding-top: 3.3333333333vw;
+  }
+}
+@media (max-width: 1200px) {
+  .guide__subcont01 {
+    line-height: 2.5vw;
+  }
+}
+.guide__subcont02 {
+  color: var(--color-base-10);
+  font-size: 28px;
+  padding: 20px 0px;
+  line-height: 28px;
+}
+@media (max-width: 1200px) {
+  .guide__subcont02 {
+    font-size: 4.6666666667vw;
+  }
+}
+@media (max-width: 1200px) {
+  .guide__subcont02 {
+    padding: 3.3333333333vw 0vw;
+  }
+}
+@media (max-width: 1200px) {
+  .guide__subcont02 {
+    line-height: 4.6666666667vw;
+  }
+}
+.guide__subcont03 {
+  color: var(--color-base-09);
+  font-size: 15px;
+  padding-top: 20px;
+  line-height: 12px;
+}
+@media (max-width: 1200px) {
+  .guide__subcont03 {
+    font-size: 2.5vw;
+  }
+}
+@media (max-width: 1200px) {
+  .guide__subcont03 {
+    padding-top: 3.3333333333vw;
+  }
+}
+@media (max-width: 1200px) {
+  .guide__subcont03 {
+    line-height: 2vw;
+  }
+}
+.guide__subcont04 {
+  color: var(--color-base-10);
+  font-size: 15px;
+  padding: 20px 20px;
+  line-height: 17px;
+  text-align: left;
+  background: var(--color-base-03);
+}
+@media (max-width: 1200px) {
+  .guide__subcont04 {
+    font-size: 2.5vw;
+  }
+}
+@media (max-width: 1200px) {
+  .guide__subcont04 {
+    padding: 3.3333333333vw 3.3333333333vw;
+  }
+}
+@media (max-width: 1200px) {
+  .guide__subcont04 {
+    line-height: 2.8333333333vw;
+  }
 }
 .guide__color .color {
   height: 200px;
   position: relative;
   color: #fff;
   border-radius: 4px 4px 0 0;
+  border: 1px solid #e0e0e0;
 }
 .guide__color .color span {
   position: absolute;

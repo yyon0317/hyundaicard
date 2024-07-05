@@ -11,62 +11,89 @@
     })
 <div id="guide" class="guide contentfont">
     <div class="layer">
-        <div class="guide__title">Font</div>
-        <div class="guide__desc">
+        <div class="guide__title outline-4x">Font</div>
+        <div class="guide__desc line">
             Font Style의 정의는 서로 다를 수 있습니다.<br />Google Fonts(<a target="_blank" href="https://fonts.google.com/noto/specimen/Noto+Sans+KR">Google Fonts Noto Sans Korean</a>, <a target="_blank" href="https://fonts.google.com/specimen/Roboto">Google Fonts Roboto</a>)를 참고하세요
         </div>
 
         <div class="guide__content">
+            <div class="guide__title2">Font Face, Family, Weight</div>
             <div class="row margin-m">
                 <div class="col-3">
                     <div class="guide__font font-weight-400">
-                        <div>language korea</div>
-                        <div>Noto Sans KR</div>
+                        <div class="guide__subcont01">language korea</div>
+                        <div class="guide__subcont02">Noto Sans KR</div>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="guide__font font-weight-400">
-                        <div>language english</div>
-                        <div>Roboto</div>
+                        <div class="guide__subcont01">language english</div>
+                        <div class="guide__subcont02">Roboto</div>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="guide__font font-weight-100">
-                        <div>Noto Sans/Roboto  thin<br>(font-weight-100)</div>
-                        <div>가나다<br>ABC</div>
+                        <div class="guide__subcont01">Noto Sans/Roboto  thin<br>(font-weight-100)</div>
+                        <div class="guide__subcont02">가나다<br>ABC</div>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="guide__font font-weight-300">
-                        <div>Noto Sans/Roboto  light<br>(font-weight-300)</div>
-                        <div>가나다<br>ABC</div>
+                        <div class="guide__subcont01">Noto Sans/Roboto  light<br>(font-weight-300)</div>
+                        <div class="guide__subcont02">가나다<br>ABC</div>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="guide__font font-weight-400">
-                        <div>Noto Sans/Roboto  regular<br>font-weight-400</div>
-                        <div>가나다<br>ABC</div>
+                        <div class="guide__subcont01">Noto Sans/Roboto  regular<br>font-weight-400</div>
+                        <div class="guide__subcont02">가나다<br>ABC</div>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="guide__font font-weight-500">
-                        <div>Noto Sans/Roboto  medium<br>(font-weight-500)</div>
-                        <div>가나다<br>ABC</div>
+                        <div class="guide__subcont01">Noto Sans/Roboto  medium<br>(font-weight-500)</div>
+                        <div class="guide__subcont02">가나다<br>ABC</div>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="guide__font font-weight-700">
-                        <div>Noto Sans/Roboto  bold<br>(font-weight-700)</div>
-                        <div>가나다<br>ABC</div>
+                        <div class="guide__subcont01">Noto Sans/Roboto  bold<br>(font-weight-700)</div>
+                        <div class="guide__subcont02">가나다<br>ABC</div>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="guide__font font-weight-900">
-                        <div>Noto Sans/Roboto  black<br>font-weight-900</div>
-                        <div>가나다<br>ABC</div>
+                        <div class="guide__subcont01">Noto Sans/Roboto  black<br>font-weight-900</div>
+                        <div class="guide__subcont02">가나다<br>ABC</div>
                     </div>
                 </div>
-                
+            </div>
+            <div class="guide__title3">HTML</div>
+            <div class="row margin-m">
+                <div class="col-12">
+                    <div class="guide__font">
+                        <div class="guide__subcont04">&lt;div class="font-weight-700"&gt;&lt;/div&gt;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide__content">
+            <div class="guide__title2">Font Size</div>
+            <div class="row margin-m">
+                <div class="col-12">
+                    <div class="guide__font">
+                        <div class="guide__desc">기준 화면 너비를 1200px로 설정합니다. 화면 너비가 1200px 이하일 때만 스타일 정의 픽셀(px)을 vw 단위로 변환</div>
+                    </div>
+                </div>
+            </div>
+            <div class="guide__title4">SCSS</div>
+            <div class="row margin-m">
+                <div class="col-12">
+                    <div class="guide__font">
+                        <div class="guide__subcont04">@include set-vw(font-size, 20px);<br>@include set-vw(line-height, 12px);</div>
+                    </div>
+                </div>
             </div>
         </div>
 

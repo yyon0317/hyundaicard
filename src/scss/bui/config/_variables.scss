@@ -40,3 +40,23 @@ $grid-breakpoints: (
   lg: 1000px,
   xl: 1120px
 );
+
+// 4의배수
+//--baseline-0x: 0px--baseline-1x: 4px--baseline-2x: 8px--baseline-3x: 12px--baseline-4x: 16px var(--baseline-2x)
+:root {
+  --baseline: 4;
+
+  @for $i from 0 through 40 {
+    --baseline-#{$i}x: calc(var(--baseline) * #{$i});
+  }
+}
+//반응형디자인 활용
+// :root {--baseline: 4px;
+// @media (max-width: 768px) {
+//   :root {
+//     --baseline: 2px; /* 모바일 장치에서는 기본 간격을 줄입니다. */
+//   }
+// }
+// .element {
+//   padding: var(--baseline-4x); /* 데스크톱에서는 16px, 모바일에서는 8px */
+// }

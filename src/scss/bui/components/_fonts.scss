@@ -1,3 +1,5 @@
+@use "sass:math"; // 다른 규칙보다 먼저 작성
+
 @for $i from 1 to 10{
   .font-weight-#{$i * 100}{
     font-weight : $i * 100;
@@ -6,19 +8,101 @@
 }
 
 
-/* 최대 화면 크기 설정 */
-$vw-viewport: 1200;
 
-/* 반응형이 일어날 화면 설정 */
+
+/* 기준 화면 너비 */
+$vw-viewport: 1200;
 @mixin SCREEN{ @media (max-width: #{$vw-viewport}px){ @content; } }
 
-/* 화면 크기에 따라 크기를 알맞게 설정해주는 함수 */
-@mixin set-vw($property, $px){
-    @include SCREEN {
-        #{$property}: get-vw($px);
-    }
-    #{$property}: $px;
+/* pixel을 vw로 변환해주는 함수 */
+@function get-vw($px){
+  $vw-context: $vw-viewport * 0.005 * 1px;
+  @return math.div($px, $vw-context) * 1vw;
 }
+
+/* 특정 CSS 속성을 픽셀 단위와 반응형 vw 단위로 설정하는 믹스인 */
+@mixin set-vw($property, $value){
+  @if type-of($value) == 'number' {
+    @include SCREEN {
+      #{$property}: get-vw($value);
+    }
+    #{$property}: $value;
+  } @else if type-of($value) == 'string' and str-slice($value, 1, 2) == '--' {
+    @include SCREEN {
+      #{$property}: calc(#{$value} * 100vw / #{$vw-viewport});
+    }
+    #{$property}: $value;
+  }
+}
+
+/* 특정 CSS 속성에 대해 수직(vertical) 및 수평(horizontal) 값을 설정하는 믹스인 */
+@mixin set-pair-vw($property, $vertical, $horizontal){
+  @if type-of($vertical) == 'number' and type-of($horizontal) == 'number' {
+    @include SCREEN {
+      #{$property}: get-vw($vertical) get-vw($horizontal);
+    }
+    #{$property}: $vertical $horizontal;
+  } @else {
+    @include SCREEN {
+      #{$property}: calc(#{$vertical} * 100vw / #{$vw-viewport}) calc(#{$horizontal} * 100vw / #{$vw-viewport});
+    }
+    #{$property}: $vertical $horizontal;
+  }
+}
+
+
+
+
+
+
+
+// /* 기준 화면 너비 */
+// $vw-viewport: 1200;
+// @mixin SCREEN{ @media (max-width: #{$vw-viewport}px){ @content; } }
+// /* pixel을 vw로 변환해주는 함수 */
+// @function get-vw($px){
+//     /* 기준 화면 너비를 1%로 나눈 값 */
+//     $vw-context: $vw-viewport * 0.005 * 1px;
+//   /* 주어진 픽셀 값을 vw 단위로 변환하여 반환 */
+//   @return math.div($px, $vw-context) * 1vw;
+// }
+// /* 특정 CSS 속성을 픽셀 단위와 반응형 vw 단위로 설정하는 믹스인 */
+// @mixin set-vw($property, $px){
+//     @include SCREEN {
+//       /* 화면 크기가 $vw-viewport 이하일 때, vw 단위로 설정 */
+//       #{$property}: get-vw($px);
+//     }
+//     /* 기본 값으로 픽셀 단위 설정 */
+//     #{$property}: $px;
+// }
+// /* 특정 CSS 속성에 대해 수직(vertical) 및 수평(horizontal) 값을 설정하는 믹스인 */
+// @mixin set-pair-vw($property, $vertical, $horizontal){
+//     @include SCREEN {
+//       /* 화면 크기가 $vw-viewport 이하일 때, 수직 및 수평 값을 vw 단위로 설정 */
+//       #{$property}: get-vw($vertical) get-vw($horizontal);
+//     }
+//     /* 기본 값으로 수직 및 수평 픽셀 값 설정 */
+//     #{$property}: $vertical $horizontal;
+// }
+/* 예시
+.guide__desc {
+  font-weight: 700;
+  @include set-vw(font-size, 28px);
+  @include set-vw(margin-bottom, 15px);
+  @include set-pair-vw(padding, 10px, 15px);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 // :root {

@@ -1,6 +1,0 @@
-@for $i from 3 to 9{
-  .font-weight-#{$i * 100}{
-    font-weight : $i * 100;
-    
-  }
-}

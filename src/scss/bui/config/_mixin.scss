@@ -1,0 +1,26 @@
+@mixin clear {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+
+@mixin hidden($mode: &) {
+	overflow: hidden;
+	visibility: hidden;
+	margin: -1px;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	line-height: 1px;
+	font-size: 1px;
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip: rect(0,0,0,0);
+	pointer-events: none;
+	
+	@if $mode == & {
+		display: block;
+		position: absolute;
+	}
+}

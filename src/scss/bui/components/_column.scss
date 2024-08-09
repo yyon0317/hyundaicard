@@ -1,0 +1,105 @@
+@mixin gutter($size) {
+    margin: 0 calc($size / 2 * -1);
+    [class^="col-"] {
+        padding: 0 calc($size / 2);
+        padding-top: calc($size / 2 * 2);
+        padding-bottom: calc($size / 2 * 2);
+    }
+}
+
+.row {
+    $gutter-xxs : 4px;
+    $gutter-xs : 8px;
+    $gutter-s : 16px;
+    $gutter-m : 24px;
+    $gutter-l : 36px;
+    $gutter-xl : 48px;
+    $gutter-xxl : 80px;
+    display: flex;
+    flex-wrap: wrap;
+    
+    // margin-xxs에서 margin-xxl까지의 각 클래스에서 gutter 믹스인을 사용하여 margin과 padding을 설정합니다.
+    &.margin-xxs {
+        @include gutter($gutter-xxs);
+    }
+    &.margin-xs {
+        @include gutter($gutter-xs);
+    }
+    &.margin-s {
+        @include gutter($gutter-s);
+    }
+    &.margin-m {
+        @include gutter($gutter-m);
+    }
+    &.margin-l {
+        @include gutter($gutter-l);
+    }
+    &.margin-xl {
+        @include gutter($gutter-xl);
+    }
+    &.margin-xxl {
+        @include gutter($gutter-xxl);
+    }
+}
+
+@for $i from 1 to 13 {
+    .col-#{$i} {
+        flex: 0 0 calc(100% / 12 * $i);
+        max-width: calc(100% / 12 * $i);
+    }
+    
+    // 1200px 이하일 때 .col-3 설정
+@media (max-width: 1200px) {
+    .col-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+}
+
+
+
+	
+
+
+// @mixin gutter($size){
+//     margin: 0 calc($size / 2) * -1;
+//     [class^="col-"]{
+//         padding: 0 calc($size / 2) * 1;
+//         padding-top: calc($size / 2) * 2;
+//     }
+// }
+// .row{
+//     &:after{
+//         content:"";display: block;clear: both;overflow: hidden;
+//     }
+//     [class^="col-"]{float: left;}
+    
+//     &.margin-xxs{
+//         @include gutter($gutter-xxs);
+//     }
+//     &.margin-xs{
+//         @include gutter($gutter-xs);
+//     }
+//     &.margin-s{
+//         @include gutter($gutter-s);
+//     }
+//     &.margin-m{
+//       @include gutter($gutter-m);
+//     }
+//     &.margin-l{
+//        @include gutter($gutter-l);
+//     }
+//     &.margin-xl{
+//        @include gutter($gutter-xl);
+//     }
+//     &.margin-xxl{
+//         @include gutter($gutter-xxl);
+//     }
+// }
+// @for $i from 1 to 13{
+//   .col-#{$i}{
+//     width: calc(100% / 12) * $i;
+    
+//   }
+// }

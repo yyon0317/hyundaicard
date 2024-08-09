@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Author" content="D MUSEUM">
+    <meta name="Keywords" content="D MUSEUM">
+    <meta name="Description" content="D MUSEUM">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+    <meta property="og:image" content="" />
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js'></script>
+    <script src="../assets/js/common.js"></script>
+
+
+
+
+
+
+ 
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/ScrollMagic.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/animation.gsap.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.min.js'></script>
+     -->
+
+
+
+    <title>D MUSEUM</title>
+
+
+</head>
+
+<body>
+    
+    <nav class="guide_nav">
+    	<div class="guide_nav_top">
+    		<h1>UI STYLE GUIDE</h1>
+    		<button type="button" class="btn_guide_menu"></button>
+    	</div>
+    	<ul class="guide_gnb">
+    		<li><a href="#"><i></i>Typography</a>
+    			<ul>
+    				<li><a href="./font.html"><span>Font</span></a></li>
+    				<li><a href="textUsage.html"><span>Usage</span></a></li>
+    				<li><a href="textColor.html"><span>Text Colors</span></a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>Color Schemes</a>
+    			<ul>
+    				<li><a href="color.html"><span>Primary Color</span></a></li>
+    				<li><a href="SecondaryColor.html"><span>Secondary Color</span></a></li>
+    				<li><a href="shadoes.html"><span>Shades of Gray</span></a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>Spacing</a>
+    			<ul>
+    				<li><a href="SizeUnit.html"><span>Size Unit</span></a></li>
+    				<li><a href="Usage.html"><span>Usage</span></a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>UI Elements</a>
+    			<ul>
+    				<li><a href="Button.html"><span>Button</span></a></li>
+    				<li><a href="Dropdown.html"><span>Dropdown</span></a></li>
+    				<li><a href="form.html"><span>Form</span></a></li>
+    				<li><a href="table.html"><span>Table</span></a></li>
+    				<li><a href="Modal.html"><span>Modal</span></a></li>
+    			</ul>
+    		</li>
+    	</ul>
+    </nav> 
+
+
+
+    	<div class="guide_top">
+    		<div>
+    			<strong>UI Elements</strong>
+    			<span>Table</span>
+    		</div>
+    		<div class="version">v1.0.0</div>
+    	</div>
+    <div id="guide" class="guide">
+        <div class="layer">
+            <div class="guide__title">Table</div>
+            <div class="guide__desc">
+                테이블을 구성하는 기본 요소는 테이블 제목과 테이블 내용입니다. <br>
+                다양한 시나리오 및 장면에 따라 테이블 옵션, 테이블 내 검색필터와 검색 창, 페이지네이션, 뷰 옵션 등 을 추가하여 사용합니다.
+            </div>
+            <div class="guide__content">
+                <div class="guide__title2">Notice</div>
+                <article class="frm__search">
+                    <div class="left list_total">
+                        총 <b>107</b>건
+                    </div>
+                    <div class="right">
+                        <div class="form-flexs form-search">
+                            <select name="" id="" class="select">
+                                <option value="">제목</option>
+                            </select>
+                            <input type="text" class="input input-block" placeholder="검색어를 입력하세요.">
+                            <button type="submit" class="btn btn-white">검색</button>
+                        </div>
+                    </div>
+                </article>
+                <div class="table mb-xl">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">번호</th>
+                                <th scope="col">분류</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">작성일</th>
+                                <th scope="col">작성자</th>
+                                <th scope="col">첨부파일</th>
+                                <th scope="col">조회수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-gray">
+                                <td>공지</td>
+                                <td><span class="cate">공지</span></td>
+                                <td class="td_subject"><a href="#">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <td>2023-12-12</td>
+                                <td>관리자</td>
+                                <td>
+                                    <span class="in_file">첨부파일</span>
+                                </td>
+                                <td>250</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>1</td>
+                                <td><span class="cate">공지</span></td>
+                                <td class="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <td>2023-12-12</td>
+                                <td>관리자</td>
+                                <td>
+                                    <span class="in_file">첨부파일</span>
+                                </td>
+                                <td>250</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>2</td>
+                                <td><span class="cate">공지</span></td>
+                                <td class="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <td>2023-12-12</td>
+                                <td>관리자</td>
+                                <td>
+                                    <span class="in_file">첨부파일</span>
+                                </td>
+                                <td>250</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>3</td>
+                                <td><span class="cate">공지</span></td>
+                                <td class="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <td>2023-12-12</td>
+                                <td>관리자</td>
+                                <td>
+                                    <span class="in_file">첨부파일</span>
+                                </td>
+                                <td>250</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>4</td>
+                                <td><span class="cate">공지</span></td>
+                                <td class="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <td>2023-12-12</td>
+                                <td>관리자</td>
+                                <td>
+                                    <span class="in_file">첨부파일</span>
+                                </td>
+                                <td>250</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>5</td>
+                                <td><span class="cate">공지</span></td>
+                                <td class="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <td>2023-12-12</td>
+                                <td>관리자</td>
+                                <td>
+                                    <span class="in_file">첨부파일</span>
+                                </td>
+                                <td>250</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>6</td>
+                                <td><span class="cate">공지</span></td>
+                                <td class="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <td>2023-12-12</td>
+                                <td>관리자</td>
+                                <td>
+                                    <span class="in_file">첨부파일</span>
+                                </td>
+                                <td>250</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="paging">
+                    <a href="#" class="fir"></a>
+                    <a href="#" class="prev"></a>
+                    <span>
+                        <a class="page current" href="#">1</a>
+                        <a class="page" href="#">2</a>
+                        <a class="page" href="#">3</a>
+                        <a class="page" href="#">4</a>
+                        <a class="page" href="#">5</a>
+                        <a class="page" href="#">6</a>
+                    </span>
+                    <a href="#" class="next"></a>
+                    <a href="#" class="end"></a>
+                </div>
+
+                <div class="bo_l_btn">
+                    <a href="./write-default.html" class="btn btn-l btn-navy">글쓰기</a>
+                </div>
+
+                
+                <div class="guide__title2">Gallery</div>
+                <article class="frm__search">
+                    <div class="left list_total">
+                        총 <b>107</b>건
+                    </div>
+                    <div class="right">
+                        <div class="form-flexs form-search">
+                            <select name="" id="" class="select">
+                                <option value="">제목</option>
+                            </select>
+                            <input type="text" class="input input-block" placeholder="검색어를 입력하세요.">
+                            <button type="submit" class="btn btn-solid">검색</button>
+                        </div>
+                    </div>
+                </article>
+                <div class="board__gall">
+                    <div class="row margin-xl">
+                         
+                        <div class="col-3">
+                            <div class="gall_li">
+                                <div class="thumb"><a href="./view-default-2.html"></a></div>
+                                <div class="caption">
+                                    <p class="subject"><a href="./view-default-2.html">안내드립니다. 안내드립니다. 안내안내드립니다. 안내드립니다. 안내</a></p>
+                                    <p class="date">YYYY.MM.DD</p>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="col-3">
+                            <div class="gall_li">
+                                <div class="thumb"><a href="./view-default-2.html"></a></div>
+                                <div class="caption">
+                                    <p class="subject"><a href="./view-default-2.html">안내드립니다. 안내드립니다. 안내안내드립니다. 안내드립니다. 안내</a></p>
+                                    <p class="date">YYYY.MM.DD</p>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="col-3">
+                            <div class="gall_li">
+                                <div class="thumb"><a href="./view-default-2.html"></a></div>
+                                <div class="caption">
+                                    <p class="subject"><a href="./view-default-2.html">안내드립니다. 안내드립니다. 안내안내드립니다. 안내드립니다. 안내</a></p>
+                                    <p class="date">YYYY.MM.DD</p>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="col-3">
+                            <div class="gall_li">
+                                <div class="thumb"><a href="./view-default-2.html"></a></div>
+                                <div class="caption">
+                                    <p class="subject"><a href="./view-default-2.html">안내드립니다. 안내드립니다. 안내안내드립니다. 안내드립니다. 안내</a></p>
+                                    <p class="date">YYYY.MM.DD</p>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="col-3">
+                            <div class="gall_li">
+                                <div class="thumb"><a href="./view-default-2.html"></a></div>
+                                <div class="caption">
+                                    <p class="subject"><a href="./view-default-2.html">안내드립니다. 안내드립니다. 안내안내드립니다. 안내드립니다. 안내</a></p>
+                                    <p class="date">YYYY.MM.DD</p>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="col-3">
+                            <div class="gall_li">
+                                <div class="thumb"><a href="./view-default-2.html"></a></div>
+                                <div class="caption">
+                                    <p class="subject"><a href="./view-default-2.html">안내드립니다. 안내드립니다. 안내안내드립니다. 안내드립니다. 안내</a></p>
+                                    <p class="date">YYYY.MM.DD</p>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="col-3">
+                            <div class="gall_li">
+                                <div class="thumb"><a href="./view-default-2.html"></a></div>
+                                <div class="caption">
+                                    <p class="subject"><a href="./view-default-2.html">안내드립니다. 안내드립니다. 안내안내드립니다. 안내드립니다. 안내</a></p>
+                                    <p class="date">YYYY.MM.DD</p>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="col-3">
+                            <div class="gall_li">
+                                <div class="thumb"><a href="./view-default-2.html"></a></div>
+                                <div class="caption">
+                                    <p class="subject"><a href="./view-default-2.html">안내드립니다. 안내드립니다. 안내안내드립니다. 안내드립니다. 안내</a></p>
+                                    <p class="date">YYYY.MM.DD</p>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="col-3">
+                            <div class="gall_li">
+                                <div class="thumb"><a href="./view-default-2.html"></a></div>
+                                <div class="caption">
+                                    <p class="subject"><a href="./view-default-2.html">안내드립니다. 안내드립니다. 안내안내드립니다. 안내드립니다. 안내</a></p>
+                                    <p class="date">YYYY.MM.DD</p>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="col-3">
+                            <div class="gall_li">
+                                <div class="thumb"><a href="./view-default-2.html"></a></div>
+                                <div class="caption">
+                                    <p class="subject"><a href="./view-default-2.html">안내드립니다. 안내드립니다. 안내안내드립니다. 안내드립니다. 안내</a></p>
+                                    <p class="date">YYYY.MM.DD</p>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="col-3">
+                            <div class="gall_li">
+                                <div class="thumb"><a href="./view-default-2.html"></a></div>
+                                <div class="caption">
+                                    <p class="subject"><a href="./view-default-2.html">안내드립니다. 안내드립니다. 안내안내드립니다. 안내드립니다. 안내</a></p>
+                                    <p class="date">YYYY.MM.DD</p>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="col-3">
+                            <div class="gall_li">
+                                <div class="thumb"><a href="./view-default-2.html"></a></div>
+                                <div class="caption">
+                                    <p class="subject"><a href="./view-default-2.html">안내드립니다. 안내드립니다. 안내안내드립니다. 안내드립니다. 안내</a></p>
+                                    <p class="date">YYYY.MM.DD</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                </div>
+                <div class="bo_l_btn">
+                    <a href="./write-default-2.html" class="btn btn-l btn-navy">글쓰기</a>
+                </div>
+
+                <div class="guide__title2">FAQ</div>
+                <div class="faq">
+                    <ol class="faq__list">
+                         <li class="faq__li">
+                            <h3 class="faq__subject">
+                                <div class="txt">자주묻는질문 자주묻는질문 자주묻는질문 자주묻는질문</div>
+                            </h3>
+                            <div class="faq__cont">
+                                <div class="txt">
+                                    파쇄업체를 통한 보안문서 폐기 예정입니다. <br>
+                                    각 부서 및 프로젝트에서 폐기할 보안 문서가 있으시다면, 4월 22일(이번주 금요일) 오전 10시까지 가산동 사무실 1401호 출입구로 배출부탁드립니다. <br><br>
+                                    [ 안내사항 ]<br>
+                                    1. 미리 적재할 장소가 협소하오니 가급적 22일 오전에 배출 부탁드립니다.<br>
+                                    2. 불가피하게 미리 배출해야할 경우 경영관리그룹에 문의 부탁드립니다. <br>
+                                    3. 바인더 제거하지 않고 배출 하셔도 무방합니다. <br>
+                                    4. 서류더미를 배출하지말고 꼭 서류를 박스에 포장 하여 배출해주시기 바랍니다. <br><br>
+                                    미리 협조에 감사드립니다.
+                                </div>
+                            </div>
+                            </li>
+                             <li class="faq__li">
+                            <h3 class="faq__subject">
+                                <div class="txt">자주묻는질문 자주묻는질문 자주묻는질문 자주묻는질문</div>
+                            </h3>
+                            <div class="faq__cont">
+                                <div class="txt">
+                                    파쇄업체를 통한 보안문서 폐기 예정입니다. <br>
+                                    각 부서 및 프로젝트에서 폐기할 보안 문서가 있으시다면, 4월 22일(이번주 금요일) 오전 10시까지 가산동 사무실 1401호 출입구로 배출부탁드립니다. <br><br>
+                                    [ 안내사항 ]<br>
+                                    1. 미리 적재할 장소가 협소하오니 가급적 22일 오전에 배출 부탁드립니다.<br>
+                                    2. 불가피하게 미리 배출해야할 경우 경영관리그룹에 문의 부탁드립니다. <br>
+                                    3. 바인더 제거하지 않고 배출 하셔도 무방합니다. <br>
+                                    4. 서류더미를 배출하지말고 꼭 서류를 박스에 포장 하여 배출해주시기 바랍니다. <br><br>
+                                    미리 협조에 감사드립니다.
+                                </div>
+                            </div>
+                            </li>
+                             <li class="faq__li">
+                            <h3 class="faq__subject">
+                                <div class="txt">자주묻는질문 자주묻는질문 자주묻는질문 자주묻는질문</div>
+                            </h3>
+                            <div class="faq__cont">
+                                <div class="txt">
+                                    파쇄업체를 통한 보안문서 폐기 예정입니다. <br>
+                                    각 부서 및 프로젝트에서 폐기할 보안 문서가 있으시다면, 4월 22일(이번주 금요일) 오전 10시까지 가산동 사무실 1401호 출입구로 배출부탁드립니다. <br><br>
+                                    [ 안내사항 ]<br>
+                                    1. 미리 적재할 장소가 협소하오니 가급적 22일 오전에 배출 부탁드립니다.<br>
+                                    2. 불가피하게 미리 배출해야할 경우 경영관리그룹에 문의 부탁드립니다. <br>
+                                    3. 바인더 제거하지 않고 배출 하셔도 무방합니다. <br>
+                                    4. 서류더미를 배출하지말고 꼭 서류를 박스에 포장 하여 배출해주시기 바랍니다. <br><br>
+                                    미리 협조에 감사드립니다.
+                                </div>
+                            </div>
+                            </li>
+                             <li class="faq__li">
+                            <h3 class="faq__subject">
+                                <div class="txt">자주묻는질문 자주묻는질문 자주묻는질문 자주묻는질문</div>
+                            </h3>
+                            <div class="faq__cont">
+                                <div class="txt">
+                                    파쇄업체를 통한 보안문서 폐기 예정입니다. <br>
+                                    각 부서 및 프로젝트에서 폐기할 보안 문서가 있으시다면, 4월 22일(이번주 금요일) 오전 10시까지 가산동 사무실 1401호 출입구로 배출부탁드립니다. <br><br>
+                                    [ 안내사항 ]<br>
+                                    1. 미리 적재할 장소가 협소하오니 가급적 22일 오전에 배출 부탁드립니다.<br>
+                                    2. 불가피하게 미리 배출해야할 경우 경영관리그룹에 문의 부탁드립니다. <br>
+                                    3. 바인더 제거하지 않고 배출 하셔도 무방합니다. <br>
+                                    4. 서류더미를 배출하지말고 꼭 서류를 박스에 포장 하여 배출해주시기 바랍니다. <br><br>
+                                    미리 협조에 감사드립니다.
+                                </div>
+                            </div>
+                            </li>
+                            
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+     	<div class="guide__footer">
+     		<p>© ALLFORLAND. All rights reserved</p>
+     	</div>
+
+</body>
+
+</html>

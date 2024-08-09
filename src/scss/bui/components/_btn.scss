@@ -1,0 +1,240 @@
+.btn{
+	$accent: (
+		'normal-01': (
+			'none': (
+				'color':			var(--color-base-13),
+				'border-color':		transparent,
+				'background-color':	transparent,
+			),
+			'fill': (
+				'color':			var(--color-base-01),
+				'border-color':		var(--color-base-13),
+				'background-color':	var(--color-base-13),
+			),
+			'line': (
+				'color':			var(--color-base-13),
+				'border-color':		var(--color-base-13),
+				'background-color':	var(--color-base-01),
+			),
+		),
+		'normal-02': (
+			'none': (
+				'color':			var(--color-base-11),
+				'border-color':		transparent,
+				'background-color':	transparent,
+			),
+			'fill': (
+				'color':			var(--color-base-01),
+				'border-color':		var(--color-base-11),
+				'background-color':	var(--color-base-11),
+			),
+			'line': (
+				'color':			var(--color-base-11),
+				'border-color':		var(--color-base-11),
+				'background-color':	var(--color-base-01),
+			),
+		),
+		'normal-03': (
+			'none': (
+				'color':			var(--color-base-08),
+				'border-color':		transparent,
+				'background-color':	transparent,
+			),
+			'fill': (
+				'color':			var(--color-base-01),
+				'border-color':		var(--color-base-08),
+				'background-color':	var(--color-base-08),
+			),
+			'line': (
+				'color':			var(--color-base-11),
+				'border-color':		var(--color-base-08),
+				'background-color':	var(--color-base-01),
+			),
+		),
+		'normal-04': (
+			'none': (
+				'color':			var(--color-base-06),
+				'border-color':		transparent,
+				'background-color':	transparent,
+			),
+			'fill': (
+				'color':			var(--color-base-01),
+				'border-color':		var(--color-base-06),
+				'background-color':	var(--color-base-06),
+			),
+			'line': (
+				'color':			var(--color-base-11),
+				'border-color':		var(--color-base-06),
+				'background-color':	var(--color-base-01),
+			),
+		),
+		'accent-01': (
+			'none': (
+				'color':			var(--color-secondary-01),
+				'border-color':		transparent,
+				'background-color':	transparent,
+			),
+			'fill': (
+				'color':			var(--color-base-01),
+				'border-color':		var(--color-secondary-01),
+				'background-color':	var(--color-secondary-01),
+			),
+			'line': (
+				'color':			var(--color-secondary-01),
+				'border-color':		var(--color-secondary-01),
+				'background-color':	var(--color-base-01),
+			),
+		),
+		'accent-02': (
+			'none': (
+				'color':			var(--color-secondary-07),
+				'border-color':		transparent,
+				'background-color':	transparent,
+			),
+			'fill': (
+				'color':			var(--color-base-01),
+				'border-color':		var(--color-secondary-07),
+				'background-color':	var(--color-secondary-07),
+			),
+			'line': (
+				'color':			var(--color-secondary-07),
+				'border-color':		var(--color-secondary-07),
+				'background-color':	var(--color-base-01),
+			),
+		)
+	);
+
+	$outline: (
+		6: (
+			'font-weight': 400,
+		),
+		8: (
+			'font-weight': 400,
+		),
+		10: (
+			'font-weight': 400,
+		),
+		12: (
+			'font-weight': 400,
+		),
+		14: (
+			'font-weight': 400,
+		),
+		16: (
+			'font-weight': 400,
+		),
+	);
+
+	// accent
+	@each $accent-name in $accent {
+		&.#{nth($accent-name, 1)} {
+			@each $type-name, $color, $border-color, $background-color in map-get($accent, nth($accent-name, 1)) {
+				// @debug "divider offset: #{nth($type-name, 1)}";
+				&.type-#{nth($type-name, 1)} {
+					// variables
+					@each $variables in map-get($accent, nth($accent-name, 1), nth($type-name, 1)) {
+						--#{nth($variables, 1)}: #{nth($variables, 2)};
+					}
+				}
+			}
+		}
+	}
+
+	@each $name in $outline {
+		// @debug "divider offset: #{nth($name, 1) * $BASELINE}";
+		&.outline-#{nth($name, 1)}x {
+			--height: #{nth($name, 1) * $gutter-1};
+			--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
+		}
+	}
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: calc((var(--line-height) / 1.5) * 0.25);
+	padding-right: calc(var(--height) / 2.4 - 4px);
+	padding-left: calc(var(--height) / 2.4 - 4px);
+	height: var(--height);
+	box-sizing: border-box;
+	border-style: solid;
+	@include set-vw(border-width, 1px);
+	line-height: var(--line-height);
+	font-size: calc(var(--line-height) / 1.5);
+	color: var(--color);
+	border-color: var(--border-color);
+	background-color: var(--background-color);
+	
+
+	&.style-b {
+		border-radius: calc(var(--height) / 6.4);
+	}
+
+	&.style-c {
+		border-radius: calc(var(--height) / 2);
+	}
+	
+	&:where(:disabled, .disabled) {
+		color: var(--color-base-01);
+		border-color: var(--color-base-06);
+		background-color: var(--color-base-06);
+	}
+
+	.btn-text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		white-space: nowrap;
+		text-align: center;
+	}
+}
+
+
+// .btn{
+// 	display: inline-block;
+// 	vertical-align: top;
+// 	padding: 9px 16px;
+// 	font-size: 14px;
+// 	border: 1px solid #999999;
+// 	color: #666;
+// 	line-height: 1;
+// 	transition: all 0.1s;
+// 	&.active,
+// 	&:hover,
+// 	&:focus{
+// 		background-color: #f8f8f8;
+// 	}
+// 	&:disabled{opacity: 0.4;}
+// }
+
+// .btn-block{display: block;width: 100%;}
+
+// .btn-xl{font-size: 16px;padding: 13px 24px;}
+// .btn-l{font-size: 16px;padding: 11px 24px;}
+// .btn-s{font-size: 13px;padding: 7px 24px;}
+// .btn-xs{font-size: 13px;padding: 5px 24px;}
+
+
+
+// .btn.btn-solid{
+// 	background-color: #264998;
+// 	color: #fff;
+// 	border-color: #264998;
+// 	&.active,
+// 	&:hover,
+// 	&:focus{
+// 		background-color: #1e3978;
+// 		border-color: #1e3978;
+// 	}
+// }
+
+
+// .btn.btn-navy{
+// 	background-color: #212e4e;
+// 	border-color: #212e4e;
+// 	color: #fff;
+// }
+// .btn.btn-gray{
+// 	background-color: #8d9096;
+// 	border-color: #8d9096;
+// 	color: #fff;
+// }

@@ -1,0 +1,98 @@
+
+.table{
+	&.style-a{
+		border: 1px solid #e1e1e1;
+		table{
+			width: 100%;
+			th,
+				td{
+					text-align: left;
+					height: auto;
+					@include set-pair-vw(padding, $gutter-2, $gutter-2);
+					&.text_usage {
+						@mixin text_usage {
+						  display: block;
+						  background-color: red;
+						  padding: initial;
+						}
+					  
+						@for $i from 1 through 20 {
+						  &_#{$i} {
+							@include text_usage;
+							$gutter-value: map-get($gutters, $i);
+							@include set-vw(width, $gutter-value);
+							@include set-vw(height, $gutter-value);
+						  }
+						}
+					  }
+				}
+			thead{
+				th{
+					background-color: #f8f8f8;
+					color: #000;
+					@include set-vw(font-size, $gutter-4);
+				}
+			}
+		}
+	}
+	&.style-b{
+		border-top: 1px solid #e1e1e1;
+		table{
+			width: 100%;
+			th,
+			td{
+				text-align: center;
+				height: 50px;
+				vertical-align: middle;
+				border-bottom: 1px solid #e1e1e1;
+			}
+			thead{
+				th{
+					background-color: #f8f8f8;
+					color: #000;
+					font-size: 14px;
+				}
+			}
+			tr.bg-gray{
+				background-color: #f8f8f8;
+			}
+			.td_subject{
+				text-align: left;
+				padding-left: 25px;
+				a{
+					&:hover{
+						color: #264998;
+						text-decoration: underline;
+					}
+				}
+			}
+			.cate{
+				display: inline-block;
+				border-radius: 3px;
+				margin-right: 8px;
+				background-color: #212e4e;
+				color: #fff;height: 28px;line-height: 28px;width: 40px;
+				text-align: center;font-weight: 700;font-size: 13px;
+			}
+			.in_file{
+				display: inline-block;
+				width: 16px;height: 18px;
+				background: url("../img/common/file-icon.png") no-repeat 50% 50%;font-size: 0;
+			}
+	
+			tbody{
+				th{
+					background-color: #f8f8f8;
+				}
+			}
+		}
+		&.table-horizontal{
+			th,
+			td{
+				text-align: left;
+				height: auto;
+				padding: 8px 25px;
+			}
+		}
+	}
+}

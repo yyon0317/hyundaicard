@@ -1,0 +1,150 @@
+
+@for $i from 1 to 10{
+  .font-weight-#{$i * 100}{
+    font-weight : $i * 100;
+    
+  }
+}
+
+// /* 기준 화면 너비 */
+// $vw-viewport: 1200;
+
+// @mixin SCREEN {
+//   @media (max-width: #{$vw-viewport}px) {
+//     @content;
+//   }
+// }
+
+// /* pixel을 vw로 변환해주는 함수 */
+// @function get-vw($px) {
+//   $vw-context: ($vw-viewport * 0.005) * 1px; // vw 단위로 변환하기 위한 컨텍스트 계산
+//   @return math.div($px, $vw-context) * 1vw;
+// }
+
+// /* 특정 CSS 속성을 픽셀 단위와 반응형 vw 단위로 설정하는 믹스인 */
+// @mixin set-vw($property, $value) {
+//   @if type-of($value) == 'number' {
+//     #{$property}: $value; // 기본적으로 픽셀 값 설정
+//     @include SCREEN {
+//       #{$property}: get-vw($value); // 반응형으로 vw 단위로 변환
+//     }
+//   } @else if type-of($value) == 'string' and str-slice($value, 1, 2) == '--' {
+//     #{$property}: $value; // 기본적으로 사용자 정의 속성 값 설정
+//     @include SCREEN {
+//       #{$property}: calc(#{$value} * 100vw / #{$vw-viewport}); // 반응형으로 vw 단위로 변환
+//     }
+//   } @else {
+//     #{$property}: $value; // 단위가 없는 경우 그대로 적용
+//   }
+// }
+
+// /* 특정 CSS 속성에 대해 수직(vertical) 및 수평(horizontal) 값을 설정하는 믹스인 */
+// @mixin set-pair-vw($property, $vertical, $horizontal) {
+//   @if type-of($vertical) == 'number' and type-of($horizontal) == 'number' {
+//     #{$property}: $vertical $horizontal; // 기본적으로 픽셀 값 설정
+//     @include SCREEN {
+//       #{$property}: get-vw($vertical) get-vw($horizontal); // 반응형으로 vw 단위로 변환
+//     }
+//   } @else {
+//     #{$property}: $vertical $horizontal; // 기본적으로 값 설정
+//     @include SCREEN {
+//       #{$property}: calc(#{$vertical} * 100vw / #{$vw-viewport}) calc(#{$horizontal} * 100vw / #{$vw-viewport}); // 반응형으로 vw 단위로 변환
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// /* 기준 화면 너비 */
+// $vw-viewport: 1200;
+// @mixin SCREEN{ @media (max-width: #{$vw-viewport}px){ @content; } }
+// /* pixel을 vw로 변환해주는 함수 */
+// @function get-vw($px){
+//     /* 기준 화면 너비를 1%로 나눈 값 */
+//     $vw-context: $vw-viewport * 0.005 * 1px;
+//   /* 주어진 픽셀 값을 vw 단위로 변환하여 반환 */
+//   @return math.div($px, $vw-context) * 1vw;
+// }
+// /* 특정 CSS 속성을 픽셀 단위와 반응형 vw 단위로 설정하는 믹스인 */
+// @mixin set-vw($property, $px){
+//     @include SCREEN {
+//       /* 화면 크기가 $vw-viewport 이하일 때, vw 단위로 설정 */
+//       #{$property}: get-vw($px);
+//     }
+//     /* 기본 값으로 픽셀 단위 설정 */
+//     #{$property}: $px;
+// }
+// /* 특정 CSS 속성에 대해 수직(vertical) 및 수평(horizontal) 값을 설정하는 믹스인 */
+// @mixin set-pair-vw($property, $vertical, $horizontal){
+//     @include SCREEN {
+//       /* 화면 크기가 $vw-viewport 이하일 때, 수직 및 수평 값을 vw 단위로 설정 */
+//       #{$property}: get-vw($vertical) get-vw($horizontal);
+//     }
+//     /* 기본 값으로 수직 및 수평 픽셀 값 설정 */
+//     #{$property}: $vertical $horizontal;
+// }
+/* 예시
+.guide__desc {
+  font-weight: 700;
+  @include set-vw(font-size, 28px);
+  @include set-vw(margin-bottom, 15px);
+  @include set-pair-vw(padding, 10px, 15px);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+// :root {
+  
+//   --baseline: 0.1vw;
+//   // --baseline: 1.1111111111vw;
+//   @for $i from 0 through 40 { // 0부터 39까지 반복
+//     --baseline-#{$i}x: #{calc(var(--baseline) * $i)};// 행간에 따른 계산된 값을 변수에 할당
+//   }
+// }
+
+// $baseline: 1.1vw; // 기준 행간
+// $font-size-ratio: 1.5; // 폰트 크기와 행간 간의 비율
+
+// @function font-size($line-height) {
+//   @return ($line-height * $baseline * $font-size-ratio);
+// }
+// :root {
+// @for $i from 0 to 40 {
+//   --font-size-#{$i}x: #{font-size($i)};
+// }
+// }
+
+
+// body {
+//   --baseline: 4vw; /* 기준 행간 설정 */
+// }
+
+
+// .guide__font{font-size: var(--font-size-10x);}
+// p {
+//   font-size: var(--font-size-10x); /* 원하는 행간의 폰트 크기 설정 */
+//   line-height: 10; /* 원하는 행간 설정 */
+// }

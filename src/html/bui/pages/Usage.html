@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("../partials/meta.html")
+</head>
+
+<body>
+    @@include("../partials/guide.head.html",{
+        "menu": "Spacing",
+        "title": "Usage"
+    })
+    <div id="guide" class="guide">
+        <div class="layer">
+            <div class="guide__title outline-12x">Usage</div>
+            <div class="guide__desc outline-5x">
+                서로 다른 컴포넌트 간 간격은 상하 16을 기본으로 사용합니다. <br>
+                간격은 8의 배수를 기본으로 권장하나 필요시 짝수 크기를 추가해 유연하게 사용가능합니다.
+            </div>
+            <div class="guide__content">
+                <div class="row margin-xs">
+                    <div class="col-12">
+                        <img src="../../assets/img/guide/usage.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include("../partials/guide.tail.html")
+</body>
+
+</html>

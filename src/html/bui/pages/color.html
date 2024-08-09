@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("../partials/meta.html")
+</head>
+
+<body>
+    @@include("../partials/guide.head.html",{
+        "menu": "Color Schemes",
+        "title": "Primary Color"
+    })
+    <div id="guide" class="guide">
+        <div class="layer">
+            <div class="guide__title outline-12x">Primary Color</div>
+            <div class="guide__desc line outline-5x">
+                주요 색상입니다.<br>
+                아래 정의된 색상 및 가이드를 사용하여 일관성 있는 브랜드 아이덴티티를 만들어 갑니다.
+            </div>
+            <div class="guide__content">
+                <div class="row margin-m">
+                    <div class="col-6">
+                        <div class="guide__color">
+                            <div class="color colorbg-primary-01">
+                                <span class="color-primary-02"><b>WHITE</b></span>
+                            </div>
+                            <div class="shame">
+                                <dl>
+                                    <dt>SCSS html</dt>
+                                    <dd>var(--color-primary-01);<br>color-primary-01</dd>
+                                </dl>
+                                <dl>
+                                    <dt>RGB</dt>
+                                    <dd>255, 255, 255</dd>
+                                </dl>
+                                <dl>
+                                    <dt>CMYK</dt>
+                                    <dd>0, 0, 0, 0</dd>
+                                </dl>
+                                <dl>
+                                    <dt>HEX</dt>
+                                    <dd>#ffffff</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // col-6 -->
+                    <div class="col-6">
+                        <div class="guide__color">
+                            <div class="color colorbg-primary-02">
+                                <span class="color-primary-01"><b>BLACK</b></span>
+                            </div>
+                            <div class="shame">
+                                <dl>
+                                    <dt>SCSS html</dt>
+                                    <dd>var(--color-primary-02);<br>color-primary-02</dd>
+                                </dl>
+                                <dl>
+                                    <dt>RGB</dt>
+                                    <dd>0, 0, 0</dd>
+                                </dl>
+                                <dl>
+                                    <dt>CMYK</dt>
+                                    <dd>0, 0, 0, 100</dd>
+                                </dl>
+                                <dl>
+                                    <dt>HEX</dt>
+                                    <dd>#000000</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // col-6 -->
+                </div>
+                <div class="guide__title3 outline-7x">HTML</div>
+                <div class="row margin-m">
+                    <div class="col-12">
+                        <div class="guide__font">
+                            <div class="guide__subcont04">&lt;div class="colorbg-primary-02"&gt;&lt;/div&gt;<br>&lt;div class="color-primary-01"&gt;&lt;/div&gt;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="guide__title4 outline-7x">SCSS</div>
+                <div class="row margin-m">
+                    <div class="col-12">
+                        <div class="guide__font">
+                            <div class="guide__subcont04">color:var(--color-primary-02);<br>border-color:var(--color-primary-02);<br>background-color:var(--color-primary-02);</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include("../partials/guide.tail.html")
+</body>
+
+</html>

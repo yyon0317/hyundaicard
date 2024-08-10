@@ -1,0 +1,92 @@
+
+$font-default: "Pretendard";
+$font-size: 16px;
+$font-color: #222;
+$hover-color : #fc9a00;
+
+$grid-width: 1120px;
+
+// $gutter : (
+//   gutter-xxs : 4px,
+//   gutter-xs : 8px,
+//   gutter-s : 16px,
+//   gutter-m : 24px,
+//   gutter-l : 36px,
+//   gutter-xl : 48px,
+//   gutter-xxl : 80px  
+// )
+
+$gutter-xxs : 4px;
+$gutter-xs : 8px;
+$gutter-s : 16px;
+$gutter-m : 24px;
+$gutter-l : 36px;
+$gutter-xl : 48px;
+$gutter-xxl : 80px;
+
+// $brandColor : (
+//   #264998,
+//   #3c9082,
+//   #212e4e
+// );
+
+$path : "/include/img";
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1000px,
+  xl: 1120px
+);
+
+//border 변수
+$border-black : 1px solid #000;
+
+// 여백 변수
+$gutter-xxxs : 0.625rem;//10
+$gutter-xxs : 0.75rem;//12
+$gutter-xs : 0.875rem;//14
+$gutter-s : 1rem;//16
+$gutter-m :1.25rem;//20
+$gutter-l : 1.5rem;//24
+$gutter-xl : 1.625rem;//26
+$gutter-xxl : 1.875rem;//30
+
+// 폰트 변수
+$font-xxxs : 0.625rem;//10
+$font-xxs : 0.75rem;//12
+$font-xs : 0.875rem;//14
+$font-s : 1rem;//16
+$font-m :1.25rem;//18
+$font-l : 1.5rem;//24
+$font-xl : 1.625rem;//26
+$font-xxl : 1.875rem;//30
+
+//반응형
+
+/*반응형 화면 크기*/
+$mobile: 324px;
+$tablet: 940px;
+$desktop: 1024px;
+
+/*반응형, 브라우저 크기가 767px 이하일때*/
+@mixin mobile{
+  @media (min-width: $mobile){
+    @content;
+  }
+}
+
+// /*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+@mixin tablet{
+  @media (min-width: $tablet){
+    @content;
+  }
+}
+
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+@mixin desktop{
+  @media (min-width: $desktop){
+    @content;
+  }
+}

@@ -1,0 +1,15 @@
+
+//Core files
+@import "../front/config/variables";
+@import "../front/config/functions";
+@import "../front/config/icon";
+
+
+// Plugins
+@import "../front/reset";
+
+@import "../front/layout/header";
+@import "../front/layout/footer";
+@import "../front/layout/sublayout";
+@import "../front/layout/guide";
+@import "../front/layout/main";

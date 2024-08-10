@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("../partials/meta.html")
+</head>
+
+<body>
+    @@include("../partials/guide.head.html",{
+        "menu": "UI Elements",
+        "title": "Dropdown"
+    })
+    <div id="guide" class="guide">
+        <div class="layer">
+            <div class="guide__title">Dropdown</div>
+            <div class="guide__desc">
+                드롭다운은 사용자가 옵션 리스트 중 하나의 옵션을 선택 시 활용되는 컴포넌트입니다.<br>
+                드롭다운 메뉴 간에 구분이 필요한 경우 메뉴 제목을 추가하여 사용할 수 있습니다.
+            </div>
+            <div class="guide__content">
+                <div class="guide__sample" style="height:520px">                            
+                    <div class="row margin-xs">
+                        <div class="col-3">
+                            <div class="types">Normal</div>
+
+                            <div class="dropmenu">
+                                <button type="button" class="trigger">드롭다운</button>
+                                <div>
+                                    <ul>
+                                        <li><a href="#">드롭다운-1</a></li>
+                                        <li><a href="#">드롭다운-2</a></li>
+                                        <li><a href="#">드롭다운-3</a></li>
+                                        <li><a href="#">드롭다운-4</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="col-3">
+                            <div class="types">Hover</div>
+                            <div class="dropmenu">
+                                <button type="button" class="trigger active">드롭다운</button>
+                                <div>
+                                    <ul>
+                                        <li><a href="#">드롭다운-1</a></li>
+                                        <li><a href="#">드롭다운-2</a></li>
+                                        <li><a href="#">드롭다운-3</a></li>
+                                        <li><a href="#">드롭다운-4</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <div class="types">Open</div>
+
+                            <div class="dropmenu">
+                                <button type="button" class="trigger active">드롭다운</button>
+                                <div>
+                                    <ul>
+                                        <li><a href="#">드롭다운-1</a></li>
+                                        <li><a href="#">드롭다운-2</a></li>
+                                        <li><a href="#">드롭다운-3</a></li>
+                                        <li><a href="#">드롭다운-4</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="col-3">
+                            <div class="types">Multiple</div>
+                            <div class="dropmenu">
+                                <button type="button" class="trigger active">드롭다운</button>
+                                <div>
+                                    <div class="heading">Dropdown header 1</div>
+                                    <ul>
+                                        <li><a href="#">드롭다운-1</a></li>
+                                        <li class="active"><a href="#">드롭다운-2</a></li>
+                                        <li><a href="#">드롭다운-3</a></li>
+                                        <li><a href="#">드롭다운-4</a></li>
+                                    </ul>
+                                    <div class="heading">Dropdown header 2</div>
+                                    <ul>
+                                        <li><a href="#">드롭다운-1</a></li>
+                                        <li class="active"><a href="#">드롭다운-2</a></li>
+                                        <li><a href="#">드롭다운-3</a></li>
+                                        <li><a href="#">드롭다운-4</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>            
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    @@include("../partials/guide.tail.html")
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+
+.required{
+	color: #e75e5e;
+	font-size: 0;
+	font-style: normal;
+	&:after{
+		content:"*";
+		font-size: 12px;
+	}
+}

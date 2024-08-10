@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("../partials/meta.html")
+</head>
+
+<body>
+    @@include("../partials/guide.head.html",{
+        "menu": "UI Elements",
+        "title": "Table"
+    })
+    <div id="guide" class="guide">
+        <div class="layer">
+            <div class="guide__title">Table</div>
+            <div class="guide__desc">
+                테이블을 구성하는 기본 요소는 테이블 제목과 테이블 내용입니다. <br>
+                다양한 시나리오 및 장면에 따라 테이블 옵션, 테이블 내 검색필터와 검색 창, 페이지네이션, 뷰 옵션 등 을 추가하여 사용합니다.
+            </div>
+            <div class="guide__content">
+                <div class="guide__title2">Notice</div>
+
+                <!-- bo_v -->
+                <div class="bo_v">
+                    <div class="bo_v_head">
+                        <div class="bo_v_title">
+                            <span class="cate">공지</span>
+                            <h2>안내드립니다. 안내드립니다.안내드립니다.</h2>
+                        </div>
+                        <div class="bo_v_info">
+                            <dl>
+                                <dt>작성자</dt>
+                                <dd>관리자 </dd>
+                            </dl>
+                            <dl>
+                                <dt>등록일</dt>
+                                <dd>YYYY.MM.DD</dd>
+                            </dl>
+                            <dl>
+                                <dt>조회수</dt>
+                                <dd>12</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="bo_v_file">
+                        <strong>첨부파일 : </strong>
+                        <ul>
+                            <li><a href="#">Text.txt</a></li>
+                            <li><a href="#">Text.txt</a></li>
+                        </ul>
+                    </div>
+                    <div class="bo_v_content">
+                        <img src="../../assets/img/guide/sample.jpg" alt="">
+                    </div>
+                    <div class="bo_v_btn">
+                        <a href="#" class="btn">수정</a>
+                        <a href="#" class="btn">삭제</a>
+                    </div>
+
+                    <div class="bo_v_ease">
+                        <ul>
+                            <li class="prev">
+                                <span>이전글</span>
+                                <a href="#">이전글!!!!!!!!!!!!!!!!!!!!!!!!!!</a>
+                            </li>
+                            <li class="next">
+                                <span>다음글</span>
+                                <a href="#">다음글!!!!!!!!!!!!!!!!!!!!!!</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bo_v_list"><a href="./table.html" class="btn btn-l btn-navy">목록</a></div>
+
+                </div>
+                <!-- e: bo_v -->
+            </div>
+        </div>
+    </div>
+     @@include("../partials/guide.tail.html")
+</body>
+
+</html>

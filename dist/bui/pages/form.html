@@ -28,7 +28,7 @@
     		<li><a href="#"><i></i>Typography</a>
     			<ul>
     				<li><a href="./font.html"><span>Font</span></a></li>
-    				<li><a href="textUsage.html"><span>Usage</span></a></li>
+    				<li><a href="textUsage.html"><span>Text Usage</span></a></li>
     				<li><a href="textColor.html"><span>Text Colors</span></a></li>
     			</ul>
     		</li>
@@ -68,30 +68,226 @@
     	</header>
     <div id="guide" class="guide">
         <div class="layer">
-            <div class="guide__title">Form</div>
-            <div class="guide__desc">
+            <div class="guide__title outline-12x">Form</div>
+            <div class="guide__desc line outline-5x">
                 모든 입력창에 공통적으로 적용되는 기본적인 스타일입니다. <br>
                 상태에 맞게 적절한 스타일을 적용해, 사용자가 현재 상태를 파악하기 쉽도록 합니다.
             </div>
             <div class="guide__content">
-                <div class="guide__title2">Basic Form</div>
+                <div class="guide__title2 outline-7x">module-a</div>
                 <div class="guide__sample mb-xl">
                     <div class="row margin-xl">
                         <div class="col-4">
-                            <div class="types">Normal</div>
-                            <input type="text" class="input input-block" placeholder="Normal value">
+                            <div class="types">Radio</div>
+                                <label class="form radio module-a style-b type-fill outline-6x accent-01"><input class="form-elem" type="radio" name="radio-0101"> <span class="form-text">form noti</span></label>
+                                <label class="form radio module-a style-b type-fill outline-6x accent-01"><input class="form-elem" type="radio" name="radio-0101" checked="checked"> <span class="form-text">form noti</span></label>
+                                <label class="form radio module-a style-b type-fill outline-6x accent-01"><input class="form-elem" type="radio" name="radio-0101" disabled="disabled"> <span class="form-text">form noti (disabled)</span></label>
                         </div>
                         <div class="col-4">
-                            <div class="types">Focused</div>
-                            <input type="text" class="input input-block" placeholder="Focused value">
+                            <div class="types">Checkbox</div>
+                                <label class="form checkbox module-a style-b type-fill outline-6x accent-01"><input class="form-elem" type="checkbox"> <span class="form-text">form noti</span></label>
+                                <label class="form checkbox module-a style-b type-line outline-6x accent-01"><input class="form-elem" type="checkbox" checked="checked"> <span class="form-text">form noti</span></label>
+                                <label class="form checkbox module-a style-b type-fill outline-6x accent-01"><input class="form-elem" type="checkbox" disabled="disabled"> <span class="form-text">form noti (disabled)</span></label>
                         </div>
                         <div class="col-4">
-                            <div class="types">Disabled</div>
-                            <input type="text" class="input input-block" disabled placeholder="Disabled value">
+                            <div class="types">switch</div>
+                                <label class="form switch module-a style-b type-fill outline-6x accent-01"><input class="form-elem" type="checkbox"> <span class="form-text">form noti</span></label>
                         </div>
                     </div>
                 </div>
-                <div class="guide__title2">Group of Form</div>
+                <div class="guide__title2 outline-7x">module-b</div>
+                <div class="guide__sample mb-xl">
+                    <div class="row margin-xl">
+                        <div class="col-6">
+                            <div class="types">Radio</div>
+                                <span class="form textfield module-b style-b type-line normal-04 outline-8x flex">
+                                    <input class="form-elem" type="text" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-8x" />
+                                </span>
+                                <span class="form textfield module-b style-b type-line normal-04 outline-10x flex">
+                                    <input class="form-elem" type="text" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-10x" />
+                                </span>
+                                <span class="form textfield module-b style-b type-line normal-04 outline-12x flex invalid">
+                                    <input class="form-elem" type="text" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-12x" />
+                                </span>
+                                <span class="form textfield module-b style-b type-fill normal-04 outline-8x flex">
+                                    <input class="form-elem" type="text" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-8x" />
+                                </span>
+                                <span class="form textfield module-b style-b type-fill normal-04 outline-10x flex">
+                                    <input class="form-elem" type="text" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-10x" />
+                                </span>
+                                <span class="form textfield module-b style-b type-fill normal-04 outline-12x flex invalid">
+                                    <input class="form-elem" type="text" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-12x" />
+                                </span>
+                        </div>
+                        <div class="col-6">
+                            <div class="types">Checkbox</div>
+                            <span class="form textfield module-b style-b type-line normal-04 outline-8x flex">
+                                <input class="form-elem" type="password" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-8x" />
+                                <span class="form-util">
+                                    <button class="form-btn-visible" type="button" onclick="passwordVisibility(this, '.form');"><span class="btn-text">텍스트 보기</span></button>
+                                </span>
+                            </span>
+                            <span class="form textfield module-b style-b type-line normal-04 outline-10x flex">
+                                <input class="form-elem" type="password" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-10x" />
+                                <span class="form-util">
+                                    <button class="form-btn-visible" type="button" onclick="passwordVisibility(this, '.form');"><span class="btn-text">텍스트 보기</span></button>
+                                </span>
+                            </span>
+                            <span class="form textfield module-b style-b type-line normal-04 outline-12x flex invalid">
+                                <input class="form-elem" type="password" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-12x" />
+                                <span class="form-util">
+                                    <button class="form-btn-visible" type="button" onclick="passwordVisibility(this, '.form');"><span class="btn-text">텍스트 보기</span></button>
+                                </span>
+                            </span>
+                            <span class="form textfield module-b style-b type-fill normal-04 outline-8x flex">
+                                <input class="form-elem" type="password" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-8x" />
+                                <span class="form-util">
+                                    <button class="form-btn-visible" type="button" onclick="passwordVisibility(this, '.form');"><span class="btn-text">텍스트 보기</span></button>
+                                </span>
+                            </span>
+                            <span class="form textfield module-b style-b type-fill normal-04 outline-10x flex">
+                                <input class="form-elem" type="password" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-10x" />
+                                <span class="form-util">
+                                    <button class="form-btn-visible" type="button" onclick="passwordVisibility(this, '.form');"><span class="btn-text">텍스트 보기</span></button>
+                                </span>
+                            </span>
+                            <span class="form textfield module-b style-b type-fill normal-04 outline-12x flex invalid">
+                                <input class="form-elem" type="password" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-12x" />
+                                <span class="form-util">
+                                    <button class="form-btn-visible" type="button" onclick="passwordVisibility(this, '.form');"><span class="btn-text">텍스트 보기</span></button>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="col-6">
+                            <span class="form textfield module-b style-b type-line normal-04 outline-8x flex">
+                                <input class="form-elem" type="search" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-8x" />
+                                <span class="form-util">
+                                    <button class="form-btn-search" type="submit"><span class="btn-text">검색</span></button>
+                                </span>
+                            </span>
+                            <span class="form textfield module-b style-b type-line normal-04 outline-10x flex">
+                                <input class="form-elem" type="search" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-10x" />
+                                <span class="form-util">
+                                    <button class="form-btn-search" type="submit"><span class="btn-text">검색</span></button>
+                                </span>
+                            </span>
+                            <span class="form textfield module-b style-b type-line normal-04 outline-12x flex invalid">
+                                <input class="form-elem" type="search" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-12x" />
+                                <span class="form-util">
+                                    <button class="form-btn-search" type="submit"><span class="btn-text">검색</span></button>
+                                </span>
+                            </span>
+                            <span class="form textfield module-b style-b type-fill normal-04 outline-8x flex">
+                                <input class="form-elem" type="search" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-8x" />
+                                <span class="form-util">
+                                    <button class="form-btn-search" type="submit"><span class="btn-text">검색</span></button>
+                                </span>
+                            </span>
+                            <span class="form textfield module-b style-b type-fill normal-04 outline-10x flex">
+                                <input class="form-elem" type="search" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-10x" />
+                                <span class="form-util">
+                                    <button class="form-btn-search" type="submit"><span class="btn-text">검색</span></button>
+                                </span>
+                            </span>
+                            <span class="form textfield module-b style-b type-fill normal-04 outline-12x flex invalid">
+                                <input class="form-elem" type="search" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-12x" />
+                                <span class="form-util">
+                                    <button class="form-btn-search" type="submit"><span class="btn-text">검색</span></button>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="col-6">
+                            <span class="form select module-b style-b type-line outline-12x normal-04 flex">
+                                <select class="form-elem">
+                                    <option>1st option</option>
+                                    <option>2nd option</option>
+                                    <option>3rd option</option>
+                                    <option>4th option</option>
+                                    <option>5th option</option>
+                                </select>
+                            </span>
+                            <span class="form select module-b style-b type-line outline-12x normal-04 flex">
+                                <select class="form-elem">
+                                    <option>1st option</option>
+                                    <option>2nd option</option>
+                                    <option>3rd option</option>
+                                    <option>4th option</option>
+                                    <option>5th option</option>
+                                </select>
+                            </span>
+                            <span class="form select module-b style-b type-line outline-12x normal-04 flex">
+                                <select class="form-elem">
+                                    <option>1st option</option>
+                                    <option>2nd option</option>
+                                    <option>3rd option</option>
+                                    <option>4th option</option>
+                                    <option>5th option</option>
+                                </select>
+                            </span>
+                            <span class="form select module-b style-b type-fill outline-12x normal-04 flex">
+                                <select class="form-elem">
+                                    <option>1st option</option>
+                                    <option>2nd option</option>
+                                    <option>3rd option</option>
+                                    <option>4th option</option>
+                                    <option>5th option</option>
+                                </select>
+                            </span>
+                            <span class="form select module-b style-b type-fill outline-12x normal-04 flex">
+                                <select class="form-elem">
+                                    <option>1st option</option>
+                                    <option>2nd option</option>
+                                    <option>3rd option</option>
+                                    <option>4th option</option>
+                                    <option>5th option</option>
+                                </select>
+                            </span>
+                            <span class="form select module-b style-b type-fill outline-12x normal-04 flex">
+                                <select class="form-elem">
+                                    <option>1st option</option>
+                                    <option>2nd option</option>
+                                    <option>3rd option</option>
+                                    <option>4th option</option>
+                                    <option>5th option</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="guide__title2 outline-7x">module-c</div>
+                <div class="guide__sample mb-xl">
+                    <div class="row margin-xl">
+                        <div class="col-6">
+                            <label class="form radio module-c style-c type-line outline-6x accent-01">
+                                <input class="form-elem" type="radio" name="radio-0301" checked="checked">
+                                <span class="form-text">form label</span>
+                            </label>
+                            <label class="form radio module-c style-c type-line outline-6x accent-01">
+                                <input class="form-elem" type="radio" name="radio-0301">
+                                <span class="form-text">form label</span>
+                            </label>
+                            <label class="form radio module-c style-c type-line outline-6x accent-01">
+                                <input class="form-elem" type="radio" name="radio-0301">
+                                <span class="form-text">form label</span>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <label class="form checkbox module-c style-c type-line outline-12x accent-01">
+                                <input class="form-elem" type="checkbox" checked="checked">
+                                <span class="form-text">form label</span>
+                            </label>
+                            <label class="form checkbox module-c style-c type-line outline-12x accent-01">
+                                <input class="form-elem" type="checkbox">
+                                <span class="form-text">form label</span>
+                            </label>
+                            <label class="form checkbox module-c style-c type-line outline-12x accent-01">
+                                <input class="form-elem" type="checkbox">
+                                <span class="form-text">form label</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="guide__title2 outline-7x">Group of Form</div>
                 <div class="guide__sample">
                     <div class="row margin-xl mb-m">
                         <div class="col-6">
@@ -131,7 +327,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

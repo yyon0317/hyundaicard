@@ -8,6 +8,13 @@
 }
 
 .row {
+    $gutter-xxs : 4px;
+    $gutter-xs : 8px;
+    $gutter-s : 16px;
+    $gutter-m : 24px;
+    $gutter-l : 36px;
+    $gutter-xl : 48px;
+    $gutter-xxl : 80px;
     display: flex;
     flex-wrap: wrap;
     

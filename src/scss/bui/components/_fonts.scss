@@ -1,4 +1,3 @@
-@use "sass:math"; // 다른 규칙보다 먼저 작성
 
 @for $i from 1 to 10{
   .font-weight-#{$i * 100}{
@@ -7,48 +6,60 @@
   }
 }
 
+// /* 기준 화면 너비 */
+// $vw-viewport: 1200;
+
+// @mixin SCREEN {
+//   @media (max-width: #{$vw-viewport}px) {
+//     @content;
+//   }
+// }
+
+// /* pixel을 vw로 변환해주는 함수 */
+// @function get-vw($px) {
+//   $vw-context: ($vw-viewport * 0.005) * 1px; // vw 단위로 변환하기 위한 컨텍스트 계산
+//   @return math.div($px, $vw-context) * 1vw;
+// }
+
+// /* 특정 CSS 속성을 픽셀 단위와 반응형 vw 단위로 설정하는 믹스인 */
+// @mixin set-vw($property, $value) {
+//   @if type-of($value) == 'number' {
+//     #{$property}: $value; // 기본적으로 픽셀 값 설정
+//     @include SCREEN {
+//       #{$property}: get-vw($value); // 반응형으로 vw 단위로 변환
+//     }
+//   } @else if type-of($value) == 'string' and str-slice($value, 1, 2) == '--' {
+//     #{$property}: $value; // 기본적으로 사용자 정의 속성 값 설정
+//     @include SCREEN {
+//       #{$property}: calc(#{$value} * 100vw / #{$vw-viewport}); // 반응형으로 vw 단위로 변환
+//     }
+//   } @else {
+//     #{$property}: $value; // 단위가 없는 경우 그대로 적용
+//   }
+// }
+
+// /* 특정 CSS 속성에 대해 수직(vertical) 및 수평(horizontal) 값을 설정하는 믹스인 */
+// @mixin set-pair-vw($property, $vertical, $horizontal) {
+//   @if type-of($vertical) == 'number' and type-of($horizontal) == 'number' {
+//     #{$property}: $vertical $horizontal; // 기본적으로 픽셀 값 설정
+//     @include SCREEN {
+//       #{$property}: get-vw($vertical) get-vw($horizontal); // 반응형으로 vw 단위로 변환
+//     }
+//   } @else {
+//     #{$property}: $vertical $horizontal; // 기본적으로 값 설정
+//     @include SCREEN {
+//       #{$property}: calc(#{$vertical} * 100vw / #{$vw-viewport}) calc(#{$horizontal} * 100vw / #{$vw-viewport}); // 반응형으로 vw 단위로 변환
+//     }
+//   }
+// }
 
 
 
-/* 기준 화면 너비 */
-$vw-viewport: 1200;
-@mixin SCREEN{ @media (max-width: #{$vw-viewport}px){ @content; } }
 
-/* pixel을 vw로 변환해주는 함수 */
-@function get-vw($px){
-  $vw-context: $vw-viewport * 0.005 * 1px;
-  @return math.div($px, $vw-context) * 1vw;
-}
 
-/* 특정 CSS 속성을 픽셀 단위와 반응형 vw 단위로 설정하는 믹스인 */
-@mixin set-vw($property, $value){
-  @if type-of($value) == 'number' {
-    @include SCREEN {
-      #{$property}: get-vw($value);
-    }
-    #{$property}: $value;
-  } @else if type-of($value) == 'string' and str-slice($value, 1, 2) == '--' {
-    @include SCREEN {
-      #{$property}: calc(#{$value} * 100vw / #{$vw-viewport});
-    }
-    #{$property}: $value;
-  }
-}
 
-/* 특정 CSS 속성에 대해 수직(vertical) 및 수평(horizontal) 값을 설정하는 믹스인 */
-@mixin set-pair-vw($property, $vertical, $horizontal){
-  @if type-of($vertical) == 'number' and type-of($horizontal) == 'number' {
-    @include SCREEN {
-      #{$property}: get-vw($vertical) get-vw($horizontal);
-    }
-    #{$property}: $vertical $horizontal;
-  } @else {
-    @include SCREEN {
-      #{$property}: calc(#{$vertical} * 100vw / #{$vw-viewport}) calc(#{$horizontal} * 100vw / #{$vw-viewport});
-    }
-    #{$property}: $vertical $horizontal;
-  }
-}
+
+
 
 
 

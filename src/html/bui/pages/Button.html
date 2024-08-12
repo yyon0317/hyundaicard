@@ -12,64 +12,241 @@
     })
     <div id="guide" class="guide">
         <div class="layer">
-            <div class="guide__title">Buttonddd</div>
-            <div class="guide__desc">
+            <div class="guide__title outline-12x">Button</div>
+            <div class="guide__desc line outline-5x">
                 버튼은 가장 주요한 컴포넌트로 사용자의 작업수행을 위해 시각적 계층 구조를 만들었습니다. <br>
                 계층 구조에 따른 스타일 가이드에 유의하여 목적에 맞게 사용하며, 임의 스타일 추가 및 사용은 제한합니다.
             </div>
             <div class="guide__content">
-                <div class="guide__title2">Button Size</div>
-                <div class="row margin-xs mb-xl">
-                    <div class="col-12">
-                        <img src="../../../assets/img/guide/button.png" alt="">
-                    </div>
+                <div class="guide__title2 outline-7x">Button Size</div>
+                <div class="table style-a">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">outline-*x</th>
+                                <th scope="col">Demo</th>
+                                <th scope="col">height</th>
+                                <th scope="col">font-size</th>
+                                <th scope="col">padding</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="outline-5x">outline-6x</td>
+                                <td class="outline-5x"><button type="button" class="btn style-a type-line normal-01 outline-6x">Button Interaction</button></td>
+                                <td class="outline-5x">24px</td>
+                                <td class="outline-5x">8px</td>
+                                <td class="outline-5x">0px 6px</td>
+                            </tr>
+                            <tr>
+                                <td class="outline-5x">outline-8x</td>
+                                <td class="outline-5x"><button type="button" class="btn style-a type-line normal-01 outline-8x">Button Interaction</button></td>
+                                <td class="outline-5x">32px</td>
+                                <td class="outline-5x">10px</td>
+                                <td class="outline-5x">0px 9px</td>
+                            </tr>
+                            <tr>
+                                <td class="outline-5x">outline-10x</td>
+                                <td class="outline-5x"><button type="button" class="btn style-a type-line normal-01 outline-10x">Button Interaction</button></td>
+                                <td class="outline-5x">40px</td>
+                                <td class="outline-5x">13px</td>
+                                <td class="outline-5x">0px 12px</td>
+                            </tr>
+                            <tr>
+                                <td class="outline-5x">outline-12x</td>
+                                <td class="outline-5x"><button type="button" class="btn style-a type-line normal-01 outline-12x">Button Interaction</button></td>
+                                <td class="outline-5x">48px</td>
+                                <td class="outline-5x">16px</td>
+                                <td class="outline-5x">0px 16px</td>
+                            </tr>
+                            <tr>
+                                <td class="outline-5x">outline-14x</td>
+                                <td class="outline-5x"><button type="button" class="btn style-a type-line normal-01 outline-14x">Button Interaction</button></td>
+                                <td class="outline-5x">56px</td>
+                                <td class="outline-5x">19px</td>
+                                <td class="outline-5x">0px 19px</td>
+                            </tr>
+                            <tr>
+                                <td class="outline-5x">outline-16x</td>
+                                <td class="outline-5x"><button type="button" class="btn style-a type-line normal-01 outline-16x">Button Interaction</button></td>
+                                <td class="outline-5x">64px</td>
+                                <td class="outline-5x">21px</td>
+                                <td class="outline-5x">0px 22px</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <div class="guide__title2">Button Default</div>
+                <div class="guide__title2 outline-7x">Button Style</div>
                 <div class="guide__sample mb-xl">
-                    <div class="row margin-xl wrapper">
-                        <div class="col-3">
-                            <div class="types">Normal</div>
-                            <button type="button" class="btn btn-block">Button Interaction</button>
+                    <div class="row margin-s">
+                        <div class="col-13">
+                            <div class="types">style-a</div>
+                            <button type="button" class="btn style-a type-fill normal-01 outline-12x">Button Interaction</button>
                         </div>
-                        <div class="col-3">
-                            <div class="types">Hover</div>
-                            <button type="button" class="btn btn-block active">Button Interaction</button>
+                        <div class="col-13">
+                            <div class="types">style-b</div>
+                            <button type="button" class="btn style-b type-fill normal-01 outline-12x">Button Interaction</button>
                         </div>
-                        <div class="col-3">
-                            <div class="types">Active</div>
-                            <button type="button" class="btn btn-block active">Button Interaction</button>
-                        </div>
-                        <div class="col-3">
-                            <div class="types">Disabled</div>
-                            <button type="button" class="btn btn-block" disabled>Button Interaction</button>
+                        <div class="col-13">
+                            <div class="types">style-c</div>
+                            <button type="button" class="btn style-c type-fill normal-01 outline-12x">Button Interaction</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="guide__title2">Button Solid</div>
-                <div class="guide__sample">
-                    <div class="row margin-xl wrapper">
-                        <div class="col-3">
-                            <div class="types">Normal</div>
-                            <button type="button" class="btn btn-solid btn-block">Button Interaction</button>
+                <div class="guide__title2 outline-7x">Button Type</div>
+                <div class="guide__sample mb-xl">
+                    <div class="row margin-s">
+                        <div class="col-13">
+                            <div class="types">type-none</div>
+                            <button type="button" class="btn style-a type-none normal-01 outline-12x">Button Interaction</button>
                         </div>
-                        <div class="col-3">
-                            <div class="types">Hover</div>
-                            <button type="button" class="btn btn-solid btn-block active">Button Interaction</button>
+                        <div class="col-13">
+                            <div class="types">type-line</div>
+                            <button type="button" class="btn style-a type-line normal-01 outline-12x">Button Interaction</button>
                         </div>
-                        <div class="col-3">
-                            <div class="types">Active</div>
-                            <button type="button" class="btn btn-solid btn-block active">Button Interaction</button>
-                        </div>
-                        <div class="col-3">
-                            <div class="types">Disabled</div>
-                            <button type="button" class="btn btn-solid btn-block" disabled>Button Interaction</button>
+                        <div class="col-13">
+                            <div class="types">type-fill</div>
+                            <button type="button" class="btn style-a type-fill normal-01 outline-12x">Button Interaction</button>
                         </div>
                     </div>
                 </div>
 
+                <div class="guide__title2 outline-7x">Button Outline</div>
+                <div class="guide__sample mb-xl">
+                    <div class="row margin-s">
+                        <div class="col-13">
+                            <div class="types">outline-6x</div>
+                            <button type="button" class="btn style-a type-line normal-01 outline-6x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">outline-8x</div>
+                            <button type="button" class="btn style-a type-line normal-01 outline-8x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">outline-10x</div>
+                            <button type="button" class="btn style-a type-line normal-01 outline-10x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">outline-12x</div>
+                            <button type="button" class="btn style-a type-line normal-01 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">outline-14x</div>
+                            <button type="button" class="btn style-a type-line normal-01 outline-14x">Button Interaction</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide__title2 outline-7x">Button Type-fill</div>
+                <div class="guide__sample mb-xl">
+                    <div class="row margin-s">
+                        <div class="col-13">
+                            <div class="types">normal-01</div>
+                            <button type="button" class="btn style-a type-fill normal-01 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">normal-02</div>
+                            <button type="button" class="btn style-a type-fill normal-02 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">normal-03</div>
+                            <button type="button" class="btn style-a type-fill normal-03 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">normal-04</div>
+                            <button type="button" class="btn style-a type-fill normal-04 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">accent-01</div>
+                            <button type="button" class="btn style-a type-fill accent-01 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">accent-02</div>
+                            <button type="button" class="btn style-a type-fill accent-02 outline-12x">Button Interaction</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide__title2 outline-7x">Button Type-line</div>
+                <div class="guide__sample mb-xl">
+                    <div class="row margin-s">
+                        <div class="col-13">
+                            <div class="types">normal-01</div>
+                            <button type="button" class="btn style-a type-line normal-01 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">normal-02</div>
+                            <button type="button" class="btn style-a type-line normal-02 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">normal-03</div>
+                            <button type="button" class="btn style-a type-line normal-03 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">normal-04</div>
+                            <button type="button" class="btn style-a type-line normal-04 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">accent-01</div>
+                            <button type="button" class="btn style-a type-line accent-01 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">accent-02</div>
+                            <button type="button" class="btn style-a type-line accent-02 outline-12x">Button Interaction</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide__title2 outline-7x">Button Type-none</div>
+                <div class="guide__sample mb-xl">
+                    <div class="row margin-s">
+                        <div class="col-13">
+                            <div class="types">normal-01</div>
+                            <button type="button" class="btn style-a type-none normal-01 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">normal-02</div>
+                            <button type="button" class="btn style-a type-none normal-02 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">normal-03</div>
+                            <button type="button" class="btn style-a type-none normal-03 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">normal-04</div>
+                            <button type="button" class="btn style-a type-none normal-04 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">accent-01</div>
+                            <button type="button" class="btn style-a type-none accent-01 outline-12x">Button Interaction</button>
+                        </div>
+                        <div class="col-13">
+                            <div class="types">accent-02</div>
+                            <button type="button" class="btn style-a type-none accent-02 outline-12x">Button Interaction</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide__title2 outline-7x">Button disabled</div>
+                <div class="guide__sample mb-xl">
+                    <div class="row margin-s">
+                        <div class="col-13">
+                            <div class="types">disabled</div>
+                            <button type="button" class="btn style-a type-none normal-01 outline-12x disabled">Button Interaction</button>
+                        </div>
+                    </div>
+                </div>
                 
+                <div class="guide__title3 outline-7x">HTML</div>
+                <div class="row margin-m">
+                    <div class="col-12">
+                        <div class="guide__font">
+                            <div class="guide__subcont04">&lt;div class="btn style-a type-line normal-01 outline-6x"&gt;</div>
+                        </div>
+                    </div>
+                </div>
                 
             </div>
         </div>

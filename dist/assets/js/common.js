@@ -1,5 +1,51 @@
+// document.addEventListener('DOMContentLoaded', function() {
+//     const typedElements = document.querySelectorAll('.typed');
+  
+//     typedElements.forEach(element => {
+//       ['mouseover', 'mouseout',].forEach(event => {
+//         element.addEventListener(event, function(e) {
+//           if (e.type === 'mouseover') {
+//             element.classList.add(event);
+//           } else {
+//             element.classList.remove(event.replace('out', 'over'));
+//           }
+//         });
+//       });
+//     });
+//   });
 
+/**
+ * passwordVisibility
+ * 
+ * @param {String} selector
+ * @return {String}
+**/
+const passwordVisibility = function(selector, closestSelector) {
+	var formElem = selector.closest(closestSelector).querySelector('.form-elem');
+	var buttonText = selector.querySelector('.btn-text');
 
+	formElem.select();
+
+	if (formElem.type === 'password') {
+		formElem.type = 'text';
+		selector.classList.add('active');
+		buttonText.innerText = '텍스트 숨기기';
+	} else {
+		formElem.type = 'password';
+		selector.classList.remove('active');
+		buttonText.innerText = '텍스트 보기';
+	}
+}
+function buiFormColorpicker(selector) {
+	selector.parentElement.dataset.buiFormValue = selector.value;
+	selector.parentElement.style.setProperty("--bui-form-value", selector.value);
+}
+window.buiFormColorpicker = buiFormColorpicker;
+
+const formInputCountView = function(selector, closestSelector) {
+	closestSelector.innerText = selector.value.length;
+}
+window.formInputCountView = formInputCountView;
 
 
 // $(function() {

@@ -51,12 +51,12 @@ $gutter-20 : 80px;
 
 
 /* 기준 화면 너비 */
-$vw-viewport: 1200;
+$vw-viewport: 720;
 @mixin SCREEN{ @media (max-width: #{$vw-viewport}px){ @content; } }
 
 /* pixel을 vw로 변환해주는 함수 */
 @function get-vw($px){
-  $vw-context: $vw-viewport * 0.005 * 1px;
+  $vw-context: $vw-viewport * 0.0075 * 1px;
   @return math.div($px, $vw-context) * 1vw;
 }
 

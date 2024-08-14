@@ -109,17 +109,19 @@
 			}
 		}
 
-		$outline: (
+		// @for $i from 3 through 13 {
+		// $gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
+		// &.outline-#{$i}x {
+		// 	@include set-vw(--line-height,$gutter-value);
+		// 	@include set-vw(--height,$gutter-value);
+		// }
+		// }
+		
+		$outline-f: (
 			4: (
 				'font-weight': 400,
 			),
-			5: (
-				'font-weight': 400,
-			),
 			6: (
-				'font-weight': 400,
-			),
-			7: (
 				'font-weight': 400,
 			),
 			8: (
@@ -131,13 +133,13 @@
 		);
 
 		// outline
-		@each $name in $outline {
-			&.outline-#{nth($name, 1)}x {
+		@each $name in $outline-f {
+			&.outline-f#{nth($name, 1)}x {
 				--height: #{nth($name, 1) * $gutter-1};
 				--line-height: #{nth($name, 1) * $gutter-1};
 			}
 		}
-		
+
 		--column-gap: calc(var(--line-height) / 4);
 		--font-size: calc(var(--line-height) / 1.5);
 		--noti-size: calc(var(--line-height) / 1.5);
@@ -149,7 +151,6 @@
 		.form-text {
 			display: block;
 			line-height: var(--line-height);
-			font-size: var(--font-size);
 		}
 
 		.form-elem {
@@ -281,7 +282,7 @@
 					height: calc(var(--line-height) * 0.75);
 					border-radius: 50%;
 					background-color: white;
-					border: int(2) solid var(--icon-color);
+					border: 2px solid var(--icon-color);
 					box-sizing: border-box;
 					transition: left .1s ease-out;
 				}
@@ -302,7 +303,7 @@
 
 	// module-b
 	&.module-b {	
-		$outline: (
+		$outline-f: (
 			6: (
 				'column-gap':  $gutter-1,
 				'row-gap': $gutter-2,
@@ -618,14 +619,22 @@
 			}
 		}
 	
-		@each $name in $outline {
-			&.outline-#{nth($name, 1)}x {
+		@each $name in $outline-f {
+			&.outline-f#{nth($name, 1)}x {
 				--height: #{nth($name, 1) * $gutter-1};
-				@each $property, $value in map-get($outline, nth($name, 1)) {
+				@each $property, $value in map-get($outline-f, nth($name, 1)) {
 					--#{$property}: #{$value};
 				}
 			}
 		}
+
+		// @for $i from 3 through 13 {
+		// 	$gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
+		// 	&.outline-#{$i}x {
+		// 		@include set-vw(--line-height,$gutter-value);
+		// 		@include set-vw(--height,$gutter-value);
+		// 	}
+		// 	}
 
 		display: inline-flex;
 		flex-wrap: wrap;

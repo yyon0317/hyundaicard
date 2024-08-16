@@ -57,6 +57,7 @@
 
 	// module-a
 	&.module-a {
+		width: 100%;
 		&:where(.radio, .checkbox, .switch) {
 			$accent: (
 				'normal-01': (
@@ -302,7 +303,8 @@
 	}
 
 	// module-b
-	&.module-b {	
+	&.module-b {
+		width: 100%;	
 		$outline-f: (
 			6: (
 				'column-gap':  $gutter-1,
@@ -340,18 +342,6 @@
 				'border-width': 1px,
 				'border-radius': $gutter-2,
 			),
-			11: (
-				'column-gap':  $gutter-1,
-				'row-gap': $gutter-2,
-				'padding': $gutter-3,
-				'padding-unit': $gutter-3,
-				'line-height': $gutter-5,
-				'font-size': calc(var(--line-height) / 1.5),
-				'font-noti': calc($gutter-5 / 1.5),
-				'font-weight': 400,
-				'border-width': 1px,
-				'border-radius': $gutter-2,
-			),
 			12: (
 				'column-gap':  $gutter-1,
 				'row-gap': $gutter-2,
@@ -373,16 +363,11 @@
 					'none': (
 						'color': var(--color-base-12),
 						'color-placeholder': var(--color-base-09),
-						'color-disabled': var(--color-secondary-01),
-						'color-valid': var(--color-secondary-02),
-						'color-invalid': var(--color-secondary-04),
+						'color-disabled': var(--color-secondary-04),
 		
 						'border-color': transparent,
 						'border-disabled': var(--color-base-09),
-						'border-valid': var(--color-secondary-02),
-						'border-invalid': var(--color-secondary-04),
 						'background-color': transparent,
-						'background-readonly': transparent,
 						'background-disabled': var(--color-base-09),
 		
 						'unit-color': var(--color-base-12),
@@ -392,16 +377,11 @@
 					'line': (
 						'color': var(--color-base-12),
 						'color-placeholder': var(--color-base-09),
-						'color-disabled': var(--color-secondary-01),
-						'color-valid': var(--color-secondary-02),
-						'color-invalid': var(--color-secondary-04),
+						'color-disabled': var(--color-secondary-04),
 		
 						'border-color': var(--color-base-12),
 						'border-disabled': var(--color-base-07),
-						'border-valid': var(--color-secondary-02),
-						'border-invalid': var(--color-secondary-04),
 						'background-color': var(--color-base-01),
-						'background-readonly': var(--color-base-07),
 						'background-disabled': var(--color-base-07),
 		
 						'unit-color': var(--color-base-12),
@@ -411,16 +391,11 @@
 					'fill': (
 						'color': var(--color-base-01),
 						'color-placeholder': var(--color-base-09),
-						'color-disabled': var(--color-secondary-01),
-						'color-valid': var(--color-secondary-02),
-						'color-invalid': var(--color-secondary-04),
+						'color-disabled': var(--color-secondary-04),
 		
 						'border-color': var(--color-base-12),
 						'border-disabled': var(--color-base-07),
-						'border-valid': var(--color-secondary-02),
-						'border-invalid': var(--color-secondary-04),
 						'background-color': var(--color-base-12),
-						'background-readonly': var(--color-base-07),
 						'background-disabled': var(--color-base-07),
 		
 						'unit-color': var(--color-base-12),
@@ -432,16 +407,11 @@
 					'none': (
 						'color': var(--color-base-12),
 						'color-placeholder': var(--color-base-09),
-						'color-disabled': var(--color-secondary-01),
-						'color-valid': var(--color-secondary-02),
-						'color-invalid': var(--color-secondary-04),
+						'color-disabled': var(--color-secondary-04),
 		
 						'border-color': transparent,
 						'border-disabled': var(--color-base-09),
-						'border-valid': var(--color-secondary-02),
-						'border-invalid': var(--color-secondary-04),
 						'background-color': transparent,
-						'background-readonly': transparent,
 						'background-disabled': var(--color-base-09),
 		
 						'unit-color': var(--color-base-09),
@@ -451,16 +421,11 @@
 					'line': (
 						'color': var(--color-base-12),
 						'color-placeholder': var(--color-base-09),
-						'color-disabled': var(--color-secondary-01),
-						'color-valid': var(--color-secondary-02),
-						'color-invalid': var(--color-secondary-04),
+						'color-disabled':var(--color-secondary-04),
 		
 						'border-color': var(--color-base-09),
 						'border-disabled': var(--color-base-07),
-						'border-valid': var(--color-secondary-02),
-						'border-invalid': var(--color-secondary-04),
 						'background-color': var(--color-base-01),
-						'background-readonly': var(--color-base-07),
 						'background-disabled': var(--color-base-07),
 		
 						'unit-color': var(--color-base-09),
@@ -470,16 +435,11 @@
 					'fill': (
 						'color': var(--color-base-01),
 						'color-placeholder': var(--color-base-09),
-						'color-disabled': var(--color-secondary-01),
-						'color-valid': var(--color-secondary-02),
-						'color-invalid': var(--color-secondary-04),
+						'color-disabled': var(--color-secondary-04),
 		
 						'border-color': var(--color-base-09),
 						'border-disabled': var(--color-base-07),
-						'border-valid': var(--color-secondary-02),
-						'border-invalid': var(--color-secondary-04),
 						'background-color': var(--color-base-09),
-						'background-readonly': var(--color-base-07),
 						'background-disabled': var(--color-base-07),
 		
 						'unit-color': var(--color-base-09),
@@ -491,16 +451,11 @@
 					'none': (
 						'color': var(--color-base-12),
 						'color-placeholder': var(--color-base-09),
-						'color-disabled': var(--color-secondary-01),
-						'color-valid': var(--color-secondary-02),
-						'color-invalid': var(--color-secondary-04),
+						'color-disabled': var(--color-secondary-04),
 		
 						'border-color': transparent,
 						'border-disabled': var(--color-base-09),
-						'border-valid': var(--color-secondary-02),
-						'border-invalid': var(--color-secondary-04),
 						'background-color': transparent,
-						'background-readonly': transparent,
 						'background-disabled': var(--color-base-09),
 		
 						'unit-color': var(--color-base-12),
@@ -510,16 +465,11 @@
 					'line': (
 						'color': var(--color-base-12),
 						'color-placeholder': var(--color-base-09),
-						'color-disabled': var(--color-secondary-01),
-						'color-valid': var(--color-secondary-02),
-						'color-invalid': var(--color-secondary-04),
+						'color-disabled': var(--color-secondary-04),
 		
 						'border-color': var(--color-base-07),
 						'border-disabled': var(--color-base-07),
-						'border-valid': var(--color-secondary-02),
-						'border-invalid': var(--color-secondary-04),
 						'background-color': var(--color-base-01),
-						'background-readonly': var(--color-base-02),
 						'background-disabled': var(--color-base-02),
 		
 						'unit-color': var(--color-base-12),
@@ -529,16 +479,11 @@
 					'fill': (
 						'color': var(--color-base-12),
 						'color-placeholder': var(--color-base-09),
-						'color-disabled': var(--color-secondary-01),
-						'color-valid': var(--color-secondary-02),
-						'color-invalid': var(--color-secondary-04),
+						'color-disabled': var(--color-secondary-04),
 		
 						'border-color': var(--color-base-07),
 						'border-disabled': var(--color-base-07),
-						'border-valid': var(--color-secondary-02),
-						'border-invalid': var(--color-secondary-04),
 						'background-color': var(--color-base-07),
-						'background-readonly': var(--color-base-07),
 						'background-disabled': var(--color-base-07),
 		
 						'unit-color': var(--color-base-09),
@@ -564,61 +509,6 @@
 			}
 		}
 
-		&:where(.radio, .checkbox, .switch) {
-			$accent: (
-				'normal-01': (
-					'color': var(--color-base-12),
-					'color-checked': var(--color-base-01),
-					// 'color-disabled': var(--color-base-07),
-
-					'border-color': var(--color-base-07),
-					'border-checked': var(--color-base-12),
-					// 'border-disabled': var(--color-base-07),
-
-					'icon-color': var(--color-base-09),
-					'icon-checked': var(--color-base-12),
-					// 'icon-disabled': var(--color-base-07),
-
-					'background-color': var(--color-base-01),
-					'background-checked': var(--color-base-12),
-					// 'background-disabled': var(--color-base-07),
-				),
-				'accent-01': (
-					'color': var(--color-base-12),
-					'color-checked': var(--color-base-01),
-					// 'color-disabled': var(--color-base-07),
-
-					'border-color': var(--color-base-07),
-					'border-checked': var(--color-secondary-02),
-					// 'border-disabled': var(--color-base-07),
-
-					'icon-color': var(--color-base-09),
-					'icon-checked': var(--color-secondary-02),
-					// 'icon-disabled': var(--color-base-07),
-
-					'background-color': var(--color-base-01),
-					'background-checked': var(--color-secondary-02),
-					// 'background-disabled': var(--color-base-01),
-				)
-			);
-	
-			// accent
-			@each $accent-name in $accent {
-				&.#{nth($accent-name, 1)} {
-					// variables
-					@each $variables in map-get($accent, nth($accent-name, 1)) {
-						--#{nth($variables, 1)}: #{nth($variables, 2)};
-					}
-
-					@each $type-name in map-get($accent, nth($accent-name, 1)) {
-						// @debug "divider offset: #{nth($type-name, 1)}";
-						
-
-					}
-				}
-			}
-		}
-	
 		@each $name in $outline-f {
 			&.outline-f#{nth($name, 1)}x {
 				--height: #{nth($name, 1) * $gutter-1};
@@ -665,10 +555,6 @@
 			// font-family: var(--font-family-default);
 			color: var(--color);
 	
-			&::placeholder {
-				color: var(--color-placeholder);
-			}
-			
 			&:disabled {
 				color: var(--color-disabled);
 				border-color: var(--border-disabled);
@@ -755,7 +641,7 @@
 				}
 			}
 		}
-	
+
 		// textfield
 		&:where(.textfield, file, .date, .datepicker) {
 			.form-elem {
@@ -987,33 +873,7 @@
 				}
 			}
 		}
-	
-		.form-elem.invalid {
-			border-width: int(2);
-			border-color: var(--border-invalid);
-	
-			&~.form-noti {
-				display: flex;
-	
-				.form-noti-wrap {
-					background-color: var(--color-invalid);
-				}
-			}
-		}
-	
-		.form-elem.valid {
-			border-width: int(2);
-			border-color: var(--border-valid);
-	
-			&~.form-noti {
-				display: flex;
-	
-				.form-noti-wrap {
-					background-color: var(--color-valid);
-				}
-			}
-		}
-	
+
 		// form-util
 		&:not(.textarea) {
 			.form-util {
@@ -1070,17 +930,6 @@
 			}
 		}
 
-		.form-btn-cancel {
-			display: none;
-			cursor: pointer;
-			pointer-events: auto;
-			
-			&::before {
-				mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='rgb(0, 0, 0)' d='M7.9,16.1c0.1,0.1,0.3,0.2,0.5,0.2c0.2,0,0.4-0.1,0.5-0.2l3.1-3.1l3.1,3.1c0.1,0.1,0.3,0.2,0.5,0.2c0.2,0,0.4-0.1,0.5-0.2c0.1-0.1,0.2-0.3,0.2-0.5c0-0.2-0.1-0.4-0.2-0.5L13.1,12l3.1-3.1c0.1-0.1,0.2-0.3,0.2-0.5c0-0.2-0.1-0.4-0.2-0.5c-0.1-0.2-0.3-0.2-0.5-0.2c-0.2,0-0.4,0.1-0.5,0.2L12,10.9L8.9,7.8C8.8,7.7,8.6,7.7,8.4,7.7C8.2,7.7,8,7.7,7.9,7.9C7.7,8,7.7,8.2,7.7,8.4c0,0.2,0.1,0.4,0.2,0.5l3.1,3.1l-3.1,3.1c-0.1,0.1-0.2,0.3-0.2,0.5C7.7,15.8,7.7,16,7.9,16.1z M12,21.5c-1.3,0-2.6-0.2-3.7-0.8c-1.2-0.5-2.2-1.2-3-2s-1.5-1.9-2-3c-0.5-1.2-0.8-2.4-0.8-3.7s0.2-2.6,0.8-3.7c0.5-1.2,1.2-2.2,2-3s1.9-1.5,3-2c1.2-0.5,2.4-0.8,3.7-0.8s2.6,0.2,3.7,0.8c1.2,0.5,2.2,1.2,3,2s1.5,1.9,2,3c0.5,1.2,0.8,2.4,0.8,3.7s-0.2,2.6-0.8,3.7c-0.5,1.2-1.2,2.2-2,3s-1.9,1.5-3,2C14.6,21.2,13.3,21.5,12,21.5z'/></svg>");
-				background-color: var(--color-base-06);
-			}
-		}
-
 		.form-btn-search {
 			&::before {
 				mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='rgb(0, 0, 0)' d='M19.6,19l-2.5-2.5c1.2-1.3,1.9-3.1,1.9-5C19,7.4,15.6,4,11.5,4S4,7.4,4,11.5S7.4,19,11.5,19c1.7,0,3.3-0.6,4.5-1.5l2.5,2.6c0.3,0.3,0.8,0.3,1.1,0C19.9,19.8,19.9,19.3,19.6,19z M11.5,17.5c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S14.8,17.5,11.5,17.5z'/></svg>");
@@ -1089,7 +938,8 @@
 
 		.form-btn-date {
 			&::before {
-				mask-image: icon(bui, date);
+				mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='rgb(0, 0, 0)' d='M5.3,21.5c-0.5,0-0.9-0.2-1.3-0.5c-0.4-0.4-0.5-0.8-0.5-1.3V6.3C3.5,5.8,3.7,5.4,4,5c0.4-0.3,0.8-0.5,1.3-0.5h1.4V2.4h1.5v2.1h7.6V2.4h1.5v2.1h1.4c0.5,0,0.9,0.2,1.3,0.5c0.4,0.4,0.5,0.8,0.5,1.3v13.4c0,0.5-0.2,0.9-0.5,1.3c-0.4,0.4-0.8,0.5-1.3,0.5C18.7,21.5,5.3,21.5,5.3,21.5z M5.3,20h13.4c0.1,0,0.1,0,0.2-0.1c0.1-0.1,0.1-0.1,0.1-0.2v-9.4H5v9.4c0,0.1,0,0.1,0.1,0.2C5.2,20,5.2,20,5.3,20z M5,8.8h14V6.3c0-0.1,0-0.1-0.1-0.2C18.8,6,18.8,6,18.7,6H5.3C5.2,6,5.2,6,5.1,6.1C5,6.2,5,6.2,5,6.3C5,6.3,5,8.8,5,8.8z M5,8.8V6V8.8z'/></svg>");
+				background-color: #000;
 			}
 		}
 

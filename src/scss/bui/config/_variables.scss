@@ -56,7 +56,7 @@ $vw-viewport: 720;
 
 /* pixel을 vw로 변환해주는 함수 */
 @function get-vw($px){
-  $vw-context: $vw-viewport * 0.0075 * 1px;
+  $vw-context: $vw-viewport * 0.0065 * 1px;
   @return math.div($px, $vw-context) * 1vw;
 }
 
@@ -166,4 +166,41 @@ $grid-breakpoints: (
 // }
 // .element {
 //   padding: var(--baseline-4x); /* 데스크톱에서는 16px, 모바일에서는 8px */
+// }
+/*반응형 화면 크기*/
+$mobile: 375px;
+$tablet: 720px;
+$desktop: 1024px;
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+/* 태블릿용 미디어 쿼리 */
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+/* 데스크톱용 미디어 쿼리 */
+@mixin desktop {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+
+// @include desktop {
+//   background-color: palegreen;
+// }
+// @include tablet {
+//   background-color: blue;
+// }
+
+// @include mobile {
+//   width: 100%;
+//   background-color: red;
 // }

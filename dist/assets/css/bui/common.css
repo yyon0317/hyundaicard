@@ -1406,79 +1406,21 @@ label {
   border-color: var(--border-disabled);
   background-color: var(--background-disabled);
 }
-.form.module-b:where(.textfield, file, .date, .datepicker, .textarea) .form-elem:read-only:not(:disabled) {
-  color: var(--color);
-  border-color: var(--border-color);
-  background-color: var(--background-readonly);
-}
-.form.module-b:where(.radio, .checkbox) .form-elem {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-color: var(--border-color);
-  background-color: var(--background-color);
-}
-.form.module-b:where(.radio, .checkbox) .form-elem:checked {
-  border-color: var(--border-checked);
-  background-color: var(--background-checked);
-}
-.form.module-b:where(.radio, .checkbox) .form-elem:checked ~ .form-text {
-  color: var(--color-checked);
-}
-.form.module-b:where(.radio, .checkbox) .form-elem:checked ~ .form-text::before {
-  color: var(--icon-checked);
-}
-.form.module-b:where(.radio, .checkbox) .form-text {
-  flex: 1 1 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: var(--column-gap);
-  position: relative;
-  z-index: 1;
-  padding: 0 var(--padding);
-  height: var(--height);
-  color: var(--color);
-  pointer-events: none;
-}
-.form.module-b:where(.radio, .checkbox)[class*=class] .form-text::before {
-  content: "";
-  display: block;
-  width: var(--line-height);
-  height: var(--line-height);
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-          mask-position: center;
-  -webkit-mask-size: var(--line-height);
-          mask-size: var(--line-height);
-  background-color: var(--color);
-}
-.form.module-b:where(.radio, .checkbox)[class*=class].radio .form-text::before {
-  -webkit-mask-image: icon(bui, form-radio-checked);
-          mask-image: icon(bui, form-radio-checked);
-}
-.form.module-b:where(.radio, .checkbox)[class*=class].checkbox .form-text::before {
-  -webkit-mask-image: icon(bui, check);
-          mask-image: icon(bui, check);
-}
-.form.module-b:where(.textfield, file, .date, .datepicker) .form-elem {
+.form.module-b:where(.textfield, .date) .form-elem {
   height: var(--height);
   text-overflow: ellipsis;
   text-align: var(--text-align);
 }
-.form.module-b:where(.textfield, file, .date, .datepicker) .form-elem:where([type=text], [type=password], [type=tel], [type=search], [type=email], [type=url], [type=date], [type=number]) {
+.form.module-b:where(.textfield, .date) .form-elem:where([type=text], [type=password], [type=search], [type=date]) {
   padding-right: var(--padding);
 }
-.form.module-b:where(.textfield, file, .date, .datepicker) .form-elem:where([type=text], [type=password], [type=tel], [type=search], [type=email], [type=url], [type=date], [type=number]):where([type=text], [type=password], [type=tel], [type=search], [type=email], [type=url], [type=number]) {
+.form.module-b:where(.textfield, .date) .form-elem:where([type=text], [type=password], [type=search], [type=date]):where([type=text], [type=password], [type=search]) {
   text-indent: var(--padding);
 }
-.form.module-b:where(.textfield, file, .date, .datepicker) .form-elem:where([type=date], [type=file]) {
+.form.module-b:where(.textfield, .date) .form-elem:where([type=date], [type=file]) {
   padding-left: var(--padding);
 }
-.form.module-b:where(.textfield, file, .date, .datepicker) .form-elem:where([type=date], [type=file]):where([type=file]) {
+.form.module-b:where(.textfield, .date) .form-elem:where([type=date], [type=file]):where([type=file]) {
   line-height: calc(var(--height) - var(--border-width) * 2);
 }
 .form.module-b.select .form-elem {
@@ -1518,142 +1460,11 @@ label {
   flex: 1 1 100%;
   display: flex;
   justify-content: flex-end;
-  font-size: var(--line-height/1.5);
+  font-size: calc((var(--line-height)) / 1.5);
 }
 .form.module-b.textarea .form-util .form-limit {
   display: flex;
   justify-content: flex-end;
-}
-.form.module-b.number {
-  flex-wrap: nowrap;
-  align-items: center;
-}
-.form.module-b.number .form-text {
-  flex: 1 1 100%;
-  line-height: var(--line-height);
-  font-size: var(--font-size);
-  color: var(--color);
-}
-.form.module-b.number .form-elem {
-  order: 2;
-  max-width: int(48);
-  height: var(--height);
-  border-color: transparent;
-  text-align: center;
-}
-.form.module-b.number [class*=form-step-] {
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: var(--height);
-  height: var(--height);
-  box-sizing: border-box;
-  border-style: solid;
-  border-width: var(--border-width);
-  border-color: var(--border-color);
-  border-radius: var(--border-radius);
-}
-.form.module-b.number [class*=form-step-]::before {
-  content: "";
-  display: block;
-  width: var(--line-height);
-  height: var(--line-height);
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-          mask-position: center;
-  -webkit-mask-size: cover;
-          mask-size: cover;
-  background-color: var(--color);
-}
-.form.module-b.number [class*=form-step-].form-step-down {
-  order: 1;
-}
-.form.module-b.number [class*=form-step-].form-step-down::before {
-  -webkit-mask-image: icon(style-a, minus);
-          mask-image: icon(style-a, minus);
-}
-.form.module-b.number [class*=form-step-].form-step-up {
-  order: 3;
-}
-.form.module-b.number [class*=form-step-].form-step-up::before {
-  -webkit-mask-image: icon(style-a, plus);
-          mask-image: icon(style-a, plus);
-}
-.form.module-b .form-frac {
-  color: var(--noti-color);
-}
-.form.module-b .form-frac .nume {
-  color: var(--color);
-}
-.form.module-b.colorpicker::before, .form.module-b.color::before {
-  content: attr(data-bui-form-value);
-  display: flex;
-  align-items: center;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding-right: var(--padding-right);
-  padding-left: var(--padding);
-  box-sizing: border-box;
-  pointer-events: none;
-}
-.form.module-b.colorpicker .form-elem, .form.module-b.color .form-elem {
-  height: var(--height);
-}
-.form.module-b.colorpicker .form-util .form-color, .form.module-b.color .form-util .form-color {
-  display: block;
-  border-radius: 50%;
-  width: var(--line-height);
-  height: var(--line-height);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
-  background-color: var(--form-value);
-  pointer-events: none;
-}
-.form.module-b.typed:where(.mouseover, .focusin) .form-util .form-btn-cancel {
-  display: block;
-}
-.form.module-b .form-noti {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  right: 0;
-  bottom: calc(100% + var(--row-gap));
-  left: 0;
-  font-size: calc(var(--line-height) / 1.5);
-  padding-bottom: var(--row-gap);
-  text-align: center;
-  color: white;
-}
-.form.module-b .form-noti .form-noti-wrap {
-  display: block;
-  position: relative;
-  padding: int(4) int(12);
-  border-width: int(2);
-  border-radius: int(16);
-}
-.form.module-b .form-noti .form-noti-wrap::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: var(--row-gap);
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-position: 50% 100%;
-          mask-position: 50% 100%;
-  -webkit-mask-size: int(28) int(16);
-          mask-size: int(28) int(16);
-  -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 16"><path fill="rgb(0, 0, 0)" d="M14.8,15.1c-0.4,0.5-1.1,0.5-1.5,0L0,0l28,0L14.8,15.1z"/></svg>');
-          mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 16"><path fill="rgb(0, 0, 0)" d="M14.8,15.1c-0.4,0.5-1.1,0.5-1.5,0L0,0l28,0L14.8,15.1z"/></svg>');
-  background: inherit;
 }
 .form.module-b:not(.textarea) .form-util {
   display: flex;
@@ -1712,10 +1523,6 @@ label {
   display: block;
   position: absolute;
 }
-.form.module-b:not(.textarea) .form-util .form-unit {
-  display: block;
-  color: var(--unit-color);
-}
 .form.module-b .form-btn-search::before {
   -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='rgb(0, 0, 0)' d='M19.6,19l-2.5-2.5c1.2-1.3,1.9-3.1,1.9-5C19,7.4,15.6,4,11.5,4S4,7.4,4,11.5S7.4,19,11.5,19c1.7,0,3.3-0.6,4.5-1.5l2.5,2.6c0.3,0.3,0.8,0.3,1.1,0C19.9,19.8,19.9,19.3,19.6,19z M11.5,17.5c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S14.8,17.5,11.5,17.5z'/></svg>");
           mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='rgb(0, 0, 0)' d='M19.6,19l-2.5-2.5c1.2-1.3,1.9-3.1,1.9-5C19,7.4,15.6,4,11.5,4S4,7.4,4,11.5S7.4,19,11.5,19c1.7,0,3.3-0.6,4.5-1.5l2.5,2.6c0.3,0.3,0.8,0.3,1.1,0C19.9,19.8,19.9,19.3,19.6,19z M11.5,17.5c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S14.8,17.5,11.5,17.5z'/></svg>");
@@ -1752,7 +1559,7 @@ label {
   --background-readonly: var(--color-base-07);
   --background-disabled: var(--color-base-07);
 }
-.form.module-c.outline-6x {
+.form.module-c.outline-f6x {
   --height: 24px;
   --line-height: 12px;
   --padding: 8px;
@@ -1762,7 +1569,7 @@ label {
   --border-width: 1px;
   --border-radius: 16px;
 }
-.form.module-c.outline-8x {
+.form.module-c.outline-f8x {
   --height: 32px;
   --line-height: 16px;
   --padding: 8px;
@@ -1772,7 +1579,7 @@ label {
   --border-width: 1px;
   --border-radius: 8px;
 }
-.form.module-c.outline-12x {
+.form.module-c.outline-f12x {
   --height: 48px;
   --line-height: 24px;
   --padding: 16px;

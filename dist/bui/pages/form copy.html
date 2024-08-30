@@ -2,152 +2,97 @@
 <html lang="ko">
 
 <head>
-    @@include("../partials/meta.html")
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Author" content="UI STYEL GUIDE">
+    <meta name="Keywords" content="UI STYEL GUIDE">
+    <meta name="Description" content="UI STYEL GUIDE">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+    <meta property="og:image" content="" />
+    <link rel="stylesheet" href="../../assets/css/bui/common.css">
+    <script src="../../assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <title>UI STYEL GUIDE</title>
+
+
 </head>
 
 <body>
-    @@include("../partials/guide.head.html",{
-        "menu": "UI Elements",
-<<<<<<< Updated upstream
-        "title": "Tab"
-    })
+    
+    <nav class="guide_nav">
+    	<div class="guide_nav_top">
+    		<h1>UI STYLE GUIDE</h1>
+    		<button type="button" class="btn_guide_menu"></button>
+    	</div>
+    	<ul class="guide_gnb">
+    		<li><a href="#"><i></i>Typography</a>
+    			<ul>
+    				<li><a href="./font.html"><span>Font</span></a></li>
+    				<li><a href="textUsage.html"><span>Text Usage</span></a></li>
+    				<li><a href="textColor.html"><span>Text Colors</span></a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>Color Schemes</a>
+    			<ul>
+    				<li><a href="color.html"><span>Primary Color</span></a></li>
+    				<li><a href="SecondaryColor.html"><span>Secondary Color</span></a></li>
+    				<li><a href="shadoes.html"><span>Base Color</span></a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>Spacing</a>
+    			<ul>
+    				<li><a href="SizeUnit.html"><span>Size Unit</span></a></li>
+    				<li><a href="Usage.html"><span>Usage</span></a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>UI Elements</a>
+    			<ul>
+    				<li><a href="Button.html"><span>Button</span></a></li>
+    				<li><a href="Dropdown.html"><span>Dropdown</span></a></li>
+    				<li><a href="form.html"><span>Form</span></a></li>
+    				<li><a href="fab.html"><span>tab</span></a></li>
+    				<li><a href="table.html"><span>Table</span></a></li>
+    				<li><a href="Modal.html"><span>Modal</span></a></li>
+    			</ul>
+    		</li>
+    	</ul>
+    </nav>
+
+
+    <div id="container">
+    	<header class="guide_top">
+    		<div>
+    			<strong>UI Elements</strong>
+    			<span>Form</span>
+    		</div>
+    		<div class="version">v1.0.0</div>
+    	</header>
     <div id="guide" class="guide">
         <div class="layer">
-            <div class="guide__title outline-12x">Tab</div>
-=======
-        "title": "tab"
-    })
-    <div id="guide" class="guide">
-        <div class="layer">
-            <div class="guide__title outline-12x">tab</div>
->>>>>>> Stashed changes
+            <div class="guide__title outline-12x">Form</div>
             <div class="guide__desc line outline-5x">
                 모든 입력창에 공통적으로 적용되는 기본적인 스타일입니다. <br>
                 상태에 맞게 적절한 스타일을 적용해, 사용자가 현재 상태를 파악하기 쉽도록 합니다.
             </div>
             <div class="guide__content">
-                <div class="guide__title2 outline-7x">style</div>
+                <div class="guide__title2 outline-7x">module-a</div>
                 <div class="guide__sample mb-xl">
                     <div class="row margin-xl">
                         <div class="col-4">
-                            <div class="types">style-a</div>
-<<<<<<< Updated upstream
-                            <div class="tab-display module-c style-a normal-01 outline-t12x ">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text">3rd item</a></li>
-                                </ul>
-                            </div>
-                            <div class="types">style-b</div>
-                            <div class="tab-display module-c style-b normal-01 outline-t12x ">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text">3rd item</a></li>
-                                </ul>
-                            </div>
-                            <div class="types">style-c</div>
-                            <div class="tab-display module-c style-c normal-01 outline-t12x ">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text">3rd item</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="types">type-a</div>
-                            <div class="tab-display module-c type-a normal-01 outline-t12x">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text">3rd item</a></li>
-                                </ul>
-                            </div>
-                            <div class="types">type-b</div>
-                            <div class="tab-display module-c type-b normal-01 outline-t12x">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text">3rd item</a></li>
-                                </ul>
-                            </div>
-                            <div class="types">type-c</div>
-                            <div class="tab-display module-c type-c normal-01 outline-t12x">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text">3rd item</a></li>
-                                </ul>
-                            </div>
-                            <div class="types">type-d</div>
-                            <div class="tab-display module-c type-d normal-01 outline-t12x">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text">3rd item</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="types">normal-01</div>
-                            <div class="tab-display module-c normal-01 outline-t12x">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text">3rd item</a></li>
-                                </ul>
-                            </div>
-                            <div class="types">accent-01</div>
-                            <div class="tab-display module-c accent-01 outline-t12x">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text">3rd item</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="types">outline-t8x</div>
-                            <div class="tab-display module-c normal-01 outline-t8x">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text">3rd item</a></li>
-                                </ul>
-                            </div>
-                            <div class="types">outline-t10x</div>
-                            <div class="tab-display module-c normal-01 outline-t10x">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text">3rd item</a></li>
-                                </ul>
-                            </div>
-                            <div class="types">outline-t12x</div>
-                            <div class="tab-display module-c normal-01 outline-t12x">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text">3rd item</a></li>
-                                </ul>
-                            </div>
-=======
+                            <div class="types">Radio</div>
                                 <label class="form radio module-a type-fill outline-f6x accent-01"><input class="form-elem" type="radio" name="radio-0101"> <span class="form-text">form noti</span></label>
                                 <label class="form radio module-a type-fill outline-f6x accent-01"><input class="form-elem" type="radio" name="radio-0101" checked="checked"> <span class="form-text">form noti</span></label>
                                 <label class="form radio module-a type-fill outline-f6x accent-01"><input class="form-elem" type="radio" name="radio-0101" disabled="disabled"> <span class="form-text">form noti (disabled)</span></label>
                         </div>
                         <div class="col-4">
-                            <div class="types">style-b</div>
+                            <div class="types">Checkbox</div>
                                 <label class="form checkbox module-a type-fill outline-f6x accent-01"><input class="form-elem" type="checkbox"> <span class="form-text">form noti</span></label>
                                 <label class="form checkbox module-a type-line outline-f6x accent-01"><input class="form-elem" type="checkbox" checked="checked"> <span class="form-text">form noti</span></label>
                                 <label class="form checkbox module-a type-fill outline-f6x accent-01"><input class="form-elem" type="checkbox" disabled="disabled"> <span class="form-text">form noti (disabled)</span></label>
                         </div>
                         <div class="col-4">
-                            <div class="types">style-c</div>
+                            <div class="types">switch</div>
                                 <label class="form switch module-a type-fill outline-f6x accent-01"><input class="form-elem" type="checkbox"> <span class="form-text">form noti</span></label>
->>>>>>> Stashed changes
                         </div>
                     </div>
                 </div>
@@ -156,94 +101,6 @@
                     <div class="row margin-xl">
                         <div class="col-6">
                             <div class="types">Radio</div>
-<<<<<<< Updated upstream
-                            <div class="tab-display module-b style-a type-d normal-01 outline-t12x" data-bui-tab="buiTabNormal">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text" href="#tabItem1st">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text" href="#tabItem2nd">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text" href="#tabItem3rd">3rd item</a></li>
-                                </ul>
-                            </div>
-                            <div id="tabItem1st" class="bui-tab-target active">
-                                <p class="em normal-01"><strong>1st item</strong></p>
-                                <p class="em normal-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel dolore magni beatae molestias tenetur veniam architecto asperiores perspiciatis accusamus minima cupiditate laborum quasi, perferendis voluptatum repellat harum quo aut!</p>
-                            </div>
-                            <div id="tabItem2nd" class="bui-tab-target">
-                                <p class="em normal-01"><strong>2nd item</strong></p>
-                                <p class="em normal-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, tempore. Nihil eius odio ullam, ea rerum perspiciatis molestias quod nesciunt suscipit pariatur, eum repellendus, sed ipsum hic ratione magni dolor!</p>
-                            </div>
-                            <div id="tabItem3rd" class="bui-tab-target">
-                                <p class="em normal-01"><strong>3rd item</strong></p>
-                                <p class="em normal-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, tempore. Nihil eius odio ullam, ea rerum perspiciatis molestias quod nesciunt suscipit pariatur, eum repellendus, sed ipsum hic ratione magni dolor!</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="types">Checkbox</div>
-                            <div class="tab-display module-c style-a type-d normal-01 outline-t12x" data-bui-tab="buiTabNormal">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text" href="#tab2Item1st">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text" href="#tab2Item2nd">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text" href="#tab2Item3rd">3rd item</a></li>
-                                </ul>
-                            </div>
-                            <div id="tab2Item1st" class="bui-tab-target active">
-                                <p class="em normal-01"><strong>1st item</strong></p>
-                                <p class="em normal-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel dolore magni beatae molestias tenetur veniam architecto asperiores perspiciatis accusamus minima cupiditate laborum quasi, perferendis voluptatum repellat harum quo aut!</p>
-                            </div>
-                            <div id="tab2Item2nd" class="bui-tab-target">
-                                <p class="em normal-01"><strong>2nd item</strong></p>
-                                <p class="em normal-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel dolore magni beatae molestias tenetur veniam architecto asperiores perspiciatis accusamus minima cupiditate laborum quasi, perferendis voluptatum repellat harum quo aut!</p>
-                            </div>
-                            <div id="tab2Item3rd" class="bui-tab-target">
-                                <p class="em normal-01"><strong>3rd item</strong></p>
-                                <p class="em normal-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, tempore. Nihil eius odio ullam, ea rerum perspiciatis molestias quod nesciunt suscipit pariatur, eum repellendus, sed ipsum hic ratione magni dolor!</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="tab-display module-d style-b type-d normal-01 outline-t12x" data-bui-tab="buiTabNormal">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text" href="#tab3Item1st">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text" href="#tab3Item2nd">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text" href="#tab3Item3rd">3rd item</a></li>
-                                </ul>
-                            </div>
-                            <div id="tab3Item1st" class="bui-tab-target active">
-                                <p class="em normal-01"><strong>1st item</strong></p>
-                                <p class="em normal-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel dolore magni beatae molestias tenetur veniam architecto asperiores perspiciatis accusamus minima cupiditate laborum quasi, perferendis voluptatum repellat harum quo aut!</p>
-                            </div>
-                            <div id="tab3Item2nd" class="bui-tab-target">
-                                <p class="em normal-01"><strong>2nd item</strong></p>
-                                <p class="em normal-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel dolore magni beatae molestias tenetur veniam architecto asperiores perspiciatis accusamus minima cupiditate laborum quasi, perferendis voluptatum repellat harum quo aut!</p>
-                            </div>
-                            <div id="tab3Item3rd" class="bui-tab-target">
-                                <p class="em normal-01"><strong>3rd item</strong></p>
-                                <p class="em normal-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel dolore magni beatae molestias tenetur veniam architecto asperiores perspiciatis accusamus minima cupiditate laborum quasi, perferendis voluptatum repellat harum quo aut!</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="tab-display module-e style-c type-d normal-01 outline-t12x" data-bui-tab="buiTabNormal">
-                                <ul class="tab-list">
-                                    <li class="tab-item current"><a class="tab-text" href="#tab4Item1st">1st item</a></li>
-                                    <li class="tab-item"><a class="tab-text" href="#tab4Item2nd">2nd item</a></li>
-                                    <li class="tab-item"><a class="tab-text" href="#tab4Item3rd">3rd item</a></li>
-                                </ul>
-                            </div>
-                            <div id="tab4Item1st" class="bui-tab-target active">
-                                <p class="em normal-01"><strong>1st item</strong></p>
-                                <p class="em normal-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel dolore magni beatae molestias tenetur veniam architecto asperiores perspiciatis accusamus minima cupiditate laborum quasi, perferendis voluptatum repellat harum quo aut!</p>
-                            </div>
-                            <div id="tab4Item2nd" class="bui-tab-target">
-                                <p class="em normal-01"><strong>2nd item</strong></p>
-                                <p class="em normal-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel dolore magni beatae molestias tenetur veniam architecto asperiores perspiciatis accusamus minima cupiditate laborum quasi, perferendis voluptatum repellat harum quo aut!</p>
-                            </div>
-                            <div id="tab4Item3rd" class="bui-tab-target">
-                                <p class="em normal-01"><strong>3rd item</strong></p>
-                                <p class="em normal-03">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vel dolore magni beatae molestias tenetur veniam architecto asperiores perspiciatis accusamus minima cupiditate laborum quasi, perferendis voluptatum repellat harum quo aut!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-=======
                                 <span class="form textfield module-b style-b type-line normal-04 outline-f8x flex">
                                     <input class="form-elem" type="text" data-bui-form-cancel="true" placeholder="Placeholder" value="outline-8x" />
                                 </span>
@@ -493,11 +350,13 @@
                     </div>
 
                 </div> -->
->>>>>>> Stashed changes
             </div>
         </div>
     </div>
-    @@include("../partials/guide.tail.html")
+    	<footer class="guide__footer">
+    		<p>© ALLFORLAND. All rights reserved</p>
+    	</footer>
+    </div>
 </body>
 
 </html>

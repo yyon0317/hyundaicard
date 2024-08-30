@@ -1,41 +1,117 @@
 
+
 .table{
+	$outline-tb: (
+	10: (
+		'font-weight': 400,
+	),
+	12: (
+		'font-weight': 400,
+	),
+	14: (
+		'font-weight': 400,
+	)
+	);
+
+	@each $i, $name in $outline-tb {
+		$gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
+		&.outline-tb#{$i}x {
+			@include set-vw(--line-height,$gutter-value);
+			@include set-vw(--height,$gutter-value);
+		}
+	}
 	&.style-a{
-		border: 1px solid #e1e1e1;
 		table{
 			width: 100%;
-			th,
-				td{
-					text-align: left;
-					height: auto;
-					@include set-pair-vw(padding, $gutter-2, $gutter-2);
-					&.text_usage {
-						@mixin text_usage {
-						  display: block;
-						  background-color: red;
-						  padding: initial;
-						}
-					  
-						@for $i from 1 through 20 {
-						  &_#{$i} {
-							@include text_usage;
-							$gutter-value: map-get($gutters, $i);
-							@include set-vw(width, $gutter-value);
-							@include set-vw(height, $gutter-value);
-						  }
-						}
-					  }
+			height: var(--height);
+			line-height: var(--line-height); 
+			font-size: calc(var(--line-height) / 2.8);
+			text-indent: 7px;
+			tr{
+				border-bottom: 0px solid #e1e1e1;
+				&:nth-child(1){
+					border-top: 1px solid #e1e1e1;
 				}
+				th,td{
+					text-align: left;
+					&.size_unit {
+						@mixin size_unit {
+							display: block;
+							background-color: red;
+							padding: initial;
+						}
+						@for $i from 1 through 20 {
+							&_#{$i} {
+								@include size_unit;
+								$gutter-value: map-get($gutters, $i);
+								@include set-vw(width, $gutter-value);
+								@include set-vw(height, $gutter-value);
+							}
+						}
+					}
+				}
+			}
+			
 			thead{
 				th{
-					background-color: #f8f8f8;
-					color: #000;
-					@include set-vw(font-size, $gutter-4);
+					background-color: var(--color-base-02);
 				}
 			}
 		}
 	}
 	&.style-b{
+		border-top: 1px solid #e1e1e1;
+		table{
+			width: 100%;
+			height: var(--height);
+			line-height: var(--line-height); 
+			font-size: calc(var(--line-height) / 2.8);
+			th,td{
+				text-align: center;
+				vertical-align: middle;
+				border-bottom: 1px solid #e1e1e1;
+			}
+			thead{
+				th{
+					background-color: #f8f8f8;
+					color: #000;
+				}
+			}
+			tbody{
+				th{
+					background-color: #f8f8f8;
+				}
+			}
+		}
+		&.table-horizontal{
+			th,
+			td{
+				text-align: left;
+				height: auto;
+				padding: 8px 25px;
+			}
+		}
+	}
+	&.style-c{
+		border: 1px solid #e1e1e1;
+		table{
+			width: 100%;
+			height: var(--height);
+			line-height: var(--line-height); 
+			font-size: calc(var(--line-height) / 2.8);
+			text-indent: 7px;
+			th,td{
+					text-align: left;
+					height: auto;
+				}
+			thead{
+				th{
+					color: #000;
+				}
+			}
+		}
+	}
+	&.style-d{
 		border-top: 1px solid #e1e1e1;
 		table{
 			width: 100%;
@@ -48,38 +124,10 @@
 			}
 			thead{
 				th{
-					background-color: #f8f8f8;
 					color: #000;
 					font-size: 14px;
 				}
 			}
-			tr.bg-gray{
-				background-color: #f8f8f8;
-			}
-			.td_subject{
-				text-align: left;
-				padding-left: 25px;
-				a{
-					&:hover{
-						color: #264998;
-						text-decoration: underline;
-					}
-				}
-			}
-			.cate{
-				display: inline-block;
-				border-radius: 3px;
-				margin-right: 8px;
-				background-color: #212e4e;
-				color: #fff;height: 28px;line-height: 28px;width: 40px;
-				text-align: center;font-weight: 700;font-size: 13px;
-			}
-			.in_file{
-				display: inline-block;
-				width: 16px;height: 18px;
-				background: url("../img/common/file-icon.png") no-repeat 50% 50%;font-size: 0;
-			}
-	
 			tbody{
 				th{
 					background-color: #f8f8f8;

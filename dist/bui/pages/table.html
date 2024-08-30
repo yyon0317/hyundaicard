@@ -67,26 +67,193 @@
     		</div>
     		<div class="version">v1.0.0</div>
     	</header>
-    <div id="guide" class="guide">
+    <div id="guide"class="guide">
         <div class="layer">
-            <div class="guide__title">Table</div>
-            <div class="guide__desc">
+            <div class="guide__title outline-12x">Table</div>
+            <div class="guide__desc line outline-5x">
                 테이블을 구성하는 기본 요소는 테이블 제목과 테이블 내용입니다. <br>
                 다양한 시나리오 및 장면에 따라 테이블 옵션, 테이블 내 검색필터와 검색 창, 페이지네이션, 뷰 옵션 등 을 추가하여 사용합니다.
             </div>
             <div class="guide__content">
-                <div class="guide__title2">Notice</div>
+                <div class="guide__title2 outline-7x">style</div>
+                <div class="guide__sample mb-xl">
+                    <div class="row margin-xl">
+                        <div class="col-12">
+                            <div class="types">style-a</div>
+                            <div class="table style-a outline-tb10x">
+                                <table>
+                                    <!-- <caption> 자유게시판 </caption> -->
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">header cell 1</th>
+                                            <th scope="col">header cell 2</th>
+                                            <th scope="col">header cell 3</th>
+                                            <th scope="col">header cell 4</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>data cell 1</td>
+                                            <td>data cell 1</td>
+                                            <td>data cell 1</td>
+                                            <td>data cell 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>data cell 2</td>
+                                            <td>data cell 2</td>
+                                            <td>data cell 2</td>
+                                            <td>data cell 2</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="colorbg-secondary-01 color-primary-01">data cell 3</td>
+                                            <td>data cell 3</td>
+                                            <td>data cell 3</td>
+                                            <td>data cell 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>data cell 4</td>
+                                            <td>data cell 4</td>
+                                            <td class="color-secondary-05 font-weight-700">data cell 4</td>
+                                            <td>data cell 4</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="types">style-b</div>
+                            <div class="table style-b outline-tb10x">
+                                <!-- <caption> 자유게시판 </caption> -->
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">header cell 1</th>
+                                            <th scope="col">header cell 2</th>
+                                            <th scope="col">header cell 3</th>
+                                            <th scope="col">header cell 4</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>data cell 1</td>
+                                            <td>data cell 1</td>
+                                            <td>data cell 1</td>
+                                            <td>data cell 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>data cell 2</td>
+                                            <td>data cell 2</td>
+                                            <td class="colorbg-secondary-07 color-primary-01 font-weight-700">data cell 2</td>
+                                            <td>data cell 2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>data cell 3</td>
+                                            <td>data cell 3</td>
+                                            <td>data cell 3</td>
+                                            <td>data cell 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>data cell 4</td>
+                                            <td>data cell 4</td>
+                                            <td>data cell 4</td>
+                                            <td>data cell 4</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="types">style-c</div>
+                            <div class="table style-c outline-tb10x">
+                                <!-- <caption> 자유게시판 </caption> -->
+                                <table>
+                                    <colgroup> 
+                                        <col style="background-color: #f8f8f8; width: 15%;"/>
+                                        <col style="width: 30%;"/>
+                                        <col style="width: 30%;"/>
+                                        <col style="width: 30%;"/>
+                                    </colgroup> 
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">header cell 1</th>
+                                            <td>data cell 1</td>
+                                            <td>data cell 2</td>
+                                            <td>data cell 3</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">header cell 2</th>
+                                            <td>data cell 1</td>
+                                            <td>data cell 2</td>
+                                            <td>data cell 3</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">header cell 3</th>
+                                            <td>data cell 1</td>
+                                            <td>data cell 2</td>
+                                            <td>data cell 3</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">header cell 4</th>
+                                            <td>data cell 1</td>
+                                            <td>data cell 2</td>
+                                            <td>data cell 3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="types">style-d</div>
+                            <div class="table style-d">
+                                <!-- <caption> 자유게시판 </caption> -->
+                                <table>
+                                    <colgroup> 
+                                        <col style="background-color: #f8f8f8;"/>
+                                    </colgroup> 
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">header cell 1</th>
+                                            <td>data cell 1</td>
+                                            <td>data cell 2</td>
+                                            <td>data cell 3</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">header cell 2</th>
+                                            <td>data cell 1</td>
+                                            <td>data cell 2</td>
+                                            <td>data cell 3</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">header cell 3</th>
+                                            <td>data cell 1</td>
+                                            <td>data cell 2</td>
+                                            <td>data cell 3</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">header cell 4</th>
+                                            <td>data cell 1</td>
+                                            <td>data cell 2</td>
+                                            <td>data cell 3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="guide__title2 outline-7x">Notice</div>
                 <article class="frm__search">
                     <div class="left list_total">
                         총 <b>107</b>건
                     </div>
                     <div class="right">
                         <div class="form-flexs form-search">
-                            <select name="" id="" class="select">
+                            <select name=""id=""class="select">
                                 <option value="">제목</option>
                             </select>
-                            <input type="text" class="input input-block" placeholder="검색어를 입력하세요.">
-                            <button type="submit" class="btn btn-white">검색</button>
+                            <input type="text"class="input input-block"placeholder="검색어를 입력하세요.">
+                            <button type="submit"class="btn btn-white">검색</button>
                         </div>
                     </div>
                 </article>
@@ -107,7 +274,7 @@
                             <tr class="bg-gray">
                                 <td>공지</td>
                                 <td><span class="cate">공지</span></td>
-                                <td class="td_subject"><a href="#">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <tdclass="td_subject"><a href="#">안내드립니다. 안내드립니다. 안내드립니다.</a></tdclass=>
                                 <td>2023-12-12</td>
                                 <td>관리자</td>
                                 <td>
@@ -119,7 +286,7 @@
                             <tr>
                                 <td>1</td>
                                 <td><span class="cate">공지</span></td>
-                                <td class="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <tdclass="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></tdclass=>
                                 <td>2023-12-12</td>
                                 <td>관리자</td>
                                 <td>
@@ -131,7 +298,7 @@
                             <tr>
                                 <td>2</td>
                                 <td><span class="cate">공지</span></td>
-                                <td class="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <tdclass="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></tdclass=>
                                 <td>2023-12-12</td>
                                 <td>관리자</td>
                                 <td>
@@ -143,7 +310,7 @@
                             <tr>
                                 <td>3</td>
                                 <td><span class="cate">공지</span></td>
-                                <td class="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <tdclass="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></tdclass=>
                                 <td>2023-12-12</td>
                                 <td>관리자</td>
                                 <td>
@@ -155,7 +322,7 @@
                             <tr>
                                 <td>4</td>
                                 <td><span class="cate">공지</span></td>
-                                <td class="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <tdclass="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></tdclass=>
                                 <td>2023-12-12</td>
                                 <td>관리자</td>
                                 <td>
@@ -167,7 +334,7 @@
                             <tr>
                                 <td>5</td>
                                 <td><span class="cate">공지</span></td>
-                                <td class="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <tdclass="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></tdclass=>
                                 <td>2023-12-12</td>
                                 <td>관리자</td>
                                 <td>
@@ -179,7 +346,55 @@
                             <tr>
                                 <td>6</td>
                                 <td><span class="cate">공지</span></td>
-                                <td class="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></td>
+                                <tdclass="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></tdclass=>
+                                <td>2023-12-12</td>
+                                <td>관리자</td>
+                                <td>
+                                    <span class="in_file">첨부파일</span>
+                                </td>
+                                <td>250</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>7</td>
+                                <td><span class="cate">공지</span></td>
+                                <tdclass="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></tdclass=>
+                                <td>2023-12-12</td>
+                                <td>관리자</td>
+                                <td>
+                                    <span class="in_file">첨부파일</span>
+                                </td>
+                                <td>250</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>8</td>
+                                <td><span class="cate">공지</span></td>
+                                <tdclass="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></tdclass=>
+                                <td>2023-12-12</td>
+                                <td>관리자</td>
+                                <td>
+                                    <span class="in_file">첨부파일</span>
+                                </td>
+                                <td>250</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>9</td>
+                                <td><span class="cate">공지</span></td>
+                                <tdclass="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></tdclass=>
+                                <td>2023-12-12</td>
+                                <td>관리자</td>
+                                <td>
+                                    <span class="in_file">첨부파일</span>
+                                </td>
+                                <td>250</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>10</td>
+                                <td><span class="cate">공지</span></td>
+                                <tdclass="td_subject"><a href="./view-default.html">안내드립니다. 안내드립니다. 안내드립니다.</a></tdclass=>
                                 <td>2023-12-12</td>
                                 <td>관리자</td>
                                 <td>
@@ -193,22 +408,22 @@
                 </div>
 
                 <div class="paging">
-                    <a href="#" class="fir"></a>
-                    <a href="#" class="prev"></a>
+                    <a href="#"class="fir"></a>
+                    <a href="#"class="prev"></a>
                     <span>
-                        <a class="page current" href="#">1</a>
-                        <a class="page" href="#">2</a>
-                        <a class="page" href="#">3</a>
-                        <a class="page" href="#">4</a>
-                        <a class="page" href="#">5</a>
-                        <a class="page" href="#">6</a>
+                        <a class="page current"href="#">1</a>
+                        <a class="page"href="#">2</a>
+                        <a class="page"href="#">3</a>
+                        <a class="page"href="#">4</a>
+                        <a class="page"href="#">5</a>
+                        <a class="page"href="#">6</a>
                     </span>
-                    <a href="#" class="next"></a>
-                    <a href="#" class="end"></a>
+                    <a href="#"class="next"></a>
+                    <a href="#"class="end"></a>
                 </div>
 
                 <div class="bo_l_btn">
-                    <a href="./write-default.html" class="btn btn-l btn-navy">글쓰기</a>
+                    <a href="./write-default.html"class="btn btn-l btn-navy">글쓰기</a>
                 </div>
 
                 
@@ -219,11 +434,11 @@
                     </div>
                     <div class="right">
                         <div class="form-flexs form-search">
-                            <select name="" id="" class="select">
+                            <select name=""id=""class="select">
                                 <option value="">제목</option>
                             </select>
-                            <input type="text" class="input input-block" placeholder="검색어를 입력하세요.">
-                            <button type="submit" class="btn btn-solid">검색</button>
+                            <input type="text"class="input input-block"placeholder="검색어를 입력하세요.">
+                            <button type="submit"class="btn btn-solid">검색</button>
                         </div>
                     </div>
                 </article>
@@ -352,7 +567,7 @@
                         
                 </div>
                 <div class="bo_l_btn">
-                    <a href="./write-default-2.html" class="btn btn-l btn-navy">글쓰기</a>
+                    <a href="./write-default-2.html"class="btn btn-l btn-navy">글쓰기</a>
                 </div>
 
                 <div class="guide__title2">FAQ</div>
@@ -428,7 +643,7 @@
                             </li>
                             
                     </ol>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

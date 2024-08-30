@@ -7,7 +7,6 @@ ul.tab-list {
 	padding: 0;
 	list-style: none;
 }
-
 .bui-tab-target {
 	&:not(.active) {
 		@include hidden;
@@ -119,13 +118,13 @@ ul.tab-list {
 		'accent-02': (
 			'none': (
 				'color':			var(--color-base-01),
-				'border-color':		var(--color-accent-020),
-				'background-color':	var(--color-accent-020),
+				'border-color':		var(--color-secondary-01),
+				'background-color':	var(--color-secondary-01),
 			),
 		)
 	); 
 
-	$outline: (
+	$outline-t: (
 		8: (
 			'font-weight': 400,
 		),
@@ -143,7 +142,13 @@ ul.tab-list {
 		),
 	);
 
-
+	@each $i, $name in $outline-t {
+		$gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
+		&.outline-t#{$i}x {
+			@include set-vw(--line-height,$gutter-value);
+			@include set-vw(--height,$gutter-value);
+		}
+	}
 	
 	// accent
 	@each $accent-name in $accent {
@@ -154,12 +159,12 @@ ul.tab-list {
 		}
 	}
 
-	@each $name in $outline {
-		&.outline-#{nth($name, 1)}x {
-			--height: #{nth($name, 1) * $gutter-1};
-			--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
-		}
-	}
+	// @each $name in $outline-t {
+	// 	&.outline-t#{nth($name, 1)}x {
+	// 		--height: #{nth($name, 1) * $gutter-1};
+	// 		--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
+	// 	}
+	// }
 
 	--normal-color: var(--color-base-09);
 	--normal-border-color: var(--color-base-05);
@@ -176,16 +181,16 @@ ul.tab-list {
 				justify-content: center;
 				white-space: nowrap;
 				text-align: center;
-				padding-right: calc(var(--height) / 2.4 - 1px);
-				padding-left: calc(var(--height) / 2.4 - 1px);
+				padding-right: calc(var(--height) / 4.4 - 1px);
+				padding-left: calc(var(--height) / 4.4 - 1px);
 				box-sizing: border-box;
 				border-style: solid;
 				border-width: 1px;
 				border-color: var(--normal-border-color);
-				height: var(--height);
-				line-height: var(--line-height); 
+				height: calc(var(--height) / 1.5);
+				line-height: calc(var(--line-height) / 1.5); 
 				color: var(--normal-color);
-				font-size: calc(var(--line-height) / 1.5);
+				font-size: calc(var(--line-height) / 3.3);
 			}   
 
 			&.current {				
@@ -261,8 +266,8 @@ ul.tab-list {
 		'accent-02': (
 			'none': (
 				'color':			var(--color-base-01),
-				'border-color':		var(--color-accent-020),
-				'background-color':	var(--color-accent-020),
+				'border-color':		var(--color-secondary-01),
+				'background-color':	var(--color-secondary-01),
 			),
 		)
 	);
@@ -284,7 +289,13 @@ ul.tab-list {
 			'font-weight': 400,
 		)
 	);
-
+	@each $i, $name in $outline-t {
+		$gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
+		&.outline-t#{$i}x {
+			@include set-vw(--line-height,$gutter-value);
+			@include set-vw(--height,$gutter-value);
+		}
+	}
 
 	
 	// accent
@@ -296,12 +307,12 @@ ul.tab-list {
 		}
 	}
 
-	@each $name in $outline-t {
-		&.outline-t#{nth($name, 1)}x {
-			--height: #{nth($name, 1) * $gutter-1};
-			--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
-		}
-	}
+	// @each $name in $outline-t {
+	// 	&.outline-t#{nth($name, 1)}x {
+	// 		--height: #{nth($name, 1) * $gutter-1};
+	// 		--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
+	// 	}
+	// }
 
 	--normal-color: var(--color-base-09);
 	--normal-border-color: var(--color-base-05);
@@ -324,12 +335,12 @@ ul.tab-list {
 				justify-content: center;
 				white-space: nowrap;
 				text-align: center;
-				padding-right: calc(var(--height) / 2.4 - 1px);
-				padding-left: calc(var(--height) / 2.4 - 1px);
+				padding-right: calc(var(--height) / 4.4 - 1px);
+				padding-left: calc(var(--height) / 4.4 - 1px);
 				box-sizing: border-box;
-				height: var(--height);
-				line-height: var(--line-height);
-				font-size: calc(var(--line-height) / 1.5);
+				height: calc(var(--height) / 1.5);
+				line-height: calc(var(--line-height) / 1.5);
+				font-size: calc(var(--line-height) / 3.3);
 				color: var(	--normal-color);
 			}
 
@@ -456,13 +467,13 @@ ul.tab-list {
 		'accent-02': (
 			'none': (
 				'color':			var(--color-base-12),
-				'border-color':		var(--color-accent-020),
+				'border-color':		var(--color-secondary-01),
 				'background-color':	var(--color-base-01),
 			),
 		)
 	);
 
-	$outline: (
+	$outline-t: (
 		8: (
 			'font-weight': 400,
 		),
@@ -474,7 +485,13 @@ ul.tab-list {
 		),
 	);
 
-
+	@each $i, $name in $outline-t {
+		$gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
+		&.outline-t#{$i}x {
+			@include set-vw(--line-height,$gutter-value);
+			@include set-vw(--height,$gutter-value);
+		}
+	}
 	
 	// accent
 	@each $accent-name in $accent {
@@ -485,23 +502,23 @@ ul.tab-list {
 		}
 	}
 
-	@each $name in $outline {
-		&.outline-#{nth($name, 1)}x {
-			--height: #{nth($name, 1) * $gutter-1};
-			--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
-		}
-	}
+	// @each $name in $outline-t {
+	// 	&.outline-t#{nth($name, 1)}x {
+	// 		--height: #{nth($name, 1) * $gutter-1};
+	// 		--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
+	// 	}
+	// }
 
 	--normal-color: var(--color-base-09);
-	--normal-border-color: var(--color-base-080);
-	background-color: var(--color-base-100);
+	--normal-border-color: var(--color-base-08);
+	background-color: var(--color-base-01);
 
 	.tab-list {
 		display: flex;
 		align-items: center;
 		
 		.tab-item {
-			box-shadow: inset 0 int(-2) 0 0 var(--normal-border-color);
+			box-shadow: inset 0 -2px 0 0 var(--normal-border-color);
 			background-color: var(--accent-background-color);
 
 			.tab-text {
@@ -510,17 +527,17 @@ ul.tab-list {
 				justify-content: center;
 				white-space: nowrap;
 				text-align: center;
-				padding-right: calc(var(--height) / 2.4 - 1px);
-				padding-left: calc(var(--height) / 2.4 - 1px);
-				height: var(--height);
-				line-height: var(--line-height);
-				font-size: calc(var(--line-height) / 1.5);
+				padding-right: calc(var(--height) / 4.4 - 1px);
+				padding-left: calc(var(--height) / 4.4 - 1px);
+				height: calc(var(--height) / 1.5);
+				line-height: calc(var(--line-height) / 1.5);
+				font-size: calc(var(--line-height) / 3.3);
 				color: var(--normal-color);
 			}
 
 			&.current {
 				.tab-text {
-					box-shadow: inset 0 int(-2) 0 0 var(--accent-border-color);
+					box-shadow: inset 0 -2px 0 0 var(--accent-border-color);
 					color: var(--accent-color);
 					font-weight: 500;
 				}
@@ -570,13 +587,13 @@ ul.tab-list {
 		'accent-02': (
 			'none': (
 				'color':			var(--color-base-01),
-				'border-color':		var(--color-accent-020),
-				'background-color':	var(--color-accent-020),
+				'border-color':		var(--color-secondary-01),
+				'background-color':	var(--color-secondary-01),
 			),
 		)
 	);
 
-	$outline: (
+	$outline-t: (
 		8: (
 			'font-weight': 400,
 		),
@@ -591,12 +608,15 @@ ul.tab-list {
 		),
 		16: (
 			'font-weight': 400,
-		),
-		28: (
-			'font-weight': 400,
 		)
 	);
-
+	@each $i, $name in $outline-t {
+		$gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
+		&.outline-t#{$i}x {
+			@include set-vw(--line-height,$gutter-value);
+			@include set-vw(--height,$gutter-value);
+		}
+	}
 
 	// accent
 	@each $accent-name in $accent {
@@ -607,16 +627,15 @@ ul.tab-list {
 		}
 	}
 
-	@each $name in $outline {
-		&.outline-#{nth($name, 1)}x {
-			--height: #{nth($name, 1) * $gutter-1};
-			--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
-		}
-	}
+	// @each $name in $outline-t {
+	// 	&.outline-t#{nth($name, 1)}x {
+	// 		--height: #{nth($name, 1) * $gutter-1};
+	// 		--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
+	// 	}
+	// }
 
 	--normal-color: var(--color-base-09);
 	--normal-border-color: var(--color-base-05);
-	--padding: 0 #{int(56)};
 
 	.tab-list {
 		position: relative;
@@ -636,11 +655,12 @@ ul.tab-list {
 				white-space: nowrap;
 				text-align: center;
 				box-sizing: border-box;
-				height: var(--height);
-				line-height: var(--line-height);
-				font-size: calc(var(--line-height) / 1.5);
+				height: calc(var(--height) / 1.5);
+				line-height: calc(var(--line-height) / 1.5);
+				font-size: calc(var(--line-height) / 3.3);
 				color: var(--normal-color);
-				padding: var(--padding);
+				padding-right: calc(var(--height) / 4.4 - 1px);
+				padding-left: calc(var(--height) / 4.4 - 1px);
 			}
 
 			&:focus-within,
@@ -708,433 +728,6 @@ ul.tab-list {
 		}
 	}
 }
-
-
-// tab temp-01
-.tab-display.module-f {
-	--line-height: var(--baseline-6x);
-	--font-size: calc(var(--line-height) / 1.5);
-	// --width: #{int(318)};
-	--accent-background-color: var(--color-base-12);
-	--accent-color: var(--color-base-01);
-	--color: var(--color-base-09);
-	--hash-color: var(--color-base-09);
-	--icon-color: var(--color-base-09);
-	--border-color: var(--color-base-05);
-	--border-radius: #{int(14)};
-
-	.tab-list {
-		display: flex;
-		flex-wrap: wrap;
-		column-gap: int(8);
-		
-		.tab-item {
-			display: flex;
-			// flex: 1 1 100%;
-
-			align-items: center;
-			column-gap: calc(var(--line-height) / 2);
-			position: relative;
-			// width: var(--width);
-
-			.tab-text {
-				display: flex;
-				flex: 1 1 100%;
-				flex-direction: column;
-				padding: int(12) int(18) int(12) int(48);
-				height: int(64);
-				box-sizing: border-box;
-				line-height: var(--line-height);
-				font-size: var(--font-size);
-				color: var(	--color);
-				border-style: solid;
-				border-width: 1px;
-				border-radius: var(--border-radius);
-				border-color: var(--border-color);
-
-				.sub-text {
-					display: block;
-					line-height: var(--baseline-4x);
-					font-size: calc(var(--baseline-4x) / 1.5);
-					font-weight: 400;
-					color: var(	--hash-color);
-				}
-
-				&::before {
-					content: '';
-					display: block;
-					position: absolute;
-					left:  calc(var(--line-height) / 2);
-					width: int(24);
-					height: int(24);
-					background-color: var(--icon-color);
-				}
-			}
-
-
-			&.current {
-				.tab-text {
-					font-weight: 500;
-					color: var(--accent-color);
-					border-color: var(--accent-border-color);
-					background-color: var(--accent-background-color);
-
-					.sub-text {
-						color: var(--accent-color);
-					}
-
-					&::before {
-						background-color: #FFFC0D;
-					}
-				}
-			}
-
-			&.cinema {
-				.tab-text {
-					&::before {
-						mask: icon(style-b, movie) no-repeat center/cover;
-					}
-				}
-
-				&.current {
-					.tab-text {
-						background-color: #019CDC;;
-					}
-				}
-			}
-
-			&.playground {
-				.tab-text {
-					&::before {
-						mask: icon(style-b, game) no-repeat center/cover;
-					}
-				}
-
-				&.current {
-					.tab-text {
-						background-color: #7E50F2;
-					}
-				}
-			}
-
-			&.gym {
-				.tab-text {
-					&::before {
-						mask: icon(style-b, cycling) no-repeat center/cover;
-					}
-				}
-
-				&.current {
-					.tab-text {
-						background-color: #329B84;
-					}
-				}
-			}
-
-			&.family {
-				.tab-text {
-					&::before {
-						mask: icon(style-b, love-house) no-repeat center/cover;
-					}
-				}
-
-				&.current {
-					.tab-text {
-						background-color: #FF7E00;
-					}
-				}
-			}
-
-			&.independent {
-				.tab-text {
-					&::before {
-						mask: icon(style-b, users) no-repeat center/cover;
-					}
-				}
-			}
-		}
-	}
-}
-
-
-
-// tab module-g
-.tab-display.module-g {
-	$accent: (
-		'normal-01': (
-			'none': (
-				'color':			var(--color-base-01),
-				'border-color':		var(--color-base-12),
-				'background-color':	var(--color-base-12),
-			),
-		),
-		'normal-02': (
-			'none': (
-				'color':			var(--color-base-01),
-				'border-color':		var(--color-base-11),
-				'background-color':	var(--color-base-11),
-			),
-		),
-		'normal-03': (
-			'none': (
-				'color':			var(--color-base-01),
-				'border-color':		var(--color-base-09),
-				'background-color':	var(--color-base-09),
-			),
-		),
-		'accent-01': (
-			'none': (
-				'color':			var(--color-base-01),
-				'border-color':		var(--color-secondary-08),
-				'background-color':	var(--color-secondary-08),
-			),
-		),
-		'accent-02': (
-			'none': (
-				'color':			var(--color-base-01),
-				'border-color':		var(--color-accent-020),
-				'background-color':	var(--color-accent-020),
-			),
-		)
-	);
-
-	// accent
-	@each $accent-name in $accent {
-		&.#{nth($accent-name, 1)} {
-			--accent-color: #{ map-get($accent, nth($accent-name, 1), 'none', 'color')};
-			--accent-border-color: #{ map-get($accent, nth($accent-name, 1), 'none', 'border-color')};
-			--accent-background-color: #{ map-get($accent, nth($accent-name, 1), 'none', 'background-color')};
-		}
-	}
-
-	&.type-c {
-		justify-content: center;
-	}
-
-	--mask-image: #{icon(style-b, premium)};
-
-	.tab-list {
-		// display: flex;
-		// flex-wrap: wrap;
-		// column-gap: int(24);
-		
-		.tab-item {
-			position: relative;
-
-			&::before,
-			&::after {
-				content: '';
-				display: block;
-				position: absolute;
-				top: 0;
-				left: calc(50% - int(23));
-				width: int(46);
-				height: int(46);
-				border-radius: int(12);
-
-			}
-
-			&::before {
-				z-index: 1;
-				background-color: var(--color-base-060);
-			}
-
-			&::after {
-				background-color: var(--color-secondary-08);
-				opacity: 0;
-			}
-
-			.tab-text {
-				position: relative;
-				z-index: 1;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				row-gap: int(4);
-				line-height: int(18);
-				font-size: calc(int(18) / 1.5);
-				color: var(--color);
-				text-align: center;
-
-				&::before {
-					content: '';
-					display: block;
-					width: int(46);
-					height: int(46);
-					mask-repeat: no-repeat;
-					mask-position: center;
-					mask-size: int(36);
-					mask-image: var(--mask-image);
-					background-color: var(--color-base-01);
-				}
-			}
-
-			&.all {
-				--mask-image: #{icon(style-b, entire)};
-			}
-
-			&.premium {
-				--mask-image: #{icon(style-b, premium)};
-			}
-
-			&.appliances {
-				--mask-image: #{icon(style-b, television)};
-			}
-
-			&.tablet {
-				--mask-image: #{icon(style-b, laptop)};
-			}
-
-			&.healthcare {
-				--mask-image: #{icon(style-b, cycling)};
-			}
-
-			&.lifestyle {
-				--mask-image: #{icon(style-b, sofa)};
-			}
-
-			&.giftcard {
-				--mask-image: #{icon(style-b, gift)};
-			}
-
-			
-			&.current {
-				@keyframes iconBefore {
-					from {
-						background-color: var(--color-base-060);
-						backdrop-filter: blur(0);
-						
-					}
-					to {
-						background-color: rgba(255, 255, 255, 0.18);
-						backdrop-filter: blur(int(8));
-					}
-				}
-			
-				@keyframes iconAfter {
-					from {
-						opacity: 0;
-						transform: translate(0, 0);
-					}
-					to {
-						opacity: 1;
-						transform: translate(int(8), int(-8));
-					}
-				}
-
-				&::before {
-					animation: iconBefore 0.25s 0s ease-in-out forwards;
-				}
-				
-				&::after {
-					animation: iconAfter 0.25s 0s ease-in-out forwards;
-				}
-			}
-		}
-	}
-}
-
-
-// tab temp-03
-.tab-display.module-h{
-
-	--color: var(--color-base-11);
-	--background-color: var(--color-base-090);
-	--accent-background-color: var(--color-base-01);
-
-	&.style-b {
-		.tab-list {
-			.tab-item {
-				.tab-text {
-					border-top-left-radius: int(20);
-					border-top-right-radius: int(20);
-					border-bottom-left-radius: int(20);
-				}
-			}
-		}
-	}
-
-	.tab-list {
-		display: flex;
-		column-gap: int(12);
-		row-gap: int(12);
-		
-		.tab-item {
-			display: flex;
-			// width: int(156);
-			width: var(--width);
-			height: int(124);
-
-			.tab-text {
-				display: flex;
-				flex-direction: column;
-				row-gap: int(16);
-				justify-content: space-between;
-				padding: int(20);
-				width: 100%;
-				box-sizing: border-box;
-				line-height: var(--baseline-6x);
-				font-size: calc(var(--baseline-6x) / 1.5);
-				font-weight: 500;
-				color: var(--color);
-				background-color: var(--background-color);
-				letter-spacing: int(-0.4);
-
-				.sub-text {
-					display: flex;
-					align-items: center;
-					line-height: var(--baseline-5x);
-					font-size: calc(var(--baseline-5x) / 1.5);
-					color: var(--color-base-09);
-
-					&::after {
-						content: '';
-						display: block;
-						width: int(20);
-						height: int(20);
-						background-color: var(--color-base-09);
-						mask: icon(style-a, chevron-right) no-repeat center/cover;
-					}
-				}
-			}
-
-
-			&.current {
-				.tab-text {
-					position: relative;
-					overflow: hidden;
-					border-style: solid;
-					border-width: int(2);
-					border-color: var(--color-secondary-08);
-
-					&::before {
-						display: block;
-						content: '';
-						position: absolute;
-						top: 0;
-						right: 0;
-						bottom: 0;
-						left: 0;
-						z-index: 1;
-						background-color: var(--accent-background-color);
-						background-size: int(85) int(85);
-						background-position: center;
-						background-repeat: no-repeat;
-						background-image: var(--background-image);
-					}
-				}
-			}
-		}
-	}
-}
-
-
-
-
-
-
-
-
 
 
 

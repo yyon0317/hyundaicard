@@ -1,3 +1,4 @@
+// import buiToggle from 'bui-toggle';
 // document.addEventListener('DOMContentLoaded', function() {
 //     const typedElements = document.querySelectorAll('.typed');
   
@@ -36,17 +37,52 @@ const passwordVisibility = function(selector, closestSelector) {
 		buttonText.innerText = '텍스트 보기';
 	}
 }
-function buiFormColorpicker(selector) {
-	selector.parentElement.dataset.buiFormValue = selector.value;
-	selector.parentElement.style.setProperty("--bui-form-value", selector.value);
-}
-window.buiFormColorpicker = buiFormColorpicker;
+document.addEventListener('DOMContentLoaded', function () {
+    // 모든 탭 그룹을 선택합니다.
+    const tabDisplays = document.querySelectorAll('[data-bui-tab="buiTabNormal"]');
+  
+    tabDisplays.forEach(tabDisplay => {
+      const tabItems = tabDisplay.querySelectorAll('.tab-item');
+      const tabContents = tabDisplay.parentElement.querySelectorAll('.bui-tab-target');
+  
+      // 각 탭에 클릭 이벤트 리스너를 추가합니다.
+      tabItems.forEach(item => {
+        item.addEventListener('click', function (event) {
+          event.preventDefault(); // 기본 링크 동작을 방지합니다.
+  
+          // 현재 탭 그룹 내 모든 탭과 콘텐츠의 활성 상태를 초기화합니다.
+          tabItems.forEach(tab => tab.classList.remove('current'));
+          tabContents.forEach(content => content.classList.remove('active'));
+  
+          // 클릭한 탭을 활성화합니다.
+          this.classList.add('current');
+  
+          // 연결된 콘텐츠를 활성화합니다.
+          const targetId = this.querySelector('a').getAttribute('href');
+          const targetContent = document.querySelector(targetId);
+          targetContent.classList.add('active');
+        });
+      });
+    });
+  });
+  
 
-const formInputCountView = function(selector, closestSelector) {
-	closestSelector.innerText = selector.value.length;
-}
-window.formInputCountView = formInputCountView;
 
+// /**
+//  * Module buiToggle dialogPopup
+//  * 
+//  * @param {String} selector
+//  * @param {Object} options
+// **/
+// const buiDialogPopup = new buiToggle('[data-bui-toggle="buiDialogPopup"]', {
+// 	reactTarget: 'html',
+// 	reactTargetActiveClass: 'active-bui-dialog-popup',
+// 	focusin: true,
+// 	focusout: true,
+// 	clickout: true,
+// 	clickoutTarget: '.popup-page-body',
+// });
+// window.buiDialogPopup = buiDialogPopup;
 
 // $(function() {
 

@@ -72,122 +72,142 @@
             <div class="guide__title outline-12x">Size Unit</div>
             <div class="guide__desc line outline-5x">
                 간격은 일관된 디자인을 만드는 데 도움이 되며 각 구성 요소 사이에 숨쉬는 공간을 제공하여 미니멀하고 깔끔한 디자인을 만듭니다. <br>
-                기본 단위는 4와 8의 배수에 기반한 7가지로 규정하여 사용합니다. (8의 배수는 가장 큰 기본 배수이며 8이 포함하고 있는 4의 배수도 사용 가능합니다.)
+                기본 단위는 4와 8의 배수에 기반한 7가지로 규정하여 사용합니다. (8의 배수는 가장 큰 기본 배수이며 8이 포함하고 있는 4의 배수도 사용 가능합니다.)<br>
+                720px 이하의 화면에서만 px단위로 입력된 값을 vw단위로 변환합니다.
             </div>
             <div class="guide__content">
-                    <div class="table style-a">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th scope="col">outline-*x</th>
-                                    <th scope="col">line-height</th>
-                                    <th scope="col">Demo</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="outline-5x">$gutter-1</td>
-                                    <td class="outline-5x">4px</td>
-                                    <td class="size_unit_1"></td>
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-2</td>
-                                    <td class="outline-5x">8px</td>
-                                    <td class="size_unit_2"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-3</td>
-                                    <td class="outline-5x">12px</td>
-                                    <td class="size_unit_3"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-4</td>
-                                    <td class="outline-5x">16px</td>
-                                    <td class="size_unit_4"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-5</td>
-                                    <td class="outline-5x">20px</td>
-                                    <td class="size_unit_5"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-6</td>
-                                    <td class="outline-5x">24px</td>
-                                    <td class="size_unit_6"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-7</td>
-                                    <td class="outline-5x">28px</td>
-                                    <td class="size_unit_7"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-8</td>
-                                    <td class="outline-5x">32px</td>
-                                    <td class="size_unit_8"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-9</td>
-                                    <td class="outline-5x">36px</td>
-                                    <td class="size_unit_9"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-10</td>
-                                    <td class="outline-5x">40px</td>
-                                    <td class="size_unit_10"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-11</td>
-                                    <td class="outline-5x">44px</td>
-                                    <td class="size_unit_11"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-12</td>
-                                    <td class="outline-5x">48px</td>
-                                    <td class="size_unit_12"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-13</td>
-                                    <td class="outline-5x">52px</td>
-                                    <td class="size_unit_13"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-14</td>
-                                    <td class="outline-5x">56px</td>
-                                    <td class="size_unit_14"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-15</td>
-                                    <td class="outline-5x">60px</td>
-                                    <td class="size_unit_15"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-16</td>
-                                    <td class="outline-5x">64px</td>
-                                    <td class="size_unit_16"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-17</td>
-                                    <td class="outline-5x">68px</td>
-                                    <td class="size_unit_17"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-18</td>
-                                    <td class="outline-5x">72px</td>
-                                    <td class="size_unit_18"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-19</td>
-                                    <td class="outline-5x">76px</td>
-                                    <td class="size_unit_19"></td>                                
-                                </tr>
-                                <tr>
-                                    <td class="outline-5x">$gutter-20</td>
-                                    <td class="outline-5x">80px</td>
-                                    <td class="size_unit_20"></td>                                
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="table style-a outline-tb12x">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">outline-*x</th>
+                                <th scope="col">line-height</th>
+                                <th scope="col">Demo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$gutter-1</td>
+                                <td>4px</td>
+                                <td class="size_unit_1"></td>
+                            </tr>
+                            <tr>
+                                <td>$gutter-2</td>
+                                <td>8px</td>
+                                <td class="size_unit_2"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-3</td>
+                                <td>12px</td>
+                                <td class="size_unit_3"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-4</td>
+                                <td>16px</td>
+                                <td class="size_unit_4"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-5</td>
+                                <td>20px</td>
+                                <td class="size_unit_5"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-6</td>
+                                <td>24px</td>
+                                <td class="size_unit_6"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-7</td>
+                                <td>28px</td>
+                                <td class="size_unit_7"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-8</td>
+                                <td>32px</td>
+                                <td class="size_unit_8"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-9</td>
+                                <td>36px</td>
+                                <td class="size_unit_9"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-10</td>
+                                <td>40px</td>
+                                <td class="size_unit_10"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-11</td>
+                                <td>44px</td>
+                                <td class="size_unit_11"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-12</td>
+                                <td>48px</td>
+                                <td class="size_unit_12"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-13</td>
+                                <td>52px</td>
+                                <td class="size_unit_13"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-14</td>
+                                <td>56px</td>
+                                <td class="size_unit_14"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-15</td>
+                                <td>60px</td>
+                                <td class="size_unit_15"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-16</td>
+                                <td>64px</td>
+                                <td class="size_unit_16"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-17</td>
+                                <td>68px</td>
+                                <td class="size_unit_17"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-18</td>
+                                <td>72px</td>
+                                <td class="size_unit_18"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-19</td>
+                                <td>76px</td>
+                                <td class="size_unit_19"></td>                                
+                            </tr>
+                            <tr>
+                                <td>$gutter-20</td>
+                                <td>80px</td>
+                                <td class="size_unit_20"></td>                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="guide__title4 outline-7x">SCSS</div>
+                <div class="row margin-m">
+                    <div class="col-12">
+                        <div class="guide__font">
+                            <div class="guide__subcont04">.my-element {
+                                @include set-vw(padding, 20px);
+                                @include set-vw(margin-top, 10px);
+                                @include set-vw(width, 300px);}<br>
+                                .my-container {
+                                @include set-pair-vw(margin, 20px, 40px);
+                                @include set-pair-vw(padding, 10px, 15px);}<br>
+                                @include SCREEN {
+                                background-color: lightblue;}<br>
+                                @include set-vw(font-size, $gutter-3);
+		                        @include set-pair-vw(padding, $gutter-11, 0px)
+                              </div>
+                        </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>

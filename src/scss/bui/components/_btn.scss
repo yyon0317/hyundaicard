@@ -104,7 +104,7 @@
 		)
 	);
 
-	$outline: (
+	$outline-b: (
 		6: (
 			'font-weight': 400,
 		),
@@ -140,9 +140,9 @@
 		}
 	}
 
-	@each $name in $outline {
+	@each $name in $outline-b {
 		// @debug "divider offset: #{nth($name, 1) * $BASELINE}";
-		&.outline-#{nth($name, 1)}x {
+		&.outline-b#{nth($name, 1)}x {
 			--height: #{nth($name, 1) * $gutter-1};
 			--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
 		}

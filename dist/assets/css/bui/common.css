@@ -1,12 +1,25 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.text-c {
+  text-align: center;
+}
+
+.text-l {
+  text-align: left;
+}
+
+.text-r {
+  text-align: right;
+}
+
 /* 기준 화면 너비 */
 /* pixel을 vw로 변환해주는 함수 */
 /* 특정 CSS 속성을 픽셀 단위와 반응형 vw 단위로 설정하는 믹스인 */
 /* 특정 CSS 속성에 대해 수직(vertical) 및 수평(horizontal) 값을 설정하는 믹스인 */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 .outline-3x {
   line-height: 12px;
   font-size: 8px;
+  line-height: 10px;
 }
 @media (max-width: 720px) {
   .outline-3x {
@@ -18,10 +31,16 @@
     font-size: 1.7094017094vw;
   }
 }
+@media (max-width: 720px) {
+  .outline-3x {
+    line-height: 2.1367521368vw;
+  }
+}
 
 .outline-4x {
   line-height: 16px;
   font-size: 10.6666666667px;
+  line-height: 13.3333333333px;
 }
 @media (max-width: 720px) {
   .outline-4x {
@@ -33,10 +52,16 @@
     font-size: 2.2792022792vw;
   }
 }
+@media (max-width: 720px) {
+  .outline-4x {
+    line-height: 2.849002849vw;
+  }
+}
 
 .outline-5x {
   line-height: 20px;
   font-size: 13.3333333333px;
+  line-height: 16.6666666667px;
 }
 @media (max-width: 720px) {
   .outline-5x {
@@ -48,10 +73,16 @@
     font-size: 2.849002849vw;
   }
 }
+@media (max-width: 720px) {
+  .outline-5x {
+    line-height: 3.5612535613vw;
+  }
+}
 
 .outline-6x {
   line-height: 24px;
   font-size: 16px;
+  line-height: 20px;
 }
 @media (max-width: 720px) {
   .outline-6x {
@@ -63,10 +94,16 @@
     font-size: 3.4188034188vw;
   }
 }
+@media (max-width: 720px) {
+  .outline-6x {
+    line-height: 4.2735042735vw;
+  }
+}
 
 .outline-7x {
   line-height: 28px;
   font-size: 18.6666666667px;
+  line-height: 23.3333333333px;
 }
 @media (max-width: 720px) {
   .outline-7x {
@@ -78,10 +115,16 @@
     font-size: 3.9886039886vw;
   }
 }
+@media (max-width: 720px) {
+  .outline-7x {
+    line-height: 4.9857549858vw;
+  }
+}
 
 .outline-8x {
   line-height: 32px;
   font-size: 21.3333333333px;
+  line-height: 26.6666666667px;
 }
 @media (max-width: 720px) {
   .outline-8x {
@@ -93,10 +136,16 @@
     font-size: 4.5584045584vw;
   }
 }
+@media (max-width: 720px) {
+  .outline-8x {
+    line-height: 5.698005698vw;
+  }
+}
 
 .outline-9x {
   line-height: 36px;
   font-size: 24px;
+  line-height: 30px;
 }
 @media (max-width: 720px) {
   .outline-9x {
@@ -108,10 +157,16 @@
     font-size: 5.1282051282vw;
   }
 }
+@media (max-width: 720px) {
+  .outline-9x {
+    line-height: 6.4102564103vw;
+  }
+}
 
 .outline-10x {
   line-height: 40px;
   font-size: 26.6666666667px;
+  line-height: 33.3333333333px;
 }
 @media (max-width: 720px) {
   .outline-10x {
@@ -123,10 +178,16 @@
     font-size: 5.698005698vw;
   }
 }
+@media (max-width: 720px) {
+  .outline-10x {
+    line-height: 7.1225071225vw;
+  }
+}
 
 .outline-11x {
   line-height: 44px;
   font-size: 29.3333333333px;
+  line-height: 36.6666666667px;
 }
 @media (max-width: 720px) {
   .outline-11x {
@@ -138,10 +199,16 @@
     font-size: 6.2678062678vw;
   }
 }
+@media (max-width: 720px) {
+  .outline-11x {
+    line-height: 7.8347578348vw;
+  }
+}
 
 .outline-12x {
   line-height: 48px;
   font-size: 32px;
+  line-height: 40px;
 }
 @media (max-width: 720px) {
   .outline-12x {
@@ -153,10 +220,16 @@
     font-size: 6.8376068376vw;
   }
 }
+@media (max-width: 720px) {
+  .outline-12x {
+    line-height: 8.547008547vw;
+  }
+}
 
 .outline-13x {
   line-height: 52px;
   font-size: 34.6666666667px;
+  line-height: 43.3333333333px;
 }
 @media (max-width: 720px) {
   .outline-13x {
@@ -166,6 +239,11 @@
 @media (max-width: 720px) {
   .outline-13x {
     font-size: 7.4074074074vw;
+  }
+}
+@media (max-width: 720px) {
+  .outline-13x {
+    line-height: 9.2592592593vw;
   }
 }
 
@@ -881,27 +959,27 @@ label {
   --border-color: var(--color-secondary-07);
   --background-color: var(--color-base-01);
 }
-.btn.outline-6x {
+.btn.outline-b6x {
   --height: 24px;
   --line-height: 12px;
 }
-.btn.outline-8x {
+.btn.outline-b8x {
   --height: 32px;
   --line-height: 16px;
 }
-.btn.outline-10x {
+.btn.outline-b10x {
   --height: 40px;
   --line-height: 20px;
 }
-.btn.outline-12x {
+.btn.outline-b12x {
   --height: 48px;
   --line-height: 24px;
 }
-.btn.outline-14x {
+.btn.outline-b14x {
   --height: 56px;
   --line-height: 28px;
 }
-.btn.outline-16x {
+.btn.outline-b16x {
   --height: 64px;
   --line-height: 32px;
 }

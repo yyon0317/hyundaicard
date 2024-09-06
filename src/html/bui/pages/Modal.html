@@ -22,61 +22,188 @@
                     <div class="col-12">
 
 
-                        <a class="bui-btn module-b style-c type-line outline-10x normal-04" href="#buiDialogPopupDemo" onclick="buiDialogPopup.active('buiDialogPopupDemo'); return false;"><span class="btn-text">팝업 열기</span></a>
+                        <a class="btn module-b style-c type-line outline-b10x normal-04" href="#buiDialogPopupDemo" onclick="togglePopup('buiDialogPopupDemo'); return false;"><span class="btn-text">팝업 열기</span></a>
+                        <a class="btn module-b style-c type-line outline-b10x normal-04" href="#buiInfoPopupDemo" onclick="togglePopup('buiInfoPopupDemo'); return false;"><span class="btn-text">팝업 열기</span></a>
+                        <a class="btn module-b style-c type-line outline-b10x normal-04" href="#buiContentPopupDemo" onclick="togglePopup('buiContentPopupDemo'); return false;"><span class="btn-text">팝업 열기</span></a>
+                        <a class="btn module-b style-c type-line outline-b10x normal-04" href="#buiFrontPopupDemo" onclick="togglePopup('buiFrontPopupDemo'); return false;"><span class="btn-text">팝업 열기</span></a>
+
+                        <!-- DialogPopup -->
+                        <div class="bui-dialog-popup module-a style-a type-a medium" data-bui-modal="buiDialogPopup" id="buiDialogPopupDemo">
+                            <div class="popup-page">
+                                <!-- popup-page-body -->
+                                <div class="popup-page-body">
+                                    <div class="popup-local">
+                                        <!-- popup-local-head -->
+                                        <div class="popup-local-head">
+                                            <h2 class="popup-local-subject"><span class="popup-local-name">Subject</span></h2>
+                                        </div>
+                                        <!-- //popup-local-head -->
+                                        <!-- popup-local-body -->
+                                        <div class="popup-local-body">
+                                            <div class="popup-content">
+                                                <!-- popup-content-body -->
+                                                <div class="popup-content-body">
+                                                    <!-- info-board -->
+                                                    <div class="bui-info-board module-a style-a type-c">
+                                                        <div class="board-wrap">
+                                                            <div class="board-head">
+                                                                <p class="board-summary">
+                                                                    <span>Lorem ipsum, dolor sit amet</span>
+                                                                    <span>consectetur adipisicing elit.</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //info-board -->
+                                                </div>
+                                                <!-- //popup-content-body -->
+                                            </div>
+                                        </div>
+                                        <!-- //popup-local-body -->
+                                        <!-- //popup-local-util -->
+                                        <div class="popup-local-util">
+                                            <div class="button-display">
+                                                <span class="button-area">
+                                                    <button class="btn module-b style-a type-none outline-b12x normal-01" type="button" onclick="togglePopup('buiDialogPopupDemo')"><span class="btn-text">cancel</span></button>
+                                                    <button class="btn module-b style-a type-fill outline-b12x accent-01" type="button" onclick="togglePopup('buiDialogPopupDemo')"><span class="btn-text">done</span></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- //popup-local-util -->
+                                    </div>
+                                </div>
+                                <!-- //popup-page-body -->
+                            </div>
+                        </div>
+                        <!-- //dialog-popup -->
 
 
-<!-- dialog-popup -->
-<div class="bui-dialog-popup module-a style-a type-a medium" data-bui-toggle="buiDialogPopup" id="buiDialogPopupDemo">
-	<div class="popup-page">
-		<!-- popup-page-body -->
-		<div class="popup-page-body">
-			<div class="popup-local">
-				<!-- popup-local-head -->
-				<div class="popup-local-head">
-					<h2 class="popup-local-subject"><span class="popup-local-name">Subject</span></h2>
-				</div>
-				<!-- //popup-local-head -->
-				<!-- popup-local-body -->
-				<div class="popup-local-body">
-					<div class="popup-content">
-						<!-- popup-content-body -->
-						<div class="popup-content-body">
-							<!-- info-board -->
-							<div class="bui-info-board module-a style-a type-c">
-								<div class="board-wrap">
-									<div class="board-head">
-										<p class="board-summary">
-											<span class="wbr">Lorem ipsum, dolor sit amet</span>
-											<span class="wbr">consectetur adipisicing elit.</span>
-										</p>
-									</div>
-								</div>
-							</div>
-							<!-- //info-board -->
-						</div>
-						<!-- //popup-content-body -->
-					</div>
-				</div>
-				<!-- //popup-local-body -->
-				<!-- //popup-local-util -->
-				<div class="popup-local-util">
-					<div class="button-display">
-						<span class="button-area">
-							<button class="bui-btn module-b style-a type-none outline-12x normal-01" type="button" onclick="buiDialogPopup.inactive('buiDialogPopupDemo')"><span class="btn-text">cancel</span></button>
-							<button class="bui-btn module-b style-a type-fill outline-12x accent-01" type="button"><span class="btn-text">done</span></button>
-						</span>
-					</div>
-				</div>
-				<!-- //popup-local-util -->
-			</div>
-		</div>
-		<!-- //popup-page-body -->
-	</div>
-</div>
-<!-- //dialog-popup -->
+                        <!-- info-popup -->
+                        <div class="bui-info-popup module-a style-a type-a medium" data-bui-modal="buiInfoPopup" id="buiInfoPopupDemo">
+                            <div class="popup-page">
+                                <!-- popup-page-body -->
+                                <div class="popup-page-body">
+                                    <div class="popup-local">
+                                        <!-- popup-local-head -->
+                                        <div class="popup-local-head">
+                                            <h2 class="popup-local-subject"><span class="popup-local-name">Subject</span></h2>
+                                        </div>
+                                        <!-- //popup-local-head -->
+                                        <!-- popup-local-body -->
+                                        <div class="popup-local-body">
+                                            <div class="popup-content">
+                                                <!-- popup-content-body -->
+                                                <div class="popup-content-body">
+                                                    <!-- info-board -->
+                                                    <div class="bui-info-board module-a style-a type-c">
+                                                        <div class="board-wrap">
+                                                            <div class="board-head">
+                                                                <p class="board-summary">
+                                                                    <span>Lorem ipsum, dolor sit amet</span>
+                                                                    <span>consectetur adipisicing elit.</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="board-util">
+                                                                <div class="button-display">
+                                                                    <span class="button-area">
+                                                                        <button class="btn module-b style-c type-line outline-b8x normal-04" type="button" onclick="togglePopup('buiInfoPopupDemo')"><span class="btn-text">confirm</span></button>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //info-board -->
+                                                </div>
+                                                <!-- //popup-content-body -->
+                                            </div>
+                                        </div>
+                                        <!-- //popup-local-body -->
+                                    </div>
+                                </div>
+                                <!-- //popup-page-body -->
+                            </div>
+                        </div>
+                        <!-- //dialog-popup -->
 
 
+                        <!-- content-popup -->
+                        <div class="bui-content-popup module-a style-a type-a medium" data-bui-modal="buiContentPopup" id="buiContentPopupDemo">
+                            <div class="popup-page">
+                                <!-- popup-page-body -->
+                                <div class="popup-page-body">
+                                    <div class="popup-local">
+                                        <!-- popup-local-head -->
+                                        <div class="popup-local-head">
+                                            <h2 class="popup-local-subject"><span class="popup-local-name">Subject</span></h2>
+                                        </div>
+                                        <!-- //popup-local-head -->
+                                        <!-- popup-local-body -->
+                                        <div class="popup-local-body">
+                                            <div class="popup-content">
+                                                <!-- popup-content-body -->
+                                                <div class="popup-content-body">
+                                                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                                                </div>
+                                                <!-- //popup-content-body -->
+                                            </div>
+                                        </div>
+                                        <!-- //popup-local-body -->
+                                        <!-- popup-local-util -->
+                                        <div class="popup-local-util">
+                                            <div class="button-display">
+                                                <span class="button-area">
+                                                    <button class="btn module-b style-a type-none outline-b12x normal-04 flex" type="button" onclick="togglePopup('buiContentPopupDemo')"><span class="btn-text">back</span></button>
+                                                    <button class="btn module-b style-a type-fill outline-b12x accent-01 flex" type="submit" disabled="disabled"><span class="btn-text">submit</span></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- //popup-local-util -->
+                                    </div>
+                                </div>
+                                <!-- //popup-page-body -->
+                            </div>
+                        </div>
+                        <!-- //content-popup -->
 
+
+                        <!-- front-popup -->
+                        <div class="bui-front-popup module-a style-a type-a" data-bui-modal="buiFrontPopup" id="buiFrontPopupDemo">
+                            <div class="popup-page">
+                                <!-- popup-page-body -->
+                                <div class="popup-page-body">
+                                    <div class="popup-local">
+                                        <!-- popup-local-head -->
+                                        <div class="popup-local-head">
+                                            <h2 class="popup-local-subject"><span class="popup-local-name">Subject</span></h2>
+                                        </div>
+                                        <!-- //popup-local-head -->
+                                        <!-- popup-local-body -->
+                                        <div class="popup-local-body">
+                                            <div class="popup-content">
+                                                <!-- popup-content-body -->
+                                                <div class="popup-content-body">
+                                                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                                                </div>
+                                                <!-- //popup-content-body -->
+                                            </div>
+                                        </div>
+                                        <!-- //popup-local-body -->
+                                        <!-- popup-local-util -->
+                                        <div class="popup-local-util">
+                                            <div class="button-display">
+                                                <span class="button-area">
+                                                    <button class="btn module-b style-b type-line outline-b12x normal-04" type="button"onclick="togglePopup('buiFrontPopupDemo')"><span class="btn-text">back</span></button>
+                                                    <button class="btn module-b style-b type-fill outline-b12x accent-01 flex" type="button" disabled="disabled"><span class="btn-text">button</span></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- //popup-local-util -->
+                                    </div>
+                                </div>
+                                <!-- //popup-page-body -->
+                            </div>
+                        </div>
+                        <!-- //FrontPopup -->
 
 
 

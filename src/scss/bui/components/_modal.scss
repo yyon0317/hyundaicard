@@ -5,25 +5,25 @@
 		.section-wrap {
 			display: flex;
 			flex-direction: column;	
-			row-gap: var(--bui-baseline-8x);
+			row-gap: $gutter-8;
 
 			.section-head {
 				display: flex;
 				flex-direction: column;			
-				row-gap: var(--bui-baseline-2x);
+				row-gap: $gutter-2;
 
 				.section-subject {
 					margin: 0;
-					line-height: var(--bui-baseline-6x);
-					font-size: calc(var(--bui-baseline-6x) / 1.5);
-					color: var(--color-normal-010);
+					line-height: $gutter-6;
+					font-size: calc($gutter-6 / 1.5);
+					color: var(--color-base-12);
 				}
 
 				.section-summary {
 					margin: 0;
-					line-height: var(--bui-baseline-6x);
-					font-size: calc(var(--bui-baseline-6x) / 1.5);
-					color: var(--color-normal-040);
+					line-height: $gutter-6;
+					font-size: calc($gutter-6 / 1.5);
+					color: var(--color-base-07);
 				}
 			}
 
@@ -48,7 +48,7 @@
 		overflow: hidden;
 	}
 
-	&[data-bui-toggle] {
+	&[data-bui-modal] {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -59,7 +59,7 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		padding: var(--bui-baseline-6x);;
+		padding: $gutter-6;
 		visibility: hidden;
 		background-color: rgba(0,0,0,0);
 		transition: visibility 0.25s ease, background-color 0.25s ease;
@@ -90,16 +90,16 @@
 		flex-direction: column;
 		position: relative;
 		overflow: hidden;
-		width: 320rem;
+		// width: 100%;
 		max-width: 100%;
 		
 		.popup-page-body {
 			display: flex;
 			flex-direction: column;
 			overflow: hidden;
-			border-radius: var(--bui-baseline-6x);;
-			background-color: var(--color-base-100);
-			box-shadow: 0 0 var(--bui-baseline-2x) 0 rgb(0 0 0 / 8%);
+			border-radius: $gutter-6;;
+			background-color: var(--color-base-01);
+			box-shadow: 0 0 $gutter-2 0 rgb(0 0 0 / 8%);
 			
 			.popup-local {
 				display: flex;
@@ -112,26 +112,26 @@
 
 				.popup-local-body {
 					flex: 1 1 100%;
-					padding: 0 var(--bui-baseline-5x);;
+					padding: 0 $gutter-5;;
 					// @include overflow-scroll(default, dark, medium, y);
 					
 					.popup-content {
 						.popup-content-body {
 							display: flex;
 							flex-direction: column;						
-							margin: var(--bui-baseline-9x) 0 var(--bui-baseline-7x) 0;
+							margin: $gutter-9 0 $gutter-7 0;
 						}
 					}
 				}
 	
 				.popup-local-util {
-					box-shadow: inset 0 1rem 0 0 var(--color-base-080);
+					// box-shadow: inset 0 1rem 0 0 var(--color-base-04);
 	
 					.button-display {
 						.button-area {
 							display: flex;
 	
-							.bui-btn {
+							.btn {
 								flex: 1 1 100%;
 							}
 						}
@@ -152,7 +152,7 @@
 		overflow: hidden;
 	}
 
-	&[data-bui-toggle] {
+	&[data-bui-modal] {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -163,7 +163,7 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		padding: var(--bui-baseline-6x);
+		padding: $gutter-6;
 		visibility: hidden;
 		background-color: rgba(0,0,0,0);
 		transition: visibility 0.25s ease, background-color 0.25s ease;
@@ -189,19 +189,19 @@
 		}
 	}
 
-	--width: 320rem;
-	--border-radius: var(--bui-baseline-6x);
-	--box-shadow: 0 0 var(--bui-baseline-2x) 0 rgb(0 0 0 / 8%);
-	--background-color: var(--bui-color-base-100);
-	--local-body-padding: 0 var(--bui-baseline-5x);
-	--content-body-margin: var(--bui-baseline-9x) 0 var(--bui-baseline-7x) 0;
+	--width: 100%;
+	--border-radius: 24px;
+	--box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%);
+	--background-color: var(--color-base-01);
+	--local-body-padding: 0 20px;
+	--content-body-margin: 36px 0 28px 0;
 
 	.popup-page {
 		display: flex;
 		flex-direction: column;
 		position: relative;
 		overflow: hidden;
-		width: var(--width);
+		// width: var(--width);
 		max-width: 100%;
 		
 		.popup-page-body {
@@ -211,6 +211,7 @@
 			border-radius: var(--border-radius);
 			background-color: var(--background-color);
 			box-shadow: var(--box-shadow);
+			text-align: center;
 			
 			.popup-local {
 				display: flex;
@@ -236,13 +237,13 @@
 				}
 	
 				.popup-local-util {
-					box-shadow: inset 0 1rem 0 0 var(--color-base-080);
+					// box-shadow: inset 0 1rem 0 0 var(--color-base-04);
 	
 					.button-display {
 						.button-area {
 							display: flex;
 	
-							.bui-btn {
+							.btn {
 								flex: 1 1 100%;
 							}
 						}
@@ -266,34 +267,34 @@
 
 	&.module-a {
 		// container
-		--container-padding: var(--bui-baseline-12x);
+		--container-padding: 48px;
 		--container-background-color: rgba(0,0,0,0.4);
 	
 		// page
 		--width: 480rem;
-		--border-radius: var(--bui-baseline-6x);
-		--box-shadow: 0 0 var(--bui-baseline-2x) 0 rgb(0 0 0 / 8%);
-		--background-color: var(--bui-color-base-100);
-		--local-body-padding: 0 var(--bui-baseline-5x);
-		--content-body-margin: var(--bui-baseline-9x) 0 var(--bui-baseline-7x) 0;
+		--border-radius: 24px;
+		--box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%);
+		--background-color: var(--color-base-01);
+		--local-body-padding: 0 10px;
+		--content-body-margin: 18px 0 14px 0;
 	
 		// local head
-		--local-head-padding: 0 var(--bui-baseline-5x);
-		--local-head-height: var(--bui-baseline-12x);
+		--local-head-padding: 0 10px;
+		--local-head-height: 48px;
 	
 		// local subject
-		--local-subject-padding: 0 calc(var(--bui-baseline-7x) + var(--bui-baseline-2x));
-		--local-subject-line-height: var(--bui-baseline-7x);
+		--local-subject-padding: 0 calc(28px + 4px);
+		--local-subject-line-height: 28px;
 		--local-subject-font-size: calc(var(--local-subject-line-height) / 1.5);
 		--local-subject-font-weight: 500;
-		--local-subject-color: var(--bui-color-normal-010);
+		--local-subject-color: var(--color-base-12);
 
-		--local-body-padding: 0 var(--bui-baseline-5x);
+		--local-body-padding: 0 20px;
 	
 		// local func
-		--local-func-button-height: var(--bui-baseline-7x);
+		--local-func-button-height: 28px;
 		--local-func-button-icon: #{icon(style-a, close)};
-		--local-func-button-color: var(--bui-color-normal-010);
+		--local-func-button-color: var(--color-base-12);
 	
 		--local-func-padding: 0 calc((var(--local-head-height) - var(--local-func-button-height)) / 2 );
 		--local-func-height: var(--local-head-height);
@@ -302,9 +303,9 @@
 		--local-util-padding: 0;
 
 		// content body
-		--content-body-margin: var(--bui-baseline-10x) 0;
+		--content-body-margin: 40px 0;
 	
-		&[data-bui-toggle] {
+		&[data-bui-modal] {
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -348,7 +349,7 @@
 			flex-direction: column;
 			position: relative;
 			overflow: hidden;
-			width: var(--width);
+			// width: var(--width);
 			max-width: 100%;
 			
 			.popup-page-body {
@@ -357,10 +358,8 @@
 				overflow: hidden;
 				border-radius: var(--border-radius);
 				background-color: var(--background-color);
-				box-shadow: var(--box-shadow);
 				
 				.popup-local {
-					flex: 1 1 00%;
 					display: flex;
 					flex-direction: column;
 					overflow: hidden;
@@ -412,59 +411,15 @@
 					}
 		
 					.popup-local-util {
-						padding: var();
-						box-shadow: inset 0 1rem 0 0 var(--color-base-080);
+						// padding: var();
+						// box-shadow: inset 0 1rem 0 0 var(--color-base-04);
 		
 						.button-display {
 							.button-area {
 								display: flex;
 		
-								.bui-btn {
+								.btn {
 									flex: 1 1 100%;
-								}
-							}
-						}
-					}
-					
-					.popup-local-func {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						position: absolute;
-						top: 0;
-						right: 0;
-						padding: var(--local-func-padding);
-						height: var(--local-func-height);
-				
-						.button-area {		
-							.bui-btn {
-								display: block;
-								position: relative;
-								width: var(--local-func-button-height);
-								height: var(--local-func-button-height);
-					
-								.btn-text {
-									@include hidden;
-								}
-					
-								&::before {
-									content: '';
-									display: block;
-									position: absolute;
-									top: 0;
-									left: 0;
-									width: 100%;
-									height: 100%;
-									mask-repeat: no-repeat;
-									mask-position: center;
-									mask-size: cover;
-									background-color: var(--local-func-button-color);
-								}
-				
-								&.popup-close {
-									&::before {
-										mask-image: var(--local-func-button-icon);
-									}
 								}
 							}
 						}
@@ -485,7 +440,7 @@
 		overflow: hidden;
 	}
 
-	&[data-bui-toggle] {
+	&[data-bui-modal] {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -529,16 +484,17 @@
 		flex-direction: column;
 		position: relative;
 		overflow: hidden;
-		width: 440rem;
+		// width: 440rem;
 		max-width: 100%;
+		width: 100%;
 		
 		.popup-page-body {
 			flex: 1 1 00%;
 			display: flex;
 			flex-direction: column;
 			overflow: hidden;
-			background-color: var(--bui-color-base-100);
-			box-shadow: 0 0 var(--bui-baseline-2x) 0 rgb(0 0 0 / 8%);
+			background-color: var(--color-base-01);
+			// box-shadow: 0 0 $gutter-2 0 rgb(0 0 0 / 8%);
 			
 			.popup-local {
 				flex: 1 1 00%;
@@ -551,19 +507,19 @@
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
-					padding: 0 var(--bui-baseline-5x);
-					height: var(--bui-baseline-12x);
+					padding: 0 $gutter-5;
+					height: $gutter-12;
 					
 					.popup-local-subject {
 						display: flex;
 						justify-content: center;
 						align-items: center;
 						margin: 0;
-						padding: 0 calc(var(--bui-baseline-7x) + var(--bui-baseline-2x));
-						line-height: var(--bui-baseline-7x);
-						font-size: calc(var(--bui-baseline-7x) / 1.5);
+						padding: 0 calc($gutter-7 + $gutter-2);
+						line-height: $gutter-7;
+						font-size: calc($gutter-7 / 1.5);
 						font-weight: 500;
-						color: var(--bui-color-normal-010);
+						color: var(--color-base-12);
 						
 						.popup-local-name {
 							display: block;
@@ -577,19 +533,19 @@
 	
 				.popup-local-body {
 					flex: 1 1 100%;
-					padding: 0 var(--bui-baseline-5x);
+					padding: 0 $gutter-5;
 					// @include overflow-scroll(default, dark, medium, y);
 					
 					.popup-content {
 						.popup-content-body {
 							display: flex;
 							flex-direction: column;						
-							margin: var(--bui-baseline-10x) 0;
+							margin: $gutter-10 0;
 
 							@include popup-section;
 
 							.noti-board {
-								margin-top: var(--bui-baseline-10x);
+								margin-top: $gutter-10;
 							}
 						}
 					}
@@ -597,59 +553,17 @@
 	
 				.popup-local-util {
 					flex-shrink: 0;
-					box-shadow: inset 0 1rem 0 0 var(--bui-color-base-090);
+					// box-shadow: inset 0 1rem 0 0 var(--color-base-03);
 	
 					.button-display {
-						padding: var(--bui-baseline-3x) var(--bui-baseline-2x);
+						padding: $gutter-3 $gutter-2;
 	
 						.button-area {
+							display: flex;
 							// @include area-gap(8rem);
 
-							.bui-btn {
-								min-width: 104rem;
-							}
-						}
-					}
-				}
-				
-				.popup-local-func {
-					display: flex;
-					align-items: center;
-					position: absolute;
-					top: 0;
-					right: var(--bui-baseline-5x);
-					height: var(--bui-baseline-12x);
-			
-					.button-area {		
-						.bui-btn {
-							display: block;
-							position: relative;
-							width: var(--bui-baseline-7x);
-							height: var(--bui-baseline-7x);
-				
-							.btn-text {
-								@include hidden;
-							}
-				
-							&::before {
-								content: '';
-								display: block;
-								position: absolute;
-								top: 0;
-								left: 0;
-								width: 100%;
-								height: 100%;
-								mask-repeat: no-repeat;
-								mask-position: center;
-								mask-size: cover;
-								background-color: var(--bui-color-normal-010);
-								
-							}
-			
-							&.popup-close {
-								&::before {
-									mask-image: icon(style-a, close-small);
-								}
+							.btn {
+								flex: 1 1 100%;
 							}
 						}
 					}
@@ -658,174 +572,6 @@
 		}
 	}
 }
-
-
-/**
- * @type		component
- * @name		content-popup
- * @moudle		module-a
-**/
-.bui-toast-popup.module-a {
-	@at-root html.active-content-popup body {
-		overflow-y: hidden;
-	}
-
-	&[data-bui-toggle] {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		position: fixed;
-		z-index: 60;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		visibility: hidden;
-		background-color: rgba(0,0,0,0);
-		transition: visibility 0.25s ease, background-color 0.25s ease;
-		pointer-events: none;
-
-		.popup-page {
-			.popup-page-body {
-				opacity: 0;
-				transform: translate(0, 100%);
-				transition: opacity 0.25s ease, transform 0.25s ease;
-			}
-		}
-	
-		&.active {
-			visibility: visible;
-			background-color: rgba(0,0,0,0.4);
-			pointer-events: auto; // dimmed background click disabled
-
-			.popup-page {
-				.popup-page-body {
-					opacity: 1;
-					transform: translate(0, 0);
-				}
-			}
-		}
-	}
-
-	.popup-page {
-		flex: 1 1 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		overflow: hidden;
-		position: relative;
-		padding-top: 48rem;
-		width: 440rem;
-		max-width: 100%;
-
-		.popup-page-body {
-			display: flex;
-			flex-direction: column;
-			overflow: hidden;
-			border-top-right-radius: 24rem;
-			border-top-left-radius: 24rem;
-			box-shadow: 0px -4rem 8rem rgba(0,0,0,0.08);
-			background-color: var(--color-base-100);
-
-			.popup-local {
-				flex: 1 1 100%;
-				display: flex;
-				flex-direction: column;
-				overflow: hidden;
-
-				.popup-local-head {
-					flex-shrink: 0;
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					padding: 0 20rem;
-					height: 72rem;
-		
-					.popup-local-subject {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						margin: 0;
-						padding: 0 calc(28rem + 8rem);
-						color: var(--color-normal-010);
-						
-						.popup-local-name {
-							display: block;
-							white-space: nowrap;
-							overflow: hidden;
-							text-overflow: ellipsis;
-							text-align: center;
-						}
-					}
-				}
-
-				.popup-local-body {
-					flex: 1 1 100%;
-					// margin-top: 24rem;
-					padding: 0 20rem;
-					// @include overflow-scroll(default, dark, medium, y);
-					
-					.popup-content {
-						.popup-content-body {
-							margin-bottom: 24rem;
-
-							>.info-board.module-b {
-								margin-bottom: 24rem;
-							}
-						}
-					}
-				}
-
-
-				.popup-local-func {
-					display: flex;
-					align-items: center;
-					position: absolute;
-					top: 0;
-					right: 20rem;
-					height: 72rem;
-			
-					.button-area {		
-						.btn {
-							display: block;
-							position: relative;
-							width: 24rem;
-							height: 24rem;
-				
-							.btn-text {
-								@include hidden;
-							}
-				
-							&::before {
-								content: '';
-								display: block;
-								position: absolute;
-								top: 0;
-								left: 0;
-								width: 100%;
-								height: 100%;
-								mask-repeat: no-repeat;
-								mask-position: center;
-								mask-size: cover;
-								background-color: var(--color-base-090);
-							}
-			
-							&.popup-close {
-								&::before {
-									mask-image: icon(style-a, close-small);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-
-
 
 
 

@@ -63,26 +63,39 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-
     document.addEventListener('DOMContentLoaded', function () {
         // 모든 탭 그룹을 선택합니다.
-        const tabDisplays = document.querySelectorAll('[data-bui-dropdown="buidropdownNormal"]');
-    
-        tabDisplays.forEach(tabDisplay => {
-        const tabItems = tabDisplay.querySelectorAll('.expand');
-        const tabContents = tabDisplay.parentElement.querySelectorAll('.posts-side');
-    
-          // 각 탭에 클릭 이벤트 리스너를 추가합니다.
-                tabItems.forEach(item => {
-                    item.addEventListener('click', function (event) {
+        const dropDisplays = document.querySelectorAll('[data-bui-dropdown="dropdowngroup"]');
+
+        dropDisplays.forEach(dropDisplay => {
+            const dropItems = dropDisplay.querySelectorAll('.btn.expand');
+            const dropContents = document.querySelectorAll('.posts-side');
+
+            // 각 탭에 클릭 이벤트 리스너를 추가합니다.
+            dropItems.forEach(item => {
+                item.addEventListener('click', function (event) {
                     event.preventDefault(); // 기본 링크 동작을 방지합니다.
-                    // 현재 탭 그룹 내 모든 탭과 콘텐츠의 활성 상태를 초기화합니다.
-                    tabContents.forEach(content => content.classList.remove('active'));
-                    
-                    });
+
+                    // 클릭된 버튼이 활성화 상태인지 확인합니다.
+                    const isActive = item.classList.contains('active');
+
+                    // 모든 탭 그룹의 .posts-item 요소와 .btn, .posts-side의 active 상태를 초기화합니다.
+                    dropDisplays.forEach(display => display.classList.remove('active'));
+                    dropItems.forEach(btn => btn.classList.remove('active'));
+                    dropContents.forEach(content => content.classList.remove('active'));
+
+                    // 클릭한 버튼이 비활성화 상태였다면, active 클래스를 추가합니다.
+                    if (!isActive) {
+                        const postItem = item.closest('.posts-item');
+                        postItem.classList.add('active');
+                        item.classList.add('active');
+                        const content = postItem.querySelector('.posts-side');
+                        content.classList.add('active');
+                    }
                 });
             });
         });
+    });
 
 
     function togglePopup(popupId) {

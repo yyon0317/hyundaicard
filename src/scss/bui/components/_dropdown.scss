@@ -334,7 +334,7 @@ ul.posts-list {
 								display: block;
 								width: 24px;
 								height: 24px;
-								mask: icon(style-a, chevron-down) no-repeat center/cover;
+								mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='rgb(0, 0, 0)' d='M6.228 8.225a.761.761 0 0 0 0 1.086L12 15l5.772-5.689a.762.762 0 0 0 0-1.086.785.785 0 0 0-1.1 0L12 12.827 7.328 8.225a.785.785 0 0 0-1.1 0Z'/></svg>") no-repeat center/cover;
 								background-color: var(--color-base-10);
 								transition: transform 0.5s ease; //20240329 라인수정
 							}

@@ -40,12 +40,12 @@ ul.posts-list {
 		justify-content: center;
 		flex-direction: column;
 		.posts-item {
-			flex-shrink: 0;
-			display: flex;
-			position: relative;
-			// padding: var(--padding);
-			width: var(--width);
-			box-sizing: border-box;
+			// flex-shrink: 0;
+			// display: flex;
+			// position: relative;
+			// // padding: var(--padding);
+			// width: var(--width);
+			// box-sizing: border-box;
 
 			.posts-wrap {
 				display: flex;
@@ -90,8 +90,6 @@ ul.posts-list {
 					.posts-head {
 						.posts-subject {
 							margin: 0;
-							// line-height: var(--head-line-height);
-							// font-size: calc(var(--head-line-height) / 1.5);
 							font-weight: var(--head-font-weight);
 							color: var(--head-color);
 
@@ -102,10 +100,7 @@ ul.posts-list {
 					}
 
 					.posts-body {
-						// line-height: var(--body-line-height);
-						// font-size: calc(var(--body-line-height) / 1.5);
 						font-weight: var(--body-font-weight);
-						letter-spacing: -0.333px;
 						color: var(--body-color);
 
 						.para {
@@ -126,8 +121,6 @@ ul.posts-list {
 								display: flex;
 								flex-wrap: wrap;
 								column-gap: 0.25em;
-								// line-height: $gutter-4;
-								// font-size: calc($gutter-4 / 1.5);
 								font-weight: 500;
 								color: var(--color-base-07);
 					
@@ -151,6 +144,7 @@ ul.posts-list {
 						.btn {
 							font-weight: 500;
 							text-decoration: none;
+							padding: 0;
 						}
 					}
 				}
@@ -176,7 +170,7 @@ ul.posts-list {
 				}
 
 				.posts-wrap {	
-					column-gap: 16px;
+					@include set-vw(column-gap, 16px);
 
 					.posts-inform {
 						.posts-head {
@@ -258,6 +252,13 @@ ul.posts-list {
 										}
 									}
 								}
+							}
+						}
+						.posts-func{
+
+
+							.btn.expand::before {
+								transform: rotate(180deg);
 							}
 						}
 					}
@@ -353,10 +354,6 @@ ul.posts-list {
 
 							.btn-text {
 								@include hidden;
-							}
-
-							&.active::before {
-								transform: rotate(180deg);
 							}
 						}
 					}
@@ -548,6 +545,9 @@ ul.posts-list {
 					display: none;
 				}
 			}
+			&:last-child{
+				border-bottom: 1px solid var(--color-base-04);
+			}
 		}
 	}
 }
@@ -608,7 +608,7 @@ ul.posts-list {
 								width: $gutter-5;
 								height: $gutter-5;
 								background-color: var(--color-base-09);
-								mask: icon(style-a, chevron-right) no-repeat center/cover;
+								mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='rgb(0, 0, 0)' d='M9.33979 6.52045C9.63268 6.22756 10.1076 6.22756 10.4004 6.52045L15.8805 12.0005L10.4004 17.4806C10.1076 17.7735 9.63268 17.7735 9.33979 17.4806C9.04689 17.1877 9.04689 16.7128 9.33979 16.4199L13.7592 12.0005L9.33979 7.58111C9.04689 7.28822 9.04689 6.81334 9.33979 6.52045Z'/></svg>");
 							}
 						}
 					}

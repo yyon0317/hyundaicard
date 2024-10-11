@@ -120,7 +120,7 @@ $gutters: (
 @for $i from 3 through 13 {
   $gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
   .outline-#{$i}x {
-    @include set-vw(line-height,$gutter-value);
+    // @include set-vw(height,$gutter-value);
     @include set-vw(font-size, calc($gutter-value/ 1.5));
     @include set-vw(line-height, calc($gutter-value/ 1.2));
   }

@@ -101,6 +101,23 @@
 				'border-color':		var(--color-secondary-07),
 				'background-color':	var(--color-base-01),
 			),
+		),
+		'accent-03': (
+			'none': (
+				'color':			var(--color-secondary-09),
+				'border-color':		transparent,
+				'background-color':	transparent,
+			),
+			'fill': (
+				'color':			var(--color-base-01),
+				'border-color':		var(--color-secondary-09),
+				'background-color':	var(--color-secondary-09),
+			),
+			'line': (
+				'color':			var(--color-secondary-09),
+				'border-color':		var(--color-secondary-09),
+				'background-color':	var(--color-base-01),
+			),
 		)
 	);
 
@@ -140,11 +157,19 @@
 		}
 	}
 
-	@each $name in $outline-b {
-		// @debug "divider offset: #{nth($name, 1) * $BASELINE}";
-		&.outline-b#{nth($name, 1)}x {
-			--height: #{nth($name, 1) * $gutter-1};
-			--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
+	// @each $name in $outline-b {
+	// 	// @debug "divider offset: #{nth($name, 1) * $BASELINE}";
+	// 	&.outline-b#{nth($name, 1)}x {
+	// 		--height: #{nth($name, 1) * $gutter-1};
+	// 		--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
+	// 	}
+	// }
+
+	@each $i, $name in $outline-b {
+		$gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
+		&.outline-b#{$i}x {
+			@include set-vw(--line-height,$gutter-value);
+			@include set-vw(--height,$gutter-value);
 		}
 	}
 
@@ -158,8 +183,8 @@
 	box-sizing: border-box;
 	border-style: solid;
 	@include set-vw(border-width, 1px);
-	line-height: var(--line-height);
-	font-size: calc(var(--line-height) / 1.5);
+	line-height:  calc((var(--line-height) / 1.5));
+	font-size: calc(var(--line-height) / 3);
 	color: var(--color);
 	border-color: var(--border-color);
 	background-color: var(--background-color);
@@ -185,6 +210,23 @@
 		justify-content: center;
 		white-space: nowrap;
 		text-align: center;
+	}
+
+	&.ico{
+		&::after{
+			content: "";
+			@include set-vw(width, 24px);
+			@include set-vw(height, 24px);
+			mask-repeat: no-repeat;
+			mask-position: center center;
+			mask-size: 100% auto;
+		}
+		&.arrow_right_w{
+			&::after{
+				mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='rgb(0, 0, 0)' d='M12.3129 6.37397C12.6058 6.08107 13.0807 6.08107 13.3736 6.37397L18.5 11.5004L13.3735 16.6269C13.0806 16.9198 12.6057 16.9198 12.3128 16.6269C12.0199 16.334 12.0199 15.8591 12.3128 15.5662L15.6287 12.2504H6.25C5.83579 12.2504 5.5 11.9146 5.5 11.5004C5.5 11.0862 5.83579 10.7504 6.25 10.7504H15.6287L12.3129 7.43463C12.02 7.14173 12.02 6.66686 12.3129 6.37397Z'/></svg>");
+				background-color:  var(--color-base-01);
+			}
+		}
 	}
 }
 

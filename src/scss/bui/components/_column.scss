@@ -1,7 +1,7 @@
 @mixin gutter($size) {
     margin: 0 calc($size / 2 * -1);
     [class^="col-"] {
-        padding: 0 calc($size / 2);
+        // padding: 0 calc($size / 2);
         padding-top: calc($size / 2 * 2);
         padding-bottom: calc($size / 2 * 2);
     }

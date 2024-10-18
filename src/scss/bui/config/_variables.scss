@@ -125,7 +125,13 @@ $gutters: (
     @include set-vw(line-height, calc($gutter-value/ 1.2));
   }
 }
-
+@for $i from 1 through 13 {
+  $gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
+  .mbt-#{$i}x {
+    // @include set-vw(height,$gutter-value);
+    @include set-vw(margin-bottom, $gutter-value);
+  }
+}
 
 $brandColor : (
   #264998,
@@ -142,6 +148,10 @@ $grid-breakpoints: (
   lg: 1000px,
   xl: 1120px
 );
+
+
+
+
 
 // 4의배수
 //--baseline-0x: 0px--baseline-1x: 4px--baseline-2x: 8px--baseline-3x: 12px--baseline-4x: 16px var(--baseline-2x)

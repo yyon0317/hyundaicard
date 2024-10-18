@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Author" content="UI STYEL GUIDE">
+    <meta name="Keywords" content="UI STYEL GUIDE">
+    <meta name="Description" content="UI STYEL GUIDE">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+    <meta property="og:image" content="" />
+    <link rel="stylesheet" href="../../assets/css/bui/common.css">
+    <script src="../../assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <title>UI STYEL GUIDE</title>
+
+
+</head>
+
+<body>
+    
+    <nav class="guide_nav">
+    	<div class="guide_nav_top">
+    		<h1>UI STYLE GUIDE</h1>
+    		<button type="button" class="btn_guide_menu"></button>
+    	</div>
+    	<ul class="guide_gnb">
+    		<li><a href="#"><i></i>page</a>
+    			<ul>
+    				<li><a href="../../front/pages/Button.html"><span>Front</span></a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>Typography</a>
+    			<ul>
+    				<li><a href="./font.html"><span>Font</span></a></li>
+    				<li><a href="textUsage.html"><span>Text Usage</span></a></li>
+    				<!-- <li><a href="textColor.html"><span>Text Colors</span></a></li> -->
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>Color Schemes</a>
+    			<ul>
+    				<li><a href="color.html"><span>Primary Color</span></a></li>
+    				<li><a href="SecondaryColor.html"><span>Secondary Color</span></a></li>
+    				<li><a href="shadoes.html"><span>Base Color</span></a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>Spacing</a>
+    			<ul>
+    				<li><a href="SizeUnit.html"><span>Size Unit</span></a></li>
+    			</ul>
+    		</li>
+    		<li><a href="#"><i></i>UI Elements</a>
+    			<ul>
+    				<li><a href="Button.html"><span>Button</span></a></li>
+    				<li><a href="Post.html"><span>Post</span></a></li>
+    				<li><a href="form.html"><span>Form</span></a></li>
+    				<li><a href="Tab.html"><span>Tab</span></a></li>
+    				<li><a href="table.html"><span>Table</span></a></li>
+    				<li><a href="Modal.html"><span>Modal</span></a></li>
+    				<li><a href="Goods.html"><span>Goods</span></a></li>
+    			</ul>
+    		</li>
+    	</ul>
+    </nav>
+
+
+    <div id="container">
+    	<header class="guide_top">
+    		<div>
+    			<strong>UI Elements</strong>
+    			<span>Goods</span>
+    		</div>
+    		<!-- <div class="version">v1.0.0</div> -->
+    	</header>
+    <div id="guide" class="guide">
+        <div class="layer">
+            <div class="guide__title outline-12x">Goods</div>
+            <div class="guide__desc outline-5x">
+                서로 다른 컴포넌트 간 간격은 상하 16을 기본으로 사용합니다. <br>
+                간격은 8의 배수를 기본으로 권장하나 필요시 짝수 크기를 추가해 유연하게 사용가능합니다.
+            </div>
+            <div class="guide__content">
+                <div class="guide__sample">
+                    <div class="row margin-xs">
+                        <div class="col-12">
+                            <!-- goods-display -->
+                                <div class="goods-display module-a">
+                                    <div class="goods-list">
+                                        <div class="goods-item">
+                                            <div class="goods-wrap">
+                                                <div class="goods-figure">
+                                                    <div class="goods-cover">
+                                                        <div class="goods-thumbnail" href="#"><img src="../../../assets/img/main/img_pc_branch_main_B00140000.jpg" alt="" /></div>
+                                                    </div>
+                                                    <div class="goods-flag">
+                                                        <button type="button" class="btn style-a type-fill accent-03 outline-b10x ico arrow_right_w">지점안내 바로가기</button>
+                                                    </div>
+                                                </div>
+                                                <div class="goods-inform">
+                                                    <div class="goods-head">
+                                                        <p class="goods-subject outline-6x font-weight-600 mbt-2x"><a class="goods-name" href="#">오늘 영업시간 10:30 ~ 20:00</a></p>
+                                                        <div class="goods-infoset outline-6x color-secondary-09 font-weight-700 mbt-3x">
+                                                            <ul class="data-list">
+                                                                <li class="data-item">
+                                                                    <span class="head">상품명</span>
+                                                                    <span class="body">10.21(월) 휴점</span>
+                                                                </li>
+                                                                <!-- <li class="data-item">
+                                                                    <span class="head">주의사항</span>
+                                                                    <span class="body">※ 롯데모바일상품권앱에 등록 후 온/오프 사용가능​</span>
+                                                                </li> -->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="goods-tags mbt-6x outline-5x">
+                                                        <p class="data-list">
+                                                            <span class="data-item dot">식 당 가 <b>10:30 ~ 22:00</b></span>
+                                                            <span class="data-item dot">대표전화 <b>02-767-2233</b></span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="goods-data">
+                                                        <a href="#"><span class="mark ico_floor font-weight-600 outline-7x"><span class="mark-text">층별안내</span></span></a>
+                                                        <a href="#"><span class="mark ico_food font-weight-600 outline-7x"><span class="mark-text">식당가</span></span></a>
+                                                        <a href="#"><span class="mark ico_parking font-weight-600 outline-7x"><span class="mark-text">위치/주차</span></span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!--// goods-display -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    	<footer class="guide__footer">
+    		<p>©uiux</p>
+    	</footer>
+    </div>
+</body>
+
+</html>

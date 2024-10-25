@@ -37,6 +37,7 @@ const passwordVisibility = function(selector, closestSelector) {
 		buttonText.innerText = '텍스트 보기';
 	}
 }
+
 document.addEventListener('DOMContentLoaded', function () {
     // 모든 탭 그룹을 선택합니다.
     const tabDisplays = document.querySelectorAll('[data-bui-tab="buiTabNormal"]');
@@ -63,51 +64,84 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    document.addEventListener('DOMContentLoaded', function () { 
-        // 모든 탭 그룹을 선택합니다.
-        const dropDisplays = document.querySelectorAll('[data-bui-dropdown="dropdowngroup"]');
-    
-        dropDisplays.forEach(dropDisplay => {
-            // 각 탭 그룹 내에서만 버튼과 컨텐츠를 선택합니다.
-            const dropItems = dropDisplay.querySelectorAll('.btn.expand');
-            const dropContents = dropDisplay.querySelectorAll('.bui-dropdown-target');
-    
-            // 각 탭에 클릭 이벤트 리스너를 추가합니다.
-            dropItems.forEach(item => {
-                item.addEventListener('click', function (event) {
-                    event.preventDefault(); // 기본 링크 동작을 방지합니다.
-    
-                    // 클릭된 버튼이 속한 탭 그룹의 모든 active 상태 초기화
-                    dropDisplay.querySelectorAll('.bui-dropdown-target').forEach(postItem => postItem.classList.remove('active'));
-                    dropDisplay.querySelectorAll('.btn.expand').forEach(btn => btn.classList.remove('active')); // 모든 버튼의 active 상태 초기화
-    
-                    // 클릭된 버튼에 active 클래스를 toggle
-                    item.classList.toggle('active');
-    
-                    // 해당하는 bui-dropdown-target 요소에 active 클래스를 toggle
-                    const postItem = item.closest('.bui-dropdown-target');
-                    if (postItem) {
-                        postItem.classList.toggle('active');
-                    }
-                });
+document.addEventListener('DOMContentLoaded', function () { 
+    // 모든 탭 그룹을 선택합니다.
+    const dropDisplays = document.querySelectorAll('[data-bui-dropdown="dropdowngroup"]');
+
+    dropDisplays.forEach(dropDisplay => {
+        // 각 탭 그룹 내에서만 버튼과 컨텐츠를 선택합니다.
+        const dropItems = dropDisplay.querySelectorAll('.btn.expand');
+        const dropContents = dropDisplay.querySelectorAll('.bui-dropdown-target');
+
+        // 각 탭에 클릭 이벤트 리스너를 추가합니다.
+        dropItems.forEach(item => {
+            item.addEventListener('click', function (event) {
+                event.preventDefault(); // 기본 링크 동작을 방지합니다.
+
+                // 클릭된 버튼이 속한 탭 그룹의 모든 active 상태 초기화
+                dropDisplay.querySelectorAll('.bui-dropdown-target').forEach(postItem => postItem.classList.remove('active'));
+                dropDisplay.querySelectorAll('.btn.expand').forEach(btn => btn.classList.remove('active')); // 모든 버튼의 active 상태 초기화
+
+                // 클릭된 버튼에 active 클래스를 toggle
+                item.classList.toggle('active');
+
+                // 해당하는 bui-dropdown-target 요소에 active 클래스를 toggle
+                const postItem = item.closest('.bui-dropdown-target');
+                if (postItem) {
+                    postItem.classList.toggle('active');
+                }
             });
         });
     });
-    
-    
-    
-    
+});
 
 
-    function togglePopup(popupId) {
-        const popup = document.getElementById(popupId);
-        if (popup.classList.contains('active')) {
-            popup.classList.remove('active');
-        } else {
-            popup.classList.add('active');
-        }
+function togglePopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup.classList.contains('active')) {
+        popup.classList.remove('active');
+    } else {
+        popup.classList.add('active');
     }
+}
     
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // JSON 파일에서 데이터를 가져오기
+    fetch('../../data/swipercont.json')
+        .then(response => response.json())
+        .then(data => {
+            // "mainculture" 키 아래의 데이터에 접근
+            const slides = data.mainculture;
+
+            // Swiper 슬라이드를 위한 컨테이너 요소
+            const swiperWrapper = document.getElementById('swiper-wrapper');
+
+            // JSON 데이터를 이용해 슬라이드 생성
+            slides.forEach(item => {
+                const slide = document.createElement('div');
+                slide.classList.add('swiper-slide');
+
+                slide.innerHTML = `
+                    <img src="${item.image}" alt="${item.caption}" style="width: 100%; height: auto;">
+                    <p>${item.caption}</p>
+                `;
+
+                swiperWrapper.appendChild(slide);
+            });
+
+            // Swiper 초기화
+            new Swiper('.swiper-container', {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        })
+        .catch(error => console.error('Error fetching JSON data:', error));
+});
 
 // /**
 //  * Module buiToggle dialogPopup

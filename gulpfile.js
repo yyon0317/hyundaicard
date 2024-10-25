@@ -195,6 +195,32 @@ function jsVendor() {
     .pipe(gulp.dest(out));
 
 }
+// Swiper의 경로 추가
+var paths = {
+    swiperCSS: 'node_modules/swiper/swiper-bundle.min.css',
+    swiperJS: 'node_modules/swiper/swiper-bundle.min.js'
+};
+
+// Swiper CSS 파일을 복사하여 src 및 dist 폴더에 추가
+function swiperCSS() {
+    return gulp.src(paths.swiperCSS)
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(folder.src + 'scss/plugins'))  // src에 복사
+        .pipe(gulp.dest(folder.dist_assets + 'css/'));  // dist에 복사
+}
+
+// Swiper JS 파일을 복사하여 src 및 dist 폴더에 추가
+function swiperJS() {
+    return gulp.src(paths.swiperJS)
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(folder.src + 'js/'))  // src에 복사
+        .pipe(gulp.dest(folder.dist_assets + 'js/'));  // dist에 복사
+}
+
+function copyDataFolder() {
+    return gulp.src(folder.src + "data/**/*.json") // 모든 .json 파일을 처리
+        .pipe(gulp.dest(folder.dist + "data/")); // dist/data로 복사
+}
 
 // live browser loading
 function browserSync(done) {
@@ -214,11 +240,11 @@ function reloadBrowserSync(done) {
     done();
 }
 
-// copy data folder to dist folder
-function copyDataFolder() {
-    return gulp.src(folder.src + "data/**/*")
-        .pipe(gulp.dest(folder.dist + "data/"));
-}
+// // copy data folder to dist folder
+// function copyDataFolder() {
+//     return gulp.src(folder.src + "data/**/*")
+//         .pipe(gulp.dest(folder.dist + "data/"));
+// }
 
 // task to compile sass for 'bui' and 'front' folders
 gulp.task("compileSass", gulp.parallel(cssBui, cssFront));
@@ -229,6 +255,7 @@ function watchFiles() {
     gulp.watch(folder.src + "assets/fonts/**/*", gulp.series(fonts,reloadBrowserSync));
     gulp.watch(folder.src + "scss/bui/**/*", gulp.series("compileSass", reloadBrowserSync));
     gulp.watch(folder.src + "scss/front/**/*", gulp.series("compileSass", reloadBrowserSync));
+    gulp.watch(folder.src + "data/**/*.json", gulp.series(copyDataFolder, reloadBrowserSync)); // JSON 파일 변경 감지
     //gulp.watch(folder.src + "scss/**/*", gulp.series(cssVendor,reloadBrowserSync));
     //gulp.watch(folder.src + "scss/**/*", gulp.series(css,reloadBrowserSync));
     gulp.watch(folder.src + "js/**/*", gulp.series(jsVendor, jsPages,reloadBrowserSync));    
@@ -244,11 +271,12 @@ gulp.task(
         html,
         imageMin,
         fonts,
-        gulp.parallel(cssBui, cssFront),
+        gulp.parallel(cssBui, cssFront, swiperCSS),
         //cssVendor,
         //css,
         jsVendor,
         jsPages,
+        swiperJS,
         copyDataFolder, // 추가
         'watch'
     ),
@@ -259,5 +287,5 @@ gulp.task(
 gulp.task(
     "build",
     //gulp.series(clean,html,imageMin,fonts,cssVendor,css,jsVendor,jsPages)
-    gulp.series(clean,html,imageMin,fonts,gulp.parallel(cssBui, cssFront),jsVendor,jsPages)
+    gulp.series(clean,html,imageMin,fonts,gulp.parallel(cssBui, cssFront, swiperCSS),jsVendor,jsPages,swiperJS,copyDataFolder)
 );

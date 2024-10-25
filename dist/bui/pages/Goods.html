@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../../assets/css/bui/common.css">
     <script src="../../assets/js/jquery-3.6.0.min.js"></script>
     <script src="../../assets/js/common.js"></script>
+    <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.min.css">
+    <script src="../../assets/js/swiper-bundle.min.min.js"></script>
     <title>UI STYEL GUIDE</title>
 
 
@@ -130,6 +132,57 @@
                                     </div>
                                 </div>
                             <!--// goods-display -->
+                            <!-- goods-display -->
+                            <div class="goods-display module-b">
+                                <div class="goods-list">
+                                    <div class="goods-item">
+                                        <div class="goods-wrap">
+                                            <div class="goods-figure">
+                                                <div class="goods-cover">
+                                                    <ul class="goods-thumbnail">
+                                                        <li><a href=""><img src="../../../assets/img/main/main_cont01.png" alt="" /></a></li>
+                                                        <li><a href=""><img src="../../../assets/img/main/main_cont02.jpg" alt="" /></a></li>
+                                                        <li><a href=""><img src="../../../assets/img/main/main_cont03.jpg" alt="" /></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="goods-inform">
+                                                <div class="goods-data">
+                                                    <a href="#"><span class="font-weight-600 outline-7x"><span class="text">더보기</span></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!--// goods-display -->
+                        </div>
+                        <div class="col-12">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper" id="swiper-wrapper">
+                                    <!-- Slides will be inserted here dynamically -->
+                                </div>
+                                <!-- 추가적인 네비게이션 버튼들 -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            
+                            <script>
+                                var swiper = new Swiper('.swiper-container', {
+                                    loop: true,
+                                    pagination: {
+                                        el: '.swiper-pagination',
+                                        type: "progressbar",
+                                        clickable: true,
+                                    },
+                                    navigation: {
+                                        nextEl: '.swiper-button-next',
+                                        prevEl: '.swiper-button-prev',
+                                    },
+                                });
+                            </script>
+                            
                         </div>
                     </div>
                 </div>

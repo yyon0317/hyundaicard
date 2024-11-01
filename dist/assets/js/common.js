@@ -1,3 +1,621 @@
+"use strict";
+
+/**
+ * 비밀번호 표시/숨기기 토글
+ * @param {HTMLElement} selector - 비밀번호 토글 버튼
+ * @param {String} closestSelector - 가장 가까운 부모 요소의 셀렉터
+ */
+const passwordVisibility = function(selector, closestSelector) {
+    const formElem = selector.closest(closestSelector).querySelector('.form-elem');
+    const buttonText = selector.querySelector('.btn-text');
+
+    formElem.select();
+
+    if (formElem.type === 'password') {
+        formElem.type = 'text';
+        selector.classList.add('active');
+        buttonText.innerText = '텍스트 숨기기';
+    } else {
+        formElem.type = 'password';
+        selector.classList.remove('active');
+        buttonText.innerText = '텍스트 보기';
+    }
+};
+
+/**
+ * 탭 기능 초기화
+ */
+function initTabs() {
+    const tabDisplays = document.querySelectorAll('[data-bui-tab="buiTabNormal"]');
+
+    tabDisplays.forEach(tabDisplay => {
+        const tabItems = tabDisplay.querySelectorAll('.tab-item');
+        const tabContents = tabDisplay.parentElement.querySelectorAll('.bui-tab-target');
+
+        tabItems.forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.preventDefault(); // 기본 링크 동작 방지
+                tabItems.forEach(tab => tab.classList.remove('current'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                this.classList.add('current');
+                const targetId = this.querySelector('a').getAttribute('href');
+                const targetContent = document.querySelector(targetId);
+                if (targetContent) targetContent.classList.add('active');
+            });
+        });
+    });
+}
+
+/**
+ * 드롭다운 기능 초기화
+ */
+function initDropdowns() {
+    const dropDisplays = document.querySelectorAll('[data-bui-dropdown="dropdowngroup"]');
+
+    dropDisplays.forEach(dropDisplay => {
+        const dropItems = dropDisplay.querySelectorAll('.btn.expand');
+
+        dropItems.forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                dropDisplay.querySelectorAll('.bui-dropdown-target').forEach(postItem => postItem.classList.remove('active'));
+                dropDisplay.querySelectorAll('.btn.expand').forEach(btn => btn.classList.remove('active'));
+
+                item.classList.toggle('active');
+                const postItem = item.closest('.bui-dropdown-target');
+                if (postItem) {
+                    postItem.classList.toggle('active');
+                }
+            });
+        });
+    });
+}
+
+/**
+ * 팝업 토글 기능
+ * @param {String} popupId - 토글할 팝업의 ID
+ */
+function togglePopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+        popup.classList.toggle('active');
+    }
+}
+
+/**
+ * Swiper 슬라이드 초기화
+ */
+function initSwiper() {
+    const swiperContainer01 = document.querySelector('[data-bui-swiper="swipermodule01"]');
+
+// 해당 요소가 존재할 때만 Swiper를 초기화
+    if (swiperContainer01) {
+        fetch('../../data/swipercont.json')
+            .then(response => response.json())
+            .then(data => {
+                const slides = data.swipermodule01;
+                const swiperWrapper = swiperContainer01.querySelector('.swiper-wrapper');
+
+                // 미디어 쿼리: 화면 너비가 720px 이하인지 확인
+                const mediaQuery = window.matchMedia("(max-width: 720px)");
+
+                // JSON 데이터를 이용해 슬라이드를 생성
+                slides.forEach(item => {
+                    const slide = document.createElement('div');
+                    slide.classList.add('swiper-slide');
+
+                    // 이미지 마크업 생성
+                    const imageElement = document.createElement('img');
+                    imageElement.alt = item.title || '';
+                    imageElement.style.width = '100%';
+                    imageElement.style.height = 'auto';
+                    imageElement.dataset.desktop = item.image; // 데스크톱 이미지 URL 저장
+                    imageElement.dataset.mobile = item.mobileimage; // 모바일 이미지 URL 저장
+
+                    // 캡션, 타이틀, 서브타이틀 마크업 생성
+                    const captionMarkup = item.caption ? `<p class="caption">${item.caption}</p>` : '';
+                    const subtitleMarkup = item.subtitle ? `<p class="subtitle">${item.subtitle}</p>` : '';
+                    const titleMarkup = item.title ? `<p class="title">${item.title}</p>` : '';
+
+                    // swiper-inform으로 감싼 부분
+                    const informMarkup = `
+                        <div class="swiper-inform">
+                            ${captionMarkup}
+                            ${subtitleMarkup}
+                            ${titleMarkup}
+                        </div>
+                    `;
+
+                    // 슬라이드에 이미지와 정보 마크업 추가
+                    slide.innerHTML = `
+                        ${informMarkup}
+                    `;
+                    slide.prepend(imageElement);
+                    swiperWrapper.appendChild(slide);
+                });
+
+                // 이미지 URL 업데이트 함수
+                function updateImages() {
+                    swiperWrapper.querySelectorAll('.swiper-slide img').forEach(img => {
+                        if (mediaQuery.matches) {
+                            // 화면 너비가 720px 이하인 경우, 모바일 이미지를 사용
+                            img.src = img.dataset.mobile || img.dataset.desktop;
+                        } else {
+                            // 화면 너비가 721px 이상인 경우, 데스크톱 이미지를 사용
+                            img.src = img.dataset.desktop || img.dataset.mobile;
+                        }
+                    });
+                }
+
+                // Swiper 초기화
+                new Swiper(swiperContainer01, {
+                    loop: true,
+                    autoplay: {
+                        delay: 1000, // autoplaySpeed 대신 delay를 사용
+                        disableOnInteraction: false // 사용자와 상호작용 시 자동 재생이 멈추지 않게 설정
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        type: "progressbar",
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    on: {
+                        init: function () {
+                            this.el.classList.add('auto-play');
+                            
+                            // 재생 버튼 클릭 이벤트 설정
+                            this.el.querySelector('.swiper-button-auto-play').addEventListener('click', () => {
+                                this.autoplay.start();
+                                this.el.classList.add('auto-play');
+                            });
+                            
+                            // 정지 버튼 클릭 이벤트 설정
+                            this.el.querySelector('.swiper-button-auto-stop').addEventListener('click', () => {
+                                this.autoplay.stop();
+                                this.el.classList.remove('auto-play');
+                            });
+                        },
+                        slideChangeTransitionEnd: function () {
+                            this.autoplay.running ? this.el.classList.add('auto-play') : this.el.classList.remove('auto-play');
+                        }
+                    }
+                });
+
+
+                // 초기 이미지 업데이트
+                updateImages();
+
+                // 미디어 쿼리 변경 시 이미지 업데이트
+                mediaQuery.addEventListener('change', updateImages);
+            })
+            .catch(error => console.error('Error fetching JSON data:', error));
+        }
+
+    // 특정 속성을 가진 Swiper 컨테이너 요소를 선택
+    const swiperContainer02 = document.querySelector('[data-bui-swiper="swipermodule02"]');
+
+    // 해당 요소가 존재할 때만 Swiper를 초기화
+    if (swiperContainer02) {
+        fetch('../../data/swipercont.json')
+            .then(response => response.json())
+            .then(data => {
+                const slides = data.swipermodule02;
+                const swiperWrapper = swiperContainer02.querySelector('.swiper-wrapper');
+
+                // JSON 데이터를 이용해 슬라이드를 생성
+            slides.forEach(item => {
+                const slide = document.createElement('div');
+                slide.classList.add('swiper-slide');
+
+                // 각 필드가 존재할 때만 해당 마크업을 생성
+                const imageMarkup = item.image ? `<img src="${item.image}" alt="${item.title || ''}" style="width: 100%; height: auto;">` : '';
+                const captionMarkup = item.caption ? `<p class="caption">${item.caption}</p>` : '';
+                const subtitleMarkup = item.subtitle ? `<p class="subtitle">${item.subtitle}</p>` : '';
+                const titleMarkup = item.title ? `<p class="title">${item.title}</p>` : '';
+
+                // swiper-inform으로 감싼 부분
+                const informMarkup = `
+                    <div class="swiper-inform">
+                        ${subtitleMarkup}
+                        ${titleMarkup}
+                        ${captionMarkup}
+                    </div>
+                `;
+
+                // 슬라이드에 이미지와 정보 마크업 추가
+                slide.innerHTML = `
+                    ${imageMarkup}
+                    ${informMarkup}
+                `;
+
+                swiperWrapper.appendChild(slide);
+            });
+
+                // Swiper 초기화
+                new Swiper(swiperContainer02, {initialSlide: 2,
+                    loop: true, // loop 활성화
+                    slidesPerView: 3, // 보이는 슬라이드 개수
+                    spaceBetween: 10, // 슬라이드 간격
+                    autoHeight: true,
+                    observer: true, // 새로고침 시 Swiper 업데이트
+                    observeParents: true, // 부모 요소 변경 시 Swiper 업데이트
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                    0: {
+                        slidesPerView: 1, // 720px 이하일 때 1개
+                    },
+                    721: {
+                        slidesPerView: 3, // 721px 이상일 때 3개
+                    }
+                }
+                });
+            })
+            .catch(error => console.error('Error fetching JSON data:', error));
+    }
+
+    // 특정 속성을 가진 Swiper 컨테이너 요소를 선택
+    const swiperContainer03 = document.querySelector('[data-bui-swiper="swipermodule03"]');
+
+    // 해당 요소가 존재할 때만 Swiper를 초기화
+    if (swiperContainer03) {
+        fetch('../../data/swipercont.json')
+            .then(response => response.json())
+            .then(data => {
+                const slides = data.swipermodule03;
+                const swiperWrapper = swiperContainer03.querySelector('.swiper-wrapper');
+
+                // JSON 데이터를 이용해 슬라이드를 생성
+            slides.forEach(item => {
+                const slide = document.createElement('div');
+                slide.classList.add('swiper-slide');
+
+                // 각 필드가 존재할 때만 해당 마크업을 생성
+                const imageMarkup = item.image ? `<img src="${item.image}" alt="${item.title || ''}" style="width: 100%; height: auto;">` : '';
+                const captionMarkup = item.caption ? `<p class="caption">${item.caption}</p>` : '';
+                const subtitleMarkup = item.subtitle ? `<p class="subtitle">${item.subtitle}</p>` : '';
+                const titleMarkup = item.title ? `<p class="title">${item.title}</p>` : '';
+
+                // swiper-inform으로 감싼 부분
+                const informMarkup = `
+                    <div class="swiper-inform">
+                        ${titleMarkup}
+                        ${subtitleMarkup}
+                        ${captionMarkup}
+                    </div>
+                `;
+
+                // 슬라이드에 이미지와 정보 마크업 추가
+                slide.innerHTML = `
+                    ${imageMarkup}
+                    ${informMarkup}
+                `;
+
+                swiperWrapper.appendChild(slide);
+            });
+
+                // Swiper 초기화
+                new Swiper(swiperContainer03, {
+                    initialSlide: 1,
+                    loop: true, // loop 활성화
+                    slidesPerView: 4, // 보이는 슬라이드 개수
+                    spaceBetween: 10, // 슬라이드 간격
+                    autoHeight: true,
+                    // loopAdditionalSlides: 4, // 추가 슬라이드 개수를 늘려 루프 가능하도록 설정
+                    observer: true, // 새로고침 시 Swiper 업데이트
+                    observeParents: true, // 부모 요소 변경 시 Swiper 업데이트
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                    0: {
+                        pagination: {
+                            el: '.swiper-pagination',
+                            type: "progressbar",
+                            clickable: true,
+                        },
+                        slidesPerView: 1, // 720px 이하일 때 1개
+                    },
+                    721: {
+                        slidesPerView: 4, // 721px 이상일 때 3개
+                    }
+                }
+                });
+            })
+            .catch(error => console.error('Error fetching JSON data:', error));
+        }
+
+    const swiperContainer04 = document.querySelector('[data-bui-swiper="swipermodule04"]');
+
+    // 해당 요소가 존재할 때만 Swiper를 초기화
+    if (swiperContainer04) {
+        fetch('../../data/swipercont.json')
+            .then(response => response.json())
+            .then(data => {
+                const slides = data.swipermodule04;
+                const swiperWrapper = swiperContainer04.querySelector('.swiper-wrapper');
+
+                // 미디어 쿼리: 화면 너비가 720px 이하인지 확인
+                const mediaQuery = window.matchMedia("(max-width: 720px)");
+
+                // JSON 데이터를 이용해 슬라이드를 생성
+                slides.forEach(item => {
+                    const slide = document.createElement('div');
+                    slide.classList.add('swiper-slide');
+
+                    // 이미지 마크업 생성
+                    const imageElement = document.createElement('img');
+                    imageElement.alt = item.title || '';
+                    imageElement.style.width = '100%';
+                    imageElement.style.height = 'auto';
+                    imageElement.dataset.desktop = item.image; // 데스크톱 이미지 URL 저장
+                    imageElement.dataset.mobile = item.mobileimage; // 모바일 이미지 URL 저장
+
+                    // 캡션, 타이틀, 서브타이틀 마크업 생성
+                    const captionMarkup = item.caption ? `<p class="caption">${item.caption}</p>` : '';
+                    const subtitleMarkup = item.subtitle ? `<p class="subtitle">${item.subtitle}</p>` : '';
+                    const titleMarkup = item.title ? `<p class="title">${item.title}</p>` : '';
+
+                    // swiper-inform으로 감싼 부분
+                    const informMarkup = `
+                        <div class="swiper-inform">
+                            ${captionMarkup}
+                            ${subtitleMarkup}
+                            ${titleMarkup}
+                        </div>
+                    `;
+
+                    // 슬라이드에 이미지와 정보 마크업 추가
+                    slide.innerHTML = `
+                        ${informMarkup}
+                    `;
+                    slide.prepend(imageElement);
+                    swiperWrapper.appendChild(slide);
+                });
+
+                // 이미지 URL 업데이트 함수
+                function updateImages() {
+                    swiperWrapper.querySelectorAll('.swiper-slide img').forEach(img => {
+                        if (mediaQuery.matches) {
+                            // 화면 너비가 720px 이하인 경우, 모바일 이미지를 사용
+                            img.src = img.dataset.mobile || img.dataset.desktop;
+                        } else {
+                            // 화면 너비가 721px 이상인 경우, 데스크톱 이미지를 사용
+                            img.src = img.dataset.desktop || img.dataset.mobile;
+                        }
+                    });
+                }
+
+                // Swiper 초기화
+                new Swiper(swiperContainer04, {
+                    loop: true,
+                        loop: true, // loop 활성화
+                        slidesPerView: 2, // 보이는 슬라이드 개수
+                        spaceBetween: 10, // 슬라이드 간격
+                        observer: true, // 새로고침 시 Swiper 업데이트
+                        observeParents: true, // 부모 요소 변경 시 Swiper 업데이트
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                    0: {
+                        slidesPerView: 1, // 720px 이하일 때 1개
+                    },
+                    721: {
+                        slidesPerView: 2, // 721px 이상일 때 3개
+                    }
+                    },
+                    on: {
+                        init: function () {
+                            this.el.classList.add('auto-play');
+                            
+                            // 재생 버튼 클릭 이벤트 설정
+                            this.el.querySelector('.swiper-button-auto-play').addEventListener('click', () => {
+                                this.autoplay.start();
+                                this.el.classList.add('auto-play');
+                            });
+                            
+                            // 정지 버튼 클릭 이벤트 설정
+                            this.el.querySelector('.swiper-button-auto-stop').addEventListener('click', () => {
+                                this.autoplay.stop();
+                                this.el.classList.remove('auto-play');
+                            });
+                        },
+                        slideChangeTransitionEnd: function () {
+                            this.autoplay.running ? this.el.classList.add('auto-play') : this.el.classList.remove('auto-play');
+                        }
+                    }
+                });
+
+
+                // 초기 이미지 업데이트
+                updateImages();
+
+                // 미디어 쿼리 변경 시 이미지 업데이트
+                mediaQuery.addEventListener('change', updateImages);
+            })
+            .catch(error => console.error('Error fetching JSON data:', error));
+        }
+
+    // 특정 속성을 가진 Swiper 컨테이너 요소를 선택
+    const swiperContainer05 = document.querySelector('[data-bui-swiper="swipermodule05"]');
+
+    // 해당 요소가 존재할 때만 Swiper를 초기화
+    if (swiperContainer05) {
+        fetch('../../data/swipercont.json')
+            .then(response => response.json())
+            .then(data => {
+                const slides = data.swipermodule05.concat(data.swipermodule05);
+                const swiperWrapper = swiperContainer05.querySelector('.swiper-wrapper');
+
+                // JSON 데이터를 이용해 슬라이드를 생성
+            slides.forEach(item => {
+                const slide = document.createElement('div');
+                slide.classList.add('swiper-slide');
+
+                // 각 필드가 존재할 때만 해당 마크업을 생성
+                const imageMarkup = item.image ? `<img src="${item.image}" alt="${item.title || ''}" style="width: 100%; height: auto;">` : '';
+                const captionMarkup = item.caption ? `<p class="caption">${item.caption}</p>` : '';
+                const subtitleMarkup = item.subtitle ? `<p class="subtitle">${item.subtitle}</p>` : '';
+                const titleMarkup = item.title ? `<p class="title">${item.title}</p>` : '';
+
+                // swiper-inform으로 감싼 부분
+                const informMarkup = `
+                    <div class="swiper-inform">
+                        ${subtitleMarkup}
+                        ${titleMarkup}
+                        ${captionMarkup}
+                    </div>
+                `;
+
+                // 슬라이드에 이미지와 정보 마크업 추가
+                slide.innerHTML = `
+                    ${imageMarkup}
+                    ${informMarkup}
+                `;
+
+                swiperWrapper.appendChild(slide);
+            });
+
+                // Swiper 초기화
+                new Swiper(swiperContainer05, {autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                },
+                loop: true, // loop 활성화
+                loopAdditionalSlides: 3, // 슬라이드를 추가로 복제하여 자연스러운 전환
+                loopedSlides: 3, // 자연스러운 루프 전환을 위해 슬라이드 복제
+                direction: 'vertical',
+                speed: 5000, // 슬라이드 전환 속도
+                slidesPerView: 'auto',
+                spaceBetween: 10, // 슬라이드 간격
+                autoHeight: true,
+                dir:"ltr",
+                observer: true,
+                observeParents: true,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        0: {
+                            direction: 'horizontal',
+                        },
+                        721: {
+                            direction: 'vertical',
+                        }
+                    }
+                });
+
+                
+            })
+            .catch(error => console.error('Error fetching JSON data:', error));
+    }
+
+    // 특정 속성을 가진 Swiper 컨테이너 요소를 선택
+    const swiperContainer06 = document.querySelector('[data-bui-swiper="swipermodule06"]');
+
+    // 해당 요소가 존재할 때만 Swiper를 초기화
+    if (swiperContainer06) {
+        fetch('../../data/swipercont.json')
+            .then(response => response.json())
+            .then(data => {
+                const slides = data.swipermodule06.concat(data.swipermodule06);
+                const swiperWrapper = swiperContainer06.querySelector('.swiper-wrapper');
+
+                // JSON 데이터를 이용해 슬라이드를 생성
+            slides.forEach(item => {
+                const slide = document.createElement('div');
+                slide.classList.add('swiper-slide');
+
+                // 각 필드가 존재할 때만 해당 마크업을 생성
+                const imageMarkup = item.image ? `<img src="${item.image}" alt="${item.title || ''}" style="width: 100%; height: auto;">` : '';
+                const captionMarkup = item.caption ? `<p class="caption">${item.caption}</p>` : '';
+                const subtitleMarkup = item.subtitle ? `<p class="subtitle">${item.subtitle}</p>` : '';
+                const titleMarkup = item.title ? `<p class="title">${item.title}</p>` : '';
+
+                // swiper-inform으로 감싼 부분
+                const informMarkup = `
+                    <div class="swiper-inform">
+                        ${subtitleMarkup}
+                        ${titleMarkup}
+                        ${captionMarkup}
+                    </div>
+                `;
+
+                // 슬라이드에 이미지와 정보 마크업 추가
+                slide.innerHTML = `
+                    ${imageMarkup}
+                    ${informMarkup}
+                `;
+
+                swiperWrapper.appendChild(slide);
+            });
+
+                // Swiper 초기화
+                new Swiper(swiperContainer06, {autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                    reverseDirection: true,
+                },
+                direction: 'rtl',
+                loop: true, // loop 활성화
+                loopAdditionalSlides: 3, // 슬라이드를 추가로 복제하여 자연스러운 전환
+                loopedSlides: 3, // 자연스러운 루프 전환을 위해 슬라이드 복제
+                direction: 'vertical',
+                speed: 5000, // 슬라이드 전환 속도
+                slidesPerView: 'auto',
+                spaceBetween: 10, // 슬라이드 간격
+                autoHeight: true,
+                observer: true,
+                observeParents: true,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        0: {
+                            direction: 'horizontal',
+                        },
+                        721: {
+                            direction: 'vertical',
+                        }
+                    }
+                });
+
+                
+            })
+            .catch(error => console.error('Error fetching JSON data:', error));
+    }
+
+
+}
+
+
+// 페이지 로드 완료 후 모든 기능 초기화
+document.addEventListener('DOMContentLoaded', function() {
+    initTabs();          // 탭 기능 초기화
+    initDropdowns();     // 드롭다운 기능 초기화
+    initSwiper();        // Swiper 슬라이드 초기화
+});
+
+
+
+
 // import buiToggle from 'bui-toggle';
 // document.addEventListener('DOMContentLoaded', function() {
 //     const typedElements = document.querySelectorAll('.typed');
@@ -15,133 +633,6 @@
 //     });
 //   });
 
-/**
- * passwordVisibility
- * 
- * @param {String} selector
- * @return {String}
-**/
-const passwordVisibility = function(selector, closestSelector) {
-	var formElem = selector.closest(closestSelector).querySelector('.form-elem');
-	var buttonText = selector.querySelector('.btn-text');
-
-	formElem.select();
-
-	if (formElem.type === 'password') {
-		formElem.type = 'text';
-		selector.classList.add('active');
-		buttonText.innerText = '텍스트 숨기기';
-	} else {
-		formElem.type = 'password';
-		selector.classList.remove('active');
-		buttonText.innerText = '텍스트 보기';
-	}
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    // 모든 탭 그룹을 선택합니다.
-    const tabDisplays = document.querySelectorAll('[data-bui-tab="buiTabNormal"]');
-
-    tabDisplays.forEach(tabDisplay => {
-    const tabItems = tabDisplay.querySelectorAll('.tab-item');
-    const tabContents = tabDisplay.parentElement.querySelectorAll('.bui-tab-target');
-
-      // 각 탭에 클릭 이벤트 리스너를 추가합니다.
-            tabItems.forEach(item => {
-                item.addEventListener('click', function (event) {
-                event.preventDefault(); // 기본 링크 동작을 방지합니다.
-                // 현재 탭 그룹 내 모든 탭과 콘텐츠의 활성 상태를 초기화합니다.
-                tabItems.forEach(tab => tab.classList.remove('current'));
-                tabContents.forEach(content => content.classList.remove('active'));
-                // 클릭한 탭을 활성화합니다.
-                this.classList.add('current');
-                // 연결된 콘텐츠를 활성화합니다.
-                const targetId = this.querySelector('a').getAttribute('href');
-                const targetContent = document.querySelector(targetId);
-                targetContent.classList.add('active');
-                });
-            });
-        });
-    });
-
-document.addEventListener('DOMContentLoaded', function () { 
-    // 모든 탭 그룹을 선택합니다.
-    const dropDisplays = document.querySelectorAll('[data-bui-dropdown="dropdowngroup"]');
-
-    dropDisplays.forEach(dropDisplay => {
-        // 각 탭 그룹 내에서만 버튼과 컨텐츠를 선택합니다.
-        const dropItems = dropDisplay.querySelectorAll('.btn.expand');
-        const dropContents = dropDisplay.querySelectorAll('.bui-dropdown-target');
-
-        // 각 탭에 클릭 이벤트 리스너를 추가합니다.
-        dropItems.forEach(item => {
-            item.addEventListener('click', function (event) {
-                event.preventDefault(); // 기본 링크 동작을 방지합니다.
-
-                // 클릭된 버튼이 속한 탭 그룹의 모든 active 상태 초기화
-                dropDisplay.querySelectorAll('.bui-dropdown-target').forEach(postItem => postItem.classList.remove('active'));
-                dropDisplay.querySelectorAll('.btn.expand').forEach(btn => btn.classList.remove('active')); // 모든 버튼의 active 상태 초기화
-
-                // 클릭된 버튼에 active 클래스를 toggle
-                item.classList.toggle('active');
-
-                // 해당하는 bui-dropdown-target 요소에 active 클래스를 toggle
-                const postItem = item.closest('.bui-dropdown-target');
-                if (postItem) {
-                    postItem.classList.toggle('active');
-                }
-            });
-        });
-    });
-});
-
-
-function togglePopup(popupId) {
-    const popup = document.getElementById(popupId);
-    if (popup.classList.contains('active')) {
-        popup.classList.remove('active');
-    } else {
-        popup.classList.add('active');
-    }
-}
-    
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    // JSON 파일에서 데이터를 가져오기
-    fetch('../../data/swipercont.json')
-        .then(response => response.json())
-        .then(data => {
-            // "mainculture" 키 아래의 데이터에 접근
-            const slides = data.mainculture;
-
-            // Swiper 슬라이드를 위한 컨테이너 요소
-            const swiperWrapper = document.getElementById('swiper-wrapper');
-
-            // JSON 데이터를 이용해 슬라이드 생성
-            slides.forEach(item => {
-                const slide = document.createElement('div');
-                slide.classList.add('swiper-slide');
-
-                slide.innerHTML = `
-                    <img src="${item.image}" alt="${item.caption}" style="width: 100%; height: auto;">
-                    <p>${item.caption}</p>
-                `;
-
-                swiperWrapper.appendChild(slide);
-            });
-
-            // Swiper 초기화
-            new Swiper('.swiper-container', {
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-            });
-        })
-        .catch(error => console.error('Error fetching JSON data:', error));
-});
 
 // /**
 //  * Module buiToggle dialogPopup

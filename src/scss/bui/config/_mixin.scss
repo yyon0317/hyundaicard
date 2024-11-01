@@ -4,6 +4,12 @@
 	clear: both;
 }
 
+@mixin img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
 
 @mixin hidden($mode: &) {
 	overflow: hidden;

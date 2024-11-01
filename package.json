@@ -26,6 +26,7 @@
     "sass": "^1.62.1"
   },
   "dependencies": {
+    "jquery.marquee": "^1.6.0",
     "swiper": "^11.1.14"
   }
 }

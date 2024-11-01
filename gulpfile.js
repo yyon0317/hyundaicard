@@ -198,7 +198,8 @@ function jsVendor() {
 // Swiper의 경로 추가
 var paths = {
     swiperCSS: 'node_modules/swiper/swiper-bundle.min.css',
-    swiperJS: 'node_modules/swiper/swiper-bundle.min.js'
+    swiperJS: 'node_modules/swiper/swiper-bundle.min.js',
+    marqueeJS: 'node_modules/jquery.marquee/jquery.marquee.min.js' // 대체 패키지 경로로 수정
 };
 
 // Swiper CSS 파일을 복사하여 src 및 dist 폴더에 추가
@@ -217,6 +218,13 @@ function swiperJS() {
         .pipe(gulp.dest(folder.dist_assets + 'js/'));  // dist에 복사
 }
 
+// Marquee JS 파일을 src 및 dist에 복사
+function marqueeJS() {
+    return gulp.src(paths.marqueeJS, { allowEmpty: true }) // 파일이 없을 경우 오류 방지
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(folder.src + 'js/'))  // src에 복사
+        .pipe(gulp.dest(folder.dist_assets + 'js/')); // dist에 복사
+}
 function copyDataFolder() {
     return gulp.src(folder.src + "data/**/*.json") // 모든 .json 파일을 처리
         .pipe(gulp.dest(folder.dist + "data/")); // dist/data로 복사
@@ -271,12 +279,13 @@ gulp.task(
         html,
         imageMin,
         fonts,
-        gulp.parallel(cssBui, cssFront, swiperCSS),
+        gulp.parallel(cssBui, cssFront, swiperCSS ),
         //cssVendor,
         //css,
         jsVendor,
         jsPages,
         swiperJS,
+        marqueeJS,
         copyDataFolder, // 추가
         'watch'
     ),
@@ -287,5 +296,5 @@ gulp.task(
 gulp.task(
     "build",
     //gulp.series(clean,html,imageMin,fonts,cssVendor,css,jsVendor,jsPages)
-    gulp.series(clean,html,imageMin,fonts,gulp.parallel(cssBui, cssFront, swiperCSS),jsVendor,jsPages,swiperJS,copyDataFolder)
+    gulp.series(clean,html,imageMin,fonts,gulp.parallel(cssBui, cssFront, swiperCSS),jsVendor,jsPages,swiperJS,copyDataFolder,marqueeJS)
 );

@@ -2525,6 +2525,13 @@ ul.goods-list {
   display: flex;
 }
 
+.marquee-wrap {
+  width: 500px;
+  height: 20px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
 /**
  * form system
 **/

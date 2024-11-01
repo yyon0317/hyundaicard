@@ -605,12 +605,24 @@ function initSwiper() {
 
 }
 
+function initmarquee() {
+    $('.marquee-wrap').marquee({
+        speed: 80, // 속도
+        gap: 100, // 간격
+        delayBeforeStart: 0, // 시작 delay값
+        direction: 'left', // 방향
+        duplicated: true, // 선택 영역 복제
+        pauseOnHover: true // hover시 일시중지 여부
+    });
+}
+
 
 // 페이지 로드 완료 후 모든 기능 초기화
 document.addEventListener('DOMContentLoaded', function() {
     initTabs();          // 탭 기능 초기화
     initDropdowns();     // 드롭다운 기능 초기화
     initSwiper();        // Swiper 슬라이드 초기화
+    initmarquee();        // Swiper 슬라이드 초기화
 });
 
 

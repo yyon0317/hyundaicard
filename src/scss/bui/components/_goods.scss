@@ -673,9 +673,11 @@ ul.goods-list {
 	overflow: hidden;
     // margin: 0 0 0 8vw;
     transition: all .5s;
+	position: relative;
 	.swiper-container{
 		flex: 1 1 100%;
 		position: relative;   
+		width: 50%;
 		// padding: 0px 7.5vw;
 		.swiper-wrapper{
 			transition-timing-function: linear;
@@ -684,14 +686,15 @@ ul.goods-list {
 				align-items: center;
 				justify-content: center;
 				background-color: #fff;
-				padding: 15px 0;
 				font-size: 18px;
 				font-weight: bold;
+				position: relative;
+				// width: 20vw;
 			  }
 			.swiper-inform{
 				position: absolute;
 				left: 1vw;
-    			bottom: 4%;
+    			bottom: 3vw;
 				.title{
 					font-size: 17px;
 					line-height:23px;
@@ -736,16 +739,105 @@ ul.goods-list {
 			margin-top: 0;
 		}
 	}
-	.swiper-title{    padding: 0 0 0 7vw;}
+	// .swiper-title{    padding: 0 0 0 7vw;}
 	.swiper-group{
 		display: flex;
+		float: right;
+		gap: 1vw;
+		height: 650px;
+		width: 500px;
+		@include tablet{flex-direction: column;height: auto;}
+		
 	}
+	.marquee-wrap {
+		// width: 500px;
+		// height: 20px;
+		// border: 1px solid #ddd;
+		overflow: hidden;
+	
+		display: block;
+		white-space: nowrap;
+		font-size: 240px;
+		font-weight: 700;
+		color: #FFFFFF;
+		line-height: 2.3;
+		letter-spacing: -0.25px;
+		text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	  }
 }
 
 
-.marquee-wrap {
-    width: 500px;
-    height: 20px;
-    border: 1px solid #ddd;
-    overflow: hidden;
-  }
+.module-f{
+	position: relative;
+	.tab-display{
+		position: absolute;left: 288px;top: 0;
+	}
+	.goods-swiper.module-f{
+		// overflow: hidden;
+		// margin: 0 0 0 8vw;
+		transition: all .5s;
+		.swiper-container{
+			// flex: 1 1 100%;
+			position: relative;  
+			.swiper-wrapper{       
+				.swiper-slide{ //flex: 0 0 50%;
+  /* 슬라이드 높이 설정 */
+    box-sizing: border-box;
+				 }
+				.swiper-inform{
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					a{
+						width: 47%;
+						display: block;
+						margin-right: 10px;
+    					margin-bottom: 10px;
+					}
+					.title{
+						font-size: 17px;
+						line-height:23px;
+						color: var(--color-base-01);
+						font-weight: 500;
+						@include tablet{
+							font-size: 8vw;
+							line-height:10vw;
+						}
+					}
+					.caption{
+						font-size: 14px;
+						line-height: 12px;
+						color: var(--color-base-01);
+						font-weight: 400;
+						margin-bottom: 6px;
+						@include tablet{
+							margin-bottom: 2vw;
+							font-size: 3vw;
+							line-height:4vw;
+						}
+					}
+				}
+			}
+	
+			.swiper-button-next{
+				position: absolute;
+				top: -16%;
+				left: 89%;
+				height: -5vw;
+				scale: 0.5;
+				color: #000000;
+				margin-top: 0;
+			}
+			.swiper-button-prev{
+				position: absolute;
+				top: -16%;
+				left: 86%;
+				height: -5vw;
+				scale: 0.5;
+				color: #000000;
+				margin-top: 0;
+			}
+		}
+		.swiper-title{    padding: 0 0 0 7vw;}
+	}
+}

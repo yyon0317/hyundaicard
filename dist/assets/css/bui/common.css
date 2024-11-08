@@ -2452,10 +2452,12 @@ ul.goods-list {
 .goods-swiper.module-e {
   overflow: hidden;
   transition: all 0.5s;
+  position: relative;
 }
 .goods-swiper.module-e .swiper-container {
   flex: 1 1 100%;
   position: relative;
+  width: 50%;
 }
 .goods-swiper.module-e .swiper-container .swiper-wrapper {
   transition-timing-function: linear;
@@ -2465,14 +2467,14 @@ ul.goods-list {
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  padding: 15px 0;
   font-size: 18px;
   font-weight: bold;
+  position: relative;
 }
 .goods-swiper.module-e .swiper-container .swiper-wrapper .swiper-inform {
   position: absolute;
   left: 1vw;
-  bottom: 4%;
+  bottom: 3vw;
 }
 .goods-swiper.module-e .swiper-container .swiper-wrapper .swiper-inform .title {
   font-size: 17px;
@@ -2518,18 +2520,106 @@ ul.goods-list {
   color: #000000;
   margin-top: 0;
 }
-.goods-swiper.module-e .swiper-title {
-  padding: 0 0 0 7vw;
-}
 .goods-swiper.module-e .swiper-group {
   display: flex;
+  float: right;
+  gap: 1vw;
+  height: 650px;
+  width: 500px;
+}
+@media (max-width: 720px) {
+  .goods-swiper.module-e .swiper-group {
+    flex-direction: column;
+    height: auto;
+  }
+}
+.goods-swiper.module-e .marquee-wrap {
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+  font-size: 240px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 2.3;
+  letter-spacing: -0.25px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.marquee-wrap {
-  width: 500px;
-  height: 20px;
-  border: 1px solid #ddd;
-  overflow: hidden;
+.module-f {
+  position: relative;
+}
+.module-f .tab-display {
+  position: absolute;
+  left: 288px;
+  top: 0;
+}
+.module-f .goods-swiper.module-f {
+  transition: all 0.5s;
+}
+.module-f .goods-swiper.module-f .swiper-container {
+  position: relative;
+}
+.module-f .goods-swiper.module-f .swiper-container .swiper-wrapper .swiper-slide {
+  /* 슬라이드 높이 설정 */
+  box-sizing: border-box;
+}
+.module-f .goods-swiper.module-f .swiper-container .swiper-wrapper .swiper-inform {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.module-f .goods-swiper.module-f .swiper-container .swiper-wrapper .swiper-inform a {
+  width: 47%;
+  display: block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.module-f .goods-swiper.module-f .swiper-container .swiper-wrapper .swiper-inform .title {
+  font-size: 17px;
+  line-height: 23px;
+  color: var(--color-base-01);
+  font-weight: 500;
+}
+@media (max-width: 720px) {
+  .module-f .goods-swiper.module-f .swiper-container .swiper-wrapper .swiper-inform .title {
+    font-size: 8vw;
+    line-height: 10vw;
+  }
+}
+.module-f .goods-swiper.module-f .swiper-container .swiper-wrapper .swiper-inform .caption {
+  font-size: 14px;
+  line-height: 12px;
+  color: var(--color-base-01);
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+@media (max-width: 720px) {
+  .module-f .goods-swiper.module-f .swiper-container .swiper-wrapper .swiper-inform .caption {
+    margin-bottom: 2vw;
+    font-size: 3vw;
+    line-height: 4vw;
+  }
+}
+.module-f .goods-swiper.module-f .swiper-container .swiper-button-next {
+  position: absolute;
+  top: -16%;
+  left: 89%;
+  height: -5vw;
+  scale: 0.5;
+  color: #000000;
+  margin-top: 0;
+}
+.module-f .goods-swiper.module-f .swiper-container .swiper-button-prev {
+  position: absolute;
+  top: -16%;
+  left: 86%;
+  height: -5vw;
+  scale: 0.5;
+  color: #000000;
+  margin-top: 0;
+}
+.module-f .goods-swiper.module-f .swiper-title {
+  padding: 0 0 0 7vw;
 }
 
 /**
@@ -3843,6 +3933,114 @@ ul.tab-list {
 }
 .tab-display.module-e.style-c .tab-list .tab-item .tab-text::before {
   border-radius: calc(var(--height) / 2);
+}
+
+.tab-display.module-f {
+  --normal-color: var(--color-base-09);
+  --normal-border-color: var(--color-base-08);
+  background-color: var(--color-base-01);
+}
+.tab-display.module-f.outline-t8x {
+  --line-height: 32px;
+  --height: 32px;
+}
+@media (max-width: 720px) {
+  .tab-display.module-f.outline-t8x {
+    --line-height: 6.8376068376vw;
+  }
+}
+@media (max-width: 720px) {
+  .tab-display.module-f.outline-t8x {
+    --height: 6.8376068376vw;
+  }
+}
+.tab-display.module-f.outline-t10x {
+  --line-height: 40px;
+  --height: 40px;
+}
+@media (max-width: 720px) {
+  .tab-display.module-f.outline-t10x {
+    --line-height: 8.547008547vw;
+  }
+}
+@media (max-width: 720px) {
+  .tab-display.module-f.outline-t10x {
+    --height: 8.547008547vw;
+  }
+}
+.tab-display.module-f.outline-t12x {
+  --line-height: 48px;
+  --height: 48px;
+}
+@media (max-width: 720px) {
+  .tab-display.module-f.outline-t12x {
+    --line-height: 10.2564102564vw;
+  }
+}
+@media (max-width: 720px) {
+  .tab-display.module-f.outline-t12x {
+    --height: 10.2564102564vw;
+  }
+}
+.tab-display.module-f.normal-01 {
+  --accent-color: var(--color-base-12);
+  --accent-border-color: var(--color-base-12);
+  --accent-background-color: var(--color-base-01);
+}
+.tab-display.module-f.normal-02 {
+  --accent-color: var(--color-base-12);
+  --accent-border-color: var(--color-base-11);
+  --accent-background-color: var(--color-base-01);
+}
+.tab-display.module-f.normal-03 {
+  --accent-color: var(--color-base-12);
+  --accent-border-color: var(--color-base-09);
+  --accent-background-color: var(--color-base-01);
+}
+.tab-display.module-f.normal-04 {
+  --accent-color: var(--color-base-12);
+  --accent-border-color: var(--color-base-09);
+  --accent-background-color: var(--color-base-01);
+}
+.tab-display.module-f.accent-01 {
+  --accent-color: var(--color-base-12);
+  --accent-border-color: var(--color-secondary-08);
+  --accent-background-color: var(--color-base-01);
+}
+.tab-display.module-f.accent-02 {
+  --accent-color: var(--color-base-12);
+  --accent-border-color: var(--color-secondary-01);
+  --accent-background-color: var(--color-base-01);
+}
+.tab-display.module-f .tab-list {
+  display: flex;
+  align-items: center;
+}
+.tab-display.module-f .tab-list .tab-item .tab-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-align: center;
+  padding-right: calc(var(--height) / 4.4 - 1px);
+  padding-left: calc(var(--height) / 4.4 - 1px);
+  height: calc(var(--height) / 1.5);
+  line-height: calc(var(--line-height) / 1.5);
+  font-size: calc(var(--line-height) / 3.3);
+  color: var(--normal-color);
+}
+.tab-display.module-f .tab-list .tab-item.current ::after {
+  border-width: 4px;
+  border-style: solid;
+  border-color: #171A19 transparent transparent #171A19;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: initial;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
 }
 
 .table.outline-tb10x {

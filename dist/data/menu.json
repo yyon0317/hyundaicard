@@ -1,0 +1,84 @@
+{
+	"mobile": [
+		{"title":"gnbtitle", "id":"gnbContents_00", "class": "spot", "name": "지점안내", "link": "#", "sub": [
+			{"title":"lnbtitle", "class": "spot", "name": "더현대", "link": "#", "sub": [
+				{"title":"subtitle", "class": "spot", "name": "더현대 서울", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "더현대 대구", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "spot", "name": "B tv", "link": "#", "sub": [
+				{"title":"subtitle", "class": "spot", "name": "요금제", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "부가서비스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "콘텐츠 안내", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "spot", "name": "더현대", "link": "#", "sub": [
+				{"title":"subtitle", "class": "spot", "name": "더현대 서울", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "더현대 대구", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "spot", "name": "B tv", "link": "#", "sub": [
+				{"title":"subtitle", "class": "spot", "name": "요금제", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "부가서비스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "콘텐츠 안내", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "spot", "name": "B tv", "link": "#", "sub": [
+				{"title":"subtitle", "class": "spot", "name": "요금제", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "부가서비스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "콘텐츠 안내", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "spot", "name": "B tv", "link": "#", "sub": [
+				{"title":"subtitle", "class": "spot", "name": "요금제", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "부가서비스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "콘텐츠 안내", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "spot", "name": "B tv", "link": "#", "sub": [
+				{"title":"subtitle", "class": "spot", "name": "요금제", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "부가서비스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "콘텐츠 안내", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			]}
+		]},
+		{"title":"gnbtitle", "id":"gnbContents_01", "class": "service", "name": "서비스", "link": "#", "sub": [
+			{"title":"lnbtitle", "class": "service", "name": "더현대", "link": "#", "sub": [
+				{"title":"subtitle", "class": "service", "name": "더현대 서울", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "더현대 대구", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "service", "name": "B tv", "link": "#", "sub": [
+				{"title":"subtitle", "class": "service", "name": "요금제", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "부가서비스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "콘텐츠 안내", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "service", "name": "더현대", "link": "#", "sub": [
+				{"title":"subtitle", "class": "service", "name": "더현대 서울", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "더현대 대구", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "service", "name": "B tv", "link": "#", "sub": [
+				{"title":"subtitle", "class": "service", "name": "요금제", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "부가서비스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "콘텐츠 안내", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "service", "name": "B tv", "link": "#", "sub": [
+				{"title":"subtitle", "class": "service", "name": "요금제", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "부가서비스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "콘텐츠 안내", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "service", "name": "B tv", "link": "#", "sub": [
+				{"title":"subtitle", "class": "service", "name": "요금제", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "부가서비스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "콘텐츠 안내", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "service", "name": "B tv", "link": "#", "sub": [
+				{"title":"subtitle", "class": "service", "name": "요금제", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "부가서비스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "콘텐츠 안내", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			]}
+		]}
+	]
+}

@@ -128,5 +128,44 @@
             "title": "MOKA 북아트 컬렉션"
         
         }
+    ],
+    "swipermodule07": [
+        {
+            "image01": "../../../assets/img/main/main_bash_default.png",
+            "image02": "../../../assets/img/main/main_hbyh_default.png",
+            "image03": "../../../assets/img/main/main_offworks_default.png",
+            "image04": "../../../assets/img/main/main_wemarket_default.png"
+        },{
+            "image01": "../../../assets/img/main/main_labels_default.png",
+            "image02": "../../../assets/img/main/main_bclean_default.png",
+            "image03": "../../../assets/img/main/main_shoepace_default.png",
+            "image04": "../../../assets/img/main/main_wineworks_default.png"
+        },{
+            "image01": "../../../assets/img/main/main_mimc_default.png",
+            "image02": "../../../assets/img/main/main_fourm_default.png",
+            "image03": "../../../assets/img/main/main_tomgreyhound_default.png"
+        }
+    ],
+    "swipermodule08": [
+        {
+            "image01": "../../../assets/img/main/main_bash_default.png",
+            "image02": "../../../assets/img/main/main_hbyh_default.png",
+            "image03": "../../../assets/img/main/main_offworks_default.png",
+            "image04": "../../../assets/img/main/main_wemarket_default.png"
+        }
+    ],
+    "swipermodule09": [
+        {
+            "image01": "../../../assets/img/main/main_labels_default.png",
+            "image02": "../../../assets/img/main/main_bclean_default.png",
+            "image03": "../../../assets/img/main/main_shoepace_default.png",
+            "image04": "../../../assets/img/main/main_wineworks_default.png"
+        }
+    ],
+    "swipermodule10": [
+        {
+            "image01": "../../../assets/img/main/main_mimc_default.png",
+            "image02": "../../../assets/img/main/main_fourm_default.png"
+        }
     ]
 }

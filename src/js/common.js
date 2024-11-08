@@ -164,7 +164,8 @@ function initSwiper() {
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
-                    },
+                    },effect: "fade",
+	loop: "infinite",
                     on: {
                         init: function () {
                             this.el.classList.add('auto-play');
@@ -492,7 +493,8 @@ function initSwiper() {
             });
 
                 // Swiper 초기화
-                new Swiper(swiperContainer05, {autoplay: {
+                new Swiper(swiperContainer05, {
+                    autoplay: {
                     delay: 0,
                     disableOnInteraction: false,
                 },
@@ -500,10 +502,10 @@ function initSwiper() {
                 loopAdditionalSlides: 3, // 슬라이드를 추가로 복제하여 자연스러운 전환
                 loopedSlides: 3, // 자연스러운 루프 전환을 위해 슬라이드 복제
                 direction: 'vertical',
+                //slidesPerGroup: 1,
                 speed: 5000, // 슬라이드 전환 속도
-                slidesPerView: 'auto',
                 spaceBetween: 10, // 슬라이드 간격
-                autoHeight: true,
+                autoHeight: 'false',
                 dir:"ltr",
                 observer: true,
                 observeParents: true,
@@ -514,9 +516,11 @@ function initSwiper() {
                     breakpoints: {
                         0: {
                             direction: 'horizontal',
+                            slidesPerView: 'auto',
                         },
                         721: {
                             direction: 'vertical',
+                            slidesPerView: '2.5',
                         }
                     }
                 });
@@ -577,10 +581,10 @@ function initSwiper() {
                 loopAdditionalSlides: 3, // 슬라이드를 추가로 복제하여 자연스러운 전환
                 loopedSlides: 3, // 자연스러운 루프 전환을 위해 슬라이드 복제
                 direction: 'vertical',
+                //slidesPerGroup: 1,
                 speed: 5000, // 슬라이드 전환 속도
-                slidesPerView: 'auto',
                 spaceBetween: 10, // 슬라이드 간격
-                autoHeight: true,
+                autoHeight: 'false',
                 observer: true,
                 observeParents: true,
                     navigation: {
@@ -590,9 +594,11 @@ function initSwiper() {
                     breakpoints: {
                         0: {
                             direction: 'horizontal',
+                            slidesPerView: 'auto',
                         },
                         721: {
                             direction: 'vertical',
+                            slidesPerView: '2.5',
                         }
                     }
                 });
@@ -602,17 +608,76 @@ function initSwiper() {
             .catch(error => console.error('Error fetching JSON data:', error));
     }
 
+    // 모든 Swiper 컨테이너 요소를 선택
+    const swiperContainers = document.querySelectorAll('[data-bui-swiper]');
+
+    // 각 Swiper 컨테이너에 대해 JSON 데이터 가져오기 및 Swiper 초기화
+    swiperContainers.forEach(swiperContainer => {
+        const swiperModule = swiperContainer.getAttribute('data-bui-swiper'); // 예: swipermodule07, swipermodule08 등
+
+        // swipermodule07, swipermodule08, swipermodule09, swipermodule10만 초기화
+        if (['swipermodule07', 'swipermodule08', 'swipermodule09', 'swipermodule10'].includes(swiperModule)) {
+            fetch('../../data/swipercont.json')
+                .then(response => response.json())
+                .then(data => {
+                    const slides = data[swiperModule]; // JSON에서 해당 모듈에 맞는 데이터 가져오기
+                    const swiperWrapper = swiperContainer.querySelector('.swiper-wrapper');
+
+                    // JSON 데이터를 이용해 슬라이드를 생성
+                    slides.forEach(item => {
+                        const slide = document.createElement('div');
+                        slide.classList.add('swiper-slide');
+
+                        // 각 필드가 존재할 때만 해당 마크업을 생성
+                        const imageMarkup01 = item.image01 ? `<a href="${item.image01url}"><img src="${item.image01}" alt="${item.title01 || ''}" style="width: 100%; height: auto;"></a>` : '';
+                        const imageMarkup02 = item.image02 ? `<a href="${item.image02url}"><img src="${item.image02}" alt="${item.title02 || ''}" style="width: 100%; height: auto;"></a>` : '';
+                        const imageMarkup03 = item.image03 ? `<a href="${item.image03url}"><img src="${item.image03}" alt="${item.title03 || ''}" style="width: 100%; height: auto;"></a>` : '';
+                        const imageMarkup04 = item.image04 ? `<a href="${item.image04url}"><img src="${item.image04}" alt="${item.title04 || ''}" style="width: 100%; height: auto;"></a>` : '';
+
+                        // swiper-inform으로 감싼 부분
+                        const informMarkup = `
+                            <div class="swiper-inform">
+                                ${imageMarkup01}
+                                ${imageMarkup02}
+                                ${imageMarkup03}
+                                ${imageMarkup04}
+                            </div>
+                        `;
+
+                        // 슬라이드에 이미지와 정보 마크업 추가
+                        slide.innerHTML = `
+                            ${informMarkup}
+                        `;
+                        
+                        swiperWrapper.appendChild(slide);
+                    });
+
+                    // Swiper 초기화
+                    new Swiper(swiperContainer, {
+                        slidesPerView: 2.2,        // 한 줄에 보이는 슬라이드 개수
+                        // spaceBetween:10,        // 슬라이드 간격
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching JSON data:', error));
+        }
+    });
+
+
 
 }
 
 function initmarquee() {
     $('.marquee-wrap').marquee({
         speed: 80, // 속도
-        gap: 100, // 간격
+        // gap: 100, // 간격
         delayBeforeStart: 0, // 시작 delay값
         direction: 'left', // 방향
-        duplicated: true, // 선택 영역 복제
-        pauseOnHover: true // hover시 일시중지 여부
+        duplicated: false, // 선택 영역 복제
+        pauseOnHover: false // hover시 일시중지 여부
     });
 }
 
@@ -628,380 +693,414 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// import buiToggle from 'bui-toggle';
-// document.addEventListener('DOMContentLoaded', function() {
-//     const typedElements = document.querySelectorAll('.typed');
+
+
+
+
+
+
+
+
+// 특정 GNB 데이터를 가져와서 렌더링
+fetch('../../data/menu.json')
+  .then(response => response.json())
+  .then(data => {
+    const gnbData = data.mobile[0]; // 첫 번째 메뉴만 예시로 선택
+    renderGnbContent(gnbData);
+  })
+  .catch(error => console.error('Error loading menu JSON:', error));
+
+// GNB 콘텐츠 렌더링 함수
+function renderGnbContent(data) {
+  const container = document.getElementById(data.id);
+
+  // GNB 제목 생성
+  const subsectionSubject = container.querySelector(".subsection-subject");
+  subsectionSubject.innerHTML = `<a href="${data.link}">${data.name}</a>`;
+
+  // LNB 리스트 생성
+  const lnbList = container.querySelector(".lnb-list");
+  lnbList.innerHTML = ''; // 기존 내용을 초기화
   
-//     typedElements.forEach(element => {
-//       ['mouseover', 'mouseout',].forEach(event => {
-//         element.addEventListener(event, function(e) {
-//           if (e.type === 'mouseover') {
-//             element.classList.add(event);
-//           } else {
-//             element.classList.remove(event.replace('out', 'over'));
-//           }
-//         });
-//       });
-//     });
-//   });
+  data.sub.forEach((lnbItem) => {
+    const lnbItemElement = document.createElement("li");
+    lnbItemElement.classList.add("lnb-item");
 
+    // LNB 항목 제목 및 링크
+    const lnbLink = document.createElement("a");
+    lnbLink.href = lnbItem.link;
+    lnbLink.textContent = lnbItem.name;
+    lnbItemElement.appendChild(lnbLink);
 
-// /**
-//  * Module buiToggle dialogPopup
-//  * 
-//  * @param {String} selector
-//  * @param {Object} options
-// **/
-// const buiDialogPopup = new buiToggle('[data-bui-toggle="buiDialogPopup"]', {
-// 	reactTarget: 'html',
-// 	reactTargetActiveClass: 'active-bui-dialog-popup',
-// 	focusin: true,
-// 	focusout: true,
-// 	clickout: true,
-// 	clickoutTarget: '.popup-page-body',
-// });
-// window.buiDialogPopup = buiDialogPopup;
+    // SNB 리스트 생성
+    const snbListContainer = document.createElement("div");
+    snbListContainer.classList.add("snb-navi");
+    const snbList = document.createElement("ul");
+    snbList.classList.add("snb-list");
 
-// $(function() {
+    // 하위 SNB 항목 추가
+    if (lnbItem.sub) {
+      lnbItem.sub.forEach((snbItem) => {
+        const snbItemElement = document.createElement("li");
+        snbItemElement.classList.add("snb-item");
 
-//     //open 마무스 효과
-//     const _root = document.documentElement;
-//     const _mouse = document.querySelector('.mouse');
-//     const _mouse_mid = document.querySelector('.mouse-mid');
-//     const _mouse_guide = document.querySelector('.mouse-guide');
+        // SNB 항목 링크
+        const snbLink = document.createElement("a");
+        snbLink.href = snbItem.link;
+        snbLink.textContent = snbItem.name;
 
-//     const a = 0.4;	// Div follow mouse - speed
-//     let _s = 60;		// Div size - hover
+        snbItemElement.appendChild(snbLink);
+        snbList.appendChild(snbItemElement);
+      });
+    }
 
-//     let x_ = 0;
-//     let y_ = 0;
-//     let _x = 0;
-//     let _y = 0;
-//     let _xm_ = 0;
-//     let _ym_ = 0;
-//     let _x_ = 0;
-//     let _y_ = 0;
-
-//     _root.addEventListener('mousemove', function(event) {
-//         _x = event.clientX;
-//         _y = event.clientY;	
-//     }, false);
-
-//     _root.addEventListener('mousedown', function(event) {
-//         _mouse.style.width = _s + 'px';
-//         _mouse.style.height = _s + 'px';
-//     }, false);
-
-//     _root.addEventListener('mouseup', function(event) {
-//         _mouse.style.width = (_s / 1.3) + 'px';
-//         _mouse.style.height = (_s / 1.3) + 'px';
-//     }, false);
-
-//     function main() {
-//         requestAnimationFrame(main);
-//         x_ += (_x - x_) * a / 2;
-//         y_ += (_y - y_) * a / 2;
-//         _x_ += (_x - _x_) * a;
-//         _y_ += (_y - _y_) * a;
-//         _xm_ += (_x - _xm_) * a / 1.5;
-//         _ym_ += (_y - _ym_) * a / 1.5;
-//         //--
-//         _mouse.style.left = x_ + 'px';
-//         _mouse.style.top = y_ + 'px';
-//         _mouse_mid.style.left = _xm_ + 'px';
-//         _mouse_mid.style.top = _ym_ + 'px';
-//         _mouse_guide.style.left = _x_ + 'px';
-//         _mouse_guide.style.top = _y_ + 'px';
-//     }
-
-//     window.addEventListener('load', main, false);
+    snbListContainer.appendChild(snbList);
+    lnbItemElement.appendChild(snbListContainer);
+    lnbList.appendChild(lnbItemElement);
+  });
+}
 
 
 
-//     const scrollSection = document.querySelector('.maincollect');
-//     const scrollContent = document.querySelector('.collectbox');
-
-//     const scrollHeight = scrollSection.clientHeight;
-//     const contentWidth = scrollContent.clientWidth;
-
-//     document.addEventListener('scroll', e => {
-//         const scrolled = window.pageYOffset;
-//         const sectionOffset = Math.abs(scrollSection.offsetTop - scrolled);
-//         const notReachedBottom = parseInt(Math.max(0, scrollSection.getBoundingClientRect().bottom - window.innerHeight));
-
-//         if (scrollSection.offsetTop <= scrolled && notReachedBottom) {
-
-//         gsap.to(scrollContent, {
-//             x: -sectionOffset });
-
-//         }
-//     });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(function() {
+
+    //open 마무스 효과
+    const _root = document.documentElement;
+    const _mouse = document.querySelector('.mouse');
+    const _mouse_mid = document.querySelector('.mouse-mid');
+    const _mouse_guide = document.querySelector('.mouse-guide');
+
+    const a = 0.4;	// Div follow mouse - speed
+    let _s = 60;		// Div size - hover
+
+    let x_ = 0;
+    let y_ = 0;
+    let _x = 0;
+    let _y = 0;
+    let _xm_ = 0;
+    let _ym_ = 0;
+    let _x_ = 0;
+    let _y_ = 0;
+
+    _root.addEventListener('mousemove', function(event) {
+        _x = event.clientX;
+        _y = event.clientY;	
+    }, false);
+
+    _root.addEventListener('mousedown', function(event) {
+        _mouse.style.width = _s + 'px';
+        _mouse.style.height = _s + 'px';
+    }, false);
+
+    _root.addEventListener('mouseup', function(event) {
+        _mouse.style.width = (_s / 1.3) + 'px';
+        _mouse.style.height = (_s / 1.3) + 'px';
+    }, false);
+
+    function main() {
+        requestAnimationFrame(main);
+        x_ += (_x - x_) * a / 2;
+        y_ += (_y - y_) * a / 2;
+        _x_ += (_x - _x_) * a;
+        _y_ += (_y - _y_) * a;
+        _xm_ += (_x - _xm_) * a / 1.5;
+        _ym_ += (_y - _ym_) * a / 1.5;
+        //--
+        _mouse.style.left = x_ + 'px';
+        _mouse.style.top = y_ + 'px';
+        _mouse_mid.style.left = _xm_ + 'px';
+        _mouse_mid.style.top = _ym_ + 'px';
+        _mouse_guide.style.left = _x_ + 'px';
+        _mouse_guide.style.top = _y_ + 'px';
+    }
+
+    window.addEventListener('load', main, false);
+
+
+
+    const scrollSection = document.querySelector('.maincollect');
+    const scrollContent = document.querySelector('.collectbox');
+
+    const scrollHeight = scrollSection.clientHeight;
+    const contentWidth = scrollContent.clientWidth;
+
+    document.addEventListener('scroll', e => {
+        const scrolled = window.pageYOffset;
+        const sectionOffset = Math.abs(scrollSection.offsetTop - scrolled);
+        const notReachedBottom = parseInt(Math.max(0, scrollSection.getBoundingClientRect().bottom - window.innerHeight));
+
+        if (scrollSection.offsetTop <= scrolled && notReachedBottom) {
+
+        gsap.to(scrollContent, {
+            x: -sectionOffset });
+
+        }
+    });
+
+    /*GNB배너 모바일 PC*/
+
+    $(".btnMobOpen").click(function(){
+
+        $(".gnb").addClass("mobMenuOpen");
+        $('body').addClass('scrollLock');
     
-//     // const scrollSection = document.querySelector('.maincollect');
-//     // const scrollContent = document.querySelector('.collectbox');
-    
-//     // const scrollHeight = scrollSection.clientHeight;
-//     // const contentWidth = scrollContent.clientWidth;
-    
-//     // document.addEventListener('scroll', e => {
-//     //     const scrolled = window.pageYOffset;
-//     //     const sectionOffset = Math.abs(scrollSection.offsetTop - scrolled);
-//     //     const notReachedBottom = parseInt(Math.max(0, scrollSection.getBoundingClientRect().bottom - window.innerHeight));
-    
-//     //     if (scrollSection.offsetTop <= scrolled && notReachedBottom) {
-    
-//     //     gsap.to(scrollContent, {
-//     //     x: -sectionOffset });
-    
-//     //     }
-//     // });
+    });
 
-//     /*GNB배너 모바일 PC*/
+    $(".btnMobClose").click(function(){
 
-//     $(".btnMobOpen").click(function(){
+        $(".gnb").removeClass("mobMenuOpen");
+        $('body').removeClass('scrollLock');
+    });
 
-//         $(".gnb").addClass("mobMenuOpen");
-//         $('body').addClass('scrollLock');
-    
-//     });
-
-//     $(".btnMobClose").click(function(){
-
-//         $(".gnb").removeClass("mobMenuOpen");
-//         $('body').removeClass('scrollLock');
-//     });
-
-//     $(window).resize(function(){
-//         if (window.innerWidth > 940) {  // 다바이스 크기가 480이상일때
-//             // $('.menu1 > a').mouseenter(function(){
-//             //     $(this).next(".sub").stop().slideDown(400);
-//             // });
-//             // $('.gnbList').mouseleave(function(){
-//             //     $(this).next(".sub").stop().slideUp(100);
-//             // });
-//             function pcmenuhover(){
-//                 $('.menu1 > a').mouseenter(function(){
-//                     // $(this).toggleClass('ongray').closest("li").siblings().children().removeClass('ongray');
-//                     $('.sub').slideUp();
-//                     if ($(this).next('.sub').is(':hidden')){
-//                         $(this).next('.sub').slideDown(200);
-//                         $('.dimmedLayer').show();
-//                     } else{
-//                         $(this).next('.sub').slideUp(200);
-//                     }
-//                     return false;
-//                 });
-//                 $('.menu1').mouseleave(function(){
-//                     // $(this).toggleClass('active').closest("li").siblings().children().removeClass('active');
-//                     $('.sub').hide();
-//                     $('.dimmedLayer').hide(); 
-//                     return false;
-//                 });
+    $(window).resize(function(){
+        if (window.innerWidth > 940) {  // 다바이스 크기가 480이상일때
+            // $('.menu1 > a').mouseenter(function(){
+            //     $(this).next(".sub").stop().slideDown(400);
+            // });
+            // $('.gnbList').mouseleave(function(){
+            //     $(this).next(".sub").stop().slideUp(100);
+            // });
+            function pcmenuhover(){
+                $('.menu1 > a').mouseenter(function(){
+                    // $(this).toggleClass('ongray').closest("li").siblings().children().removeClass('ongray');
+                    $('.sub').slideUp();
+                    if ($(this).next('.sub').is(':hidden')){
+                        $(this).next('.sub').slideDown(200);
+                        $('.dimmedLayer').show();
+                    } else{
+                        $(this).next('.sub').slideUp(200);
+                    }
+                    return false;
+                });
+                $('.menu1').mouseleave(function(){
+                    // $(this).toggleClass('active').closest("li").siblings().children().removeClass('active');
+                    $('.sub').hide();
+                    $('.dimmedLayer').hide(); 
+                    return false;
+                });
                 
-//             };
+            };
         
-//             pcmenuhover();
+            pcmenuhover();
 
             
-//             $(".btnSearchOpen").click(function(){
+            $(".btnSearchOpen").click(function(){
 
-//             $(".gnb").removeClass("mobMenuOpen");
-//             $(".totalSearchWrap").addClass("totalSearcopen");
-//             $('.btnSearchOpen').hide();
-//             // $(".header").css('border-bottom',' 0px solid');
-//             // $(".menu1 > a").off('mouseenter');
-//             $('.menu1 > a').off('mouseenter');
-//             $('body').addClass('scrollLock');
-//             $('.dimmedLayer').show();
-//             });
+            $(".gnb").removeClass("mobMenuOpen");
+            $(".totalSearchWrap").addClass("totalSearcopen");
+            $('.btnSearchOpen').hide();
+            // $(".header").css('border-bottom',' 0px solid');
+            // $(".menu1 > a").off('mouseenter');
+            $('.menu1 > a').off('mouseenter');
+            $('body').addClass('scrollLock');
+            $('.dimmedLayer').show();
+            });
 
-//             $(".btnsearchclose").click(function(){
+            $(".btnsearchclose").click(function(){
 
-//             $(".totalSearchWrap").removeClass("totalSearcopen");
-//             $('.btnSearchOpen').show();
-//             $('body').removeClass('scrollLock');
-//             $('.dimmedLayer').hide();
-//             // $(".header").css('border-bottom',' 1px solid #000');
-//             pcmenuhover();
-//             // $(".menu1 > a").on('mouseenter');
-//             // $('.sub').show();
-//             });
+            $(".totalSearchWrap").removeClass("totalSearcopen");
+            $('.btnSearchOpen').show();
+            $('body').removeClass('scrollLock');
+            $('.dimmedLayer').hide();
+            // $(".header").css('border-bottom',' 1px solid #000');
+            pcmenuhover();
+            // $(".menu1 > a").on('mouseenter');
+            // $('.sub').show();
+            });
 
-//             let header = document.querySelector("header");
-//             let headerHeight = header.offsetHeight;
+            let header = document.querySelector("header");
+            let headerHeight = header.offsetHeight;
 
-//             window.onscroll = function () {
-//             let windowTop = window.scrollY;
-//             if (windowTop >= headerHeight) {
-//                 header.classList.add("sticky");
-//             } else {
-//                 header.classList.remove("sticky");
-//             }
-//             };
-//         } else {
-//             $('.menu1 > a').click(function(){
-//                 $(this).toggleClass('active').closest("li").siblings().children().removeClass('active');
-//                 $('.sub').slideUp();
-//                 if ($(this).next('.sub').is(':hidden')){
-//                     $(this).next('.sub').slideDown(200);
-//                 } else{
-//                     $(this).next('.sub').slideUp(200);
-//                 }
+            window.onscroll = function () {
+            let windowTop = window.scrollY;
+            if (windowTop >= headerHeight) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+            };
+        } else {
+            $('.menu1 > a').click(function(){
+                $(this).toggleClass('active').closest("li").siblings().children().removeClass('active');
+                $('.sub').slideUp();
+                if ($(this).next('.sub').is(':hidden')){
+                    $(this).next('.sub').slideDown(200);
+                } else{
+                    $(this).next('.sub').slideUp(200);
+                }
 
-//                 return false;
-//             });
+                return false;
+            });
 
-//             $(".btnSearchOpen").click(function(){
+            $(".btnSearchOpen").click(function(){
 
-//                 $(".gnb").removeClass("mobMenuOpen");
-//                 $(".totalSearchWrap").addClass("totalSearcopen");
-//                 $('.btnSearchOpen').hide();
-//                 $(".header").css('border-bottom',' 0px solid');
-//                 $('body').addClass('scrollLock');
-//             });
+                $(".gnb").removeClass("mobMenuOpen");
+                $(".totalSearchWrap").addClass("totalSearcopen");
+                $('.btnSearchOpen').hide();
+                $(".header").css('border-bottom',' 0px solid');
+                $('body').addClass('scrollLock');
+            });
         
-//             $(".btnsearchclose").click(function(){
+            $(".btnsearchclose").click(function(){
         
-//                 $(".totalSearchWrap").removeClass("totalSearcopen");
-//                 $('.btnSearchOpen').show();
-//                 $(".header").css('border-bottom',' 1px solid #000');
-//                 $('body').removeClass('scrollLock');
-//             });
-//         }
-//     }).resize();
+                $(".totalSearchWrap").removeClass("totalSearcopen");
+                $('.btnSearchOpen').show();
+                $(".header").css('border-bottom',' 1px solid #000');
+                $('body').removeClass('scrollLock');
+            });
+        }
+    }).resize();
 
 
 
-//     $(window).on('scroll', function() {
-//         var scrollTop = $(document).scrollTop();
-//         var $seasons_box = $('.mainabout .aboutimg_box');
-//         var move_01 = scrollTop / 10;
-//         var move_02 = scrollTop / 10;
-//         var move_03 = scrollTop / 10;
-//         var move_04 = scrollTop / 10;
-//         $seasons_box.eq(0).find('.box').css({'transform':'translateY('+ move_01 +'px)'});
-//         $seasons_box.eq(1).find('.box').css({'transform':'translateY('+ (-move_02) +'px)'});
-//         $seasons_box.eq(2).find('.box').css({'transform':'translateY('+ move_03 +'px)'});
-//         $seasons_box.eq(3).find('.box').css({'transform':'translateY('+ (-move_04) +'px)'});
-//     });
+    $(window).on('scroll', function() {
+        var scrollTop = $(document).scrollTop();
+        var $seasons_box = $('.mainabout .aboutimg_box');
+        var move_01 = scrollTop / 10;
+        var move_02 = scrollTop / 10;
+        var move_03 = scrollTop / 10;
+        var move_04 = scrollTop / 10;
+        $seasons_box.eq(0).find('.box').css({'transform':'translateY('+ move_01 +'px)'});
+        $seasons_box.eq(1).find('.box').css({'transform':'translateY('+ (-move_02) +'px)'});
+        $seasons_box.eq(2).find('.box').css({'transform':'translateY('+ move_03 +'px)'});
+        $seasons_box.eq(3).find('.box').css({'transform':'translateY('+ (-move_04) +'px)'});
+    });
     
     
 
 
-//     var $cursor = $("#cursor"),
-//         $cursor2 = $("#cursor2"),
-//         $cursor3 = $("#cursor3");
+    var $cursor = $("#cursor"),
+        $cursor2 = $("#cursor2"),
+        $cursor3 = $("#cursor3");
     
-//     $('.cont_newsletter').on("mousemove", function(event) {
-//         $cursor.css({ left: event.clientX + "px", top: event.clientY + "px" });
-//         $cursor2.css({ left: event.clientX + "px", top: event.clientY + "px" });
-//         $cursor3.css({ left: event.clientX + "px", top: event.clientY + "px" });
-//     });
+    $('.cont_newsletter').on("mousemove", function(event) {
+        $cursor.css({ left: event.clientX + "px", top: event.clientY + "px" });
+        $cursor2.css({ left: event.clientX + "px", top: event.clientY + "px" });
+        $cursor3.css({ left: event.clientX + "px", top: event.clientY + "px" });
+    });
 
-//     function addHover() {
-//         $cursor2.add($cursor3).addClass("hover hover-2");
-//     }
+    function addHover() {
+        $cursor2.add($cursor3).addClass("hover hover-2");
+    }
 
-//     function removeHover() {
-//         $cursor2.add($cursor3).removeClass("hover hover-2");
-//     }
-
-
-
-//     removeHover();
-
-//     $(".hover-target, .hover-target-2").hover(addHover, removeHover);
-
-//     $('.img-1, .img-2, .img-3, .img-4').hover(function() {
-//         var className = $(this).attr('class');
-//         $('.cont_newsletter').addClass(className + '-wrap');
-//     }, function() {
-//         var className = $(this).attr('class');
-//         $('.cont_newsletter').removeClass(className + '-wrap');
-//     });
+    function removeHover() {
+        $cursor2.add($cursor3).removeClass("hover hover-2");
+    }
 
 
-//     $('.cont_newsletter').on('mouseenter', function() {
-//         $('.cont_newsletter [class^="cursor"]').css('display', 'block');
-//     }).on('mouseleave', function() {
-//         $('.cont_newsletter [class^="cursor"]').css('display', 'none');
-//     });
+
+    removeHover();
+
+    $(".hover-target, .hover-target-2").hover(addHover, removeHover);
+
+    $('.img-1, .img-2, .img-3, .img-4').hover(function() {
+        var className = $(this).attr('class');
+        $('.cont_newsletter').addClass(className + '-wrap');
+    }, function() {
+        var className = $(this).attr('class');
+        $('.cont_newsletter').removeClass(className + '-wrap');
+    });
 
 
+    $('.cont_newsletter').on('mouseenter', function() {
+        $('.cont_newsletter [class^="cursor"]').css('display', 'block');
+    }).on('mouseleave', function() {
+        $('.cont_newsletter [class^="cursor"]').css('display', 'none');
+    });
 
 
 
 
 
-//     // var controller = new ScrollMagic.Controller();
 
-//     // var horizontalSlide = new TimelineMax()
-//     // // animate panels
-//     // .to("#js-slideContainer", 1,   {x: "-20%"})	
-//     // .to("#js-slideContainer", 1,   {x: "-40%"})
-//     // .to("#js-slideContainer", 1,   {x: "-60%"})
-//     // .to("#js-slideContainer", 1,   {x: "-80%"})
+
+    // var controller = new ScrollMagic.Controller();
+
+    // var horizontalSlide = new TimelineMax()
+    // // animate panels
+    // .to("#js-slideContainer", 1,   {x: "-20%"})	
+    // .to("#js-slideContainer", 1,   {x: "-40%"})
+    // .to("#js-slideContainer", 1,   {x: "-60%"})
+    // .to("#js-slideContainer", 1,   {x: "-80%"})
   
   
-//     // // create scene to pin and link animation
-//     // new ScrollMagic.Scene({
-//     //   triggerElement: "#js-wrapper",
-//     //   triggerHook: "onLeave",
-//     //   duration: "400%"
-//     // })
-//     //   .setPin("#js-wrapper")
-//     //   .setTween(horizontalSlide)
-//     //   //.addIndicators() // add indicators (requires plugin)
-//     //   .addTo(controller);
+    // // create scene to pin and link animation
+    // new ScrollMagic.Scene({
+    //   triggerElement: "#js-wrapper",
+    //   triggerHook: "onLeave",
+    //   duration: "400%"
+    // })
+    //   .setPin("#js-wrapper")
+    //   .setTween(horizontalSlide)
+    //   //.addIndicators() // add indicators (requires plugin)
+    //   .addTo(controller);
     
 
 
 
 
-// /*
-// // faq
-// $('.faq__list .faq__subject').on('click' , function(){
+/*
+// faq
+$('.faq__list .faq__subject').on('click' , function(){
 
-//     if($(this).parent('li').is('.active')){
-//         $(this).parent('li').removeClass('active')
-//         $(this).siblings('.faq__cont').stop().slideUp(250);
-//     } else {
-//         $(this).parent('li').addClass('active')
-//         $(this).siblings('.faq__cont').stop().slideDown(250);
-//     }
-// })
+    if($(this).parent('li').is('.active')){
+        $(this).parent('li').removeClass('active')
+        $(this).siblings('.faq__cont').stop().slideUp(250);
+    } else {
+        $(this).parent('li').addClass('active')
+        $(this).siblings('.faq__cont').stop().slideDown(250);
+    }
+})
 
-// // dropmenu
-// $('.dropmenu .trigger').on('click' , function(){
-//     if($(this).is('.active')){
-//         $(this).removeClass('active')
-//     } else {
-//         $(this).addClass('active')
-//     }
-// })
-// */
-
-
-// // config 변수
-// // var xl = 1000;
-
-// // 전역함수
-// // var $window = $(window),
-// //     $windowWidth = $window.width(),
-// //     $body = $('body'),
-// //     $header = $('#header'),
-// //     $nav = $('#nav');
-
-// //넓이 리턴 함수
-// // function returnWidth(){
-// //     $windowWidth = $window.width();
-// //     return $windowWidth;
-// // }
+// dropmenu
+$('.dropmenu .trigger').on('click' , function(){
+    if($(this).is('.active')){
+        $(this).removeClass('active')
+    } else {
+        $(this).addClass('active')
+    }
+})
+*/
 
 
-// })
+// config 변수
+// var xl = 1000;
+
+// 전역함수
+// var $window = $(window),
+//     $windowWidth = $window.width(),
+//     $body = $('body'),
+//     $header = $('#header'),
+//     $nav = $('#nav');
+
+//넓이 리턴 함수
+// function returnWidth(){
+//     $windowWidth = $window.width();
+//     return $windowWidth;
+// }
+
+
+})
 
 
 

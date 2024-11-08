@@ -729,6 +729,131 @@ ul.tab-list {
 	}
 }
 
+// tab module-f
+.tab-display.module-f {
+	$accent: (
+		'normal-01': (
+			'none': (
+				'color':			var(--color-base-12),
+				'border-color':		var(--color-base-12),
+				'background-color':	var(--color-base-01),
+			),
+		),
+		'normal-02': (
+			'none': (
+				'color':			var(--color-base-12),
+				'border-color':		var(--color-base-11),
+				'background-color':	var(--color-base-01),
+			),
+		),
+		'normal-03': (
+			'none': (
+				'color':			var(--color-base-12),
+				'border-color':		var(--color-base-09),
+				'background-color':	var(--color-base-01),
+			),
+		),
+		'normal-04': (
+			'none': (
+				'color':			var(--color-base-12),
+				'border-color':		var(--color-base-09),
+				'background-color':	var(--color-base-01),
+			),
+		),
+		'accent-01': (
+			'none': (
+				'color':			var(--color-base-12),
+				'border-color':		var(--color-secondary-08),
+				'background-color':	var(--color-base-01),
+			),
+		),
+		'accent-02': (
+			'none': (
+				'color':			var(--color-base-12),
+				'border-color':		var(--color-secondary-01),
+				'background-color':	var(--color-base-01),
+			),
+		)
+	);
+
+	$outline-t: (
+		8: (
+			'font-weight': 400,
+		),
+		10: (
+			'font-weight': 400,
+		),
+		12: (
+			'font-weight': 400,
+		),
+	);
+
+	@each $i, $name in $outline-t {
+		$gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
+		&.outline-t#{$i}x {
+			@include set-vw(--line-height,$gutter-value);
+			@include set-vw(--height,$gutter-value);
+		}
+	}
+	
+	// accent
+	@each $accent-name in $accent {
+		&.#{nth($accent-name, 1)} {
+			--accent-color: #{ map-get($accent, nth($accent-name, 1), 'none', 'color')};
+			--accent-border-color: #{ map-get($accent, nth($accent-name, 1), 'none', 'border-color')};
+			--accent-background-color: #{ map-get($accent, nth($accent-name, 1), 'none', 'background-color')};
+		}
+	}
+
+	// @each $name in $outline-t {
+	// 	&.outline-t#{nth($name, 1)}x {
+	// 		--height: #{nth($name, 1) * $gutter-1};
+	// 		--line-height: #{nth($name, 1) * $gutter-1 * 0.5};
+	// 	}
+	// }
+
+	--normal-color: var(--color-base-09);
+	--normal-border-color: var(--color-base-08);
+	background-color: var(--color-base-01);
+
+	.tab-list {
+		display: flex;
+		align-items: center;
+		
+		.tab-item {
+			.tab-text {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				white-space: nowrap;
+				text-align: center;
+				padding-right: calc(var(--height) / 4.4 - 1px);
+				padding-left: calc(var(--height) / 4.4 - 1px);
+				height: calc(var(--height) / 1.5);
+				line-height: calc(var(--line-height) / 1.5);
+				font-size: calc(var(--line-height) / 3.3);
+				color: var(--normal-color);
+			}
+
+			&.current {
+				::after{
+					border-width: 4px;
+					border-style: solid;
+					border-color: #171A19 transparent transparent #171A19;
+					content: "";
+					position: absolute;
+					top: 0;
+					left: initial;
+					bottom: 0;
+					right: 0;
+					width: 0;
+					height: 0;
+				}
+			}
+		}
+	}
+}
+
 
 
 

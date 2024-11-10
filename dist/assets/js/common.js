@@ -699,47 +699,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-// 특정 GNB 데이터를 가져와서 렌더링
+// JSON 데이터를 가져와 모든 GNB 항목을 렌더링
 fetch('../../data/menu.json')
   .then(response => response.json())
   .then(data => {
-    const gnbData = data.mobile[0]; // 첫 번째 메뉴만 예시로 선택
-    renderGnbContent(gnbData);
+    const mainContainer = document.getElementById("gnbContainer"); // GNB 항목들이 들어갈 메인 컨테이너
+    data.mobile.forEach(gnbItem => renderGnbContent(gnbItem, mainContainer));
   })
   .catch(error => console.error('Error loading menu JSON:', error));
 
 // GNB 콘텐츠 렌더링 함수
-function renderGnbContent(data) {
-  const container = document.getElementById(data.id);
-
-  // GNB 제목 생성
-  const subsectionSubject = container.querySelector(".subsection-subject");
-  subsectionSubject.innerHTML = `<a href="${data.link}">${data.name}</a>`;
-
-  // LNB 리스트 생성
-  const lnbList = container.querySelector(".lnb-list");
-  lnbList.innerHTML = ''; // 기존 내용을 초기화
+function renderGnbContent(data, container) {
+  // 기본 HTML 구조를 복제하여 사용
+  const subsection = document.createElement("div");
+  subsection.classList.add("subsection");
   
+  subsection.innerHTML = `
+    <div class="subsection-wrap">
+      <div class="subsection-head">
+        <p class="subsection-subject">
+          <a href="${data.link}">${data.name}</a>
+        </p>
+      </div>
+      <div class="section-body">
+        <div class="lnb-navi">
+          <ul class="lnb-list"></ul>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // LNB 리스트를 찾아서 항목 추가
+  const lnbList = subsection.querySelector(".lnb-list");
+
   data.sub.forEach((lnbItem) => {
     const lnbItemElement = document.createElement("li");
     lnbItemElement.classList.add("lnb-item");
 
-    // LNB 항목 제목 및 링크
+    // LNB 항목 링크 생성
     const lnbLink = document.createElement("a");
     lnbLink.href = lnbItem.link;
     lnbLink.textContent = lnbItem.name;
     lnbItemElement.appendChild(lnbLink);
 
-    // SNB 리스트 생성
-    const snbListContainer = document.createElement("div");
-    snbListContainer.classList.add("snb-navi");
-    const snbList = document.createElement("ul");
-    snbList.classList.add("snb-list");
+    // SNB 리스트 추가 (하위 항목이 있는 경우에만)
+    if (lnbItem.sub && lnbItem.sub.length > 0) {
+      const snbListContainer = document.createElement("div");
+      snbListContainer.classList.add("snb-navi");
 
-    // 하위 SNB 항목 추가
-    if (lnbItem.sub) {
+      const snbList = document.createElement("ul");
+      snbList.classList.add("snb-list");
+
       lnbItem.sub.forEach((snbItem) => {
         const snbItemElement = document.createElement("li");
         snbItemElement.classList.add("snb-item");
@@ -752,13 +762,19 @@ function renderGnbContent(data) {
         snbItemElement.appendChild(snbLink);
         snbList.appendChild(snbItemElement);
       });
+
+      snbListContainer.appendChild(snbList);
+      lnbItemElement.appendChild(snbListContainer);
     }
 
-    snbListContainer.appendChild(snbList);
-    lnbItemElement.appendChild(snbListContainer);
+    // LNB 리스트에 항목 추가
     lnbList.appendChild(lnbItemElement);
   });
+
+  // 최종적으로 메인 컨테이너에 섹션 추가
+  container.appendChild(subsection);
 }
+
 
 
 

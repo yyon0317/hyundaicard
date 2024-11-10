@@ -5,80 +5,128 @@
 				{"title":"subtitle", "class": "spot", "name": "더현대 서울", "link": "#", "sub": null},
 				{"title":"subtitle", "class": "spot", "name": "더현대 대구", "link": "#", "sub": null}
 			]},
-			{"title":"lnbtitle", "class": "spot", "name": "B tv", "link": "#", "sub": [
-				{"title":"subtitle", "class": "spot", "name": "요금제", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "부가서비스", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "콘텐츠 안내", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			{"title":"lnbtitle", "class": "spot", "name": "현대백화점", "link": "#", "sub": [
+				{"title":"subtitle", "class": "spot", "name": "압구정본점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "무역센터점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "천호점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "신촌점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "미아점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "목동점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "중동점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "킨텍스점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "디큐브시티", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "울산점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "울산동구점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "충청점", "link": "#", "sub": null}
 			]},
-			{"title":"lnbtitle", "class": "spot", "name": "더현대", "link": "#", "sub": [
-				{"title":"subtitle", "class": "spot", "name": "더현대 서울", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "더현대 대구", "link": "#", "sub": null}
+			{"title":"lnbtitle", "class": "spot", "name": "커넥트더현대", "link": "#", "sub": [
+				{"title":"subtitle", "class": "spot", "name": "커넥트현대", "link": "#", "sub": null}
 			]},
-			{"title":"lnbtitle", "class": "spot", "name": "B tv", "link": "#", "sub": [
-				{"title":"subtitle", "class": "spot", "name": "요금제", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "부가서비스", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "콘텐츠 안내", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "B tv 주요서비스", "link": "#", "sub": null}
-			]},
-			{"title":"lnbtitle", "class": "spot", "name": "B tv", "link": "#", "sub": [
-				{"title":"subtitle", "class": "spot", "name": "요금제", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "부가서비스", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "콘텐츠 안내", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "B tv 주요서비스", "link": "#", "sub": null}
-			]},
-			{"title":"lnbtitle", "class": "spot", "name": "B tv", "link": "#", "sub": [
-				{"title":"subtitle", "class": "spot", "name": "요금제", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "부가서비스", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "콘텐츠 안내", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "B tv 주요서비스", "link": "#", "sub": null}
-			]},
-			{"title":"lnbtitle", "class": "spot", "name": "B tv", "link": "#", "sub": [
-				{"title":"subtitle", "class": "spot", "name": "요금제", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "부가서비스", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "콘텐츠 안내", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "spot", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			{"title":"lnbtitle", "class": "spot", "name": "현대아울렛", "link": "#", "sub": [
+				{"title":"subtitle", "class": "spot", "name": "김포점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "송도점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "대전점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "SPACE 1", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "동대문점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "가산점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "가든파이브점", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "spot", "name": "대구점", "link": "#", "sub": null}
 			]}
 		]},
-		{"title":"gnbtitle", "id":"gnbContents_01", "class": "service", "name": "서비스", "link": "#", "sub": [
-			{"title":"lnbtitle", "class": "service", "name": "더현대", "link": "#", "sub": [
-				{"title":"subtitle", "class": "service", "name": "더현대 서울", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "더현대 대구", "link": "#", "sub": null}
+		{"title":"gnbtitle", "id":"gnbContents_01", "class": "service", "name": "서비스이벤트", "link": "#", "sub": [
+			{"title":"lnbtitle", "class": "service", "name": "VIP프로그램", "link": "#", "sub": [
+				{"title":"subtitle", "class": "service", "name": "선정 기준", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "VIP 혜택", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "마일리지 적립", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "리워드", "link": "#", "sub": null}
 			]},
-			{"title":"lnbtitle", "class": "service", "name": "B tv", "link": "#", "sub": [
-				{"title":"subtitle", "class": "service", "name": "요금제", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "부가서비스", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "콘텐츠 안내", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			{"title":"lnbtitle", "class": "service", "name": "고객 서비스", "link": "#", "sub": [
+				{"title":"subtitle", "class": "service", "name": "고객의 의견", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "자주 하는 질문", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "서비스 제도", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "약관 및 기타 방침 안내", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "주요 문의처", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "배송조회", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "공지사항", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "행복 인사이트 위원회", "link": "#", "sub": null}
 			]},
-			{"title":"lnbtitle", "class": "service", "name": "더현대", "link": "#", "sub": [
-				{"title":"subtitle", "class": "service", "name": "더현대 서울", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "더현대 대구", "link": "#", "sub": null}
-			]},
-			{"title":"lnbtitle", "class": "service", "name": "B tv", "link": "#", "sub": [
-				{"title":"subtitle", "class": "service", "name": "요금제", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "부가서비스", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "콘텐츠 안내", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "B tv 주요서비스", "link": "#", "sub": null}
-			]},
-			{"title":"lnbtitle", "class": "service", "name": "B tv", "link": "#", "sub": [
-				{"title":"subtitle", "class": "service", "name": "요금제", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "부가서비스", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "콘텐츠 안내", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "B tv 주요서비스", "link": "#", "sub": null}
-			]},
-			{"title":"lnbtitle", "class": "service", "name": "B tv", "link": "#", "sub": [
-				{"title":"subtitle", "class": "service", "name": "요금제", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "부가서비스", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "콘텐츠 안내", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "B tv 주요서비스", "link": "#", "sub": null}
-			]},
-			{"title":"lnbtitle", "class": "service", "name": "B tv", "link": "#", "sub": [
-				{"title":"subtitle", "class": "service", "name": "요금제", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "부가서비스", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "콘텐츠 안내", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "service", "name": "B tv 주요서비스", "link": "#", "sub": null}
+			{"title":"lnbtitle", "class": "service", "name": "이벤트", "link": "#", "sub": [
+				{"title":"subtitle", "class": "service", "name": "진행 이벤트", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "당첨자 발표", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "service", "name": "어린이그림그리기대회", "link": "#", "sub": null}
 			]}
+		]},
+		{"title":"gnbtitle", "id":"gnbContents_02", "class": "brand", "name": "브랜드", "link": "#", "sub": [
+			{"title":"lnbtitle", "class": "brand", "name": "라이프스타일", "link": "#", "sub": [
+				{"title":"subtitle", "class": "brand", "name": "B CLEAN", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "brand", "name": "위펫", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "brand", "name": "리빙", "link": "#", "sub": [
+				{"title":"subtitle", "class": "brand", "name": "HBYC", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "brand", "name": "위마켓", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "brand", "name": "현대식품관", "link": "#", "sub": [
+				{"title":"subtitle", "class": "brand", "name": "명인명촌", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "brand", "name": "와인웍스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "brand", "name": "원테이블", "link": "#", "sub": null}
+			]}
+		]},
+		{"title":"gnbtitle", "id":"gnbContents_03", "class": "channel", "name": "콘텐츠 채널", "link": "#", "sub": [
+			{"title":"lnbtitle", "class": "channel", "name": "콘텐츠", "link": "#", "sub": [
+				{"title":"subtitle", "class": "channel", "name": "3분 쇼핑", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "channel", "name": "에디토리얼 디파트먼트", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "channel", "name": "그로서리 가이드", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "channel", "name": "스타일H매거진", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "channel", "name": "채널", "link": "#", "sub": [
+				{"title":"subtitle", "class": "channel", "name": "인스타그램", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "channel", "name": "페이스북", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "channel", "name": "블로그", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "channel", "name": "포스트", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "channel", "name": "현대백화점 유튜브", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "channel", "name": "서체 다운로드", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "channel", "name": "현대백화점APP", "link": "#", "sub": null}
+			]}
+		]},
+		{"title":"gnbtitle", "id":"gnbContents_04", "class": "culture", "name": "문화센터전시공연", "link": "#", "sub": [
+			{"title":"lnbtitle", "class": "culture", "name": "문화센터", "link": "#", "sub": [
+				{"title":"subtitle", "class": "culture", "name": "CH1895", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "culture", "name": "문화센터", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "culture", "name": "컬처커넥트", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "culture", "name": "나의강의실", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "culture", "name": "공식유튜브", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "culture", "name": "공식인스타그램", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "culture", "name": "공식블로그", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "culture", "name": "전시공연", "link": "#", "sub": [
+				{"title":"subtitle", "class": "culture", "name": "공간소개", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "culture", "name": "진행중인전시공연", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "culture", "name": "지난전시공연", "link": "#", "sub": null}
+			]}
+		]},
+		{"title":"gnbtitle", "id":"gnbContents_05", "class": "card", "name": "카드상품권멤버십", "link": "#", "sub": [
+			{"title":"lnbtitle", "class": "card", "name": "현대백화점카드", "link": "#", "sub": [
+				{"title":"subtitle", "class": "card", "name": "카드소개신청", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "card", "name": "발급현황 조회", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "card", "name": "카드사용등록", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "card", "name": "카드 비밀번호 등록", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "card", "name": "마이카드", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "card", "name": "적립금액 마일리지", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "card", "name": "카드이벤트", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "card", "name": "월컴라운지", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "card", "name": "ARS 카드상담", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "card", "name": "상품권", "link": "#", "sub": [
+				{"title":"subtitle", "class": "card", "name": "상품권 소개", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "card", "name": "구입안내", "link": "#", "sub": null}
+			]}
+		]},
+		{"title":"gnbtitle", "id":"gnbContents_06", "class": "online", "name": "비대면 온라인쇼핑", "link": "#", "sub": [
+			{"title":"lnbtitle", "class": "online", "name": "더현대닷컴", "link": "#", "sub": null },
+			{"title":"lnbtitle", "class": "online", "name": "온라인쇼핑", "link": "#", "sub": null },
+			{"title":"lnbtitle", "class": "online", "name": "현대식품관투홈", "link": "#", "sub": null },
+			{"title":"lnbtitle", "class": "online", "name": "현대 Hmall", "link": "#", "sub": null },
+			{"title":"lnbtitle", "class": "online", "name": "비대면 결제", "link": "#", "sub": null }
 		]}
 	]
 }

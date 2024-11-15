@@ -5,10 +5,6 @@ ul.goods-list {
 	list-style: none;
 }
 
-/**
- * @name		goods-display
- * @moudle		module-a
-**/
 .goods-display.module-a {
 	--column-count: 1;
 	--width: calc((100% / var(--column-count)) - (var(--column-gap) * (var(--column-count) - 1) / var(--column-count)));
@@ -32,9 +28,43 @@ ul.goods-list {
 		flex-wrap: wrap;
 		.goods-item {
 			position: relative;
+			.goods-title{
+				.sub-text01{
+					display: block;
+    				text-align: end;
+					font-size: 100px;
+					font-weight: 900;
+					margin-bottom: 14px;
+					color: #FFFFFF;
+					letter-spacing: -0.25px;
+					text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+					@include tablet{
+						margin-bottom: 0;
+						font-size: 90px;
+					}
+				}
+				.sub-text02{
+					display: block;
+					background-color: #FFFFFF;
+					font-size: 35px;
+					font-weight: 900;
+					color: #171A19;
+					line-height: 1.3;
+					letter-spacing: -0.25px;
+					text-align: end;
+					position: absolute;
+					right: 0px;
+					top: 124px;
+					@include tablet{
+						position: initial;    
+						font-size: 28px;
+					}
+				}
+			}
 			.goods-wrap {
 				display: flex;
-				box-sizing: border-box;    justify-content: center;
+				box-sizing: border-box;    
+				justify-content: center;
 				gap: 0 20px;
 				@include tablet{
 					display: flex;
@@ -42,7 +72,7 @@ ul.goods-list {
     				flex-direction: column;
 				  }
 				.goods-figure {
-					width: 50%;
+					width: 60%;
 					position: relative;
 					@include tablet{
 						width: 100%;
@@ -78,12 +108,17 @@ ul.goods-list {
 				}
 
 				.goods-inform {
+					width: 40%;
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
 					border-top: 1px solid var(--color-base-12);
+					padding: 24px 0px;
+					@include tablet{
+						width: 100%;
+						border-top: 0px solid var(--color-base-12);
+					  }
 					.goods-tags {
-
 						.data-list {
 							display: flex;
 							flex-wrap: wrap;
@@ -135,10 +170,22 @@ ul.goods-list {
 
 					.goods-data {
 						display: flex;
-						@include set-vw(gap,10px);
+						justify-content: space-around;
+						@include set-vw(gap,5px);
+						@include tablet{
+							border-top: 1px solid #ddd;
+							border-bottom: 1px solid #ddd;
+							padding: 13px 0px;
+						}
+						a:nth-child(4){
+							display: none;
+							@include tablet{
+								display: block;
+							}
+						}
 						.mark{
 							display: flex;
-    						align-items: center;
+    						align-items: center;    flex-direction: column;
 							&.ico_floor::before{
 								background-image: url('../../img/main/ico_floor_32.png');
 							}
@@ -147,6 +194,9 @@ ul.goods-list {
 							}
 							&.ico_parking::before{
 									background-image: url('../../img/main/ico_parking_32.png');
+							}
+							&.ico_shopping::before{
+									background-image: url('../../img/main/ico_shopping_32.png');
 							}
 							&::before{
 								content: "";
@@ -187,18 +237,22 @@ ul.goods-list {
 	--infoset-line-height: 20px;
 	--infoset-color: var(--color-base-08);
 	.goods-list {
+		@include tablet{
+			display: none;
+		}
 		.goods-item {
 			position: relative;
 			.goods-wrap {
 				display: flex;
 				box-sizing: border-box;
 				gap: 0 20px;
-				flex-direction: row-reverse;justify-content: space-between;
+				flex-direction: row-reverse;
+				justify-content: space-between;
 				@include tablet{
 					display: flex;
     				box-sizing: border-box;
     				flex-direction: column;
-				  }
+				}
 				.goods-figure {
 					width: 60%;
 					@include tablet{
@@ -241,7 +295,8 @@ ul.goods-list {
 
 				.goods-inform {
 					display: flex;
-					flex-direction: column;justify-content: flex-end;
+					flex-direction: column;
+					justify-content: flex-end;
 					border-top: 1px solid var(--color-base-12);
 					width: 40%;
 					.goods-tags {
@@ -297,32 +352,8 @@ ul.goods-list {
 
 					.goods-data {
 						display: flex;
-						@include set-vw(gap,10px);justify-content: flex-end;
-						.mark{
-							display: flex;
-    						align-items: center;
-							&.ico_floor::before{
-								background-image: url('../../img/main/ico_floor_32.png');
-							}
-							&.ico_food::before{
-									background-image: url('../../img/main/ico_food_32.png');
-							}
-							&.ico_parking::before{
-									background-image: url('../../img/main/ico_parking_32.png');
-							}
-							&::before{
-								content: "";
-								display: block;
-								position: relative;
-								left: 0;
-								top: 0;
-								width: 25px;
-								height: 25px;
-								background-size: cover;
-								
-								
-							}
-						}
+						@include set-vw(gap,10px);
+						justify-content: flex-end;
 					}
 				}
 			}
@@ -344,72 +375,59 @@ ul.goods-list {
 				position: absolute;
 				left: 3vw;
     			bottom: 11%;
-				.title{
-					font-size: 40px;
-					line-height: 44px;
-					color: var(--color-base-01);
-					font-weight: 500;
-					@include tablet{
-						font-size: 8vw;
-						line-height:10vw;
-					}
-				}
 				.subtitle{
-					font-size: 10px;
-					line-height: 12px;
+					@include set-vw(font-size, calc($gutter-7/1.5));
+					@include set-vw(line-height,calc($gutter-7/1.2));
 					color: var(--color-base-01);
 					font-weight: 400;
-					margin-bottom: 20px;
-					@include tablet{
-						margin-bottom: 2vw;
-						font-size: 3vw;
-						line-height:4vw;
-					}
+					@include set-vw(margin-bottom,$gutter-3);
+				}
+				.title{
+					@include set-vw(font-size, calc($gutter-12/1.5));
+					@include set-vw(line-height,calc($gutter-12/1.2));
+					color: var(--color-base-01);
+					font-weight: 500;
+					@include set-vw(margin-bottom,$gutter-2);
 				}
 			}
 		}
+		.swiper-nav{
+			display: flex;
+			position: absolute;
+			bottom: 30px;
+			left: 5%;
+			width: 90%;
+		}
 		.swiper-pagination-horizontal{
-			top: 92%;
 			width: 71%;
-			left: 3vw;
 		}
 		.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
 			background-color: #fff;
 		}
 
 		.swiper-button-next{
-			position: absolute;
-			top: 88%;
-   	 		left: 84%;
-			height: -5vw;
-			scale: 0.3;
+			scale: 0.4;
 			color: #fff;
-			margin-top: 0;
+			left: 84%;
 		}
 		.swiper-button-prev{
-			position: absolute;
-			top: 88%;
-			left: 80%;
-			height: -5vw;
-			scale: 0.3;
+			scale: 0.4;
 			color: #fff;
-			margin-top: 0;
+			left: 75%;
 		}
 		.swiper-button-auto-play {
 			background-image: url('../../img/common/ico_play_white.png');
 		}
 		
 		div[class|=swiper-button-auto] {
-			width: 49px;
-			height: 42px;
+			width: 25px;
+			height: 32px;
 			background-size: cover;
 			background-repeat: no-repeat;
 			z-index: 1;
 			position: absolute;
-			top: 88%;
-			left: 86%;
-			scale: 0.5;
-			margin-top: 0;
+			bottom: -15px;
+			right: 0;
 		}
 		
 		.swiper-button-auto-stop {
@@ -425,7 +443,8 @@ ul.goods-list {
 		}
 	}
 	.swiper-sidecont{
-		flex: 1 1 60%;overflow: hidden;
+		flex: 1 1 60%;
+		overflow: hidden;
 		img{
 			@include img;
 		}
@@ -434,7 +453,7 @@ ul.goods-list {
 
 .goods-swiper.module-b{
 	overflow: hidden;
-    // margin: 0 0 0 8vw;
+	position: relative;
     transition: all .5s;
 	.swiper-container{
 		flex: 1 1 100%;
@@ -446,50 +465,55 @@ ul.goods-list {
 				left: 1vw;
     			bottom: 4%;
 				.title{
-					font-size: 17px;
-					line-height:23px;
+					@include set-vw(font-size, calc($gutter-8/1.5));
+					@include set-vw(line-height,calc($gutter-8/1.2));
 					color: var(--color-base-01);
 					font-weight: 500;
-					@include tablet{
-						font-size: 8vw;
-						line-height:10vw;
-					}
+					@include set-vw(margin-bottom,$gutter-2);
 				}
 				.caption{
-					font-size: 14px;
-					line-height: 12px;
+					@include set-vw(font-size, calc($gutter-5/1.5));
+					@include set-vw(line-height,calc($gutter-5/1.2));
 					color: var(--color-base-01);
 					font-weight: 400;
-					margin-bottom: 6px;
-					@include tablet{
-						margin-bottom: 2vw;
-						font-size: 3vw;
-						line-height:4vw;
-					}
+					@include set-vw(margin-bottom,$gutter-2);
 				}
 			}
 		}
-
+	}
+	.swiper-nav{
+		position: absolute;
+		right: 24px;
+		top: -31px;
+		width: 35px;
+		@include tablet{
+			top: -53px;
+		}
 		.swiper-button-next{
 			position: absolute;
-			top: -16%;
-			left: 89%;
-			height: -5vw;
+			left: 108%;
 			scale: 0.5;
 			color: #000000;
-			margin-top: 0;
+			@include tablet{
+				scale: 0.3;
+			}
 		}
 		.swiper-button-prev{
 			position: absolute;
-			top: -16%;
-			left: 86%;
-			height: -5vw;
+			right: 28%;
 			scale: 0.5;
 			color: #000000;
-			margin-top: 0;
+			@include tablet{
+				scale: 0.3;
+			}
 		}
 	}
-	.swiper-title{    padding: 0 0 0 7vw;}
+	.swiper-title{
+		padding: 0 0 0 7vw;
+		@include tablet{
+			padding: 0 0 0 0;
+		}
+	}
 }
 
 .goods-swiper.module-c{
@@ -502,67 +526,67 @@ ul.goods-list {
 		.swiper-wrapper{
 			.swiper-inform{
 				.subtitle{
-					font-size: 10px;
-					line-height: 12px;
+					@include set-vw(font-size, calc($gutter-6/1.5));
+					@include set-vw(line-height,calc($gutter-6/1.2));
 					color: var(--color-base-13);
 					font-weight: 400;
-					margin-bottom: 20px;
-					@include tablet{
-						margin-bottom: 2vw;
-						font-size: 3vw;
-						line-height:4vw;
-					}
+					@include set-vw(margin-bottom,$gutter-5);
 				}
 				.title{
-					font-size: 17px;
-					line-height:23px;
+					@include set-vw(font-size, calc($gutter-8/1.5));
+					@include set-vw(line-height,calc($gutter-8/1.2));
 					color: var(--color-base-13);
 					font-weight: 500;
-					@include tablet{
-						font-size: 8vw;
-						line-height:10vw;
-					}
+					@include set-vw(margin-bottom,$gutter-2);
 				}
 				.caption{
-					font-size: 14px;
-					line-height: 12px;
+					@include set-vw(font-size, calc($gutter-5/1.5));
+					@include set-vw(line-height,calc($gutter-5/1.2));
 					color: var(--color-base-10);
 					font-weight: 400;
-					margin-bottom: 6px;
-					@include tablet{
-						margin-bottom: 2vw;
-						font-size: 3vw;
-						line-height:4vw;
-					}
+					@include set-vw(margin-bottom,$gutter-2);
 				}
 			}
 		}
 		.swiper-pagination-horizontal{
-			top: 92%;
-			width: 71%;
-			left: 3vw;
+			top: 99%;
+			width: 100%;
+			left: 0;
+			display: none;
+			@include tablet{
+				display: block;
+			}
 		}
 		.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
-			background-color: #fff;
+			background-color: #000;
 		}
 
-		.swiper-button-next{
+		.swiper-nav{
 			position: absolute;
-			top: -16%;
-			left: 98%;
-			height: -5vw;
-			scale: 0.5;
-			color: #000000;
-			margin-top: 0;
-		}
-		.swiper-button-prev{
-			position: absolute;
-			top: -16%;
-			left: 95%;
-			height: -5vw;
-			scale: 0.5;
-			color: #000000;
-			margin-top: 0;
+			right: 24px;
+			top: -31px;
+			width: 35px;
+			@include tablet{
+				top: -53px;
+			}
+			.swiper-button-next{
+				position: absolute;
+				left: 108%;
+				scale: 0.5;
+				color: #000000;
+				@include tablet{
+					scale: 0.3;
+				}
+			}
+			.swiper-button-prev{
+				position: absolute;
+				right: 28%;
+				scale: 0.5;
+				color: #000000;
+				@include tablet{
+					scale: 0.3;
+				}
+			}
 		}
 	}
 }
@@ -581,44 +605,13 @@ ul.goods-list {
 				position: absolute;
 				left: 3vw;
     			bottom: 11%;
-				.title{
-					font-size: 40px;
-					line-height: 44px;
-					color: var(--color-base-01);
-					font-weight: 500;
-					@include tablet{
-						font-size: 8vw;
-						line-height:10vw;
-					}
-				}
-				.subtitle{
-					font-size: 10px;
-					line-height: 12px;
-					color: var(--color-base-01);
-					font-weight: 400;
-					margin-bottom: 20px;
-					@include tablet{
-						margin-bottom: 2vw;
-						font-size: 3vw;
-						line-height:4vw;
-					}
-				}
 			}
-		}
-		.swiper-pagination-horizontal{
-			top: 92%;
-			width: 71%;
-			left: 3vw;
-		}
-		.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
-			background-color: #fff;
 		}
 
 		.swiper-button-next{
 			position: absolute;
 			top: 88%;
    	 		left: 84%;
-			height: -5vw;
 			scale: 0.3;
 			color: #fff;
 			margin-top: 0;
@@ -627,7 +620,6 @@ ul.goods-list {
 			position: absolute;
 			top: 88%;
 			left: 80%;
-			height: -5vw;
 			scale: 0.3;
 			color: #fff;
 			margin-top: 0;
@@ -659,12 +651,6 @@ ul.goods-list {
 		
 		&:not(.auto-play) .swiper-button-auto-stop {
 			display: none;
-		}
-	}
-	.swiper-sidecont{
-		flex: 1 1 60%;overflow: hidden;
-		img{
-			@include img;
 		}
 	}
 }
@@ -776,13 +762,14 @@ ul.goods-list {
 		// overflow: hidden;
 		// margin: 0 0 0 8vw;
 		transition: all .5s;
+		// height: 500px;
 		.swiper-container{
 			// flex: 1 1 100%;
 			position: relative;  
-			.swiper-wrapper{       
+			.swiper-wrapper{       height: 500px;
 				.swiper-slide{ //flex: 0 0 50%;
   /* 슬라이드 높이 설정 */
-    box-sizing: border-box;
+    box-sizing: border-box; 
 				 }
 				.swiper-inform{
 					display: flex;
@@ -790,6 +777,7 @@ ul.goods-list {
 					flex-wrap: wrap;
 					a{
 						width: 47%;
+						height: 224px;
 						display: block;
 						margin-right: 10px;
     					margin-bottom: 10px;

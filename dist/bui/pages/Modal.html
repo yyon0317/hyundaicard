@@ -37,7 +37,6 @@
     			<ul>
     				<li><a href="./font.html"><span>Font</span></a></li>
     				<li><a href="textUsage.html"><span>Text Usage</span></a></li>
-    				<!-- <li><a href="textColor.html"><span>Text Colors</span></a></li> -->
     			</ul>
     		</li>
     		<li><a href="#"><i></i>Color Schemes</a>
@@ -79,13 +78,11 @@
         <div class="layer">
             <div class="guide__title outline-12x">Modal</div>
             <div class="guide__desc outline-5x">
-                모달의 제목 텍스트는 좌측정렬을 기본으로 하지만, 경우에 따라 중앙 정렬도 사용 가능합니다. <br>
-                닫기 버튼은 모달 영역 외 배경을 클릭해도 모달이 닫히는 기능을 암시하며, 내부의 컨텐츠를 방해하지 않기 위해 모달 바깥에 위치합니다. 
+                DialogPopup/InfoPopup/ContentPopup/FrontPopup 각 팝업은 필요한 기능에 맞춰 버튼과 스타일을 다르게 적용할 수 있으며, JavaScript를 통해 팝업을 열거나 닫는 이벤트도 추가했습니다.
             </div>
             <div class="guide__content">
                 <div class="row">
                     <div class="col-12">
-
 
                         <a class="btn module-b style-c type-line outline-b10x normal-04" href="#buiDialogPopupDemo" onclick="togglePopup('buiDialogPopupDemo'); return false;"><span class="btn-text">팝업 열기</span></a>
                         <a class="btn module-b style-c type-line outline-b10x normal-04" href="#buiInfoPopupDemo" onclick="togglePopup('buiInfoPopupDemo'); return false;"><span class="btn-text">팝업 열기</span></a>
@@ -270,38 +267,20 @@
                         </div>
                         <!-- //FrontPopup -->
 
-
-
-
-
-                        <!-- <div class="guide__modal">
-
-                            <div class="modal active" style="position:static;">
-                                <div class="modal__container" style="position:static;">
-                                    <div class="modal__body">
-                                        <div class="modal__header">
-                                            <h2>Modal Title</h2>
-                                            <button type="button" title="닫기" class="modal__close"></button>
-                                        </div>
-                                        <div class="modal__content">
-                                            Cum ad aedificationem utentis interfaciei adveniens, superficies ui aspectus exponit et multum sentit simile quid 
-                                            in navigatro interretiali nancisceris, scilicet: Documentum Object Model
-                                            Haec signa adhiberi possunt ad usorem interfaces cogens, etiam intra alternis modalibus.
-                                            alternis elementum, quod dom additur et continet omnia quae sequuntur form elementum quod involvit contentus 
-                                            de dialogo caput, quod etiam iconem plugin ostendere potest
-                                            Margines et color quae structuram circumdant automatice provisae sunt.
-
-                                            <div class="modal__foot">
-                                                <button type="button" class="btn">Done</button>
-                                            </div>
-                                        </div>
+                        <div class="guide__title3 outline-7x">HTML</div>
+                        <div class="row ">
+                            <div class="col-12">
+                                <div class="guide__font">
+                                    <div class="guide__subcont04">
+                                        &lt;a class="btn module-b style-c type-line outline-b10x normal-04" href="#buiDialogPopupDemo" onclick="togglePopup('buiDialogPopupDemo'); return false;"&gt;&lt;/a&gt;
+                                    </br>&lt; class="bui-dialog-popup module-a style-a type-a medium" data-bui-modal="buiDialogPopup" id="buiDialogPopupDemo"&gt;&lt;/div&gt;
                                     </div>
+                                
+
                                 </div>
-                                <div class="backgroup"></div>
                             </div>
-                            e: modal
-                            
-                        </div> -->
+                        </div>
+
                     </div>
                 </div>
             </div>

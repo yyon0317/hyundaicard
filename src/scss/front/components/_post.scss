@@ -1,0 +1,62 @@
+.dropmenu{
+	position: relative;
+	font-size: 14px;
+	.trigger{
+		display: block;
+		width: 100%;
+		height: 36px;
+		border: 1px solid #e0e0e0;
+		padding: 0 28px 0 16px;
+		text-align: left;
+		transition: all 0.1s;
+		position: relative;
+		&:after{
+			content:"";display: block;
+			position: absolute;right: 17px;top: 50%;
+			background: url("../img/common/select-icon.png") no-repeat 0 0;
+			width: 12px;height: 6px;
+			transform: translateY(-50%) rotate(0deg);
+			transition: all 0.1s;
+		}
+		&:hover{
+			background-color: #f8f8f8;
+			border-color: #999999;
+		}
+		&.active{
+			background-color: #f8f8f8;border-color: #999999;
+			&:after{
+				transform: translateY(-50%) rotate(180deg);
+			}
+			+div{
+				display: block;
+			}
+		}
+	}
+	> div{
+		display: none;
+		position: absolute;left: 0;right: 0;
+		top: 36px;
+		background-color: #fff;
+		border: 1px solid #999999;border-top: 0;
+	}
+	.heading{
+		font-size: 12px;color: #777;
+		padding: 23px 12px 7px;
+	}
+	ul{
+		li{
+			a{
+				display: block;
+				padding: 12px 18px;
+				&:hover{
+					background-color: #f0f0f0;
+				}
+			}
+			&.active{
+				a{
+					background-color: #f0f0f0;
+				}
+			}
+		}
+	}
+}

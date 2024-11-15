@@ -9,16 +9,6 @@ $hover-color : #fc9a00;
 
 $grid-width: 1120px;
 
-// $gutter : (
-//   gutter-xxs : 4px,
-//   gutter-xs : 8px,
-//   gutter-s : 16px,
-//   gutter-m : 24px,
-//   gutter-l : 36px,
-//   gutter-xl : 48px,
-//   gutter-xxl : 80px  
-// )
-
 $gutter-1 : 4px;
 $gutter-2 : 8px;
 $gutter-3 : 12px;
@@ -39,16 +29,6 @@ $gutter-17 : 68px;
 $gutter-18 : 72px;
 $gutter-19 : 76px;
 $gutter-20 : 80px;
-
-
-// // @each 반복문을 사용하여 변수 출력
-// @each $value in $gutters {
-//   $index: index($gutters, $value); // 배열에서 값의 인덱스를 가져옵니다.
-  
-//   .gutter-#{$index} {
-//     margin: $value; // 각 클래스에 해당하는 margin 값을 적용합니다.
-//   }
-// }
 
 
 /* 기준 화면 너비 */
@@ -91,7 +71,6 @@ $vw-viewport: 720;
   }
 }
 
-
 $gutters: (
   1: 4px,
   2: 8px,
@@ -133,52 +112,6 @@ $gutters: (
   }
 }
 
-$brandColor : (
-  #264998,
-  #3c9082,
-  #212e4e
-);
-
-$path : "/include/img";
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 1000px,
-  xl: 1120px
-);
-
-
-
-
-
-// 4의배수
-//--baseline-0x: 0px--baseline-1x: 4px--baseline-2x: 8px--baseline-3x: 12px--baseline-4x: 16px var(--baseline-2x)
-// :root {
-//   --baseline: 4px;
-
-//   @for $i from 0 through 40 {
-//     --baseline-#{$i}x: calc(var(--baseline) * #{$i});
-//   }
-// }
-// :root {
-//   --baseline: 4px;
-
-//   @for $i from 0 through 40 {
-//     --baseline-#{$i}x: calc(#{$i} * #{var(--baseline)});
-//   }
-// }
-//반응형디자인 활용
-// :root {--baseline: 4px;
-// @media (max-width: 768px) {
-//   :root {
-//     --baseline: 2px; /* 모바일 장치에서는 기본 간격을 줄입니다. */
-//   }
-// }
-// .element {
-//   padding: var(--baseline-4x); /* 데스크톱에서는 16px, 모바일에서는 8px */
-// }
 /*반응형 화면 크기*/
 $mobile: 375px;
 $tablet: 720px;
@@ -203,16 +136,3 @@ $desktop: 1024px;
     @content;
   }
 }
-
-
-// @include desktop {
-//   background-color: palegreen;
-// }
-// @include tablet {
-//   background-color: blue;
-// }
-
-// @include mobile {
-//   width: 100%;
-//   background-color: red;
-// }

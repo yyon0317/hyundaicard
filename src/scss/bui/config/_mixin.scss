@@ -11,7 +11,7 @@
 }
 
 
-@mixin hidden($mode: &) {
+@mixin hidden{
 	overflow: hidden;
 	visibility: hidden;
 	margin: -1px;
@@ -24,9 +24,4 @@
 	clip: rect(0 0 0 0);
 	clip: rect(0,0,0,0);
 	pointer-events: none;
-	
-	@if $mode == & {
-		display: block;
-		position: absolute;
-	}
 }

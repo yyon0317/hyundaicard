@@ -608,37 +608,37 @@ ul.goods-list {
 			}
 		}
 
-		.swiper-button-next{
+		.swiper-nav{
+			display: flex;
 			position: absolute;
-			top: 88%;
-   	 		left: 84%;
-			scale: 0.3;
+			bottom: 30px;
+			left: 5%;
+			width: 90%;
+		}
+
+		.swiper-button-next{
+			scale: 0.4;
 			color: #fff;
-			margin-top: 0;
+			left: 84%;
 		}
 		.swiper-button-prev{
-			position: absolute;
-			top: 88%;
-			left: 80%;
-			scale: 0.3;
+			scale: 0.4;
 			color: #fff;
-			margin-top: 0;
+			left: 75%;
 		}
 		.swiper-button-auto-play {
 			background-image: url('../../img/common/ico_play_white.png');
 		}
 		
 		div[class|=swiper-button-auto] {
-			width: 49px;
-			height: 42px;
+			width: 25px;
+			height: 32px;
 			background-size: cover;
 			background-repeat: no-repeat;
 			z-index: 1;
 			position: absolute;
-			top: 88%;
-			left: 86%;
-			scale: 0.5;
-			margin-top: 0;
+			bottom: -15px;
+			right: 0;
 		}
 		
 		.swiper-button-auto-stop {
@@ -667,62 +667,25 @@ ul.goods-list {
 		// padding: 0px 7.5vw;
 		.swiper-wrapper{
 			transition-timing-function: linear;
-			.swiper-slide {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				background-color: #fff;
-				font-size: 18px;
-				font-weight: bold;
-				position: relative;
-				// width: 20vw;
-			  }
-			.swiper-inform{
+			  .swiper-inform{
 				position: absolute;
 				left: 1vw;
-    			bottom: 3vw;
+    			bottom: 4%;
 				.title{
-					font-size: 17px;
-					line-height:23px;
+					@include set-vw(font-size, calc($gutter-8/1.5));
+					@include set-vw(line-height,calc($gutter-8/1.2));
 					color: var(--color-base-01);
 					font-weight: 500;
-					@include tablet{
-						font-size: 8vw;
-						line-height:10vw;
-					}
+					@include set-vw(margin-bottom,$gutter-2);
 				}
 				.caption{
-					font-size: 14px;
-					line-height: 12px;
+					@include set-vw(font-size, calc($gutter-5/1.5));
+					@include set-vw(line-height,calc($gutter-5/1.2));
 					color: var(--color-base-01);
 					font-weight: 400;
-					margin-bottom: 6px;
-					@include tablet{
-						margin-bottom: 2vw;
-						font-size: 3vw;
-						line-height:4vw;
-					}
+					@include set-vw(margin-bottom,$gutter-2);
 				}
 			}
-		}
-
-		.swiper-button-next{
-			position: absolute;
-			top: -16%;
-			left: 89%;
-			height: -5vw;
-			scale: 0.5;
-			color: #000000;
-			margin-top: 0;
-		}
-		.swiper-button-prev{
-			position: absolute;
-			top: -16%;
-			left: 86%;
-			height: -5vw;
-			scale: 0.5;
-			color: #000000;
-			margin-top: 0;
 		}
 	}
 	// .swiper-title{    padding: 0 0 0 7vw;}
@@ -732,15 +695,11 @@ ul.goods-list {
 		gap: 1vw;
 		height: 650px;
 		width: 500px;
-		@include tablet{flex-direction: column;height: auto;}
+		@include tablet{flex-direction: column;height: 500px;}
 		
 	}
 	.marquee-wrap {
-		// width: 500px;
-		// height: 20px;
-		// border: 1px solid #ddd;
 		overflow: hidden;
-	
 		display: block;
 		white-space: nowrap;
 		font-size: 240px;
@@ -749,60 +708,39 @@ ul.goods-list {
 		line-height: 2.3;
 		letter-spacing: -0.25px;
 		text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-	  }
+		@include tablet{
+			display: none;
+		}
+	}
 }
 
 
 .module-f{
 	position: relative;
 	.tab-display{
-		position: absolute;left: 288px;top: 0;
+		position: absolute;
+		left: 288px;
+		top: 0;
 	}
 	.goods-swiper.module-f{
-		// overflow: hidden;
-		// margin: 0 0 0 8vw;
-		transition: all .5s;
-		// height: 500px;
 		.swiper-container{
-			// flex: 1 1 100%;
 			position: relative;  
-			.swiper-wrapper{       height: 500px;
-				.swiper-slide{ //flex: 0 0 50%;
-  /* 슬라이드 높이 설정 */
-    box-sizing: border-box; 
+			.swiper-wrapper{       
+				height: 500px;
+				.swiper-slide{ 
+    				box-sizing: border-box; 
 				 }
 				.swiper-inform{
 					display: flex;
 					flex-direction: row;
 					flex-wrap: wrap;
+					width: 100%;
 					a{
 						width: 47%;
-						height: 224px;
+						height: auto;
 						display: block;
 						margin-right: 10px;
     					margin-bottom: 10px;
-					}
-					.title{
-						font-size: 17px;
-						line-height:23px;
-						color: var(--color-base-01);
-						font-weight: 500;
-						@include tablet{
-							font-size: 8vw;
-							line-height:10vw;
-						}
-					}
-					.caption{
-						font-size: 14px;
-						line-height: 12px;
-						color: var(--color-base-01);
-						font-weight: 400;
-						margin-bottom: 6px;
-						@include tablet{
-							margin-bottom: 2vw;
-							font-size: 3vw;
-							line-height:4vw;
-						}
 					}
 				}
 			}

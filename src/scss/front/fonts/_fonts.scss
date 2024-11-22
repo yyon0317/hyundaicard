@@ -2,7 +2,7 @@
 // Google font - Roboto & Rubik
 //
 
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 @import url('//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
 
@@ -11,4 +11,34 @@
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+}
+
+@font-face {
+	font-family: 'Happiness-Sans';
+	font-style: 'normal';
+	font-weight: 400;
+	src:local('Happiness-Sans'),
+		url('./Happiness-Sans-Regular.woff2') format('woff2'), /*  Modern Browsers */ 
+		url('./Happiness-Sans-Regular.woff') format('woff'), /* Modern Browsers */
+		url('./Happiness-Sans-Regular.ttf') format('truetype'), /* Safari, Android, iOS */ 
+}
+
+@font-face {
+	font-family: 'Happiness-Sans';
+	font-style: 'bold';
+	font-weight: 700;
+	src:local('Happiness-Sans'),
+		url('./Happiness-Sans-Bold.woff2') format('woff2'), /*  Modern Browsers */ 
+		url('./Happiness-Sans-Bold.woff') format('woff'), /* Modern Browsers */
+		url('./Happiness-Sans-Bold.ttf') format('truetype'), /* Safari, Android, iOS */ 
+}
+
+@font-face {
+	font-family: 'Happiness-Sans-Title';
+	font-style: 'bold';
+	font-weight: 900;
+	src:local('Happiness-Sans-Title'),  
+		url('./Happiness-Sans-Title.woff2') format('woff2'), /*  Modern Browsers */ 
+		url('./Happiness-Sans-Title.woff') format('woff'), /* Modern Browsers */
+		url('./Happiness-Sans-Title.ttf') format('truetype'), /* Safari, Android, iOS */ 
 }

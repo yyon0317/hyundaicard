@@ -2,6 +2,99 @@
 
 
 $(function() {
+    $(window).resize(function(){
+        if (window.innerWidth > 1200) {  // 다바이스 크기가 480이상일때
+    function pcmenuhover() {
+        $(".gnb").removeClass("active");
+        $('body').removeClass('scrollLock');
+        $('.mologo').hide();
+        // subsection-subject > a에 마우스 엔터 이벤트 추가
+        $('.subsection-subject > a').mouseenter(function () {
+            // 형제 section-body 요소 찾기
+            const sectionBody = $(this).closest('.subsection-head').next('.section-body');
+    
+            // 모든 section-body에서 active 제거 후 현재 요소에만 추가
+            $('.section-body').removeClass('active');
+            sectionBody.addClass('active');
+    
+            // dimmedLayer 표시
+            $('.dimmedLayer').show();
+        });
+    
+        // 헤더에서 마우스가 나갔을 때 모든 active 제거
+        $('#gnbContainer').mouseleave(function () {
+            $('.section-body').removeClass('active');
+            $('.dimmedLayer').hide();
+        });
+    }
+
+            
+    
+    // 함수 실행
+    
+    
+    
+    $(".btnSearchOpen").click(function(){
+
+        $(".gnb").removeClass("mobMenuOpen");
+        $(".totalSearchWrap").addClass("totalSearcopen");
+        $('.dimmedLayer').show();
+    });
+
+    $(".btnsearchclose").click(function(){
+
+        $(".totalSearchWrap").removeClass("totalSearcopen");
+        $('.dimmedLayer').hide();
+    });
+
+    pcmenuhover();
+
+} else {
+    $('.mologo').show();
+    $(".btnMobOpen").click(function(){
+
+        $(".gnb").addClass("active");
+        $('body').addClass('scrollLock');
+    
+    });
+    $(".btnMobClose").click(function(){
+
+        $(".gnb").removeClass("active");
+        $('body').removeClass('scrollLock');
+    
+    });
+            
+
+    // $('.menu1 > a').click(function(){
+    //     $(this).toggleClass('active').closest("li").siblings().children().removeClass('active');
+    //     $('.sub').slideUp();
+    //     if ($(this).next('.sub').is(':hidden')){
+    //         $(this).next('.sub').slideDown(200);
+    //     } else{
+    //         $(this).next('.sub').slideUp(200);
+    //     }
+
+    //     return false;
+    // });
+
+    // $(".btnSearchOpen").click(function(){
+
+    //     $(".gnb").removeClass("mobMenuOpen");
+    //     $(".totalSearchWrap").addClass("totalSearcopen");
+    //     $('.btnSearchOpen').hide();
+    //     $(".header").css('border-bottom',' 0px solid');
+    //     $('body').addClass('scrollLock');
+    // });
+
+    // $(".btnsearchclose").click(function(){
+
+    //     $(".totalSearchWrap").removeClass("totalSearcopen");
+    //     $('.btnSearchOpen').show();
+    //     $(".header").css('border-bottom',' 1px solid #000');
+    //     $('body').removeClass('scrollLock');
+    // });
+}
+}).resize();
 
 
     // config 변수
@@ -721,12 +814,21 @@ swiperContainers.forEach(swiperContainer => {
 
                 // Swiper 초기화
                 new Swiper(swiperContainer, {
-                    slidesPerView: 2.2,        // 한 줄에 보이는 슬라이드 개수
+                    slidesPerView: 1.8,        // 한 줄에 보이는 슬라이드 개수
                     // spaceBetween:10,        // 슬라이드 간격
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1,    
+                        },
+                        721: {
+                            slidesPerView:  1.8,     
+                        }
+                    },
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
                     }
+                    
                 });
             })
             .catch(error => console.error('Error fetching JSON data:', error));
@@ -833,7 +935,6 @@ function renderGnbContent(data, container) {
   // 최종적으로 메인 컨테이너에 섹션 추가
   container.appendChild(subsection);
 }
-
 
 
 

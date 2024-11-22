@@ -165,7 +165,8 @@
     "swipermodule10": [
         {
             "image01": "../../../assets/img/main/main_mimc_default.png",
-            "image02": "../../../assets/img/main/main_fourm_default.png"
+            "image02": "../../../assets/img/main/main_fourm_default.png",
+            "image03": "../../../assets/img/main/main_tomgreyhound_default.png"
         }
     ]
 }

@@ -2479,6 +2479,12 @@ ul.goods-list {
   bottom: 30px;
   left: 5%;
   width: 90%;
+  visibility: hidden;
+}
+@media (max-width: 720px) {
+  .goods-swiper.module-d .swiper-container .swiper-nav {
+    visibility: visible;
+  }
 }
 .goods-swiper.module-d .swiper-container .swiper-button-next {
   scale: 0.4;
@@ -2613,11 +2619,17 @@ ul.goods-list {
   left: 288px;
   top: 0;
 }
+@media (max-width: 720px) {
+  .module-f .tab-display {
+    position: initial;
+  }
+}
 .module-f .goods-swiper.module-f .swiper-container {
   position: relative;
 }
 .module-f .goods-swiper.module-f .swiper-container .swiper-wrapper {
-  height: 500px;
+  max-height: 75vw;
+  min-height: 33vw;
 }
 .module-f .goods-swiper.module-f .swiper-container .swiper-wrapper .swiper-slide {
   box-sizing: border-box;
@@ -2627,31 +2639,45 @@ ul.goods-list {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  gap: 1vw;
 }
 .module-f .goods-swiper.module-f .swiper-container .swiper-wrapper .swiper-inform a {
   width: 47%;
   height: auto;
   display: block;
-  margin-right: 10px;
-  margin-bottom: 10px;
 }
-.module-f .goods-swiper.module-f .swiper-container .swiper-button-next {
+.module-f .goods-swiper.module-f .swiper-container .swiper-nav {
   position: absolute;
-  top: -16%;
-  left: 89%;
-  height: -5vw;
+  right: 24px;
+  top: -31px;
+  width: 35px;
+}
+@media (max-width: 720px) {
+  .module-f .goods-swiper.module-f .swiper-container .swiper-nav {
+    top: -53px;
+  }
+}
+.module-f .goods-swiper.module-f .swiper-container .swiper-nav .swiper-button-next {
+  position: absolute;
+  left: 108%;
   scale: 0.5;
   color: #000000;
-  margin-top: 0;
 }
-.module-f .goods-swiper.module-f .swiper-container .swiper-button-prev {
+@media (max-width: 720px) {
+  .module-f .goods-swiper.module-f .swiper-container .swiper-nav .swiper-button-next {
+    scale: 0.3;
+  }
+}
+.module-f .goods-swiper.module-f .swiper-container .swiper-nav .swiper-button-prev {
   position: absolute;
-  top: -16%;
-  left: 86%;
-  height: -5vw;
+  right: 28%;
   scale: 0.5;
   color: #000000;
-  margin-top: 0;
+}
+@media (max-width: 720px) {
+  .module-f .goods-swiper.module-f .swiper-container .swiper-nav .swiper-button-prev {
+    scale: 0.3;
+  }
 }
 .module-f .goods-swiper.module-f .swiper-title {
   padding: 0 0 0 7vw;

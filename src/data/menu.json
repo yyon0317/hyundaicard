@@ -71,24 +71,7 @@
 				{"title":"subtitle", "class": "brand", "name": "원테이블", "link": "#", "sub": null}
 			]}
 		]},
-		{"title":"gnbtitle", "id":"gnbContents_03", "class": "channel", "name": "콘텐츠 채널", "link": "#", "sub": [
-			{"title":"lnbtitle", "class": "channel", "name": "콘텐츠", "link": "#", "sub": [
-				{"title":"subtitle", "class": "channel", "name": "3분 쇼핑", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "channel", "name": "에디토리얼 디파트먼트", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "channel", "name": "그로서리 가이드", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "channel", "name": "스타일H매거진", "link": "#", "sub": null}
-			]},
-			{"title":"lnbtitle", "class": "channel", "name": "채널", "link": "#", "sub": [
-				{"title":"subtitle", "class": "channel", "name": "인스타그램", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "channel", "name": "페이스북", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "channel", "name": "블로그", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "channel", "name": "포스트", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "channel", "name": "현대백화점 유튜브", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "channel", "name": "서체 다운로드", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "channel", "name": "현대백화점APP", "link": "#", "sub": null}
-			]}
-		]},
-		{"title":"gnbtitle", "id":"gnbContents_04", "class": "culture", "name": "문화센터전시공연", "link": "#", "sub": [
+		{"title":"gnbtitle", "id":"gnbContents_03", "class": "culture", "name": "문화센터전시공연", "link": "#", "sub": [
 			{"title":"lnbtitle", "class": "culture", "name": "문화센터", "link": "#", "sub": [
 				{"title":"subtitle", "class": "culture", "name": "CH1895", "link": "#", "sub": null},
 				{"title":"subtitle", "class": "culture", "name": "문화센터", "link": "#", "sub": null},
@@ -104,7 +87,7 @@
 				{"title":"subtitle", "class": "culture", "name": "지난전시공연", "link": "#", "sub": null}
 			]}
 		]},
-		{"title":"gnbtitle", "id":"gnbContents_05", "class": "card", "name": "카드상품권멤버십", "link": "#", "sub": [
+		{"title":"gnbtitle", "id":"gnbContents_04", "class": "card", "name": "카드상품권멤버십", "link": "#", "sub": [
 			{"title":"lnbtitle", "class": "card", "name": "현대백화점카드", "link": "#", "sub": [
 				{"title":"subtitle", "class": "card", "name": "카드소개신청", "link": "#", "sub": null},
 				{"title":"subtitle", "class": "card", "name": "발급현황 조회", "link": "#", "sub": null},
@@ -121,7 +104,7 @@
 				{"title":"subtitle", "class": "card", "name": "구입안내", "link": "#", "sub": null}
 			]}
 		]},
-		{"title":"gnbtitle", "id":"gnbContents_06", "class": "online", "name": "비대면 온라인쇼핑", "link": "#", "sub": [
+		{"title":"gnbtitle", "id":"gnbContents_05", "class": "online", "name": "ESG경영", "link": "#", "sub": [
 			{"title":"lnbtitle", "class": "online", "name": "더현대닷컴", "link": "#", "sub": null },
 			{"title":"lnbtitle", "class": "online", "name": "온라인쇼핑", "link": "#", "sub": null },
 			{"title":"lnbtitle", "class": "online", "name": "현대식품관투홈", "link": "#", "sub": null },

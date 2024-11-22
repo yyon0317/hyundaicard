@@ -1,92 +1,138 @@
-
-$font-default: "Pretendard";
-$font-size: 16px;
+@use "sass:math"; // 다른 규칙보다 먼저 작성
+.text-c{text-align: center;}
+.text-l{text-align: left;}
+.text-r{text-align: right;}
+//$font-default: "Montserrat";
+$font-size: 15px;
 $font-color: #222;
 $hover-color : #fc9a00;
 
 $grid-width: 1120px;
 
-// $gutter : (
-//   gutter-xxs : 4px,
-//   gutter-xs : 8px,
-//   gutter-s : 16px,
-//   gutter-m : 24px,
-//   gutter-l : 36px,
-//   gutter-xl : 48px,
-//   gutter-xxl : 80px  
-// )
+$gutter-1 : 4px;
+$gutter-2 : 8px;
+$gutter-3 : 12px;
+$gutter-4 : 16px;
+$gutter-5 : 20px;
+$gutter-6 : 24px;
+$gutter-7 : 28px;
+$gutter-8 : 32px;
+$gutter-9 : 36px;
+$gutter-10 : 40px;
+$gutter-11 : 44px;
+$gutter-12 : 48px;
+$gutter-13 : 52px;
+$gutter-14 : 56px;
+$gutter-15 : 60px;
+$gutter-16 : 64px;
+$gutter-17 : 68px;
+$gutter-18 : 72px;
+$gutter-19 : 76px;
+$gutter-20 : 80px;
 
-$gutter-xxs : 4px;
-$gutter-xs : 8px;
-$gutter-s : 16px;
-$gutter-m : 24px;
-$gutter-l : 36px;
-$gutter-xl : 48px;
-$gutter-xxl : 80px;
 
-// $brandColor : (
-//   #264998,
-//   #3c9082,
-//   #212e4e
-// );
+/* 기준 화면 너비 */
+$vw-viewport: 720;
+@mixin SCREEN{ @media (max-width: #{$vw-viewport}px){ @content; } }
 
-$path : "/include/img";
+/* pixel을 vw로 변환해주는 함수 */
+@function get-vw($px){
+  $vw-context: $vw-viewport * 0.0065 * 1px;
+  @return math.div($px, $vw-context) * 1vw;
+}
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 1000px,
-  xl: 1120px
+/* 특정 CSS 속성을 픽셀 단위와 반응형 vw 단위로 설정하는 믹스인 */
+@mixin set-vw($property, $value){
+  @if type-of($value) == 'number' {
+    @include SCREEN {
+      #{$property}: get-vw($value);
+    }
+    #{$property}: $value;
+  } @else if type-of($value) == 'string' and str-slice($value, 1, 2) == '--' {
+    @include SCREEN {
+      #{$property}: calc(#{$value} * 100vw / #{$vw-viewport});
+    }
+    #{$property}: $value;
+  }
+}
+
+/* 특정 CSS 속성에 대해 수직(vertical) 및 수평(horizontal) 값을 설정하는 믹스인 */
+@mixin set-pair-vw($property, $vertical, $horizontal){
+  @if type-of($vertical) == 'number' and type-of($horizontal) == 'number' {
+    @include SCREEN {
+      #{$property}: get-vw($vertical) get-vw($horizontal);
+    }
+    #{$property}: $vertical $horizontal;
+  } @else {
+    @include SCREEN {
+      #{$property}: calc(#{$vertical} * 100vw / #{$vw-viewport}) calc(#{$horizontal} * 100vw / #{$vw-viewport});
+    }
+    #{$property}: $vertical $horizontal;
+  }
+}
+
+$gutters: (
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 20px,
+  6: 24px,
+  7: 28px,
+  8: 32px,
+  9: 36px,
+  10: 40px,
+  11: 44px,
+  12: 48px,
+  13: 52px,
+  14: 56px,
+  15: 60px,
+  16: 64px,
+  17: 68px,
+  18: 72px,
+  19: 76px,
+  20: 80px
 );
 
-//border 변수
-$border-black : 1px solid #000;
+// $gutter-6: map-get($gutters, 6);
 
-// 여백 변수
-$gutter-xxxs : 0.625rem;//10
-$gutter-xxs : 0.75rem;//12
-$gutter-xs : 0.875rem;//14
-$gutter-s : 1rem;//16
-$gutter-m :1.25rem;//20
-$gutter-l : 1.5rem;//24
-$gutter-xl : 1.625rem;//26
-$gutter-xxl : 1.875rem;//30
-
-// 폰트 변수
-$font-xxxs : 0.625rem;//10
-$font-xxs : 0.75rem;//12
-$font-xs : 0.875rem;//14
-$font-s : 1rem;//16
-$font-m :1.25rem;//18
-$font-l : 1.5rem;//24
-$font-xl : 1.625rem;//26
-$font-xxl : 1.875rem;//30
-
-//반응형
+@for $i from 3 through 13 {
+  $gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
+  .outline-#{$i}x {
+    // @include set-vw(height,$gutter-value);
+    @include set-vw(font-size, calc($gutter-value/ 1.5));
+    @include set-vw(line-height, calc($gutter-value/ 1.2));
+  }
+}
+@for $i from 1 through 13 {
+  $gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
+  .mbt-#{$i}x {
+    // @include set-vw(height,$gutter-value);
+    @include set-vw(margin-bottom, $gutter-value);
+  }
+}
 
 /*반응형 화면 크기*/
-$mobile: 324px;
+$mobile: 375px;
 $tablet: 720px;
-$desktop: 1024px;
+$desktop: 1200px;
 
-/*반응형, 브라우저 크기가 767px 이하일때*/
-@mixin mobile{
-  @media (min-width: $mobile){
+@mixin mobile {
+  @media (max-width: $mobile) {
     @content;
   }
 }
 
-// /*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
-@mixin tablet{
-  @media (min-width: $tablet){
+/* 태블릿용 미디어 쿼리 */
+@mixin tablet {
+  @media (max-width: $tablet) {
     @content;
   }
 }
 
-/*반응형, 브라우저 크기가 1024px 이상일때*/
-@mixin desktop{
-  @media (min-width: $desktop){
+/* 데스크톱용 미디어 쿼리 */
+@mixin desktop {
+  @media (max-width: $desktop) {
     @content;
   }
 }

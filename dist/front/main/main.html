@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Author" content="D MUSEUM">
+    <meta name="Keywords" content="D MUSEUM">
+    <meta name="Description" content="D MUSEUM">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+    <meta property="og:image" content="" />
+    <link rel="stylesheet" href="../../assets/css/front/common.css">
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js'></script>
+    <script src="../../assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.min.css">
+    <script src="../../assets/js/swiper-bundle.min.min.js"></script>
+    <script src="../../assets/js/jquery.marquee.min.min.js"></script>
+
+
+
+
+ 
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/ScrollMagic.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/animation.gsap.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.min.js'></script>
+     -->
+
+
+
+    <title>D MUSEUM</title>
+
+
+    
+</head>
+
+<body>
+    <header class="header">
+      <div class="inner">
+        <!-- <h1 class="logo"><a href="../main/main.html"><img src="../../assets/img/common/logo.png" alt="더현대"><span class="he">대림미술관</span></a></h1> -->
+
+
+      <div class="gnb-group">
+      <h1 class="mologo"><a href="../main/main.html"><img src="../../assets/img/common/logo.png" alt="더현대"><span class="he">대림미술관</span></a></h1>
+      <nav id="gnb" class="gnb" aria-label="메인 메뉴">
+          <!-- mobGnbHead -->
+          <div>
+              <div class="logoWrap">
+                  <h1 class="logo"><a href="../main/main.html"><img src="../../assets/img/common/logo.png" alt="더현대"><span class="he">대림미술관</span></a></h1>
+                  <div class="posts-display module-b logotoogle">
+                      <ul class="posts-list">
+                          <li class="posts-item bui-dropdown-target" data-bui-dropdown="dropdowngroup">
+                              <div class="posts-wrap">
+                                  <div class="posts-inform">
+                                      <div class="posts-func"><button type="button" class="btn expand normal-01 type-none active" title="펼치기"><span class="btn-text">click here</span></button></div>
+                                  </div>
+                              </div>
+                              <div class="posts-side">
+                                  <ul>
+                                      <li>
+                                          <a href="#">현대백화점</a>
+                                      </li>
+                                      <li>
+                                          <a href="#">더현대닷컴</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+        
+        
+
+        
+
+              <!-- <div class="mobGnbHead">
+                  <h1 class="logoImg">
+                      <a href="../pages/main.html"><img src="../../assets/img/common/logo.png" alt=" 더현대"></a>
+                  </h1>
+                  <div class="mobHeadUtil">
+                      <button type="button" class="btnSearchOpen" aria-haspopup="dialog" aria-label="검색열기"><i class="icon btnsearch"></i></button>
+                      <button type="button" class="btnMobClose" aria-label="메뉴닫기"><i class="icon btnsearchclose"></i></button>
+                  </div>
+              </div> -->
+              <!-- //mobGnbHead -->
+
+              <h2 class="he">메인 메뉴</h2>
+              <!-- gnbList -->
+              <div id="gnbContainer"></div>
+          </div>
+    
+
+          <div>
+              <!-- utilWrap -->
+              <div class="utilWrap mover">
+                  <ul>
+                
+                      <li class="login_btn"><a href="#">로그인</a></li>
+                      <li><a href="#">투자정보</a></li>
+                      <li><a href="#">현대백화점그룹</a></li>
+                  </ul>
+              </div>
+              <!-- //utilWrap -->
+              <!-- utilWrap -->
+              <div class="utilWrap">
+                  <ul>
+                      <li class="selectWrap">
+                          <select class="selectBox" title="언어선택">
+                              <option value="/">한국어</option>
+                              <option value="/eng">ENG</option>
+                              <option value="/chn">中文</option>
+                              <option value="/jpn">日本語</option>
+                          </select>
+                      </li>
+                  </ul>
+              </div>
+              <!-- //utilWrap -->
+
+              <div class="btnUtil">
+                  <button type="button" class="btnSearchOpen" aria-label="검색열기">
+                      <i class="icon btnsearch"></i>
+                  </button>
+              </div>
+          </div>
+
+          <!-- <ul class="gnbList">
+              <li class="menu1">
+                  <a href="#">관람·참여<i class="icon togglePlus"></i></a>
+                  <div class="sub"style="display: none;" >
+                      <ul>
+                          <li><a href="#">서울</a></li>
+                          <li><a href="#">과천</a></li>
+                          <li><a href="#">덕수궁</a></li>
+                          <li><a href="#">청주</a></li>
+                          <li><a href="#">어린이미술관</a></li>
+                          <li><a href="#">이벤트</a></li>
+                          <li><a href="#">통합예약</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="menu1">
+                  <a href="#">전시<i class="icon togglePlus"></i></a>
+                  <div class="sub" style="display: none;">
+                      <ul>
+                          <li><a href="#">현재전시</a></li>
+                          <li><a href="#">예정전시</a></li>
+                          <li><a href="#">과거전시</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="menu1">
+                  <a href="#">교육<i class="icon togglePlus"></i></a>
+                  <div class="sub" style="display: none;">
+                      <ul>
+                          <li><a href="#">미술관교육소개</a></li>
+                          <li><a href="#">어린이</a></li>
+                          <li><a href="#">청소년</a></li>
+                          <li><a href="#;">교사</a></li>
+                          <li><a href="#">성인</a></li>
+                          <li><a href="#">교육자료실</a></li>
+                          <li><a href="#">참여신청</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="menu1">
+                  <a href="#">소장품<i class="icon togglePlus"></i></a>
+                  <div class="sub" style="display: none;">
+                      <ul>
+                          <li><a href="#">소장품 검색</a></li>
+                          <li><a href="#">소장품 탐색</a></li>
+                          <li><a href="#">보존과학</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="menu1">
+                  <a href="#">미술연구<i class="icon togglePlus"></i></a>
+                  <div class="sub" style="display: none;">
+                      <ul>
+                          <li><a href="#">도서와 아카이브</a></li>
+                          <li><a href="#">연구</a></li>
+                          <li><a href="#">발간자료</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="menu1">
+                  <a href="#">디지털미술관<i class="icon togglePlus"></i></a>
+                  <div class="sub" style="display: none;">
+                      <ul>
+                          <li><a href="#">메인</a></li>
+                          <li><a href="#">맞춤검색</a></li>
+                          <li><a href="#">오디오가이드</a></li>
+                          <li><a href="#">이용자갤러리</a></li>
+                      </ul>
+                  </div>
+              </li>
+          </ul> -->
+          <!-- //gnbList -->
+
+
+      </nav>
+      </div>
+
+
+
+
+
+      <!-- 
+      <header class="header">
+          <div class="inner">
+
+          <nav id="gnb" class="gnb" aria-label="메인 메뉴">
+              <div>
+                  <h1 class="logo"><a href="../main/main.html"><img src="../../assets/img/common/logo.png" alt="더현대"><span class="he">대림미술관</span></a></h1>
+
+                  <h2 class="he">메인 메뉴</h2>
+                  <div id="gnbContainer">
+                      <div class="subsection">
+        <div class="subsection-wrap">
+          <div class="subsection-head">
+            <p class="subsection-subject">
+              <a href="#">지점안내</a>
+            </p>
+          </div>
+          <div class="section-body" style="display: none;">
+            <div class="lnb-navi">
+              <ul class="lnb-list"><li class="lnb-item"><a href="#">더현대</a><div class="snb-navi"><ul class="snb-list"><li class="snb-item"><a href="#">더현대 서울</a></li><li class="snb-item"><a href="#">더현대 대구</a></li></ul></div></li><li class="lnb-item"><a href="#">현대백화점</a><div class="snb-navi"><ul class="snb-list"><li class="snb-item"><a href="#">압구정본점</a></li><li class="snb-item"><a href="#">무역센터점</a></li><li class="snb-item"><a href="#">천호점</a></li><li class="snb-item"><a href="#">신촌점</a></li><li class="snb-item"><a href="#">미아점</a></li><li class="snb-item"><a href="#">목동점</a></li><li class="snb-item"><a href="#">중동점</a></li><li class="snb-item"><a href="#">킨텍스점</a></li><li class="snb-item"><a href="#">디큐브시티</a></li><li class="snb-item"><a href="#">울산점</a></li><li class="snb-item"><a href="#">울산동구점</a></li><li class="snb-item"><a href="#">충청점</a></li></ul></div></li><li class="lnb-item"><a href="#">커넥트더현대</a><div class="snb-navi"><ul class="snb-list"><li class="snb-item"><a href="#">커넥트현대</a></li></ul></div></li><li class="lnb-item"><a href="#">현대아울렛</a><div class="snb-navi"><ul class="snb-list"><li class="snb-item"><a href="#">김포점</a></li><li class="snb-item"><a href="#">송도점</a></li><li class="snb-item"><a href="#">대전점</a></li><li class="snb-item"><a href="#">SPACE 1</a></li><li class="snb-item"><a href="#">동대문점</a></li><li class="snb-item"><a href="#">가산점</a></li><li class="snb-item"><a href="#">가든파이브점</a></li><li class="snb-item"><a href="#">대구점</a></li></ul></div></li></ul>
+            </div>
+          </div>
+        </div>
+      </div><div class="subsection">
+        <div class="subsection-wrap">
+          <div class="subsection-head">
+            <p class="subsection-subject">
+              <a href="#">서비스이벤트</a>
+            </p>
+          </div>
+          <div class="section-body" style="display: none;">
+            <div class="lnb-navi">
+              <ul class="lnb-list"><li class="lnb-item"><a href="#">VIP프로그램</a><div class="snb-navi"><ul class="snb-list"><li class="snb-item"><a href="#">선정 기준</a></li><li class="snb-item"><a href="#">VIP 혜택</a></li><li class="snb-item"><a href="#">마일리지 적립</a></li><li class="snb-item"><a href="#">리워드</a></li></ul></div></li><li class="lnb-item"><a href="#">고객 서비스</a><div class="snb-navi"><ul class="snb-list"><li class="snb-item"><a href="#">고객의 의견</a></li><li class="snb-item"><a href="#">자주 하는 질문</a></li><li class="snb-item"><a href="#">서비스 제도</a></li><li class="snb-item"><a href="#">약관 및 기타 방침 안내</a></li><li class="snb-item"><a href="#">주요 문의처</a></li><li class="snb-item"><a href="#">배송조회</a></li><li class="snb-item"><a href="#">공지사항</a></li><li class="snb-item"><a href="#">행복 인사이트 위원회</a></li></ul></div></li><li class="lnb-item"><a href="#">이벤트</a><div class="snb-navi"><ul class="snb-list"><li class="snb-item"><a href="#">진행 이벤트</a></li><li class="snb-item"><a href="#">당첨자 발표</a></li><li class="snb-item"><a href="#">어린이그림그리기대회</a></li></ul></div></li></ul>
+            </div>
+          </div>
+        </div>
+      </div></div>
+              </div>
+  
+
+              <div>
+ 
+                  <div class="utilWrap mover">
+                      <ul>
+              
+                          <li class="login_btn"><a href="#">로그인</a></li>
+                          <li><a href="#">투자정보</a></li>
+                          <li><a href="#">현대백화점그룹</a></li>
+                      </ul>
+                  </div>
+      
+                  <div class="utilWrap">
+                      <ul>
+                          <li class="selectWrap">
+                              <select class="selectBox" title="언어선택">
+                                  <option value="/">한국어</option>
+                                  <option value="/eng">ENG</option>
+                                  <option value="/chn">中文</option>
+                                  <option value="/jpn">日本語</option>
+                              </select>
+                          </li>
+                      </ul>
+                  </div>
+           
+
+                  <div class="btnUtil">
+                      <button type="button" class="btnSearchOpen" aria-label="검색열기">
+                          <i class="icon btnsearch"></i>
+                      </button>
+                      <button type="button" class="btnMobOpen" aria-label="메뉴열기">
+                          <i class="icon btnmenu"></i>
+                      </button>
+                  </div>
+              </div>
+          </nav>
+
+        </div>
+        </header> -->
+
+      <!-- <div class="btnUtil">
+        <button type="button" class="btnSearchOpen" aria-label="검색열기">
+          <i class="icon btnsearch"></i>
+        </button>
+        <button type="button" class="btnMobOpen" aria-label="메뉴열기">
+          <i class="icon btnmenu"></i>
+        </button>
+      </div> -->
+
+
+      <button type="button" class="btnMobOpen" aria-label="메뉴열기">
+        <i class="icon btnmenu"></i>
+    </button>
+    <button type="button" class="btnMobClose" aria-label="메뉴닫기"><i class="icon btnsearchclose"></i></button>
+
+    </div>
+    </header>
+  
+    <div class="totalSearchWrap">
+      <form id="totalSearchForm" name="totalSearchForm" method="post">
+        <div class="inner">
+          <div class="searchLayer">
+            <div class="searchLayer-select">
+              <span class="form select module-b style-a type-line outline-f12x normal-05">
+                <select class="form-elem">
+                    <option>1st option</option>
+                    <option>2nd option</option>
+                    <option>3rd option</option>
+                    <option>4th option</option>
+                    <option>5th option</option>
+                </select>
+              </span>
+            </div>
+            <div class="searchLayer-textfield">
+              <span class="form textfield module-b style-a type-line normal-05 outline-f12x">
+                <input class="form-elem" type="search" placeholder="Placeholder" value="outline-f12x">
+                <span class="form-util">
+                    <button class="form-btn-search" type="submit"><span class="btn-text">검색</span></button>
+                </span>
+              </span>
+            </div>
+            <div class="keyword">
+              <dl>
+                <dt>인기검색어</dt>
+                <dd id="popular_searches">
+                <ul id="hotKeyword" class="list"><li><a href="/newPortal/search/search.do?code=&amp;searchWord=어그">어그</a></li><li><a href="/newPortal/search/search.do?code=&amp;searchWord=폴로">폴로</a></li><li><a href="/newPortal/search/search.do?code=&amp;searchWord=노스페이스">노스페이스</a></li><li><a href="/newPortal/search/search.do?code=&amp;searchWord=나이키">나이키</a></li><li><a href="/newPortal/search/search.do?code=&amp;searchWord=주차">주차</a></li></ul></dd>
+              </dl>
+            </div>
+            <button type="button" aria-label="검색닫기"><i class="icon btnsearchclose"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container">
+        <main id="content" class="content main">
+            <div class="inner">
+
+                <!-- mainSection -->
+                <!-- <div class="mainsection mainvisual">
+                    <div class="cont_visualbox">
+                        <div class="cont_visualimg">
+                            <img src="../../assets/img/main/img_visual.png" alt="지금 D GREW로 가입하고 특별한 혜택을 만나보세요!">
+                        </div>
+
+                        <div class="cont_visualinfo">
+                            <div> 
+                                <strong class="tit">젊은 모색 2023: 미술관을 위한 주석</strong>
+                                <p class="date">2023.4.27.-2023.09.10.</p>
+                            </div>
+                            <button type="button" class="btn">전시 예약 바로가기</button>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- //mainSection -->
+
+                <!-- mainSection -->
+                <div class="mainsection mainabout on">
+                    <div class="cont_aboutinfo">
+                        <p class="txt">Treat your skin in every season</p>
+                        <strong class="tit">영감을 디자인하는<br><span>"복합문화예술센터"</span></strong>
+                        <p class="desc">대림문화재단 설립 20주년을 맞아 2015년 12월 한남동에 개관한 디뮤지엄은, 대림미술관에서 선보여온 다양한 문화예술 콘텐츠들을 더 확장된 공간에서, 보다 많은 사람들에게 수준 높은 감성으로 제시하며 주목을 받아 왔습니다.</p>
+                    </div>
+
+                    <div class="cont_aboutimg">
+                        <div class="aboutimg_box">
+                            <div class="box">
+                                <img  src="../../assets/img/main/img_about01.png" alt="대림미술관">
+                            </div>
+                        </div>
+                        <div class="aboutimg_box">
+                            <div class="box" >
+                                <img src="../../assets/img/main/img_about03.png" alt="대림미술관">
+                            </div>
+                        </div>
+                        <div class="aboutimg_box">
+                            <div class="box" >
+                                <img src="../../assets/img/main/img_about02.png" alt="대림미술관">
+                            </div>
+                        </div>
+                        <div class="aboutimg_box">
+                            <div class="box" >
+                                <img src="../../assets/img/main/img_about04.png" alt="대림미술관"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //mainSection -->
+
+                <!-- mainSection -->
+                <div class="mainsection mainmedia">
+                    <div class="cont_aboutvideo">
+                        <h3 class="hidden_txt">Treat your skin in every season</h3>
+                        <div class="media_video mobile"></div>
+                        <!-- <img class="media_video mobile" src="" alt="videoImg"> -->
+                        <video class="media_video pc"  id="aboutVideo" autoplay="autoplay" muted="muted" loop="loop"><source data-v-69c615d1="" src="https://cdn.daelimmuseum.org/Store/Homepage/Main/Pc/202202/20220225123810497001.mp4" type="video/mp4"> Sorry, your browser doesn't support embedded videos. </video>
+                    </div>
+                </div>
+                <!-- //mainSection -->
+
+                <!-- mainSection -->
+                <div class="mainsection mainnewsletter">
+                    <div class="cont_newsletter">
+                        <div class="cuserbox">
+                            <p>Contrary to popular belief, Lorem Ipsum is not 
+                            <a href="#" class="hover-target img-1">simply random text</a>. 
+                            It has roots in a piece of classical 
+                            <a href="#" class="hover-target img-2">Latin literature</a> 
+                            from 45 BC, making it over 2000 years old. Richard McClintock, 
+                            a Latin professor at Hampden-Sydney College in 
+                            <a href="#" class="hover-target img-3">Virginia</a>, 
+                            looked up one of the more obscure 
+                            <a href="#" class="hover-target img-4">Latin words</a>, 
+                            consectetur, from a Lorem Ipsum passage.</p>
+                        </div>
+                            <div class='cursor' id="cursor"></div>
+                            <div class='cursor2' id="cursor2"></div>
+                            <div class='cursor3' id="cursor3"></div> 
+                    </div>
+                </div>
+                <!-- //mainSection -->
+
+                <!-- mainSection -->
+                <!-- <div class="mainsection maincollect">
+                    <div class="cont cont_collect" id="js-wrapper">
+                        <div class="collectbox" id="js-slideContainer">
+                            <div class="collectbox_item">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2479807/person1.jpg"/>
+                                <div class="collectbox_collectinfo">
+                                        <h3>What attained our violin</h3>
+                                        <p>Been is in merely immune makes back peacefully.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- //mainSection -->
+
+
+
+
+
+
+
+
+                <!-- mainSection -->
+                <div class="mainsection maincollect">
+                    <div class="cont cont_collect">
+                        <div class="collectbox">
+                            <div class="collectbox_item">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2479807/person1.jpg"/>
+                                <div class="collectbox_collectinfo">
+                                        <h3>What attained our violin</h3>
+                                        <p>Been is in merely immune makes back peacefully.</p>
+                                </div>
+                            </div>
+                            <div class="collectbox_item">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2479807/person3.jpg"/>
+                                <div class="collectbox_collectinfo">
+                                    <h3>Imitation believed nothing soft</h3>
+                                    <p> A this that not, most god, to in times and a no question.</p>
+                                </div>
+                            </div>
+                            <div class="collectbox_item">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2479807/person2.jpg" />
+                                <div class="collectbox_collectinfo">
+                                    <h3>A the he didn't however white</h3>
+                                    <p> Nice structure when on to could hotel cannot as  proposal, seven way.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="collectbox_item">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2479807/person4.jpg"/>
+                                <div class="collectbox_collectinfo">
+                                    <h3>Much of contracting</h3>
+                                    <p>A gets the can sitting however by turned it built it about and yes. </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- //mainSection -->
+                
+
+
+
+                <!-- mainSection -->
+                <div class="mainsection mainvist on" >
+                    <ul class="vist_list">
+                        <li><a href="index.html" data-media="1" data-text="Facial Moisturizer">Facial Moisturizer</a></li>
+                        <li><a href="index.html" data-media="2" data-text="Hydrating Mask">Hydrating Mask</a></li>
+                        <li><a href="index.html" data-media="3" data-text="Exfoliant Paste">Exfoliant Paste</a></li>
+                    </ul>
+                    <a href="index.html" class="govist_btn">SHOP NOW</a>
+                </div>
+                <!-- //mainSection -->
+
+                
+
+
+
+
+            </div>
+        </main>
+    </div>
+
+    
+    <div class="dimmedLayer" >fff</div>
+    
+</body>
+</html>

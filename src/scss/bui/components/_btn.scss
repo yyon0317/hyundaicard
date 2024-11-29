@@ -216,8 +216,6 @@
 		// 'ico_'로 시작하는 모든 클래스에 기본 스타일 적용
 		&[class*="ico_"]::after {
 			content: "";
-			@include set-vw(width, 24px);
-			@include set-vw(height, 24px);
 			mask-repeat: no-repeat;
 			mask-position: center center;
 			mask-size: 100% auto;

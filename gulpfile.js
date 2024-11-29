@@ -199,7 +199,8 @@ function jsVendor() {
 var paths = {
     swiperCSS: 'node_modules/swiper/swiper-bundle.min.css',
     swiperJS: 'node_modules/swiper/swiper-bundle.min.js',
-    marqueeJS: 'node_modules/jquery.marquee/jquery.marquee.min.js' // 대체 패키지 경로로 수정
+    marqueeJS: 'node_modules/jquery.marquee/jquery.marquee.min.js', // 대체 패키지 경로로 수정
+    gsapJS: 'node_modules/gsap/dist/gsap.min.js' // GSAP 경로 추가
 };
 
 // Swiper CSS 파일을 복사하여 src 및 dist 폴더에 추가
@@ -217,6 +218,20 @@ function swiperJS() {
         .pipe(gulp.dest(folder.src + 'js/'))  // src에 복사
         .pipe(gulp.dest(folder.dist_assets + 'js/'));  // dist에 복사
 }
+
+function gsapJS() {
+    return gulp.src(paths.gsapJS, { allowEmpty: true }) // allowEmpty 옵션 추가
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(folder.src + 'js/'))  // src에 복사
+        .pipe(gulp.dest(folder.dist_assets + 'js/'));  // dist에 복사
+}
+function scrollTriggerJS() {
+    return gulp.src('node_modules/gsap/dist/ScrollTrigger.js') // 수정된 경로
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(folder.src + 'js/'))
+        .pipe(gulp.dest(folder.dist_assets + 'js/'));
+}
+
 
 // Marquee JS 파일을 src 및 dist에 복사
 function marqueeJS() {
@@ -285,6 +300,8 @@ gulp.task(
         jsVendor,
         jsPages,
         swiperJS,
+        scrollTriggerJS,
+        gsapJS,
         marqueeJS,
         copyDataFolder, // 추가
         'watch'
@@ -296,5 +313,5 @@ gulp.task(
 gulp.task(
     "build",
     //gulp.series(clean,html,imageMin,fonts,cssVendor,css,jsVendor,jsPages)
-    gulp.series(clean,html,imageMin,fonts,gulp.parallel(cssBui, cssFront, swiperCSS),jsVendor,jsPages,swiperJS,copyDataFolder,marqueeJS)
+    gulp.series(clean,html,imageMin,fonts,gulp.parallel(cssBui, cssFront, swiperCSS),jsVendor,jsPages,swiperJS,scrollTriggerJS,gsapJS,copyDataFolder,marqueeJS)
 );

@@ -1,100 +1,89 @@
 "use strict";
 
 
-$(function() {
-    $(window).resize(function(){
-        if (window.innerWidth > 1200) {  // 다바이스 크기가 480이상일때
+// 플러그인 등록
+gsap.registerPlugin(ScrollTrigger);
+
+document.addEventListener('DOMContentLoaded', () => {
+    ScrollTrigger.create({
+        start: 'top -10',
+        end: 99999,
+        toggleClass: {className: 'main-tool-bar--scrolled', targets: '.main-tool-bar'}
+      });
+      
+});
+
+
+$(function () {
     function pcmenuhover() {
-        $(".gnb").removeClass("active");
-        $('body').removeClass('scrollLock');
-        $('.mologo').hide();
-        // subsection-subject > a에 마우스 엔터 이벤트 추가
-        $('.subsection-subject > a').mouseenter(function () {
-            // 형제 section-body 요소 찾기
+        $('#gnbContainer').off('mouseenter', '.subsection-subject > a').on('mouseenter', '.subsection-subject > a', function () {
             const sectionBody = $(this).closest('.subsection-head').next('.section-body');
-    
-            // 모든 section-body에서 active 제거 후 현재 요소에만 추가
+
             $('.section-body').removeClass('active');
             sectionBody.addClass('active');
-    
-            // dimmedLayer 표시
             $('.dimmedLayer').show();
         });
-    
-        // 헤더에서 마우스가 나갔을 때 모든 active 제거
-        $('#gnbContainer').mouseleave(function () {
+
+        $('#gnbContainer').off('mouseleave').on('mouseleave', function () {
             $('.section-body').removeClass('active');
             $('.dimmedLayer').hide();
         });
+        
+
     }
 
-            
-    
-    // 함수 실행
-    
-    
-    
-    $(".btnSearchOpen").click(function(){
+    function handleResize() {
+        if (window.innerWidth > 1200) {
+            // console.log("Desktop 모드 활성화");
+            $('.mologo').hide();
+            $('.mologoWrap').hide();
+            $('.btnMobClose').hide();
+            $('.momenu').show();
+            $('.momenuheader').hide();
+            $('.logoWrap').show();
+            $('.utilWrap').show();
+            $('#gnbContainer').show();
+            $('.btnUtil').show();
+            pcmenuhover();
+        } else {
+            // console.log("Mobile 모드 활성화");
+            // Mobile 관련 로직
+            pcmenuhover();
+            $('.mologoWrap').show();
+            $('.logoWrap').hide();
+            $('.utilWrap').hide();
+            $('.btnUtil').hide();
+            $('.mologo').show();
+            $('.momenuheader').hide();
+            $('.momenu').hide();
+            $('.btnMobClose').hide();
+            $(".ico_btnMobOpen_w").off('click').on('click', function () {    
+                if (window.innerWidth <= 1200) {
+                $('.subsection:nth-child(1) .section-body').addClass('active');
+              }
+                $("#gnbContainer").show();
+                
+                $('.utilWrap').hide();
+                $('.mologoWrap').hide();
+                $('.momenuheader').show();
+                $('.momenu').show();
+                $('.btnMobClose').show();
+                $('body').addClass('scrollLock');
+            });
+            $(".btnMobClose").off('click').on('click', function () {
+                $("#gnbContainer").hide();
+                $('.utilWrap').hide();
+                $('.mologoWrap').show();
+                $('.momenuheader').hide();
+                $('.momenu').hide();
+                $('.btnMobClose').hide();
+                $('body').removeClass('scrollLock');
+            });
+        }
+    }
 
-        $(".gnb").removeClass("mobMenuOpen");
-        $(".totalSearchWrap").addClass("totalSearcopen");
-        $('.dimmedLayer').show();
-    });
-
-    $(".btnsearchclose").click(function(){
-
-        $(".totalSearchWrap").removeClass("totalSearcopen");
-        $('.dimmedLayer').hide();
-    });
-
-    pcmenuhover();
-
-} else {
-    $('.mologo').show();
-    $(".btnMobOpen").click(function(){
-
-        $(".gnb").addClass("active");
-        $('body').addClass('scrollLock');
-    
-    });
-    $(".btnMobClose").click(function(){
-
-        $(".gnb").removeClass("active");
-        $('body').removeClass('scrollLock');
-    
-    });
-            
-
-    // $('.menu1 > a').click(function(){
-    //     $(this).toggleClass('active').closest("li").siblings().children().removeClass('active');
-    //     $('.sub').slideUp();
-    //     if ($(this).next('.sub').is(':hidden')){
-    //         $(this).next('.sub').slideDown(200);
-    //     } else{
-    //         $(this).next('.sub').slideUp(200);
-    //     }
-
-    //     return false;
-    // });
-
-    // $(".btnSearchOpen").click(function(){
-
-    //     $(".gnb").removeClass("mobMenuOpen");
-    //     $(".totalSearchWrap").addClass("totalSearcopen");
-    //     $('.btnSearchOpen').hide();
-    //     $(".header").css('border-bottom',' 0px solid');
-    //     $('body').addClass('scrollLock');
-    // });
-
-    // $(".btnsearchclose").click(function(){
-
-    //     $(".totalSearchWrap").removeClass("totalSearcopen");
-    //     $('.btnSearchOpen').show();
-    //     $(".header").css('border-bottom',' 1px solid #000');
-    //     $('body').removeClass('scrollLock');
-    // });
-}
-}).resize();
+    $(window).on('resize', handleResize);
+    handleResize(); // 초기 실행
 
 
     // config 변수
@@ -155,6 +144,24 @@ $(function() {
         }
     })
     
+
+
+
+
+     $(".ico_searchopen_w, .ico_searchopen_b").click(function(){
+
+        $(".gnb").removeClass("mobMenuOpen");
+        $(".totalSearchWrap").addClass("totalSearcopen");
+        $('.ico_searchopen_w').hide();
+        $('body').addClass('scrollLock');
+    });
+
+    $(".btnsearchclose").click(function(){
+
+        $(".totalSearchWrap").removeClass("totalSearcopen");
+        $('.ico_searchopen_w').show();
+        $('body').removeClass('scrollLock');
+    });
     })
     
 
@@ -866,6 +873,7 @@ fetch('../../data/menu.json')
   .then(data => {
     const mainContainer = document.getElementById("gnbContainer"); // GNB 항목들이 들어갈 메인 컨테이너
     data.mobile.forEach(gnbItem => renderGnbContent(gnbItem, mainContainer));
+
   })
   .catch(error => console.error('Error loading menu JSON:', error));
 
@@ -884,7 +892,8 @@ function renderGnbContent(data, container) {
       </div>
       <div class="section-body">
         <div class="lnb-navi">
-          <ul class="lnb-list"></ul>
+            <p>${data.name}</p>
+            <ul class="lnb-list"></ul>
         </div>
       </div>
     </div>
@@ -1035,7 +1044,7 @@ function renderGnbContent(data, container) {
 
 //     /*GNB배너 모바일 PC*/
 
-//     $(".btnMobOpen").click(function(){
+//     $(".ico_btnMobOpen_w").click(function(){
 
 //         $(".gnb").addClass("mobMenuOpen");
 //         $('body').addClass('scrollLock');

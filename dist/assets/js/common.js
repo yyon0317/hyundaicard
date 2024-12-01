@@ -1,10 +1,11 @@
 "use strict";
 
 
-// 플러그인 등록
-gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
+
+// 플러그인 등록
+gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.create({
         start: 'top -10',
         end: 99999,
@@ -894,6 +895,8 @@ function renderGnbContent(data, container) {
         <div class="lnb-navi">
             <p>${data.name}</p>
             <ul class="lnb-list"></ul>
+            <a href="${data.link}">
+            <img src="${data.gnbimg}" alt="${data.name}"></a>
         </div>
       </div>
     </div>

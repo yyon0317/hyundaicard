@@ -1,6 +1,6 @@
 {
 	"mobile": [
-		{"title":"gnbtitle", "id":"gnbContents_00", "class": "spot", "name": "지점안내", "link": "#", "sub": [
+		{"title":"gnbtitle", "id":"gnbContents_00", "class": "spot", "name": "지점안내", "link": "#", "gnbimg":"../../../assets/img/main/mainswiper_art.png", "sub": [
 			{"title":"lnbtitle", "class": "spot", "name": "더현대", "link": "#", "sub": [
 				{"title":"subtitle", "class": "spot", "name": "더현대 서울", "link": "#", "sub": null},
 				{"title":"subtitle", "class": "spot", "name": "더현대 대구", "link": "#", "sub": null}
@@ -105,11 +105,13 @@
 			]}
 		]},
 		{"title":"gnbtitle", "id":"gnbContents_05", "class": "online", "name": "ESG경영", "link": "#", "sub": [
-			{"title":"lnbtitle", "class": "online", "name": "더현대닷컴", "link": "#", "sub": null },
-			{"title":"lnbtitle", "class": "online", "name": "온라인쇼핑", "link": "#", "sub": null },
-			{"title":"lnbtitle", "class": "online", "name": "현대식품관투홈", "link": "#", "sub": null },
-			{"title":"lnbtitle", "class": "online", "name": "현대 Hmall", "link": "#", "sub": null },
-			{"title":"lnbtitle", "class": "online", "name": "비대면 결제", "link": "#", "sub": null }
+			{"title":"lnbtitle", "class": "online", "name": "ESG경영", "link": "#", "sub": [
+				{"title":"lnbtitle", "class": "online", "name": "ESG 경영 체계", "link": "#", "sub": null },
+				{"title":"lnbtitle", "class": "online", "name": "환경", "link": "#", "sub": null },
+				{"title":"lnbtitle", "class": "online", "name": "사회", "link": "#", "sub": null },
+				{"title":"lnbtitle", "class": "online", "name": "ESG 정보공시", "link": "#", "sub": null },
+				{"title":"lnbtitle", "class": "online", "name": "ESG 보고서", "link": "#", "sub": null }
+		]}
 		]}
 	]
 }

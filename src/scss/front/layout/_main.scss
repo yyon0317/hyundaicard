@@ -1,3 +1,204 @@
+.content-body {
+
+  .section-wrap {
+    .section-head {
+      @include hidden;
+    }
+  }
+	.section.main-topevent {
+    .section-wrap{
+      .section-body{
+        
+      }
+    }
+  }
+  .section.main-news {
+    .section-wrap{
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 0 20px;
+      .section-body{
+
+      }
+    }
+  }
+  .section.main-culture {
+    .section-wrap{
+      .section-body{
+        width: 100%;
+        overflow: hidden;
+        .goods-swiper.module-b{
+          transition: all 0.5s;
+          max-width: 1440px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .section.main-popup {
+    .section-wrap{
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 0 20px;
+      .section-body{
+
+      }
+    }
+  }
+  .section.main-cardpoint {
+    .section-wrap{
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 0 20px;
+      .section-body{
+
+      }
+    }
+  }
+  .section.main-onlineshopping {
+    .section-wrap{
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 0 20px;
+      .section-body{
+
+      }
+    }
+  }
+  .section.main-trendnews {
+    .section-wrap{
+      position: relative;
+      .section-body{
+        max-width: 1480px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .marquee-wrap{
+        width: 100%;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+  .section.main-brand {
+    .section-wrap{
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 0 20px;
+      .section-body{
+
+      }
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // .container{
 //     margin-top:70px;
 // }

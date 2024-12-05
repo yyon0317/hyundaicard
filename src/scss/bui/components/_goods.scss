@@ -24,8 +24,6 @@ ul.goods-list {
 	--infoset-line-height: 20px;
 	--infoset-color: var(--color-base-08);
 	.goods-list {
-		display: flex;
-		flex-wrap: wrap;
 		.goods-item {
 			position: relative;
 			.goods-title{
@@ -452,13 +450,19 @@ ul.goods-list {
 }
 
 .goods-swiper.module-b{
-	overflow: hidden;
 	position: relative;
-    transition: all .5s;
+	width: 90%;
+	margin: 0 auto; 
+	.swiper-title{
+		display: flex;
+		gap: 16px;
+		@include tablet{
+			flex-direction: column;
+		}
+	}
 	.swiper-container{
 		flex: 1 1 100%;
-		position: relative;   
-		padding: 0px 7.5vw;
+		position: relative;
 		.swiper-wrapper{
 			.swiper-inform{
 				position: absolute;
@@ -484,10 +488,10 @@ ul.goods-list {
 	.swiper-nav{
 		position: absolute;
 		right: 24px;
-		top: -31px;
+		top: -44px;
 		width: 35px;
 		@include tablet{
-			top: -53px;
+			top: -8vw;
 		}
 		.swiper-button-next{
 			position: absolute;
@@ -506,12 +510,6 @@ ul.goods-list {
 			@include tablet{
 				scale: 0.3;
 			}
-		}
-	}
-	.swiper-title{
-		padding: 0 0 0 7vw;
-		@include tablet{
-			padding: 0 0 0 0;
 		}
 	}
 }
@@ -702,22 +700,21 @@ ul.goods-list {
 		@include tablet{flex-direction: column;height: 500px;}
 		
 	}
-	.marquee-wrap {
-		overflow: hidden;
-		display: block;
-		white-space: nowrap;
-		font-size: 240px;
-		font-weight: 700;
-		color: #FFFFFF;
-		line-height: 2.3;
-		letter-spacing: -0.25px;
-		text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-		@include tablet{
-			display: none;
-		}
+}
+.marquee-wrap {
+	overflow: hidden;
+	display: block;
+	white-space: nowrap;
+	font-size: 240px;
+	font-weight: 700;
+	color: #FFFFFF;
+	line-height: 2.3;
+	letter-spacing: -0.25px;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	@include tablet{
+		display: none;
 	}
 }
-
 
 .module-f{
 	position: relative;

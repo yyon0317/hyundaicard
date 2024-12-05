@@ -11,6 +11,16 @@ gsap.registerPlugin(ScrollTrigger);
         end: 99999,
         toggleClass: {className: 'main-tool-bar--scrolled', targets: '.main-tool-bar'}
       });
+
+      gsap.to(".swiper-sidecont", {
+        duration: 2, // 5초
+        flex: '1 1 60%',
+        ease: "power4.out", // 부드러운 가속/감속
+        onComplete: () => {
+            // 애니메이션 완료 후 class 추가 (필요할 경우)
+            document.querySelector(".swiper-sidecont").classList.add("swiper-sidecont--event");
+        }
+    });
       
 });
 
@@ -473,7 +483,7 @@ if (swiperContainer03) {
 
             // Swiper 초기화
             new Swiper(swiperContainer03, {
-                initialSlide: 1,
+                // initialSlide: 1,
                 loop: true, // loop 활성화
                 slidesPerView: 4, // 보이는 슬라이드 개수
                 spaceBetween: 10, // 슬라이드 간격
@@ -481,10 +491,6 @@ if (swiperContainer03) {
                 // loopAdditionalSlides: 4, // 추가 슬라이드 개수를 늘려 루프 가능하도록 설정
                 observer: true, // 새로고침 시 Swiper 업데이트
                 observeParents: true, // 부모 요소 변경 시 Swiper 업데이트
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
                 breakpoints: {
                 0: {
                     pagination: {
@@ -495,6 +501,7 @@ if (swiperContainer03) {
                     slidesPerView: 1, // 720px 이하일 때 1개
                 },
                 721: {
+                    loop: false, // loop 활성화
                     slidesPerView: 4, // 721px 이상일 때 3개
                 }
             }

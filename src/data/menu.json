@@ -1,6 +1,6 @@
 {
 	"mobile": [
-		{"title":"gnbtitle", "id":"gnbContents_00", "class": "spot", "name": "지점안내", "link": "#", "gnbimg":"../../../assets/img/main/mainswiper_art.png", "sub": [
+		{"title":"gnbtitle", "id":"gnbContents_00", "class": "spot", "name": "지점안내", "link": "#", "gnbimg":"../../../assets/img/main/gnbimg_spot.jpg", "sub": [
 			{"title":"lnbtitle", "class": "spot", "name": "더현대", "link": "#", "sub": [
 				{"title":"subtitle", "class": "spot", "name": "더현대 서울", "link": "#", "sub": null},
 				{"title":"subtitle", "class": "spot", "name": "더현대 대구", "link": "#", "sub": null}
@@ -33,7 +33,7 @@
 				{"title":"subtitle", "class": "spot", "name": "대구점", "link": "#", "sub": null}
 			]}
 		]},
-		{"title":"gnbtitle", "id":"gnbContents_01", "class": "service", "name": "서비스이벤트", "link": "#", "sub": [
+		{"title":"gnbtitle", "id":"gnbContents_01", "class": "service", "name": "서비스이벤트", "link": "#", "gnbimg":"../../../assets/img/main/gnbimg_service.jpg", "sub": [
 			{"title":"lnbtitle", "class": "service", "name": "VIP프로그램", "link": "#", "sub": [
 				{"title":"subtitle", "class": "service", "name": "선정 기준", "link": "#", "sub": null},
 				{"title":"subtitle", "class": "service", "name": "VIP 혜택", "link": "#", "sub": null},
@@ -56,10 +56,22 @@
 				{"title":"subtitle", "class": "service", "name": "어린이그림그리기대회", "link": "#", "sub": null}
 			]}
 		]},
-		{"title":"gnbtitle", "id":"gnbContents_02", "class": "brand", "name": "브랜드", "link": "#", "sub": [
+		{"title":"gnbtitle", "id":"gnbContents_02", "class": "brand", "name": "브랜드", "link": "#", "gnbimg":"../../../assets/img/main/gnbimg_brand.jpg", "sub": [
+			{"title":"lnbtitle", "class": "brand", "name": "컨템포러리", "link": "#", "sub": [
+				{"title":"subtitle", "class": "brand", "name": "FOURM", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "brand", "name": "톰그레이하운드", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "brand", "name": "PEER", "link": "#", "sub": null}
+			]},
+			{"title":"lnbtitle", "class": "brand", "name": "해외패션", "link": "#", "sub": [
+				{"title":"subtitle", "class": "brand", "name": "THE BASH", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "brand", "name": "위마켓", "link": "#", "sub": null}
+			]},
 			{"title":"lnbtitle", "class": "brand", "name": "라이프스타일", "link": "#", "sub": [
 				{"title":"subtitle", "class": "brand", "name": "B CLEAN", "link": "#", "sub": null},
-				{"title":"subtitle", "class": "brand", "name": "위펫", "link": "#", "sub": null}
+				{"title":"subtitle", "class": "brand", "name": "오프웍스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "brand", "name": "LABELS", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "brand", "name": "슈페이스", "link": "#", "sub": null},
+				{"title":"subtitle", "class": "brand", "name": "슈라이브러리", "link": "#", "sub": null}
 			]},
 			{"title":"lnbtitle", "class": "brand", "name": "리빙", "link": "#", "sub": [
 				{"title":"subtitle", "class": "brand", "name": "HBYC", "link": "#", "sub": null},
@@ -71,7 +83,7 @@
 				{"title":"subtitle", "class": "brand", "name": "원테이블", "link": "#", "sub": null}
 			]}
 		]},
-		{"title":"gnbtitle", "id":"gnbContents_03", "class": "culture", "name": "문화센터전시공연", "link": "#", "sub": [
+		{"title":"gnbtitle", "id":"gnbContents_03", "class": "culture", "name": "문화센터전시공연", "link": "#", "gnbimg":"../../../assets/img/main/gnbimg_culture.png", "sub": [
 			{"title":"lnbtitle", "class": "culture", "name": "문화센터", "link": "#", "sub": [
 				{"title":"subtitle", "class": "culture", "name": "CH1895", "link": "#", "sub": null},
 				{"title":"subtitle", "class": "culture", "name": "문화센터", "link": "#", "sub": null},
@@ -87,7 +99,7 @@
 				{"title":"subtitle", "class": "culture", "name": "지난전시공연", "link": "#", "sub": null}
 			]}
 		]},
-		{"title":"gnbtitle", "id":"gnbContents_04", "class": "card", "name": "카드상품권멤버십", "link": "#", "sub": [
+		{"title":"gnbtitle", "id":"gnbContents_04", "class": "card", "name": "카드상품권멤버십", "link": "#", "gnbimg":"../../../assets/img/main/gnbimg_card.jpg", "sub": [
 			{"title":"lnbtitle", "class": "card", "name": "현대백화점카드", "link": "#", "sub": [
 				{"title":"subtitle", "class": "card", "name": "카드소개신청", "link": "#", "sub": null},
 				{"title":"subtitle", "class": "card", "name": "발급현황 조회", "link": "#", "sub": null},
@@ -104,7 +116,7 @@
 				{"title":"subtitle", "class": "card", "name": "구입안내", "link": "#", "sub": null}
 			]}
 		]},
-		{"title":"gnbtitle", "id":"gnbContents_05", "class": "online", "name": "ESG경영", "link": "#", "sub": [
+		{"title":"gnbtitle", "id":"gnbContents_05", "class": "online", "name": "ESG경영", "link": "#", "gnbimg":"../../../assets/img/main/gnbimg_online.jpg", "sub": [
 			{"title":"lnbtitle", "class": "online", "name": "ESG경영", "link": "#", "sub": [
 				{"title":"lnbtitle", "class": "online", "name": "ESG 경영 체계", "link": "#", "sub": null },
 				{"title":"lnbtitle", "class": "online", "name": "환경", "link": "#", "sub": null },

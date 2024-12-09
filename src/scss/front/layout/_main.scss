@@ -86,7 +86,14 @@
       margin: 0 auto;
       padding: 0 20px;
       .section-body{
-
+        .module-f{
+          .tab-display{
+            position: absolute;
+            left: 310px;
+            top: 8px;
+            @include tablet{position: initial;}
+          }
+        }
       }
     }
   }

@@ -677,7 +677,7 @@ label {
   overflow: hidden;
 }
 
-.he {
+.blind {
   overflow: hidden;
   visibility: hidden;
   margin: -1px;
@@ -2102,6 +2102,11 @@ ul.posts-list {
     column-gap: 3.4188034188vw;
   }
 }
+@media (max-width: 720px) {
+  .posts-display.module-d.style-b .posts-list .posts-item .posts-wrap {
+    align-items: center;
+  }
+}
 .posts-display.module-d.style-b .posts-list .posts-item .posts-wrap::before {
   content: "";
   display: block;
@@ -2622,8 +2627,8 @@ ul.goods-list {
 }
 .goods-swiper.module-b .swiper-container .swiper-wrapper .swiper-inform {
   position: absolute;
-  left: 1vw;
-  bottom: 4%;
+  left: 5vw;
+  bottom: 5vw;
 }
 .goods-swiper.module-b .swiper-container .swiper-wrapper .swiper-inform .title {
   font-size: 21.3333333333px;
@@ -2677,7 +2682,7 @@ ul.goods-list {
 }
 @media (max-width: 720px) {
   .goods-swiper.module-b .swiper-nav {
-    top: -8vw;
+    top: -20vw;
   }
 }
 .goods-swiper.module-b .swiper-nav .swiper-button-next {
@@ -2706,6 +2711,15 @@ ul.goods-list {
 .goods-swiper.module-c {
   overflow: hidden;
   transition: all 0.5s;
+}
+.goods-swiper.module-c .swiper-title {
+  display: flex;
+  gap: 16px;
+}
+@media (max-width: 720px) {
+  .goods-swiper.module-c .swiper-title {
+    flex-direction: column;
+  }
 }
 .goods-swiper.module-c .swiper-container {
   flex: 1 1 100%;
@@ -2760,7 +2774,7 @@ ul.goods-list {
   line-height: 16.6666666667px;
   color: var(--color-base-10);
   font-weight: 400;
-  margin-bottom: 8px;
+  padding-bottom: 20px;
 }
 @media (max-width: 720px) {
   .goods-swiper.module-c .swiper-container .swiper-wrapper .swiper-inform .caption {
@@ -2774,7 +2788,7 @@ ul.goods-list {
 }
 @media (max-width: 720px) {
   .goods-swiper.module-c .swiper-container .swiper-wrapper .swiper-inform .caption {
-    margin-bottom: 1.7094017094vw;
+    padding-bottom: 4.2735042735vw;
   }
 }
 .goods-swiper.module-c .swiper-container .swiper-pagination-horizontal {
@@ -2986,21 +3000,11 @@ ul.goods-list {
   position: relative;
   overflow: hidden;
 }
-.module-f .tab-display {
-  position: absolute;
-  left: 288px;
-  top: 0;
-}
-@media (max-width: 720px) {
-  .module-f .tab-display {
-    position: initial;
-  }
-}
 .module-f .goods-swiper.module-f .swiper-container {
   position: relative;
 }
 .module-f .goods-swiper.module-f .swiper-container .swiper-wrapper {
-  max-height: 75vw;
+  max-height: 90vw;
   min-height: 33vw;
 }
 .module-f .goods-swiper.module-f .swiper-container .swiper-wrapper .swiper-slide {
@@ -5917,13 +5921,13 @@ header.main-tool-bar .inner {
 }
 
 .btn.ico_searchopen_b::after {
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
 }
 
 .btn.ico_btnMobOpen_w::after {
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
 }
 
 @media (max-width: 1200px) {
@@ -5984,6 +5988,9 @@ header.main-tool-bar .inner {
   }
   .gnb-group .gnb > div {
     flex-direction: column;
+  }
+  .gnb-group .gnb > div:nth-child(2) {
+    display: none;
   }
   .gnb-group .gnb .mologoWrap {
     display: flex;
@@ -6689,6 +6696,17 @@ header.main-tool-bar .inner {
   margin: 0 auto;
   padding: 0 20px;
 }
+.content-body .section.main-brand .section-wrap .section-body .module-f .tab-display {
+  position: absolute;
+  left: 310px;
+  top: 8px;
+}
+@media (max-width: 720px) {
+  .content-body .section.main-brand .section-wrap .section-body .module-f .tab-display {
+    position: initial;
+  }
+}
+
 .mainvisual {
   height: 100vh;
 }

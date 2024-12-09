@@ -36,7 +36,7 @@ label{cursor: pointer;}
         content:"";display: block;clear: both;overflow: hidden;
     }
 }
-.he{overflow: hidden;visibility: hidden;margin: -1px;width: 1px;height: 1px;padding: 0;line-height: 1px;font-size: 1px;border: 0;clip: rect(0 0 0 0);clip: rect(0,0,0,0);pointer-events: none;}
+.blind{overflow: hidden;visibility: hidden;margin: -1px;width: 1px;height: 1px;padding: 0;line-height: 1px;font-size: 1px;border: 0;clip: rect(0 0 0 0);clip: rect(0,0,0,0);pointer-events: none;}
 
 .mbt-xl{margin-bottom: 48px !important;}
 .mbt-m{margin-bottom: 24px !important;}

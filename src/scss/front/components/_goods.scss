@@ -466,8 +466,8 @@ ul.goods-list {
 		.swiper-wrapper{
 			.swiper-inform{
 				position: absolute;
-				left: 1vw;
-    			bottom: 4%;
+				left: 5vw;
+    			bottom: 5vw;
 				.title{
 					@include set-vw(font-size, calc($gutter-8/1.5));
 					@include set-vw(line-height,calc($gutter-8/1.2));
@@ -491,7 +491,7 @@ ul.goods-list {
 		top: -44px;
 		width: 35px;
 		@include tablet{
-			top: -8vw;
+			top: -20vw;
 		}
 		.swiper-button-next{
 			position: absolute;
@@ -518,6 +518,13 @@ ul.goods-list {
 	overflow: hidden;
     // margin: 0 0 0 8vw;
     transition: all .5s;
+	.swiper-title{
+		display: flex;
+		gap: 16px;
+		@include tablet{
+			flex-direction: column;
+		}
+	}
 	.swiper-container{
 		flex: 1 1 100%;
 		position: relative;   
@@ -542,7 +549,7 @@ ul.goods-list {
 					@include set-vw(line-height,calc($gutter-5/1.2));
 					color: var(--color-base-10);
 					font-weight: 400;
-					@include set-vw(margin-bottom,$gutter-2);
+					@include set-vw(padding-bottom,$gutter-5);
 				}
 			}
 		}
@@ -719,17 +726,11 @@ ul.goods-list {
 
 .module-f{
 	position: relative;    overflow: hidden;
-	.tab-display{
-		position: absolute;
-		left: 288px;
-		top: 0;
-		@include tablet{position: initial;}
-	}
 	.goods-swiper.module-f{
 		.swiper-container{
 			position: relative;  
 			.swiper-wrapper{       
-				max-height: 75vw;
+				max-height: 90vw;
 				min-height: 33vw;
 				.swiper-slide{ 
     				box-sizing: border-box; 

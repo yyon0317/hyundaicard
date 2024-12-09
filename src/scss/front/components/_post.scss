@@ -745,6 +745,9 @@ ul.posts-list {
 
 				.posts-wrap {	
 					@include set-vw(column-gap, 16px);
+					@include tablet{
+						align-items: center;
+					}
 					
 					&::before {
 						content: '';

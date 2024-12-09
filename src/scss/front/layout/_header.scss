@@ -304,8 +304,8 @@ header.main-tool-bar {
     border-color: var(--color-secondary-09);
   }
 }
-.btn.ico_searchopen_b::after{width: 24px; height: 24px;}
-.btn.ico_btnMobOpen_w::after{width: 24px; height: 24px;}
+.btn.ico_searchopen_b::after{width: 25px; height: 25px;}
+.btn.ico_btnMobOpen_w::after{width: 25px; height: 25px;}
 
 @include desktop{
 
@@ -364,6 +364,7 @@ header.main-tool-bar {
         height: 100vh;
       }
     > div{flex-direction: column;}
+    > div:nth-child(2){display: none;}
     .mologoWrap{
       display: flex;
       justify-content: space-between;

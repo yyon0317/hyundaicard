@@ -113,7 +113,7 @@ $gutters: (
   $gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
   .mbt-#{$i}x {
     // @include set-vw(height,$gutter-value);
-    @include set-vw(margin-bottom, $gutter-value/ 1.5);
+    @include set-vw(margin-bottom, $gutter-value);
   }
 }
 

@@ -683,7 +683,7 @@
 						background-color: transparent;
 						appearance: none;
 						pointer-events: auto;
-						
+						height: var(--line-height);
 						&::before {
 							background-color: var(--color);
 						}

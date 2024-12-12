@@ -836,6 +836,10 @@ ul.tab-list {
 			}
 
 			&.current {
+				.tab-text {
+					font-weight: 500;
+					color: #171A19;
+				}
 				::after{
 					border-width: 4px;
 					border-style: solid;

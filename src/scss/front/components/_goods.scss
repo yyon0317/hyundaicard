@@ -466,8 +466,8 @@ ul.goods-list {
 		.swiper-wrapper{
 			.swiper-inform{
 				position: absolute;
-				left: 5vw;
-    			bottom: 5vw;
+				left: 3vw;
+    			bottom: 3vw;
 				.title{
 					@include set-vw(font-size, calc($gutter-8/1.5));
 					@include set-vw(line-height,calc($gutter-8/1.2));
@@ -742,9 +742,24 @@ ul.goods-list {
 					width: 100%;
 					gap: 1vw;
 					a{
-						width: 47%;
+						width: 48%;
 						height: auto;
 						display: block;
+						&:hover{
+							overflow: hidden;
+							border-radius: 100%;
+							transition: all .5s;opacity: 50%;
+						}
+						&:nth-child(2),&:nth-child(3){
+							overflow: hidden;
+							border-radius: 100%;opacity: 50%;
+							&:hover{
+								overflow: hidden;
+								border-radius: 0%;
+								transition: all .5s;
+								opacity: 100%;
+							}
+						}
 					}
 				}
 			}

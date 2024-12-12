@@ -106,14 +106,14 @@ $gutters: (
   .outline-#{$i}x {
     // @include set-vw(height,$gutter-value);
     @include set-vw(font-size, calc($gutter-value/ 1.5));
-    @include set-vw(line-height, calc($gutter-value/ 1.2));
+    @include set-vw(line-height, calc($gutter-value/ 1.1));
   }
 }
 @for $i from 1 through 25 {
   $gutter-value: map-get($gutters, $i); // $gutters 맵에서 해당하는 값 가져오기
   .mbt-#{$i}x {
     // @include set-vw(height,$gutter-value);
-    @include set-vw(margin-bottom, $gutter-value/ 1.5);
+    @include set-vw(margin-bottom,$gutter-value);
   }
 }
 

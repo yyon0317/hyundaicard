@@ -239,7 +239,9 @@
 	}
 	&__content{
 		overflow: hidden;
-
+		.table{
+			overflow-x: scroll;
+		}
 	}
 	&__font{
 		border-radius: 4px;

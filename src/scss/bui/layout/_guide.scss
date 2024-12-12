@@ -239,12 +239,20 @@
 	}
 	&__content{
 		overflow: hidden;
-
+		.table{
+			overflow-x: scroll;
+		}
 	}
 	&__font{
 		border-radius: 4px;
 		display: flex;
 		flex-direction: column;
+	}
+
+	&__page{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 	}
 	&__subcont01{
 		color: var(--color-base-08);@include set-vw(font-size, 15px);@include set-vw(padding-top, 20px);@include set-vw(line-height, 15px);
@@ -257,6 +265,9 @@
 	}
 	&__subcont04{
 		color: var(--color-base-10);@include set-vw(font-size, 15px);@include set-pair-vw(padding, 20px, 20px);@include set-vw(line-height, 17px);text-align: left;background: var(--color-base-03);
+	}
+	&__subcont05{
+		color: var(--color-base-08);@include set-vw(font-size, 15px);@include set-vw(line-height, 15px); align-items: center;
 	}
 	//color
 	&__color{

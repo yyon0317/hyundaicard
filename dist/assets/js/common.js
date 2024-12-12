@@ -13,11 +13,10 @@ gsap.registerPlugin(ScrollTrigger);
       });
 
       gsap.to(".swiper-sidecont", {
-        duration: 2, // 5초
+        duration: 3,
         flex: '1 1 60%',
-        ease: "power4.out", // 부드러운 가속/감속
+        ease: "power3.out",
         onComplete: () => {
-            // 애니메이션 완료 후 class 추가 (필요할 경우)
             document.querySelector(".swiper-sidecont").classList.add("swiper-sidecont--event");
         }
     });
@@ -45,7 +44,6 @@ $(function () {
 
     function handleResize() {
         if (window.innerWidth > 1200) {
-            // console.log("Desktop 모드 활성화");
             $('.mologo').hide();
             $('.mologoWrap').hide();
             $('.btnMobClose').hide();
@@ -57,8 +55,6 @@ $(function () {
             $('.btnUtil').show();
             pcmenuhover();
         } else {
-            // console.log("Mobile 모드 활성화");
-            // Mobile 관련 로직
             pcmenuhover();
             $('.mologoWrap').show();
             $('.logoWrap').hide();
@@ -94,11 +90,11 @@ $(function () {
     }
 
     $(window).on('resize', handleResize);
-    handleResize(); // 초기 실행
+    handleResize();
 
 
     // config 변수
-    var xl = 720; //1000
+    var xl = 720; 
     
     // 전역함수
     var $window = $(window),
@@ -160,7 +156,7 @@ $(function () {
 
 
      $(".ico_searchopen_w, .ico_searchopen_b").click(function(){
-
+        $('.dimmedLayer').show();
         $(".gnb").removeClass("mobMenuOpen");
         $(".totalSearchWrap").addClass("totalSearcopen");
         $('.ico_searchopen_w').hide();
@@ -168,7 +164,7 @@ $(function () {
     });
 
     $(".btnsearchclose").click(function(){
-
+        $('.dimmedLayer').hide();
         $(".totalSearchWrap").removeClass("totalSearcopen");
         $('.ico_searchopen_w').show();
         $('body').removeClass('scrollLock');
@@ -804,10 +800,10 @@ swiperContainers.forEach(swiperContainer => {
                     slide.classList.add('swiper-slide');
 
                     // 각 필드가 존재할 때만 해당 마크업을 생성
-                    const imageMarkup01 = item.image01 ? `<a href="${item.image01url}"><img src="${item.image01}" alt="${item.title01 || ''}" style="width: 100%; height: auto;"></a>` : '';
-                    const imageMarkup02 = item.image02 ? `<a href="${item.image02url}"><img src="${item.image02}" alt="${item.title02 || ''}" style="width: 100%; height: auto;"></a>` : '';
-                    const imageMarkup03 = item.image03 ? `<a href="${item.image03url}"><img src="${item.image03}" alt="${item.title03 || ''}" style="width: 100%; height: auto;"></a>` : '';
-                    const imageMarkup04 = item.image04 ? `<a href="${item.image04url}"><img src="${item.image04}" alt="${item.title04 || ''}" style="width: 100%; height: auto;"></a>` : '';
+                    const imageMarkup01 = item.image01 ? `<a href="${item.image01url}"><img src="${item.image01}" alt="${item.title01 || ''}" style="width: 100%; height: 100%;"></a>` : '';
+                    const imageMarkup02 = item.image02 ? `<a href="${item.image02url}"><img src="${item.image02}" alt="${item.title02 || ''}" style="width: 100%; height: 100%;"></a>` : '';
+                    const imageMarkup03 = item.image03 ? `<a href="${item.image03url}"><img src="${item.image03}" alt="${item.title03 || ''}" style="width: 100%; height: 100%;"></a>` : '';
+                    const imageMarkup04 = item.image04 ? `<a href="${item.image04url}"><img src="${item.image04}" alt="${item.title04 || ''}" style="width: 100%; height: 100%;"></a>` : '';
 
                     // swiper-inform으로 감싼 부분
                     const informMarkup = `
@@ -954,303 +950,4 @@ function renderGnbContent(data, container) {
   // 최종적으로 메인 컨테이너에 섹션 추가
   container.appendChild(subsection);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $(function() {
-
-//     //open 마무스 효과
-//     const _root = document.documentElement;
-//     const _mouse = document.querySelector('.mouse');
-//     const _mouse_mid = document.querySelector('.mouse-mid');
-//     const _mouse_guide = document.querySelector('.mouse-guide');
-
-//     const a = 0.4;	// Div follow mouse - speed
-//     let _s = 60;		// Div size - hover
-
-//     let x_ = 0;
-//     let y_ = 0;
-//     let _x = 0;
-//     let _y = 0;
-//     let _xm_ = 0;
-//     let _ym_ = 0;
-//     let _x_ = 0;
-//     let _y_ = 0;
-
-//     _root.addEventListener('mousemove', function(event) {
-//         _x = event.clientX;
-//         _y = event.clientY;	
-//     }, false);
-
-//     _root.addEventListener('mousedown', function(event) {
-//         _mouse.style.width = _s + 'px';
-//         _mouse.style.height = _s + 'px';
-//     }, false);
-
-//     _root.addEventListener('mouseup', function(event) {
-//         _mouse.style.width = (_s / 1.3) + 'px';
-//         _mouse.style.height = (_s / 1.3) + 'px';
-//     }, false);
-
-//     function main() {
-//         requestAnimationFrame(main);
-//         x_ += (_x - x_) * a / 2;
-//         y_ += (_y - y_) * a / 2;
-//         _x_ += (_x - _x_) * a;
-//         _y_ += (_y - _y_) * a;
-//         _xm_ += (_x - _xm_) * a / 1.5;
-//         _ym_ += (_y - _ym_) * a / 1.5;
-//         //--
-//         _mouse.style.left = x_ + 'px';
-//         _mouse.style.top = y_ + 'px';
-//         _mouse_mid.style.left = _xm_ + 'px';
-//         _mouse_mid.style.top = _ym_ + 'px';
-//         _mouse_guide.style.left = _x_ + 'px';
-//         _mouse_guide.style.top = _y_ + 'px';
-//     }
-
-//     window.addEventListener('load', main, false);
-
-
-
-//     const scrollSection = document.querySelector('.maincollect');
-//     const scrollContent = document.querySelector('.collectbox');
-
-//     const scrollHeight = scrollSection.clientHeight;
-//     const contentWidth = scrollContent.clientWidth;
-
-//     document.addEventListener('scroll', e => {
-//         const scrolled = window.pageYOffset;
-//         const sectionOffset = Math.abs(scrollSection.offsetTop - scrolled);
-//         const notReachedBottom = parseInt(Math.max(0, scrollSection.getBoundingClientRect().bottom - window.innerHeight));
-
-//         if (scrollSection.offsetTop <= scrolled && notReachedBottom) {
-
-//         gsap.to(scrollContent, {
-//             x: -sectionOffset });
-
-//         }
-//     });
-
-//     /*GNB배너 모바일 PC*/
-
-//     $(".ico_btnMobOpen_w").click(function(){
-
-//         $(".gnb").addClass("mobMenuOpen");
-//         $('body').addClass('scrollLock');
-    
-//     });
-
-//     $(".btnMobClose").click(function(){
-
-//         $(".gnb").removeClass("mobMenuOpen");
-//         $('body').removeClass('scrollLock');
-//     });
-
-//     $(window).resize(function(){
-//         if (window.innerWidth > 940) {  // 다바이스 크기가 480이상일때
-//             // $('.menu1 > a').mouseenter(function(){
-//             //     $(this).next(".sub").stop().slideDown(400);
-//             // });
-//             // $('.gnbList').mouseleave(function(){
-//             //     $(this).next(".sub").stop().slideUp(100);
-//             // });
-//             function pcmenuhover(){
-//                 $('.menu1 > a').mouseenter(function(){
-//                     // $(this).toggleClass('ongray').closest("li").siblings().children().removeClass('ongray');
-//                     $('.sub').slideUp();
-//                     if ($(this).next('.sub').is(':hidden')){
-//                         $(this).next('.sub').slideDown(200);
-//                         $('.dimmedLayer').show();
-//                     } else{
-//                         $(this).next('.sub').slideUp(200);
-//                     }
-//                     return false;
-//                 });
-//                 $('.menu1').mouseleave(function(){
-//                     // $(this).toggleClass('active').closest("li").siblings().children().removeClass('active');
-//                     $('.sub').hide();
-//                     $('.dimmedLayer').hide(); 
-//                     return false;
-//                 });
-                
-//             };
-        
-//             pcmenuhover();
-
-            
-//             $(".btnSearchOpen").click(function(){
-
-//             $(".gnb").removeClass("mobMenuOpen");
-//             $(".totalSearchWrap").addClass("totalSearcopen");
-//             $('.btnSearchOpen').hide();
-//             // $(".header").css('border-bottom',' 0px solid');
-//             // $(".menu1 > a").off('mouseenter');
-//             $('.menu1 > a').off('mouseenter');
-//             $('body').addClass('scrollLock');
-//             $('.dimmedLayer').show();
-//             });
-
-//             $(".btnsearchclose").click(function(){
-
-//             $(".totalSearchWrap").removeClass("totalSearcopen");
-//             $('.btnSearchOpen').show();
-//             $('body').removeClass('scrollLock');
-//             $('.dimmedLayer').hide();
-//             // $(".header").css('border-bottom',' 1px solid #000');
-//             pcmenuhover();
-//             // $(".menu1 > a").on('mouseenter');
-//             // $('.sub').show();
-//             });
-
-//             let header = document.querySelector("header");
-//             let headerHeight = header.offsetHeight;
-
-//             window.onscroll = function () {
-//             let windowTop = window.scrollY;
-//             if (windowTop >= headerHeight) {
-//                 header.classList.add("sticky");
-//             } else {
-//                 header.classList.remove("sticky");
-//             }
-//             };
-//         } else {
-//             $('.menu1 > a').click(function(){
-//                 $(this).toggleClass('active').closest("li").siblings().children().removeClass('active');
-//                 $('.sub').slideUp();
-//                 if ($(this).next('.sub').is(':hidden')){
-//                     $(this).next('.sub').slideDown(200);
-//                 } else{
-//                     $(this).next('.sub').slideUp(200);
-//                 }
-
-//                 return false;
-//             });
-
-//             $(".btnSearchOpen").click(function(){
-
-//                 $(".gnb").removeClass("mobMenuOpen");
-//                 $(".totalSearchWrap").addClass("totalSearcopen");
-//                 $('.btnSearchOpen').hide();
-//                 $(".header").css('border-bottom',' 0px solid');
-//                 $('body').addClass('scrollLock');
-//             });
-        
-//             $(".btnsearchclose").click(function(){
-        
-//                 $(".totalSearchWrap").removeClass("totalSearcopen");
-//                 $('.btnSearchOpen').show();
-//                 $(".header").css('border-bottom',' 1px solid #000');
-//                 $('body').removeClass('scrollLock');
-//             });
-//         }
-//     }).resize();
-
-
-
-//     $(window).on('scroll', function() {
-//         var scrollTop = $(document).scrollTop();
-//         var $seasons_box = $('.mainabout .aboutimg_box');
-//         var move_01 = scrollTop / 10;
-//         var move_02 = scrollTop / 10;
-//         var move_03 = scrollTop / 10;
-//         var move_04 = scrollTop / 10;
-//         $seasons_box.eq(0).find('.box').css({'transform':'translateY('+ move_01 +'px)'});
-//         $seasons_box.eq(1).find('.box').css({'transform':'translateY('+ (-move_02) +'px)'});
-//         $seasons_box.eq(2).find('.box').css({'transform':'translateY('+ move_03 +'px)'});
-//         $seasons_box.eq(3).find('.box').css({'transform':'translateY('+ (-move_04) +'px)'});
-//     });
-    
-    
-
-
-//     var $cursor = $("#cursor"),
-//         $cursor2 = $("#cursor2"),
-//         $cursor3 = $("#cursor3");
-    
-//     $('.cont_newsletter').on("mousemove", function(event) {
-//         $cursor.css({ left: event.clientX + "px", top: event.clientY + "px" });
-//         $cursor2.css({ left: event.clientX + "px", top: event.clientY + "px" });
-//         $cursor3.css({ left: event.clientX + "px", top: event.clientY + "px" });
-//     });
-
-//     function addHover() {
-//         $cursor2.add($cursor3).addClass("hover hover-2");
-//     }
-
-//     function removeHover() {
-//         $cursor2.add($cursor3).removeClass("hover hover-2");
-//     }
-
-
-
-//     removeHover();
-
-//     $(".hover-target, .hover-target-2").hover(addHover, removeHover);
-
-//     $('.img-1, .img-2, .img-3, .img-4').hover(function() {
-//         var className = $(this).attr('class');
-//         $('.cont_newsletter').addClass(className + '-wrap');
-//     }, function() {
-//         var className = $(this).attr('class');
-//         $('.cont_newsletter').removeClass(className + '-wrap');
-//     });
-
-
-//     $('.cont_newsletter').on('mouseenter', function() {
-//         $('.cont_newsletter [class^="cursor"]').css('display', 'block');
-//     }).on('mouseleave', function() {
-//         $('.cont_newsletter [class^="cursor"]').css('display', 'none');
-//     });
-
-
-
-
-
-
-
-//     // var controller = new ScrollMagic.Controller();
-
-//     // var horizontalSlide = new TimelineMax()
-//     // // animate panels
-//     // .to("#js-slideContainer", 1,   {x: "-20%"})	
-//     // .to("#js-slideContainer", 1,   {x: "-40%"})
-//     // .to("#js-slideContainer", 1,   {x: "-60%"})
-//     // .to("#js-slideContainer", 1,   {x: "-80%"})
-  
-  
-//     // // create scene to pin and link animation
-//     // new ScrollMagic.Scene({
-//     //   triggerElement: "#js-wrapper",
-//     //   triggerHook: "onLeave",
-//     //   duration: "400%"
-//     // })
-//     //   .setPin("#js-wrapper")
-//     //   .setTween(horizontalSlide)
-//     //   //.addIndicators() // add indicators (requires plugin)
-//     //   .addTo(controller);
-
-
-// })
-
 

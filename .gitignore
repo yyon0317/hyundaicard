@@ -1,0 +1,6 @@
+node_modules
+dist/front
+dist/data
+dist/bui
+dist/assets/css
+dist/assets/js

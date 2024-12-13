@@ -43,8 +43,7 @@ function clean() {
 // Process images
 function images() {
     return gulp.src(`${paths.src}img/**/*`)
-        .pipe(newer(paths.assets.img))
-        .pipe(gulp.dest(paths.assets.img));
+        .pipe(gulp.dest(paths.assets.img)); // dist/assets/img로 복사
 }
 
 // Copy fonts
@@ -54,10 +53,10 @@ function fonts() {
 
 // Compile HTML
 function html() {
-    return gulp.src([`${paths.src}html/**`, `!${paths.src}html/partials/**`, './src/*.html'])
+    return gulp.src([`${paths.src}*.html`, `${paths.src}html/**/*.html`]) // src 및 html 디렉토리의 모든 .html 파일 선택
         .pipe(fileinclude({ prefix: "@@", basepath: "@file" }))
         .pipe(replace("{href}", ""))
-        .pipe(gulp.dest(paths.dist));
+        .pipe(gulp.dest(paths.dist)); // dist 루트로 파일 출력
 }
 
 // Compile and minify SCSS
@@ -173,5 +172,5 @@ gulp.task(
 
 gulp.task('deploy', function() {
 	return gulp.src('./dist/**/*')
-    .pipe(ghPages());
+    .pipe(ghPages({ cacheDir: '.publish' })); // 임시 디렉토리 설정
 });

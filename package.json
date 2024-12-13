@@ -29,5 +29,6 @@
     "gsap": "^3.12.5",
     "jquery.marquee": "^1.6.0",
     "swiper": "^11.1.14"
-  }
+  },
+  "homepage": "https://yyon0317.github.io/hyundaicard/"
 }

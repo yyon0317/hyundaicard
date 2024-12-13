@@ -1,260 +1,126 @@
 "use strict";
-//npm install --save-dev gulp gulp-newer gulp-sass sass gulp-sourcemaps del gulp-autoprefixer gulp-clean-css gulp-rename gulp-concat gulp-uglify gulp-npm-dist browser-sync gulp-file-include gulp-replace
 
-var gulp = require("gulp"),
+// Import plugins
+const gulp = require("gulp"),
     newer = require("gulp-newer"),
-    sass = require('gulp-sass')(require('sass')),
+    sass = require("gulp-sass")(require("sass")),
     sourcemaps = require("gulp-sourcemaps"),
-    // del = require('del'),
     autoprefixer = require("gulp-autoprefixer"),
-    cleanCSS = require('gulp-clean-css'),
+    cleanCSS = require("gulp-clean-css"),
     rename = require("gulp-rename"),
-    concat = require("gulp-concat"),
     uglify = require("gulp-uglify"),
-    npmdist = require('gulp-npm-dist'),
-    browsersync = require("browser-sync"),
-    //babel = require('gulp-babel'),
-    fileinclude = require('gulp-file-include');
-    const replace = require('gulp-replace');
-    const del = require('del');//npm install --save-dev del@2
+    browsersync = require("browser-sync").create(),
+    fileinclude = require("gulp-file-include"),
+    replace = require("gulp-replace"),
+    del = require("del");
 
-
-var folder = {
-    src: "src/", // source files
-    dist: "dist/", // build files
-    dist_assets: "dist/assets/", //build assets files
-    href : "" // link varble
+// Paths
+const paths = {
+    src: "src/",
+    dist: "dist/",
+    assets: {
+        img: "dist/assets/img/",
+        fonts: "dist/assets/fonts/",
+        css: "dist/assets/css/",
+        js: "dist/assets/js/",
+        data: "dist/data/",
+    },
+    external: {
+        swiperCSS: "node_modules/swiper/swiper-bundle.min.css",
+        swiperJS: "node_modules/swiper/swiper-bundle.min.js",
+        marqueeJS: "node_modules/jquery.marquee/jquery.marquee.min.js",
+        gsapJS: "node_modules/gsap/dist/gsap.min.js",
+    },
 };
 
-// command line args
-var arg = (argList => {
-    let arg = {}, a, opt, thisOpt, curOpt;
-    for (a = 0; a < argList.length; a++) {
-
-        thisOpt = argList[a].trim();
-        opt = thisOpt.replace(/^\-+/, '');
-
-        if (opt === thisOpt) {
-
-            // argument value
-            if (curOpt) arg[curOpt] = opt;
-            curOpt = null;
-
-        }
-        else {
-
-            // argument name
-            curOpt = opt;
-            arg[curOpt] = true;
-
-        }
-    }
-    return arg;
-})(process.argv);
-
-// cleaning the dist directory
-function clean(done) {
-    del.sync(folder.dist)
-    done();
+// Clean dist directory
+function clean() {
+    return del(paths.dist);
 }
 
-// image processing
-function imageMin() {
-    var out = folder.dist_assets + "images";
-    return gulp
-        .src(folder.src + "images/**/*")
-        .pipe(newer(out))
-        //.pipe(imagemin())
-        .pipe(gulp.dest(out))
+// Process images
+function images() {
+    return gulp.src(`${paths.src}img/**/*`)
+        .pipe(newer(paths.assets.img))
+        .pipe(gulp.dest(paths.assets.img));
 }
 
-// copy fonts from src folder to dist folder
+// Copy fonts
 function fonts() {
-    var out = folder.dist_assets + "fonts/";
-
-    return gulp.src([folder.src + "fonts/**/*"]).pipe(gulp.dest(out));
+    return gulp.src(`${paths.src}fonts/**/*`).pipe(gulp.dest(paths.assets.fonts));
 }
+
+// Compile HTML
 function html() {
-    var out = folder.dist;
-
-    return gulp
-        .src([
-            folder.src + "html/**", "!" + folder.src + "html/partials/**"
-        ])
-        .pipe(fileinclude({
-            prefix: '@@',
-            basepath: '@file',
-            indent: true
-        }))
-        .pipe(replace(folder.href, ''))
-        .pipe(gulp.dest(out));
+    return gulp.src([`${paths.src}html/**`, `!${paths.src}html/partials/**`, './src/*.html'])
+        .pipe(fileinclude({ prefix: "@@", basepath: "@file" }))
+        .pipe(replace("{href}", ""))
+        .pipe(gulp.dest(paths.dist));
 }
 
-// compile & minify sass
-// function css() {
-//     return gulp
-//         .src([folder.src + "/scss/bui/*.scss"])
-//         //.pipe(sourcemaps.init())
-//         .pipe(sass()) // scss to css
-//         .pipe(
-//             autoprefixer({
-//                 overrideBrowserslist: ['> 1%']
-//             })
-//         )
-//         .pipe(gulp.dest(folder.dist_assets + "css/"))
-//         .pipe(cleanCSS())
-//         .pipe(
-//             rename({
-//                 // rename app.css to icons.min.css
-//                 suffix: ".min"
-//             })
-//         )
-//         //.pipe(sourcemaps.write("./")) // source maps for icons.min.css
-//         .pipe(gulp.dest(folder.dist_assets + "css/"));
-// }
-// function cssVendor() {
-//     return gulp
-//         .src([folder.src + "/scss/bui/**/*.css"])
-//         .pipe(gulp.dest(folder.dist_assets + "css/"))
-// }
-
-/////////////////////////
-
-// compile & minify sass for 'bui' folder
+// Compile and minify SCSS
 function cssBui() {
-    return gulp
-        .src([folder.src + "/scss/bui/**/*.scss"])
+    return gulp.src(`${paths.src}scss/bui/**/*.scss`)
         .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer({
-            overrideBrowserslist: ['> 1%']
-        }))
-        .pipe(gulp.dest(folder.dist_assets + "css/bui/")) // 'bui' 폴더에 컴파일된 CSS 파일 추가
+        .pipe(sass().on("error", sass.logError))
+        .pipe(autoprefixer({ overrideBrowserslist: ["> 1%"] }))
+        .pipe(gulp.dest(`${paths.assets.css}bui/`))
         .pipe(cleanCSS())
-        .pipe(
-            rename({
-                suffix: ".min"
-            })
-        )
-        .pipe(sourcemaps.write("./"))
-        .pipe(gulp.dest(folder.dist_assets + "css/bui/"));
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(`${paths.assets.css}bui/`));
 }
 
-// compile & minify sass for 'front' folder
 function cssFront() {
-    return gulp
-        .src([folder.src + "/scss/front/**/*.scss"])
+    return gulp.src(`${paths.src}scss/front/**/*.scss`)
         .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer({
-            overrideBrowserslist: ['> 1%']
-        }))
-        .pipe(gulp.dest(folder.dist_assets + "css/front/")) // 'front' 폴더에 컴파일된 CSS 파일 추가
+        .pipe(sass().on("error", sass.logError))
+        .pipe(autoprefixer({ overrideBrowserslist: ["> 1%"] }))
+        .pipe(gulp.dest(`${paths.assets.css}front/`))
         .pipe(cleanCSS())
-        .pipe(
-            rename({
-                suffix: ".min"
-            })
-        )
-        .pipe(sourcemaps.write("./"))
-        .pipe(gulp.dest(folder.dist_assets + "css/front/"));
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(`${paths.assets.css}front/`));
 }
 
-// function cssVendor() {
-//     return gulp
-//         .src([folder.src + "/scss/**/*.css"]) // 수정된 부분
-//         .pipe(gulp.dest(folder.dist_assets + "css/"));
-// }
-
-///////////////////////////////
-// js
+// Process JavaScript
 function jsPages() {
-    var out = folder.dist_assets + "js/";
-
-    return gulp.src(folder.src + "js/*.js")
-        //.pipe(uglify())
-        //.pipe(babel())
-        .on("error", function (err) {
-            console.log(err.toString());
-        })
-        .pipe(gulp.dest(out));
-
+    return gulp.src(`${paths.src}js/*.js`)
+        .pipe(uglify())
+        .pipe(gulp.dest(paths.assets.js));
 }
 
 function jsVendor() {
-    var out = folder.dist_assets + "js";
-
     return gulp.src([
-        folder.src + "js/libs/jquery-3.6.0.min.js",
-        folder.src + "js/libs/slick.min.js"
-    ])
-    .on("error", function (err) {
-        console.log(err.toString());
-    })
-    
-    .pipe(gulp.dest(out));
-
-}
-// Swiper의 경로 추가
-var paths = {
-    swiperCSS: 'node_modules/swiper/swiper-bundle.min.css',
-    swiperJS: 'node_modules/swiper/swiper-bundle.min.js',
-    marqueeJS: 'node_modules/jquery.marquee/jquery.marquee.min.js', // 대체 패키지 경로로 수정
-    gsapJS: 'node_modules/gsap/dist/gsap.min.js' // GSAP 경로 추가
-};
-
-// Swiper CSS 파일을 복사하여 src 및 dist 폴더에 추가
-function swiperCSS() {
-    return gulp.src(paths.swiperCSS)
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest(folder.src + 'scss/plugins'))  // src에 복사
-        .pipe(gulp.dest(folder.dist_assets + 'css/'));  // dist에 복사
+        `${paths.src}js/libs/jquery-3.6.0.min.js`,
+        `${paths.src}js/libs/slick.min.js`,
+    ]).pipe(gulp.dest(paths.assets.js));
 }
 
-// Swiper JS 파일을 복사하여 src 및 dist 폴더에 추가
-function swiperJS() {
-    return gulp.src(paths.swiperJS)
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest(folder.src + 'js/'))  // src에 복사
-        .pipe(gulp.dest(folder.dist_assets + 'js/'));  // dist에 복사
+// Copy external libraries
+function externalAssets() {
+    // Swiper CSS and JS
+    gulp.src(paths.external.swiperCSS)
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(gulp.dest(paths.assets.css));
+
+    gulp.src(paths.external.swiperJS)
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(gulp.dest(paths.assets.js));
+
+    // GSAP and Marquee JS
+    gulp.src(paths.external.gsapJS).pipe(gulp.dest(paths.assets.js));
+    return gulp.src(paths.external.marqueeJS).pipe(gulp.dest(paths.assets.js));
 }
 
-function gsapJS() {
-    return gulp.src(paths.gsapJS, { allowEmpty: true }) // allowEmpty 옵션 추가
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest(folder.src + 'js/'))  // src에 복사
-        .pipe(gulp.dest(folder.dist_assets + 'js/'));  // dist에 복사
-}
-function scrollTriggerJS() {
-    return gulp.src('node_modules/gsap/dist/ScrollTrigger.js') // 수정된 경로
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest(folder.src + 'js/'))
-        .pipe(gulp.dest(folder.dist_assets + 'js/'));
+// Copy data files
+function copyData() {
+    return gulp.src(`${paths.src}data/**/*.json`).pipe(gulp.dest(paths.assets.data));
 }
 
-
-// Marquee JS 파일을 src 및 dist에 복사
-function marqueeJS() {
-    return gulp.src(paths.marqueeJS, { allowEmpty: true }) // 파일이 없을 경우 오류 방지
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest(folder.src + 'js/'))  // src에 복사
-        .pipe(gulp.dest(folder.dist_assets + 'js/')); // dist에 복사
-}
-function copyDataFolder() {
-    return gulp.src(folder.src + "data/**/*.json") // 모든 .json 파일을 처리
-        .pipe(gulp.dest(folder.dist + "data/")); // dist/data로 복사
-}
-
-// live browser loading
+// BrowserSync
 function browserSync(done) {
-    browsersync.init({
-        server: {
-            baseDir: folder.dist,
-            routes: {
-                "/assets": folder.dist + 'assets'
-            }
-        }
-    });
+    browsersync.init({ server: { baseDir: paths.dist } });
     done();
 }
 
@@ -263,55 +129,43 @@ function reloadBrowserSync(done) {
     done();
 }
 
-// // copy data folder to dist folder
-// function copyDataFolder() {
-//     return gulp.src(folder.src + "data/**/*")
-//         .pipe(gulp.dest(folder.dist + "data/"));
-// }
-
-// task to compile sass for 'bui' and 'front' folders
-gulp.task("compileSass", gulp.parallel(cssBui, cssFront));
-// watch all changes
+// Watch files
 function watchFiles() {
-    gulp.watch(folder.src + "html/**", gulp.series(html, reloadBrowserSync));
-    gulp.watch(folder.src + "assets/images/**/*", gulp.series(imageMin, reloadBrowserSync));
-    gulp.watch(folder.src + "assets/fonts/**/*", gulp.series(fonts,reloadBrowserSync));
-    gulp.watch(folder.src + "scss/bui/**/*", gulp.series("compileSass", reloadBrowserSync));
-    gulp.watch(folder.src + "scss/front/**/*", gulp.series("compileSass", reloadBrowserSync));
-    gulp.watch(folder.src + "data/**/*.json", gulp.series(copyDataFolder, reloadBrowserSync)); // JSON 파일 변경 감지
-    //gulp.watch(folder.src + "scss/**/*", gulp.series(cssVendor,reloadBrowserSync));
-    //gulp.watch(folder.src + "scss/**/*", gulp.series(css,reloadBrowserSync));
-    gulp.watch(folder.src + "js/**/*", gulp.series(jsVendor, jsPages,reloadBrowserSync));    
+    gulp.watch(`${paths.src}html/**`, gulp.series(html, reloadBrowserSync));
+    gulp.watch(`${paths.src}img/**/*`, gulp.series(images, reloadBrowserSync));
+    gulp.watch(`${paths.src}fonts/**/*`, gulp.series(fonts, reloadBrowserSync));
+    gulp.watch(`${paths.src}scss/bui/**/*`, gulp.series(cssBui, reloadBrowserSync));
+    gulp.watch(`${paths.src}scss/front/**/*`, gulp.series(cssFront, reloadBrowserSync));
+    gulp.watch(`${paths.src}js/**/*`, gulp.series(jsVendor, jsPages, reloadBrowserSync));
+    gulp.watch(`${paths.src}data/**/*.json`, gulp.series(copyData, reloadBrowserSync));
 }
 
-// watch all changes
+// Define tasks
+gulp.task("clean", clean);
+gulp.task("html", html);
+gulp.task("css", gulp.parallel(cssBui, cssFront));
+gulp.task("js", gulp.parallel(jsVendor, jsPages));
+gulp.task("external", externalAssets);
+gulp.task("images", images);
+gulp.task("fonts", fonts);
+gulp.task("data", copyData);
 gulp.task("watch", gulp.parallel(watchFiles, browserSync));
 
-// default task
+// Default task
 gulp.task(
     "default",
     gulp.series(
-        html,
-        imageMin,
-        fonts,
-        gulp.parallel(cssBui, cssFront, swiperCSS ),
-        //cssVendor,
-        //css,
-        jsVendor,
-        jsPages,
-        swiperJS,
-        scrollTriggerJS,
-        gsapJS,
-        marqueeJS,
-        copyDataFolder, // 추가
-        'watch'
-    ),
-    function (done) { done(); }
+        clean,
+        gulp.parallel(html, cssBui, cssFront, jsVendor, jsPages, images, fonts, copyData, externalAssets),
+        "watch"
+    )
 );
 
-// build
+// Build task
 gulp.task(
     "build",
-    //gulp.series(clean,html,imageMin,fonts,cssVendor,css,jsVendor,jsPages)
-    gulp.series(clean,html,imageMin,fonts,gulp.parallel(cssBui, cssFront, swiperCSS),jsVendor,jsPages,swiperJS,scrollTriggerJS,gsapJS,copyDataFolder,marqueeJS)
+    gulp.series(
+        clean,
+        gulp.parallel(html, cssBui, cssFront, jsVendor, jsPages, images, fonts, copyData, externalAssets)
+    )
 );

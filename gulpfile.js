@@ -13,6 +13,8 @@ const gulp = require("gulp"),
     fileinclude = require("gulp-file-include"),
     replace = require("gulp-replace"),
     del = require("del");
+    const ghPages = require("gulp-gh-pages");
+
 
 // Paths
 const paths = {
@@ -150,7 +152,6 @@ gulp.task("images", images);
 gulp.task("fonts", fonts);
 gulp.task("data", copyData);
 gulp.task("watch", gulp.parallel(watchFiles, browserSync));
-
 // Default task
 gulp.task(
     "default",
@@ -169,3 +170,8 @@ gulp.task(
         gulp.parallel(html, cssBui, cssFront, jsVendor, jsPages, images, fonts, copyData, externalAssets)
     )
 );
+
+gulp.task('deploy', function() {
+	return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});

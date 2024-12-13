@@ -13,7 +13,6 @@ const gulp = require("gulp"),
     fileinclude = require("gulp-file-include"),
     replace = require("gulp-replace"),
     del = require("del");
-    const ghPages = require("gulp-gh-pages");
 
 
 // Paths
@@ -169,8 +168,3 @@ gulp.task(
         gulp.parallel(html, cssBui, cssFront, jsVendor, jsPages, images, fonts, copyData, externalAssets)
     )
 );
-
-gulp.task('deploy', function() {
-	return gulp.src('./dist/**/*')
-    .pipe(ghPages({ cacheDir: '.publish' })); // 임시 디렉토리 설정
-});

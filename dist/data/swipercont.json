@@ -1,0 +1,172 @@
+{
+    "swipermodule01": [
+        {
+            "image": "../../../assets/img/main/mainswiper_art.png",
+            "mobileimage": "../../../assets/img/main/mobilemainswiper_art.png"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_pushpack.png",
+            "mobileimage": "../../../assets/img/main/mobilemainswiper_pushpack.png",
+            "subtitle": "10월 쿠폰팩",
+            "title": "현백<br>PUSH PACK"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_benefit.png",
+            "mobileimage": "../../../assets/img/main/mobilemainswiper_benefit.png",
+            "subtitle": "현대백화점 APP",
+            "title": "첫 고객님께 드리는<br>특별한 혜택"
+        }
+    ],
+    "swipermodule02": [
+        {
+            "image": "../../../assets/img/main/mainswiper_culture01.png",
+            "caption": "2024.10.03 ~ 2025.01.22",
+            "title": "유코 히쿠치 특별전_비밀의 숲"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_culture02.png",
+            "caption": "2024.09.04 ~ 2024.11.03",
+            "title": "A Grand Day Out"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_culture03.png",
+            "caption": "2024.07.16 ~ 2024.11.10",
+            "title": "MOKA 북아트 컬렉션"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_culture04.png",
+            "title": "문화센터<br>가을시즌 수강신청"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_culture01.png",
+            "caption": "2024.10.03 ~ 2025.01.22",
+            "title": "유코 히쿠치 특별전_비밀의 숲"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_culture02.png",
+            "caption": "2024.09.04 ~ 2024.11.03",
+            "title": "A Grand Day Out"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_culture03.png",
+            "caption": "2024.07.16 ~ 2024.11.10",
+            "title": "MOKA 북아트 컬렉션"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_culture04.png",
+            "title": "문화센터<br>가을시즌 수강신청"
+        }
+    ],
+    "swipermodule03": [
+        {
+            "image": "../../../assets/img/main/mainswiper_popupstore01.png",
+            "caption": "2024.10.18 ~ 2024.10.31",
+            "title": "Autumn Breeze",
+            "subtitle": "늘 새롭고 재미있는<br>디자인을 제안합니다."
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_popupstore02.png",
+            "caption": "2024.10.25 ~ 2024.10.31",
+            "title": "커스티지 주얼리",
+            "subtitle": "당신이 만드는 헤리티지,<br>당신만을 위한 주얼리"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_popupstore03.png",
+            "caption": "2024.10.22 ~ 2024.11.07",
+            "title": "공예가의 Dessert Table",
+            "subtitle": "전통과 현대가 어우러지며<br>일상의 여유를 찾는 공예 이야기"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_popupstore04.png",
+            "caption": "2024.10.15 ~ 2024.10.31",
+            "title": "포레포레 파티 메리메리 팝업",
+            "subtitle": "패밀리 셀렉트숍 포레포레에서<br>파티를 즐겨보세요."
+        }
+    ],
+    "swipermodule04": [
+        {
+            "image": "../../../assets/img/main/mainswiper_card.jpg",
+            "mobileimage": "../../../assets/img/main/mobilemainswiper_card.jpg"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_point.jpg",
+            "mobileimage": "../../../assets/img/main/mobilemainswiper_point.jpg"
+        }
+    ],
+    "swipermodule05": [
+        {
+            "image": "../../../assets/img/main/mainswiper_trandnews01.png",
+            "caption": "2024.10.03 ~ 2025.01.22",
+            "title": "유코 히쿠치 특별전_비밀의 숲"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_trandnews02.png",
+            "caption": "2024.09.04 ~ 2024.11.03",
+            "title": "A Grand Day Out"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_trandnews03.png",
+            "caption": "2024.07.16 ~ 2024.11.10",
+            "title": "MOKA 북아트 컬렉션"
+        
+        }
+    ],
+    "swipermodule06": [
+        {
+            "image": "../../../assets/img/main/mainswiper_trandnews04.png",
+            "caption": "2024.10.03 ~ 2025.01.22",
+            "title": "유코 히쿠치 특별전_비밀의 숲"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_trandnews05.png",
+            "caption": "2024.09.04 ~ 2024.11.03",
+            "title": "A Grand Day Out"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_trandnews06.png",
+            "caption": "2024.07.16 ~ 2024.11.10",
+            "title": "MOKA 북아트 컬렉션"
+        
+        }
+    ],
+    "swipermodule07": [
+        {
+            "image01": "../../../assets/img/main/main_bash_default.png",
+            "image02": "../../../assets/img/main/main_hbyh_default.png",
+            "image03": "../../../assets/img/main/main_offworks_default.png",
+            "image04": "../../../assets/img/main/main_wemarket_default.png"
+        },{
+            "image01": "../../../assets/img/main/main_labels_default.png",
+            "image02": "../../../assets/img/main/main_bclean_default.png",
+            "image03": "../../../assets/img/main/main_shoepace_default.png",
+            "image04": "../../../assets/img/main/main_wineworks_default.png"
+        },{
+            "image01": "../../../assets/img/main/main_mimc_default.png",
+            "image02": "../../../assets/img/main/main_fourm_default.png",
+            "image03": "../../../assets/img/main/main_tomgreyhound_default.png"
+        }
+    ],
+    "swipermodule08": [
+        {
+            "image01": "../../../assets/img/main/main_bash_default.png",
+            "image02": "../../../assets/img/main/main_hbyh_default.png",
+            "image03": "../../../assets/img/main/main_offworks_default.png",
+            "image04": "../../../assets/img/main/main_wemarket_default.png"
+        }
+    ],
+    "swipermodule09": [
+        {
+            "image01": "../../../assets/img/main/main_labels_default.png",
+            "image02": "../../../assets/img/main/main_bclean_default.png",
+            "image03": "../../../assets/img/main/main_shoepace_default.png",
+            "image04": "../../../assets/img/main/main_wineworks_default.png"
+        }
+    ],
+    "swipermodule10": [
+        {
+            "image01": "../../../assets/img/main/main_mimc_default.png",
+            "image02": "../../../assets/img/main/main_fourm_default.png",
+            "image03": "../../../assets/img/main/main_tomgreyhound_default.png"
+        }
+    ]
+}

@@ -207,19 +207,36 @@ function initTabs() {
         const tabContents = tabDisplay.parentElement.querySelectorAll('.bui-tab-target');
 
         tabItems.forEach(item => {
-            item.addEventListener('click', function(event) {
+            const anchor = item.querySelector('a');
+            // 초기 aria-selected 속성 추가
+            anchor.setAttribute('aria-selected', 'false');
+
+            anchor.addEventListener('click', function(event) {
                 event.preventDefault(); // 기본 링크 동작 방지
-                tabItems.forEach(tab => tab.classList.remove('current'));
+                
+                // 모든 탭에서 선택된 상태 해제
+                tabItems.forEach(tab => {
+                    const tabAnchor = tab.querySelector('a');
+                    tab.classList.remove('current');
+                    tabAnchor.setAttribute('aria-selected', 'false');
+                });
+
+                // 모든 탭 콘텐츠에서 활성 상태 해제
                 tabContents.forEach(content => content.classList.remove('active'));
 
-                this.classList.add('current');
-                const targetId = this.querySelector('a').getAttribute('href');
+                // 클릭한 탭 활성화
+                item.classList.add('current');
+                this.setAttribute('aria-selected', 'true');
+
+                // 관련 콘텐츠 활성화
+                const targetId = this.getAttribute('href');
                 const targetContent = document.querySelector(targetId);
                 if (targetContent) targetContent.classList.add('active');
             });
         });
     });
 }
+
 
 /**
  * 드롭다운 기능 초기화
@@ -231,21 +248,45 @@ function initDropdowns() {
         const dropItems = dropDisplay.querySelectorAll('.btn.expand');
 
         dropItems.forEach(item => {
-            item.addEventListener('click', function(event) {
+            // 드롭다운 버튼 초기화
+            item.setAttribute('aria-expanded', 'false');
+
+            const postItem = item.closest('.bui-dropdown-target');
+            if (postItem) {
+                postItem.setAttribute('aria-hidden', 'true');
+            }
+
+            // 클릭 이벤트 추가
+            item.addEventListener('click', function (event) {
                 event.preventDefault();
 
-                dropDisplay.querySelectorAll('.bui-dropdown-target').forEach(postItem => postItem.classList.remove('active'));
-                dropDisplay.querySelectorAll('.btn.expand').forEach(btn => btn.classList.remove('active'));
+                // 동일 그룹의 다른 드롭다운 닫기
+                dropDisplay.querySelectorAll('.bui-dropdown-target').forEach(postItem => {
+                    postItem.classList.remove('active');
+                    postItem.setAttribute('aria-hidden', 'true');
+                });
 
-                item.classList.toggle('active');
-                const postItem = item.closest('.bui-dropdown-target');
+                dropDisplay.querySelectorAll('.btn.expand').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+
+                // 현재 클릭된 버튼 및 대상 상태 토글
+                console.log('Clicked button:', this); // 디버깅용: 클릭된 버튼 출력
+
+                const isExpanded = this.classList.toggle('active');
+                console.log('Active class toggled:', isExpanded); // 디버깅용: active 상태 출력
+                this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+
                 if (postItem) {
-                    postItem.classList.toggle('active');
+                    const isActive = postItem.classList.toggle('active');
+                    postItem.setAttribute('aria-hidden', isActive ? 'false' : 'true');
                 }
             });
         });
     });
 }
+
 
 /**
  * 팝업 토글 기능

@@ -255,7 +255,7 @@ ul.posts-list {
 							}
 						}
 						.posts-func{
-							.btn.expand::before {
+							.btn.expand.active::before {
 								transform: rotate(180deg);
 							}
 						}

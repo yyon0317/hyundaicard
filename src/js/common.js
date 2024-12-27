@@ -337,9 +337,11 @@ if (swiperContainer01) {
                 // swiper-inform으로 감싼 부분
                 const informMarkup = `
                     <div class="swiper-inform">
-                        ${captionMarkup}
-                        ${subtitleMarkup}
-                        ${titleMarkup}
+                        <a href=" ${item.url}">
+                            ${captionMarkup}
+                            ${subtitleMarkup}
+                            ${titleMarkup}
+                        </a>
                     </div>
                 `;
 
@@ -446,8 +448,10 @@ if (swiperContainer02) {
 
             // 슬라이드에 이미지와 정보 마크업 추가
             slide.innerHTML = `
+            <a href="${item.url}">
                 ${imageMarkup}
                 ${informMarkup}
+            </a>
             `;
 
             swiperWrapper.appendChild(slide);
@@ -455,7 +459,7 @@ if (swiperContainer02) {
 
             // Swiper 초기화
             new Swiper(swiperContainer02, {initialSlide: 2,
-                loop: true, // loop 활성화
+                loop: false, // loop 활성화
                 slidesPerView: 3, // 보이는 슬라이드 개수
                 spaceBetween: 10, // 슬라이드 간격
                 autoHeight: true,
@@ -511,8 +515,10 @@ if (swiperContainer03) {
 
             // 슬라이드에 이미지와 정보 마크업 추가
             slide.innerHTML = `
+            <a href="${item.url}">
                 ${imageMarkup}
                 ${informMarkup}
+            </a>
             `;
 
             swiperWrapper.appendChild(slide);
@@ -573,23 +579,17 @@ if (swiperContainer04) {
                 imageElement.dataset.desktop = item.image; // 데스크톱 이미지 URL 저장
                 imageElement.dataset.mobile = item.mobileimage; // 모바일 이미지 URL 저장
 
-                // 캡션, 타이틀, 서브타이틀 마크업 생성
-                const captionMarkup = item.caption ? `<p class="caption">${item.caption}</p>` : '';
-                const subtitleMarkup = item.subtitle ? `<p class="subtitle">${item.subtitle}</p>` : '';
-                const titleMarkup = item.title ? `<p class="title">${item.title}</p>` : '';
-
                 // swiper-inform으로 감싼 부분
                 const informMarkup = `
-                    <div class="swiper-inform">
-                        ${captionMarkup}
-                        ${subtitleMarkup}
-                        ${titleMarkup}
-                    </div>
+                    <a href="${item.url}">
+                    </a>
                 `;
 
                 // 슬라이드에 이미지와 정보 마크업 추가
                 slide.innerHTML = `
+                
                     ${informMarkup}
+                   
                 `;
                 slide.prepend(imageElement);
                 swiperWrapper.appendChild(slide);
@@ -697,8 +697,10 @@ if (swiperContainer05) {
 
             // 슬라이드에 이미지와 정보 마크업 추가
             slide.innerHTML = `
+            <a href="${item.url}">
                 ${imageMarkup}
                 ${informMarkup}
+                </a>
             `;
 
             swiperWrapper.appendChild(slide);
@@ -759,7 +761,7 @@ if (swiperContainer06) {
             slide.classList.add('swiper-slide');
 
             // 각 필드가 존재할 때만 해당 마크업을 생성
-            const imageMarkup = item.image ? `<img src="${item.image}" alt="${item.title || ''}" style="width: 100%; height: auto;">` : '';
+            const imageMarkup = item.image ? `<a href="${item.url}"><img src="${item.image}" alt="${item.title || ''}" style="width: 100%; height: auto;"></a>` : '';
             const captionMarkup = item.caption ? `<p class="caption">${item.caption}</p>` : '';
             const subtitleMarkup = item.subtitle ? `<p class="subtitle">${item.subtitle}</p>` : '';
             const titleMarkup = item.title ? `<p class="title">${item.title}</p>` : '';
@@ -775,8 +777,10 @@ if (swiperContainer06) {
 
             // 슬라이드에 이미지와 정보 마크업 추가
             slide.innerHTML = `
+            <a href="${item.url}">
                 ${imageMarkup}
                 ${informMarkup}
+                </a>
             `;
 
             swiperWrapper.appendChild(slide);

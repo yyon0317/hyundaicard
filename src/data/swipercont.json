@@ -2,19 +2,19 @@
     "swipermodule01": [
         {
             "image": "../../../assets/img/main/mainswiper_art.png",
-            "url": "/",
+            "url": "#",
             "mobileimage": "../../../assets/img/main/mobilemainswiper_art.png"
         },
         {
             "image": "../../../assets/img/main/mainswiper_pushpack.png",
-            "url": "/",
+            "url": "#",
             "mobileimage": "../../../assets/img/main/mobilemainswiper_pushpack.png",
             "subtitle": "10월 쿠폰팩",
             "title": "현백<br>PUSH PACK"
         },
         {
             "image": "../../../assets/img/main/mainswiper_benefit.png",
-            "url": "/",
+            "url": "#",
             "mobileimage": "../../../assets/img/main/mobilemainswiper_benefit.png",
             "subtitle": "현대백화점 APP",
             "title": "첫 고객님께 드리는<br>특별한 혜택"
@@ -23,77 +23,77 @@
     "swipermodule02": [
         {
             "image": "../../../assets/img/main/mainswiper_culture01.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.10.03 ~ 2025.01.22",
             "title": "유코 히쿠치 특별전_비밀의 숲"
         },
         {
             "image": "../../../assets/img/main/mainswiper_culture02.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.09.04 ~ 2024.11.03",
             "title": "A Grand Day Out"
         },
         {
             "image": "../../../assets/img/main/mainswiper_culture03.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.07.16 ~ 2024.11.10",
             "title": "MOKA 북아트 컬렉션"
         },
         {
             "image": "../../../assets/img/main/mainswiper_culture04.png",
-            "url": "/",
+            "url": "#",
             "title": "문화센터<br>가을시즌 수강신청"
         },
         {
             "image": "../../../assets/img/main/mainswiper_culture01.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.10.03 ~ 2025.01.22",
             "title": "유코 히쿠치 특별전_비밀의 숲"
         },
         {
             "image": "../../../assets/img/main/mainswiper_culture02.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.09.04 ~ 2024.11.03",
             "title": "A Grand Day Out"
         },
         {
             "image": "../../../assets/img/main/mainswiper_culture03.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.07.16 ~ 2024.11.10",
             "title": "MOKA 북아트 컬렉션"
         },
         {
             "image": "../../../assets/img/main/mainswiper_culture04.png",
-            "url": "/",
+            "url": "#",
             "title": "문화센터<br>가을시즌 수강신청"
         }
     ],
     "swipermodule03": [
         {
             "image": "../../../assets/img/main/mainswiper_popupstore01.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.10.18 ~ 2024.10.31",
-            "url": "/",
+            "url": "#",
             "title": "Autumn Breeze",
             "subtitle": "늘 새롭고 재미있는<br>디자인을 제안합니다."
         },
         {
             "image": "../../../assets/img/main/mainswiper_popupstore02.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.10.25 ~ 2024.10.31",
             "title": "커스티지 주얼리",
             "subtitle": "당신이 만드는 헤리티지,<br>당신만을 위한 주얼리"
         },
         {
             "image": "../../../assets/img/main/mainswiper_popupstore03.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.10.22 ~ 2024.11.07",
             "title": "공예가의 Dessert Table",
             "subtitle": "전통과 현대가 어우러지며<br>일상의 여유를 찾는 공예 이야기"
         },
         {
             "image": "../../../assets/img/main/mainswiper_popupstore04.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.10.15 ~ 2024.10.31",
             "title": "포레포레 파티 메리메리 팝업",
             "subtitle": "패밀리 셀렉트숍 포레포레에서<br>파티를 즐겨보세요."
@@ -102,31 +102,31 @@
     "swipermodule04": [
         {
             "image": "../../../assets/img/main/mainswiper_card.jpg",
-            "url": "/",
+            "url": "#",
             "mobileimage": "../../../assets/img/main/mobilemainswiper_card.jpg"
         },
         {
             "image": "../../../assets/img/main/mainswiper_point.jpg",
-            "url": "/",
+            "url": "#",
             "mobileimage": "../../../assets/img/main/mobilemainswiper_point.jpg"
         }
     ],
     "swipermodule05": [
         {
             "image": "../../../assets/img/main/mainswiper_trandnews01.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.10.03 ~ 2025.01.22",
             "title": "유코 히쿠치 특별전_비밀의 숲"
         },
         {
             "image": "../../../assets/img/main/mainswiper_trandnews02.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.09.04 ~ 2024.11.03",
             "title": "A Grand Day Out"
         },
         {
             "image": "../../../assets/img/main/mainswiper_trandnews03.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.07.16 ~ 2024.11.10",
             "title": "MOKA 북아트 컬렉션"
         
@@ -135,19 +135,19 @@
     "swipermodule06": [
         {
             "image": "../../../assets/img/main/mainswiper_trandnews04.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.10.03 ~ 2025.01.22",
             "title": "유코 히쿠치 특별전_비밀의 숲"
         },
         {
             "image": "../../../assets/img/main/mainswiper_trandnews05.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.09.04 ~ 2024.11.03",
             "title": "A Grand Day Out"
         },
         {
             "image": "../../../assets/img/main/mainswiper_trandnews06.png",
-            "url": "/",
+            "url": "#",
             "caption": "2024.07.16 ~ 2024.11.10",
             "title": "MOKA 북아트 컬렉션"
         

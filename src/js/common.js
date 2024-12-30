@@ -64,12 +64,10 @@ $(function () {
             $('.momenuheader').hide();
             $('.momenu').hide();
             $('.btnMobClose').hide();
-            $(".ico_btnMobOpen_w").off('click').on('click', function () {    
-                if (window.innerWidth <= 1200) {
-                $('.subsection:nth-child(1) .section-body').addClass('active');
-              }
+            if (window.innerWidth <= 1200) {
+              }$(".ico_btnMobOpen_w").off('click').on('click', function () {    
                 $("#gnbContainer").show();
-                
+                $('.subsection:nth-child(1) .section-body').addClass('active');
                 $('.utilWrap').hide();
                 $('.mologoWrap').hide();
                 $('.momenuheader').show();
@@ -553,116 +551,128 @@ if (swiperContainer03) {
         .catch(error => console.error('Error fetching JSON data:', error));
     }
 
-const swiperContainer04 = document.querySelector('[data-bui-swiper="swipermodule04"]');
+    const swiperContainer04 = document.querySelector('[data-bui-swiper="swipermodule04"]');
 
-// 해당 요소가 존재할 때만 Swiper를 초기화
-if (swiperContainer04) {
-    fetch('../../data/swipercont.json')
-        .then(response => response.json())
-        .then(data => {
-            const slides = data.swipermodule04;
-            const swiperWrapper = swiperContainer04.querySelector('.swiper-wrapper');
-
-            // 미디어 쿼리: 화면 너비가 720px 이하인지 확인
-            const mediaQuery = window.matchMedia("(max-width: 720px)");
-
-            // JSON 데이터를 이용해 슬라이드를 생성
-            slides.forEach(item => {
-                const slide = document.createElement('div');
-                slide.classList.add('swiper-slide');
-
-                // 이미지 마크업 생성
-                const imageElement = document.createElement('img');
-                imageElement.alt = item.title || '';
-                imageElement.style.width = '100%';
-                imageElement.style.height = 'auto';
-                imageElement.dataset.desktop = item.image; // 데스크톱 이미지 URL 저장
-                imageElement.dataset.mobile = item.mobileimage; // 모바일 이미지 URL 저장
-
-                // swiper-inform으로 감싼 부분
-                const informMarkup = `
-                    <a href="${item.url}">
-                    </a>
-                `;
-
-                // 슬라이드에 이미지와 정보 마크업 추가
-                slide.innerHTML = `
-                
-                    ${informMarkup}
-                   
-                `;
-                slide.prepend(imageElement);
-                swiperWrapper.appendChild(slide);
-            });
-
-            // 이미지 URL 업데이트 함수
-            function updateImages() {
-                swiperWrapper.querySelectorAll('.swiper-slide img').forEach(img => {
-                    if (mediaQuery.matches) {
-                        // 화면 너비가 720px 이하인 경우, 모바일 이미지를 사용
-                        img.src = img.dataset.mobile || img.dataset.desktop;
-                    } else {
-                        // 화면 너비가 721px 이상인 경우, 데스크톱 이미지를 사용
-                        img.src = img.dataset.desktop || img.dataset.mobile;
-                    }
+    // 해당 요소가 존재할 때만 Swiper를 초기화
+    if (swiperContainer04) {
+        fetch('../../data/swipercont.json')
+            .then(response => response.json())
+            .then(data => {
+                const slides = data.swipermodule04;
+                const swiperWrapper = swiperContainer04.querySelector('.swiper-wrapper');
+    
+                // 미디어 쿼리: 화면 너비가 720px 이하인지 확인
+                const mediaQuery = window.matchMedia("(max-width: 720px)");
+    
+                // JSON 데이터를 이용해 슬라이드를 생성
+                slides.forEach(item => {
+                    const slide = document.createElement('div');
+                    slide.classList.add('swiper-slide');
+    
+                    // 이미지 URL 데이터를 슬라이드에 추가
+                    const imageElement = document.createElement('img');
+                    imageElement.alt = item.title || '';
+                    imageElement.style.width = '100%';
+                    imageElement.style.height = 'auto';
+                    imageElement.dataset.desktop = item.image; // 데스크톱 이미지 URL 저장
+                    imageElement.dataset.mobile = item.mobileimage; // 모바일 이미지 URL 저장
+    
+                    // `a` 태그로 전체 콘텐츠를 감싸기
+                    const linkElement = document.createElement('a');
+                    linkElement.href = item.url || '#';
+    
+                    // `a` 태그에 이미지와 텍스트 추가
+                    linkElement.appendChild(imageElement);
+    
+                    // swiper-inform으로 감싼 정보 마크업 추가
+                    const informDiv = document.createElement('div');
+                    informDiv.classList.add('swiper-inform');
+                    informDiv.innerHTML = `
+                        ${item.title ? `<p class="title">${item.title}</p>` : ''}
+                        ${item.subtitle ? `<p class="subtitle">${item.subtitle}</p>` : ''}
+                        ${item.caption ? `<p class="caption">${item.caption}</p>` : ''}
+                    `;
+    
+                    linkElement.appendChild(informDiv);
+                    slide.appendChild(linkElement);
+                    swiperWrapper.appendChild(slide);
                 });
-            }
-
-            // Swiper 초기화
-            new Swiper(swiperContainer04, {
-                loop: true,
-                    loop: true, // loop 활성화
+    
+                // 이미지 URL 업데이트 함수
+                function updateImages() {
+                    swiperWrapper.querySelectorAll('.swiper-slide img').forEach(img => {
+                        if (mediaQuery.matches) {
+                            // 화면 너비가 720px 이하인 경우, 모바일 이미지를 사용
+                            img.src = img.dataset.mobile || img.dataset.desktop;
+                        } else {
+                            // 화면 너비가 721px 이상인 경우, 데스크톱 이미지를 사용
+                            img.src = img.dataset.desktop || img.dataset.mobile;
+                        }
+                    });
+                }
+    
+                // Swiper 초기화
+                new Swiper(swiperContainer04, {
+                    loop: false, // loop 활성화
                     slidesPerView: 2, // 보이는 슬라이드 개수
                     spaceBetween: 10, // 슬라이드 간격
                     observer: true, // 새로고침 시 Swiper 업데이트
                     observeParents: true, // 부모 요소 변경 시 Swiper 업데이트
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                breakpoints: {
-                0: {
-                    slidesPerView: 1, // 720px 이하일 때 1개
-                },
-                721: {
-                    slidesPerView: 2, // 721px 이상일 때 3개
-                }
-                },
-                on: {
-                    init: function () {
-                        this.el.classList.add('auto-play');
-                        
-                        // 재생 버튼 클릭 이벤트 설정
-                        this.el.querySelector('.swiper-button-auto-play').addEventListener('click', () => {
-                            this.autoplay.start();
-                            this.el.classList.add('auto-play');
-                        });
-                        
-                        // 정지 버튼 클릭 이벤트 설정
-                        this.el.querySelector('.swiper-button-auto-stop').addEventListener('click', () => {
-                            this.autoplay.stop();
-                            this.el.classList.remove('auto-play');
-                        });
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
                     },
-                    slideChangeTransitionEnd: function () {
-                        this.autoplay.running ? this.el.classList.add('auto-play') : this.el.classList.remove('auto-play');
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1, // 720px 이하일 때 1개
+                        },
+                        721: {
+                            slidesPerView: 2, // 721px 이상일 때 2개
+                        }
+                    },
+                    on: {
+                        init: function () {
+                            this.el.classList.add('auto-play');
+    
+                            // 재생 버튼 클릭 이벤트 설정
+                            const autoplayStartButton = this.el.querySelector('.swiper-button-auto-play');
+                            if (autoplayStartButton) {
+                                autoplayStartButton.addEventListener('click', () => {
+                                    this.autoplay.start();
+                                    this.el.classList.add('auto-play');
+                                });
+                            }
+    
+                            // 정지 버튼 클릭 이벤트 설정
+                            const autoplayStopButton = this.el.querySelector('.swiper-button-auto-stop');
+                            if (autoplayStopButton) {
+                                autoplayStopButton.addEventListener('click', () => {
+                                    this.autoplay.stop();
+                                    this.el.classList.remove('auto-play');
+                                });
+                            }
+                        },
+                        slideChangeTransitionEnd: function () {
+                            this.autoplay.running
+                                ? this.el.classList.add('auto-play')
+                                : this.el.classList.remove('auto-play');
+                        }
                     }
-                }
-            });
-
-
-            // 초기 이미지 업데이트
-            updateImages();
-
-            // 미디어 쿼리 변경 시 이미지 업데이트
-            mediaQuery.addEventListener('change', updateImages);
-        })
-        .catch(error => console.error('Error fetching JSON data:', error));
+                });
+    
+                // 초기 이미지 업데이트
+                updateImages();
+    
+                // 미디어 쿼리 변경 시 이미지 업데이트
+                mediaQuery.addEventListener('change', updateImages);
+            })
+            .catch(error => console.error('Error fetching JSON data:', error));
     }
+    
 
 // 특정 속성을 가진 Swiper 컨테이너 요소를 선택
 const swiperContainer05 = document.querySelector('[data-bui-swiper="swipermodule05"]');
@@ -713,8 +723,8 @@ if (swiperContainer05) {
                 disableOnInteraction: false,
             },
             loop: true, // loop 활성화
-            loopAdditionalSlides: 3, // 슬라이드를 추가로 복제하여 자연스러운 전환
-            loopedSlides: 3, // 자연스러운 루프 전환을 위해 슬라이드 복제
+            loopAdditionalSlides: 2, // 슬라이드를 추가로 복제하여 자연스러운 전환
+            loopedSlides: 2, // 자연스러운 루프 전환을 위해 슬라이드 복제
             direction: 'vertical',
             //slidesPerGroup: 1,
             speed: 5000, // 슬라이드 전환 속도
@@ -726,6 +736,9 @@ if (swiperContainer05) {
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
+                },
+                keyboard: {
+                    enabled: true, // 키보드 내비게이션 활성화
                 },
                 breakpoints: {
                     0: {
@@ -761,7 +774,7 @@ if (swiperContainer06) {
             slide.classList.add('swiper-slide');
 
             // 각 필드가 존재할 때만 해당 마크업을 생성
-            const imageMarkup = item.image ? `<a href="${item.url}"><img src="${item.image}" alt="${item.title || ''}" style="width: 100%; height: auto;"></a>` : '';
+            const imageMarkup = item.image ? `<img src="${item.image}" alt="${item.title || ''}" style="width: 100%; height: auto;">` : '';
             const captionMarkup = item.caption ? `<p class="caption">${item.caption}</p>` : '';
             const subtitleMarkup = item.subtitle ? `<p class="subtitle">${item.subtitle}</p>` : '';
             const titleMarkup = item.title ? `<p class="title">${item.title}</p>` : '';
@@ -777,9 +790,9 @@ if (swiperContainer06) {
 
             // 슬라이드에 이미지와 정보 마크업 추가
             slide.innerHTML = `
-            <a href="${item.url}">
-                ${imageMarkup}
-                ${informMarkup}
+                <a href="${item.url}">
+                    ${imageMarkup}
+                    ${informMarkup}
                 </a>
             `;
 
@@ -794,8 +807,8 @@ if (swiperContainer06) {
             },
             direction: 'rtl',
             loop: true, // loop 활성화
-            loopAdditionalSlides: 3, // 슬라이드를 추가로 복제하여 자연스러운 전환
-            loopedSlides: 3, // 자연스러운 루프 전환을 위해 슬라이드 복제
+            loopAdditionalSlides: 2, // 슬라이드를 추가로 복제하여 자연스러운 전환
+            loopedSlides: 2, // 자연스러운 루프 전환을 위해 슬라이드 복제
             direction: 'vertical',
             //slidesPerGroup: 1,
             speed: 5000, // 슬라이드 전환 속도
@@ -806,6 +819,9 @@ if (swiperContainer06) {
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
+                },
+                keyboard: {
+                    enabled: true, // 키보드 내비게이션 활성화
                 },
                 breakpoints: {
                     0: {

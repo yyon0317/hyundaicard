@@ -73,7 +73,6 @@
             "image": "../../../assets/img/main/mainswiper_popupstore01.png",
             "url": "#",
             "caption": "2024.10.18 ~ 2024.10.31",
-            "url": "#",
             "title": "Autumn Breeze",
             "subtitle": "늘 새롭고 재미있는<br>디자인을 제안합니다."
         },
@@ -129,7 +128,24 @@
             "url": "#",
             "caption": "2024.07.16 ~ 2024.11.10",
             "title": "MOKA 북아트 컬렉션"
-        
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_trandnews01.png",
+            "url": "#",
+            "caption": "2024.10.03 ~ 2025.01.22",
+            "title": "유코 히쿠치 특별전_비밀의 숲"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_trandnews02.png",
+            "url": "#",
+            "caption": "2024.09.04 ~ 2024.11.03",
+            "title": "A Grand Day Out"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_trandnews03.png",
+            "url": "#",
+            "caption": "2024.07.16 ~ 2024.11.10",
+            "title": "MOKA 북아트 컬렉션"
         }
     ],
     "swipermodule06": [
@@ -150,7 +166,24 @@
             "url": "#",
             "caption": "2024.07.16 ~ 2024.11.10",
             "title": "MOKA 북아트 컬렉션"
-        
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_trandnews04.png",
+            "url": "#",
+            "caption": "2024.10.03 ~ 2025.01.22",
+            "title": "유코 히쿠치 특별전_비밀의 숲"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_trandnews05.png",
+            "url": "#",
+            "caption": "2024.09.04 ~ 2024.11.03",
+            "title": "A Grand Day Out"
+        },
+        {
+            "image": "../../../assets/img/main/mainswiper_trandnews06.png",
+            "url": "#",
+            "caption": "2024.07.16 ~ 2024.11.10",
+            "title": "MOKA 북아트 컬렉션"
         }
     ],
     "swipermodule07": [
@@ -169,36 +202,72 @@
             "title04" : "the wemarket"
         },{
             "image01": "../../../assets/img/main/main_labels_default.png",
+            "image01url" : "/",
+            "title01" : "the labels",
             "image02": "../../../assets/img/main/main_bclean_default.png",
+            "image02url" : "/",
+            "title02" : "the bclean",
             "image03": "../../../assets/img/main/main_shoepace_default.png",
-            "image04": "../../../assets/img/main/main_wineworks_default.png"
+            "image03url" : "/",
+            "title03" : "the shoepace",
+            "image04": "../../../assets/img/main/main_wineworks_default.png",
+            "image04url" : "/",
+            "title04" : "the wineworks"
         },{
             "image01": "../../../assets/img/main/main_mimc_default.png",
+            "image01url" : "/",
+            "title01" : "the mimc",
             "image02": "../../../assets/img/main/main_fourm_default.png",
-            "image03": "../../../assets/img/main/main_tomgreyhound_default.png"
+            "image02url" : "/",
+            "title02" : "the fourm",
+            "image03": "../../../assets/img/main/main_tomgreyhound_default.png",
+            "image03url" : "/",
+            "title03" : "the tomgreyhound"
         }
     ],
     "swipermodule08": [
         {
             "image01": "../../../assets/img/main/main_bash_default.png",
+            "image01url" : "/",
+            "title01" : "the bash",
             "image02": "../../../assets/img/main/main_hbyh_default.png",
+            "image02url" : "/",
+            "title02" : "the hbyh",
             "image03": "../../../assets/img/main/main_offworks_default.png",
-            "image04": "../../../assets/img/main/main_wemarket_default.png"
+            "image03url" : "/",
+            "title03" : "the offworks",
+            "image04": "../../../assets/img/main/main_wemarket_default.png",
+            "image04url" : "/",
+            "title04" : "the wemarket"
         }
     ],
     "swipermodule09": [
         {
             "image01": "../../../assets/img/main/main_labels_default.png",
+            "image01url" : "/",
+            "title01" : "the labels",
             "image02": "../../../assets/img/main/main_bclean_default.png",
+            "image02url" : "/",
+            "title02" : "the bclean",
             "image03": "../../../assets/img/main/main_shoepace_default.png",
-            "image04": "../../../assets/img/main/main_wineworks_default.png"
+            "image03url" : "/",
+            "title03" : "the shoepace",
+            "image04": "../../../assets/img/main/main_wineworks_default.png",
+            "image04url" : "/",
+            "title04" : "the wineworks"
         }
     ],
     "swipermodule10": [
         {
             "image01": "../../../assets/img/main/main_mimc_default.png",
+            "image01url" : "/",
+            "title01" : "the mimc",
             "image02": "../../../assets/img/main/main_fourm_default.png",
-            "image03": "../../../assets/img/main/main_tomgreyhound_default.png"
+            "image02url" : "/",
+            "title02" : "the fourm",
+            "image03": "../../../assets/img/main/main_tomgreyhound_default.png",
+            "image03url" : "/",
+            "title03" : "the tomgreyhound"
         }
     ]
 }

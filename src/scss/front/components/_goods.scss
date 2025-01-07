@@ -678,8 +678,11 @@ ul.goods-list {
 			transition-timing-function: linear;
 			  .swiper-inform{
 				position: absolute;
-				left: 1vw;
-    			bottom: 4%;
+				left: 0;
+				bottom: 10px;
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0) 8.13%, rgba(0, 0, 0, 0.5) 97.33%);
+				width: 100%;
+				height: 25%;
 				.title{
 					@include set-vw(font-size, calc($gutter-8/1.5));
 					@include set-vw(line-height,calc($gutter-8/1.2));

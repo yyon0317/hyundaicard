@@ -67,7 +67,7 @@ HyundaiCard/
 │   │   │   ├── intro/         # BUI 인트로
 │   │   │   ├── pages/         # BUI 페이지
 │   │   │   └── partials/      # BUI 파셜 HTML
-│   │   ├── front/             # 프론트엔드 관련 HTML
+│   │   ├── front/             # MAIN HTML
 │   │   │   ├── main/          # 메인 페이지
 │   │   │   ├── pages/         # 기타 페이지
 │   │   │   └── partials/      # 공통 파셜 HTML
@@ -91,13 +91,25 @@ HyundaiCard/
 │   │   │   ├── fonts/         # 폰트 스타일
 │   │   │   ├── helper/        # 헬퍼 스타일
 │   │   │   ├── layout/        # 레이아웃 스타일
-│   │   │   └── plugins/       # 플러그인 스타일
-│   │   ├── _reset.scss        # 리셋 스타일
-│   │   └── common.scss        # 공통 스타일
+│   │   │   ├── plugins/       # 플러그인 스타일
+│   │   │   ├── _reset.scss    # reset 스타일
+│   │   │   └── common.scss    # common 스타일
+│   │   ├── front/             # BUI 관련 SCSS
+│   │   │   ├── components/    # 컴포넌트 스타일
+│   │   │   ├── config/        # 설정 스타일
+│   │   │   ├── fonts/         # 폰트 스타일
+│   │   │   ├── helper/        # 헬퍼 스타일
+│   │   │   ├── layout/        # 레이아웃 스타일
+│   │   │   ├── plugins/       # 플러그인 스타일
+│   │   │   ├── _reset.scss    # reset 스타일
+│   │   │   └── common.scss    # common 스타일
+│   │   └── plugins/           # BUI 관련 SCSS
 ├── gulpfile.js                # Gulp 설정 파일
 ├── package.json               # 프로젝트 의존성 정보
 ├── package-lock.json          # 의존성 잠금 파일
 ├── index.html                 # 메인 HTML 파일
 └── README.md                  # 프로젝트 설명
+```
+
 
 감사합니다. 

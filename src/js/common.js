@@ -1,15 +1,83 @@
 "use strict";
 
+/**
+ * Guide Menu
+ */
+function initGuideMenu() {
+    // config 변수
+    var xl = 720; 
 
-// 플러그인 등록
-gsap.registerPlugin(ScrollTrigger);
+    // 전역 변수
+    var $window = $(window),
+        $windowWidth = $window.width(),
+        $body = $('body'),
+        $header = $('#header'),
+        $nav = $('#nav');
+
+    // 넓이 리턴 함수
+    function returnWidth(){
+        $windowWidth = $window.width();
+        return $windowWidth;
+    }
+
+    // menu toggle
+    $('.btn_guide_menu').on('click', function(){
+        $body.toggleClass('full');
+    });
+
+    var _menu = $('.guide_top strong').text(),
+        _page = $('.guide_top span').text();
+
+    $('.guide_gnb > li > a').each(function(){
+        var _txt =  $(this).text();
+
+        if(_txt == _menu){
+            $(this).parent('li').addClass('open');
+            var _menu2 = $(this).siblings('ul');
+
+            _menu2.find('li').each(function(){
+                var _txt =  $(this).find('a').text();
+
+                if(_txt == _page){
+                    $(this).addClass('active');
+                }
+            });
+        }
+    });
+
+    $('.guide_gnb > li > a').on('click', function(){
+        if(!$(this).parent('li').is('.open')){
+
+            if($(this).parent('li').is('.active')){
+                $(this).parent('li').removeClass('active');
+                $(this).siblings('ul').stop().slideUp(250);
+            } else {
+                $(this).parent('li').siblings('li').removeClass('active');
+                $(this).parent('li').siblings('li:not(".open")').find('ul').stop().slideUp(250);
+                $(this).parent('li').addClass('active');
+                $(this).siblings('ul').stop().slideDown(250);
+            }
+
+        }
+    });
+}
+
+/**
+ * GSAP Animations
+ */
+function initGSAPAnimations() {
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Scroll-triggered class toggle
     ScrollTrigger.create({
         start: 'top -10',
         end: 99999,
         toggleClass: {className: 'main-tool-bar--scrolled', targets: '.main-tool-bar'}
-      });
+    });
 
-      gsap.to(".swiper-sidecont", {
+    // Animate swiper-sidecont element
+    gsap.to(".swiper-sidecont", {
         duration: 3,
         flex: '1 1 60%',
         ease: "power3.out",
@@ -17,9 +85,7 @@ gsap.registerPlugin(ScrollTrigger);
             document.querySelector(".swiper-sidecont").classList.add("swiper-sidecont--event");
         }
     });
-      
-
-
+}
 
 /**
  * PC 메뉴 hover 이벤트 처리
@@ -87,49 +153,31 @@ function handleResize() {
     }
 }
 
-/**
- * 검색창 열기/닫기 이벤트 처리
- */
-// 검색창 열기
-$('.ico_searchopen_w, .ico_searchopen_b').click(function () {
-    $('.dimmedLayer').show();
-    $('.gnb').removeClass('mobMenuOpen');
-    $('.totalSearchWrap').addClass('totalSearcopen');
-    $('.ico_searchopen_w').hide();
-    $('body').addClass('scrollLock');
-});
-
-// 검색창 닫기
-$('.btnsearchclose').click(function () {
-    $('.dimmedLayer').hide();
-    $('.totalSearchWrap').removeClass('totalSearcopen');
-    $('.ico_searchopen_w').show();
-    $('body').removeClass('scrollLock');
-});
-
 // 초기 실행 및 리사이즈 이벤트 설정
 $(window).on('resize', handleResize);
 handleResize();
 
 /**
- * 비밀번호 표시/숨기기 토글
+ * Search Bar
  */
-const passwordVisibility = function(selector, closestSelector) {
-    const formElem = selector.closest(closestSelector).querySelector('.form-elem');
-    const buttonText = selector.querySelector('.btn-text');
+function initSearchBar() {
+    // 검색창 열기
+    $('.ico_searchopen_w, .ico_searchopen_b').click(function () {
+        $('.dimmedLayer').show();
+        $('.gnb').removeClass('mobMenuOpen');
+        $('.totalSearchWrap').addClass('totalSearcopen');
+        $('.ico_searchopen_w').hide();
+        $('body').addClass('scrollLock');
+    });
 
-    formElem.select();
-
-    if (formElem.type === 'password') {
-        formElem.type = 'text';
-        selector.classList.add('active');
-        buttonText.innerText = '텍스트 숨기기';
-    } else {
-        formElem.type = 'password';
-        selector.classList.remove('active');
-        buttonText.innerText = '텍스트 보기';
-    }
-};
+    // 검색창 닫기
+    $('.btnsearchclose').click(function () {
+        $('.dimmedLayer').hide();
+        $('.totalSearchWrap').removeClass('totalSearcopen');
+        $('.ico_searchopen_w').show();
+        $('body').removeClass('scrollLock');
+    });
+}
 
 /**
  * 탭 기능 초기화
@@ -222,17 +270,7 @@ function initDropdowns() {
 }
 
 /**
- * 팝업 토글 기능
- */
-function togglePopup(popupId) {
-    const popup = document.getElementById(popupId);
-    if (popup) {
-        popup.classList.toggle('active');
-    }
-}
-
-/**
- * Swiper Initialization with Full Features
+ * Swiper
  */
 function initSwiper() {
     const swiperModules = [
@@ -564,154 +602,131 @@ function initmarquee() {
     });
 }
 
+/**
+ * 비밀번호 표시/숨기기 토글
+ */
+const passwordVisibility = function(selector, closestSelector) {
+    const formElem = selector.closest(closestSelector).querySelector('.form-elem');
+    const buttonText = selector.querySelector('.btn-text');
 
-// 페이지 로드 완료 후 모든 기능 초기화
-document.addEventListener('DOMContentLoaded', function() {
-    initTabs();          // 탭 기능 초기화
-    initDropdowns();     // 드롭다운 기능 초기화
-    initSwiper();        // Swiper 슬라이드 초기화
-    initmarquee();        // marquee 초기화
-});
+    formElem.select();
 
-
-// JSON 데이터를 가져와 모든 GNB 항목을 렌더링
-fetch('../../data/menu.json')
-  .then(response => response.json())
-  .then(data => {
-    const mainContainer = document.getElementById("gnbContainer"); // GNB 항목들이 들어갈 메인 컨테이너
-    data.mobile.forEach(gnbItem => renderGnbContent(gnbItem, mainContainer));
-
-  })
-  .catch(error => console.error('Error loading menu JSON:', error));
-
-// GNB 콘텐츠 렌더링 함수
-function renderGnbContent(data, container) {
-  // 기본 HTML 구조를 복제하여 사용
-  const subsection = document.createElement("div");
-  subsection.classList.add("subsection");
-  
-  subsection.innerHTML = `
-    <div class="subsection-wrap">
-      <div class="subsection-head">
-        <p class="subsection-subject">
-          <a href="${data.link}">${data.name}</a>
-        </p>
-      </div>
-      <div class="section-body">
-        <div class="lnb-navi">
-            <p>${data.name}</p>
-            <ul class="lnb-list"></ul>
-            <a href="${data.link}">
-            <img src="${data.gnbimg}" alt="${data.name}"></a>
-        </div>
-      </div>
-    </div>
-  `;
-
-  // LNB 리스트를 찾아서 항목 추가
-  const lnbList = subsection.querySelector(".lnb-list");
-
-  data.sub.forEach((lnbItem) => {
-    const lnbItemElement = document.createElement("li");
-    lnbItemElement.classList.add("lnb-item");
-
-    // LNB 항목 링크 생성
-    const lnbLink = document.createElement("a");
-    lnbLink.href = lnbItem.link;
-    lnbLink.textContent = lnbItem.name;
-    lnbItemElement.appendChild(lnbLink);
-
-    // SNB 리스트 추가 (하위 항목이 있는 경우에만)
-    if (lnbItem.sub && lnbItem.sub.length > 0) {
-      const snbListContainer = document.createElement("div");
-      snbListContainer.classList.add("snb-navi");
-
-      const snbList = document.createElement("ul");
-      snbList.classList.add("snb-list");
-
-      lnbItem.sub.forEach((snbItem) => {
-        const snbItemElement = document.createElement("li");
-        snbItemElement.classList.add("snb-item");
-
-        // SNB 항목 링크
-        const snbLink = document.createElement("a");
-        snbLink.href = snbItem.link;
-        snbLink.textContent = snbItem.name;
-
-        snbItemElement.appendChild(snbLink);
-        snbList.appendChild(snbItemElement);
-      });
-
-      snbListContainer.appendChild(snbList);
-      lnbItemElement.appendChild(snbListContainer);
+    if (formElem.type === 'password') {
+        formElem.type = 'text';
+        selector.classList.add('active');
+        buttonText.innerText = '텍스트 숨기기';
+    } else {
+        formElem.type = 'password';
+        selector.classList.remove('active');
+        buttonText.innerText = '텍스트 보기';
     }
+};
 
-    // LNB 리스트에 항목 추가
-    lnbList.appendChild(lnbItemElement);
-  });
+/**
+ * 팝업 토글 기능
+ */
+function togglePopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+        popup.classList.toggle('active');
+    }
+}
 
-  // 최종적으로 메인 컨테이너에 섹션 추가
-  container.appendChild(subsection);
+/**
+ * GNB
+ */
+function initGNB() {
+    // JSON 데이터를 가져와 모든 GNB 항목을 렌더링
+    fetch('../../data/menu.json')
+        .then(response => response.json())
+        .then(data => {
+            const mainContainer = document.getElementById("gnbContainer"); // GNB 항목들이 들어갈 메인 컨테이너
+            data.mobile.forEach(gnbItem => renderGnbContent(gnbItem, mainContainer));
+        })
+        .catch(error => console.error('Error loading menu JSON:', error));
+}
+
+/**
+ * Render GNB Content
+ */
+function renderGnbContent(data, container) {
+    // 기본 HTML 구조를 복제하여 사용
+    const subsection = document.createElement("div");
+    subsection.classList.add("subsection");
+
+    subsection.innerHTML = `
+        <div class="subsection-wrap">
+            <div class="subsection-head">
+                <p class="subsection-subject">
+                    <a href="${data.link}">${data.name}</a>
+                </p>
+            </div>
+            <div class="section-body">
+                <div class="lnb-navi">
+                    <p>${data.name}</p>
+                    <ul class="lnb-list"></ul>
+                    <a href="${data.link}">
+                    <img src="${data.gnbimg}" alt="${data.name}"></a>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // LNB 리스트를 찾아서 항목 추가
+    const lnbList = subsection.querySelector(".lnb-list");
+
+    data.sub.forEach((lnbItem) => {
+        const lnbItemElement = document.createElement("li");
+        lnbItemElement.classList.add("lnb-item");
+
+        // LNB 항목 링크 생성
+        const lnbLink = document.createElement("a");
+        lnbLink.href = lnbItem.link;
+        lnbLink.textContent = lnbItem.name;
+        lnbItemElement.appendChild(lnbLink);
+
+        // SNB 리스트 추가 (하위 항목이 있는 경우에만)
+        if (lnbItem.sub && lnbItem.sub.length > 0) {
+            const snbListContainer = document.createElement("div");
+            snbListContainer.classList.add("snb-navi");
+
+            const snbList = document.createElement("ul");
+            snbList.classList.add("snb-list");
+
+            lnbItem.sub.forEach((snbItem) => {
+                const snbItemElement = document.createElement("li");
+                snbItemElement.classList.add("snb-item");
+
+                // SNB 항목 링크
+                const snbLink = document.createElement("a");
+                snbLink.href = snbItem.link;
+                snbLink.textContent = snbItem.name;
+
+                snbItemElement.appendChild(snbLink);
+                snbList.appendChild(snbItemElement);
+            });
+
+            snbListContainer.appendChild(snbList);
+            lnbItemElement.appendChild(snbListContainer);
+        }
+
+        // LNB 리스트에 항목 추가
+        lnbList.appendChild(lnbItemElement);
+    });
+
+    // 최종적으로 메인 컨테이너에 섹션 추가
+    container.appendChild(subsection);
 }
 
 $(document).ready(function () {
+    initTabs();          // 탭 기능 초기화
+    initDropdowns();     // 드롭다운 기능 초기화
+    initSwiper();        // Swiper 슬라이드 초기화
+    initmarquee();       // marquee 초기화
+    initSearchBar();     // 검색창 초기화
 
+    initGuideMenu(); // 가이드 메뉴 초기화
+    initGSAPAnimations(); // GSAP 애니메이션 초기화
+    initGNB(); // GNB 초기화
+});
 
-    // config 변수
-    var xl = 720; 
-    
-    // 전역함수
-    var $window = $(window),
-        $windowWidth = $window.width(),
-        $body = $('body'),
-        $header = $('#header'),
-        $nav = $('#nav');
-    
-    // 넓이 리턴 함수
-    function returnWidth(){
-        $windowWidth = $window.width();
-        return $windowWidth;
-    }
-    
-    // menu
-    $('.btn_guide_menu').on('click', function(){
-        $body.toggleClass('full')
-    })
-    
-    var _menu = $('.guide_top strong').text(),
-        _page = $('.guide_top span').text();
-    
-    $('.guide_gnb > li > a').each(function(){
-        var _txt =  $(this).text();
-    
-        if(_txt == _menu){
-            $(this).parent('li').addClass('open')
-            var _menu2 = $(this).siblings('ul');
-    
-            _menu2.find('li').each(function(){
-                var _txt =  $(this).find('a').text();
-    
-                if(_txt == _page){
-                    $(this).addClass('active')
-                }
-            })
-        }
-    })
-    
-    
-    $('.guide_gnb > li > a').on('click' , function(){
-        if(!$(this).parent('li').is('.open')){
-    
-            if($(this).parent('li').is('.active')){
-                $(this).parent('li').removeClass('active')
-                $(this).siblings('ul').stop().slideUp(250);
-            } else {
-                $(this).parent('li').siblings('li').removeClass('active')
-                $(this).parent('li').siblings('li:not(".open")').find('ul').stop().slideUp(250);
-                $(this).parent('li').addClass('active')
-                $(this).siblings('ul').stop().slideDown(250);
-            }
-    
-        }
-    })
-    })

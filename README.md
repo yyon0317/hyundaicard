@@ -2,6 +2,10 @@
 
 이 저장소는 현대백화점 웹 페이지의 프론트엔드 구현 및 클론 프로젝트입니다. HTML, SCSS, JavaScript를 활용하여 현대백화점의 UI와 사용자 경험을 재현하는 데 중점을 둔 프로젝트입니다.
 
+## 완성작 보기 
+[HYUNDAISTORE_STYLEGUIDE SITE](https://hyundaistore-portfolio.netlify.app/bui/intro/index.html)<br>
+[HYUNDAISTORE_SITE](https://hyundaistore-portfolio.netlify.app/front/main/main) 
+
 ## 프로젝트 개요
 
 ### 주요 기능
